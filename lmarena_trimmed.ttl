@@ -1,0 +1,1956 @@
+@base <https://www.contextuel.ai/spec/Enki/> .
+@prefix enki: <https://www.contextuel.ai/spec/Enki/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix contextuel: <https://www.contextuel.ai/spec/Contextuel/> .
+
+contextuel:AI2_ImpACT_Low_risk a dct:License ;
+    rdfs:label "AI2 ImpACT Low-risk" .
+
+contextuel:Apache_2_0 a dct:License ;
+    rdfs:label "Apache 2.0" ;
+    rdfs:label "Apache-2.0" .
+
+contextuel:CC_BY_NC_4_0 a dct:License ;
+    rdfs:label "CC-BY-NC-4.0" .
+
+contextuel:CC_BY_NC_SA_4_0 a dct:License ;
+    rdfs:label "CC-BY-NC-SA-4.0" .
+
+contextuel:CC_BY_SA_3_0 a dct:License ;
+    rdfs:label "CC-BY-SA 3.0" .
+
+contextuel:DeepSeek_License a dct:License ;
+    rdfs:label "DeepSeek License" .
+
+contextuel:Falcon_180B_TII_License a dct:License ;
+    rdfs:label "Falcon-180B TII License" .
+
+contextuel:Gemma_license a dct:License ;
+    rdfs:label "Gemma license" .
+
+contextuel:Llama_2_Community a dct:License ;
+    rdfs:label "Llama 2 Community" .
+
+contextuel:MIT a dct:License ;
+    rdfs:label "MIT" .
+
+contextuel:Non_commercial a dct:License ;
+    rdfs:label "Non-commercial" .
+
+contextuel:Proprietary a dct:License ;
+    rdfs:label "Proprietary" .
+
+contextuel:Qianwen_LICENSE a dct:License ;
+    rdfs:label "Qianwen LICENSE" .
+
+contextuel:Yi_License a dct:License ;
+    rdfs:label "Yi License" .
+
+contextuel:01_AI a enki:LLMManufacturer ;
+    rdfs:label "01 AI" ;
+    enki:manufactures contextuel:Yi_34B_Chat .
+
+contextuel:Alibaba a enki:LLMManufacturer ;
+    rdfs:label "Alibaba" ;
+    enki:manufactures contextuel:Qwen1_5_4B_Chat ;
+    enki:manufactures contextuel:Qwen1_5_72B_Chat ;
+    enki:manufactures contextuel:Qwen1_5_7B_Chat ;
+    enki:manufactures contextuel:Qwen_14B_Chat .
+
+contextuel:Allen_AI a enki:LLMManufacturer ;
+    rdfs:label "Allen AI" ;
+    enki:manufactures contextuel:OLMo_7B_instruct .
+
+contextuel:AllenAI_UW a enki:LLMManufacturer ;
+    rdfs:label "AllenAI/UW" ;
+    enki:manufactures contextuel:Tulu_2_DPO_70B ;
+    enki:manufactures contextuel:Tulu_30B .
+
+contextuel:Anthropic a enki:LLMManufacturer ;
+    rdfs:label "Anthropic" ;
+    enki:manufactures contextuel:Claude_1 ;
+    enki:manufactures contextuel:Claude_2_0 ;
+    enki:manufactures contextuel:Claude_2_1 ;
+    enki:manufactures contextuel:Claude_3_Opus ;
+    enki:manufactures contextuel:Claude_3_Sonnet ;
+    enki:manufactures contextuel:Claude_Instant_1 .
+
+contextuel:Cognitive_Computations a enki:LLMManufacturer ;
+    rdfs:label "Cognitive Computations" ;
+    enki:manufactures contextuel:Dolphin_2_2_1_Mistral_7B .
+
+contextuel:Databricks a enki:LLMManufacturer ;
+    rdfs:label "Databricks" ;
+    enki:manufactures contextuel:Dolly_V2_12B .
+
+contextuel:DeepSeek_AI a enki:LLMManufacturer ;
+    rdfs:label "DeepSeek AI" ;
+    enki:manufactures contextuel:DeepSeek_LLM_67B_Chat .
+
+contextuel:Google a enki:LLMManufacturer ;
+    rdfs:label "Google" ;
+    enki:manufactures contextuel:Bard_Gemini_Pro ;
+    enki:manufactures contextuel:Gemini_Pro ;
+    enki:manufactures contextuel:Gemini_Pro_Dev_API ;
+    enki:manufactures contextuel:Gemma_2B_it ;
+    enki:manufactures contextuel:Gemma_7B_it ;
+    enki:manufactures contextuel:PaLM_Chat_Bison_001 .
+
+contextuel:h2oai a enki:LLMManufacturer ;
+    rdfs:label "h2oai" ;
+    enki:manufactures contextuel:H2O_Oasst_OpenLLaMA_13B .
+
+contextuel:HuggingFace a enki:LLMManufacturer ;
+    rdfs:label "HuggingFace" ;
+    enki:manufactures contextuel:Zephyr_7b_alpha ;
+    enki:manufactures contextuel:Zephyr_7b_beta .
+
+contextuel:LMSYS a enki:LLMManufacturer ;
+    rdfs:label "LMSYS" ;
+    enki:manufactures contextuel:FastChat_T5_3B ;
+    enki:manufactures contextuel:Vicuna_13B ;
+    enki:manufactures contextuel:Vicuna_13B_16k ;
+    enki:manufactures contextuel:Vicuna_33B ;
+    enki:manufactures contextuel:Vicuna_7B ;
+    enki:manufactures contextuel:Vicuna_7B_16k .
+
+contextuel:Meta a enki:LLMManufacturer ;
+    rdfs:label "Meta" ;
+    enki:manufactures contextuel:CodeLlama_34B_instruct ;
+    enki:manufactures contextuel:CodeLlama_70B_instruct ;
+    enki:manufactures contextuel:LLaMA_13B ;
+    enki:manufactures contextuel:Llama_2_13b_chat ;
+    enki:manufactures contextuel:Llama_2_70b_chat ;
+    enki:manufactures contextuel:Llama_2_7b_chat .
+
+contextuel:Microsoft a enki:LLMManufacturer ;
+    rdfs:label "Microsoft" ;
+    enki:manufactures contextuel:WizardLM_13B_v1_0 ;
+    enki:manufactures contextuel:WizardLM_13B_v1_1 ;
+    enki:manufactures contextuel:WizardLM_13b_v1_2 ;
+    enki:manufactures contextuel:WizardLM_30B ;
+    enki:manufactures contextuel:WizardLM_70B_v1_0 .
+
+contextuel:Mistral a enki:LLMManufacturer ;
+    rdfs:label "Mistral" ;
+    enki:manufactures contextuel:Mistral_7B_Instruct_v0_1 ;
+    enki:manufactures contextuel:Mistral_7B_Instruct_v0_2 ;
+    enki:manufactures contextuel:Mistral_Large_2402 ;
+    enki:manufactures contextuel:Mistral_Medium ;
+    enki:manufactures contextuel:Mistral_Next ;
+    enki:manufactures contextuel:Mixtral_8x7b_Instruct_v0_1 .
+
+contextuel:MosaicML a enki:LLMManufacturer ;
+    rdfs:label "MosaicML" ;
+    enki:manufactures contextuel:MPT_30B_Instruct ;
+    enki:manufactures contextuel:MPT_30B_chat ;
+    enki:manufactures contextuel:MPT_7B_Chat .
+
+contextuel:Nomic_AI a enki:LLMManufacturer ;
+    rdfs:label "Nomic AI" ;
+    enki:manufactures contextuel:GPT4All_13B_Snoozy .
+
+contextuel:NousResearch a enki:LLMManufacturer ;
+    rdfs:label "NousResearch" ;
+    enki:manufactures contextuel:Nous_Hermes_13B ;
+    enki:manufactures contextuel:Nous_Hermes_2_Mixtral_8x7B_DPO ;
+    enki:manufactures contextuel:OpenHermes_2_5_Mistral_7b .
+
+contextuel:Nvidia a enki:LLMManufacturer ;
+    rdfs:label "Nvidia" ;
+    enki:manufactures contextuel:NV_Llama2_70B_SteerLM_Chat .
+
+contextuel:OpenAI a enki:LLMManufacturer ;
+    rdfs:label "OpenAI" ;
+    enki:manufactures contextuel:GPT_3_5_Turbo_0125 ;
+    enki:manufactures contextuel:GPT_3_5_Turbo_0314 ;
+    enki:manufactures contextuel:GPT_3_5_Turbo_0613 ;
+    enki:manufactures contextuel:GPT_3_5_Turbo_1106 ;
+    enki:manufactures contextuel:GPT_4_0125_preview ;
+    enki:manufactures contextuel:GPT_4_0314 ;
+    enki:manufactures contextuel:GPT_4_0613 ;
+    enki:manufactures contextuel:GPT_4_1106_preview .
+
+contextuel:OpenAssistant a enki:LLMManufacturer ;
+    rdfs:label "OpenAssistant" ;
+    enki:manufactures contextuel:OpenAssistant_LLaMA_30B ;
+    enki:manufactures contextuel:OpenAssistant_Pythia_12B .
+
+contextuel:OpenChat a enki:LLMManufacturer ;
+    rdfs:label "OpenChat" ;
+    enki:manufactures contextuel:OpenChat_3_5 ;
+    enki:manufactures contextuel:OpenChat_3_5_0106 .
+
+contextuel:Perplexity_AI a enki:LLMManufacturer ;
+    rdfs:label "Perplexity AI" ;
+    enki:manufactures contextuel:pplx_70b_online ;
+    enki:manufactures contextuel:pplx_7b_online .
+
+contextuel:RWKV a enki:LLMManufacturer ;
+    rdfs:label "RWKV" ;
+    enki:manufactures contextuel:RWKV_4_Raven_14B .
+
+contextuel:Salesforce a enki:LLMManufacturer ;
+    rdfs:label "Salesforce" ;
+    enki:manufactures contextuel:XGen_7B_8K_Inst .
+
+contextuel:Stability_AI a enki:LLMManufacturer ;
+    rdfs:label "Stability AI" ;
+    enki:manufactures contextuel:StableLM_Tuned_Alpha_7B .
+
+contextuel:Stanford a enki:LLMManufacturer ;
+    rdfs:label "Stanford" ;
+    enki:manufactures contextuel:Alpaca_13B .
+
+contextuel:TII a enki:LLMManufacturer ;
+    rdfs:label "TII" ;
+    enki:manufactures contextuel:Falcon_40B_Instruct ;
+    enki:manufactures contextuel:falcon_180b_chat .
+
+contextuel:Together_AI a enki:LLMManufacturer ;
+    rdfs:label "Together AI" ;
+    enki:manufactures contextuel:StripedHyena_Nous_7B .
+
+contextuel:Tsinghua a enki:LLMManufacturer ;
+    rdfs:label "Tsinghua" ;
+    enki:manufactures contextuel:ChatGLM2_6B ;
+    enki:manufactures contextuel:ChatGLM3_6B ;
+    enki:manufactures contextuel:ChatGLM_6B .
+
+contextuel:UC_Berkeley a enki:LLMManufacturer ;
+    rdfs:label "UC Berkeley" ;
+    enki:manufactures contextuel:Koala_13B ;
+    enki:manufactures contextuel:Starling_LM_7B_alpha .
+
+contextuel:UCSD a enki:LLMManufacturer ;
+    rdfs:label "UCSD" ;
+    enki:manufactures contextuel:Baize_v2_13B .
+
+contextuel:Upstage_AI a enki:LLMManufacturer ;
+    rdfs:label "Upstage AI" ;
+    enki:manufactures contextuel:SOLAR_10_7B_Instruct_v1_0 .
+
+contextuel:UW a enki:LLMManufacturer ;
+    rdfs:label "UW" ;
+    enki:manufactures contextuel:Guanaco_33B ;
+    enki:manufactures contextuel:Guanaco_65B .
+
+contextuel:LM_Arena_MMLU a enki:Evaluation ;
+    rdfs:label "LM Arena MMLU" ;
+    enki:evaluator contextuel:LM_Arena ;
+    enki:evaluee contextuel:Alpaca_13B ;
+    enki:evaluee contextuel:Baize_v2_13B ;
+    enki:evaluee contextuel:ChatGLM2_6B ;
+    enki:evaluee contextuel:ChatGLM_6B ;
+    enki:evaluee contextuel:Claude_1 ;
+    enki:evaluee contextuel:Claude_2_0 ;
+    enki:evaluee contextuel:Claude_3_Opus ;
+    enki:evaluee contextuel:Claude_3_Sonnet ;
+    enki:evaluee contextuel:Claude_Instant_1 ;
+    enki:evaluee contextuel:CodeLlama_34B_instruct ;
+    enki:evaluee contextuel:DeepSeek_LLM_67B_Chat ;
+    enki:evaluee contextuel:Dolly_V2_12B ;
+    enki:evaluee contextuel:Falcon_40B_Instruct ;
+    enki:evaluee contextuel:FastChat_T5_3B ;
+    enki:evaluee contextuel:GPT4All_13B_Snoozy ;
+    enki:evaluee contextuel:GPT_3_5_Turbo_0314 ;
+    enki:evaluee contextuel:GPT_4_0314 ;
+    enki:evaluee contextuel:Gemini_Pro ;
+    enki:evaluee contextuel:Gemini_Pro_Dev_API ;
+    enki:evaluee contextuel:Gemma_2B_it ;
+    enki:evaluee contextuel:Gemma_7B_it ;
+    enki:evaluee contextuel:Guanaco_33B ;
+    enki:evaluee contextuel:Guanaco_65B ;
+    enki:evaluee contextuel:H2O_Oasst_OpenLLaMA_13B ;
+    enki:evaluee contextuel:Koala_13B ;
+    enki:evaluee contextuel:LLaMA_13B ;
+    enki:evaluee contextuel:Llama_2_13b_chat ;
+    enki:evaluee contextuel:Llama_2_70b_chat ;
+    enki:evaluee contextuel:Llama_2_7b_chat ;
+    enki:evaluee contextuel:MPT_30B_Instruct ;
+    enki:evaluee contextuel:MPT_30B_chat ;
+    enki:evaluee contextuel:MPT_7B_Chat ;
+    enki:evaluee contextuel:Mistral_7B_Instruct_v0_1 ;
+    enki:evaluee contextuel:Mistral_Large_2402 ;
+    enki:evaluee contextuel:Mistral_Medium ;
+    enki:evaluee contextuel:Mixtral_8x7b_Instruct_v0_1 ;
+    enki:evaluee contextuel:NV_Llama2_70B_SteerLM_Chat ;
+    enki:evaluee contextuel:Nous_Hermes_13B ;
+    enki:evaluee contextuel:OpenAssistant_LLaMA_30B ;
+    enki:evaluee contextuel:OpenAssistant_Pythia_12B ;
+    enki:evaluee contextuel:OpenChat_3_5 ;
+    enki:evaluee contextuel:OpenChat_3_5_0106 ;
+    enki:evaluee contextuel:Qwen1_5_4B_Chat ;
+    enki:evaluee contextuel:Qwen1_5_72B_Chat ;
+    enki:evaluee contextuel:Qwen1_5_7B_Chat ;
+    enki:evaluee contextuel:Qwen_14B_Chat ;
+    enki:evaluee contextuel:RWKV_4_Raven_14B ;
+    enki:evaluee contextuel:SOLAR_10_7B_Instruct_v1_0 ;
+    enki:evaluee contextuel:StableLM_Tuned_Alpha_7B ;
+    enki:evaluee contextuel:Starling_LM_7B_alpha ;
+    enki:evaluee contextuel:Tulu_30B ;
+    enki:evaluee contextuel:Vicuna_13B ;
+    enki:evaluee contextuel:Vicuna_13B_16k ;
+    enki:evaluee contextuel:Vicuna_33B ;
+    enki:evaluee contextuel:Vicuna_7B ;
+    enki:evaluee contextuel:Vicuna_7B_16k ;
+    enki:evaluee contextuel:WizardLM_13B_v1_0 ;
+    enki:evaluee contextuel:WizardLM_13B_v1_1 ;
+    enki:evaluee contextuel:WizardLM_13b_v1_2 ;
+    enki:evaluee contextuel:WizardLM_30B ;
+    enki:evaluee contextuel:WizardLM_70B_v1_0 ;
+    enki:evaluee contextuel:XGen_7B_8K_Inst ;
+    enki:evaluee contextuel:Yi_34B_Chat ;
+    enki:evaluee contextuel:Zephyr_7b_beta ;
+    enki:evaluee contextuel:falcon_180b_chat ;
+    enki:metricEvaluated contextuel:Alpaca_13B_MMLU ;
+    enki:metricEvaluated contextuel:Baize_v2_13B_MMLU ;
+    enki:metricEvaluated contextuel:ChatGLM2_6B_MMLU ;
+    enki:metricEvaluated contextuel:ChatGLM_6B_MMLU ;
+    enki:metricEvaluated contextuel:Claude_1_MMLU ;
+    enki:metricEvaluated contextuel:Claude_2_0_MMLU ;
+    enki:metricEvaluated contextuel:Claude_3_Opus_MMLU ;
+    enki:metricEvaluated contextuel:Claude_3_Sonnet_MMLU ;
+    enki:metricEvaluated contextuel:Claude_Instant_1_MMLU ;
+    enki:metricEvaluated contextuel:CodeLlama_34B_instruct_MMLU ;
+    enki:metricEvaluated contextuel:DeepSeek_LLM_67B_Chat_MMLU ;
+    enki:metricEvaluated contextuel:Dolly_V2_12B_MMLU ;
+    enki:metricEvaluated contextuel:Falcon_40B_Instruct_MMLU ;
+    enki:metricEvaluated contextuel:FastChat_T5_3B_MMLU ;
+    enki:metricEvaluated contextuel:GPT4All_13B_Snoozy_MMLU ;
+    enki:metricEvaluated contextuel:GPT_3_5_Turbo_0314_MMLU ;
+    enki:metricEvaluated contextuel:GPT_4_0314_MMLU ;
+    enki:metricEvaluated contextuel:Gemini_Pro_Dev_API_MMLU ;
+    enki:metricEvaluated contextuel:Gemini_Pro_MMLU ;
+    enki:metricEvaluated contextuel:Gemma_2B_it_MMLU ;
+    enki:metricEvaluated contextuel:Gemma_7B_it_MMLU ;
+    enki:metricEvaluated contextuel:Guanaco_33B_MMLU ;
+    enki:metricEvaluated contextuel:Guanaco_65B_MMLU ;
+    enki:metricEvaluated contextuel:H2O_Oasst_OpenLLaMA_13B_MMLU ;
+    enki:metricEvaluated contextuel:Koala_13B_MMLU ;
+    enki:metricEvaluated contextuel:LLaMA_13B_MMLU ;
+    enki:metricEvaluated contextuel:Llama_2_13b_chat_MMLU ;
+    enki:metricEvaluated contextuel:Llama_2_70b_chat_MMLU ;
+    enki:metricEvaluated contextuel:Llama_2_7b_chat_MMLU ;
+    enki:metricEvaluated contextuel:MPT_30B_Instruct_MMLU ;
+    enki:metricEvaluated contextuel:MPT_30B_chat_MMLU ;
+    enki:metricEvaluated contextuel:MPT_7B_Chat_MMLU ;
+    enki:metricEvaluated contextuel:Mistral_7B_Instruct_v0_1_MMLU ;
+    enki:metricEvaluated contextuel:Mistral_Large_2402_MMLU ;
+    enki:metricEvaluated contextuel:Mistral_Medium_MMLU ;
+    enki:metricEvaluated contextuel:Mixtral_8x7b_Instruct_v0_1_MMLU ;
+    enki:metricEvaluated contextuel:NV_Llama2_70B_SteerLM_Chat_MMLU ;
+    enki:metricEvaluated contextuel:Nous_Hermes_13B_MMLU ;
+    enki:metricEvaluated contextuel:OpenAssistant_LLaMA_30B_MMLU ;
+    enki:metricEvaluated contextuel:OpenAssistant_Pythia_12B_MMLU ;
+    enki:metricEvaluated contextuel:OpenChat_3_5_0106_MMLU ;
+    enki:metricEvaluated contextuel:OpenChat_3_5_MMLU ;
+    enki:metricEvaluated contextuel:Qwen1_5_4B_Chat_MMLU ;
+    enki:metricEvaluated contextuel:Qwen1_5_72B_Chat_MMLU ;
+    enki:metricEvaluated contextuel:Qwen1_5_7B_Chat_MMLU ;
+    enki:metricEvaluated contextuel:Qwen_14B_Chat_MMLU ;
+    enki:metricEvaluated contextuel:RWKV_4_Raven_14B_MMLU ;
+    enki:metricEvaluated contextuel:SOLAR_10_7B_Instruct_v1_0_MMLU ;
+    enki:metricEvaluated contextuel:StableLM_Tuned_Alpha_7B_MMLU ;
+    enki:metricEvaluated contextuel:Starling_LM_7B_alpha_MMLU ;
+    enki:metricEvaluated contextuel:Tulu_30B_MMLU ;
+    enki:metricEvaluated contextuel:Vicuna_13B_16k_MMLU ;
+    enki:metricEvaluated contextuel:Vicuna_13B_MMLU ;
+    enki:metricEvaluated contextuel:Vicuna_33B_MMLU ;
+    enki:metricEvaluated contextuel:Vicuna_7B_16k_MMLU ;
+    enki:metricEvaluated contextuel:Vicuna_7B_MMLU ;
+    enki:metricEvaluated contextuel:WizardLM_13B_v1_0_MMLU ;
+    enki:metricEvaluated contextuel:WizardLM_13B_v1_1_MMLU ;
+    enki:metricEvaluated contextuel:WizardLM_13b_v1_2_MMLU ;
+    enki:metricEvaluated contextuel:WizardLM_30B_MMLU ;
+    enki:metricEvaluated contextuel:WizardLM_70B_v1_0_MMLU ;
+    enki:metricEvaluated contextuel:XGen_7B_8K_Inst_MMLU ;
+    enki:metricEvaluated contextuel:Yi_34B_Chat_MMLU ;
+    enki:metricEvaluated contextuel:Zephyr_7b_beta_MMLU ;
+    enki:metricEvaluated contextuel:falcon_180b_chat_MMLU ;
+    enki:testsCapability contextuel:AcademicDomainKnowledge ;
+    enki:testsCapability contextuel:FactualRecall ;
+    enki:testsCapability contextuel:GeneralKnowledgeReasoning ;
+    enki:testsCapability contextuel:MultiStepReasoning .
+
+contextuel:LM_Arena_MT_Bench a enki:Evaluation ;
+    rdfs:label "LM Arena MT-Bench" ;
+    enki:evaluator contextuel:LM_Arena ;
+    enki:evaluee contextuel:Alpaca_13B ;
+    enki:evaluee contextuel:Baize_v2_13B ;
+    enki:evaluee contextuel:ChatGLM2_6B ;
+    enki:evaluee contextuel:ChatGLM_6B ;
+    enki:evaluee contextuel:Claude_1 ;
+    enki:evaluee contextuel:Claude_2_0 ;
+    enki:evaluee contextuel:Claude_2_1 ;
+    enki:evaluee contextuel:Claude_Instant_1 ;
+    enki:evaluee contextuel:Dolly_V2_12B ;
+    enki:evaluee contextuel:Falcon_40B_Instruct ;
+    enki:evaluee contextuel:FastChat_T5_3B ;
+    enki:evaluee contextuel:GPT4All_13B_Snoozy ;
+    enki:evaluee contextuel:GPT_3_5_Turbo_0314 ;
+    enki:evaluee contextuel:GPT_3_5_Turbo_0613 ;
+    enki:evaluee contextuel:GPT_3_5_Turbo_1106 ;
+    enki:evaluee contextuel:GPT_4_0314 ;
+    enki:evaluee contextuel:GPT_4_0613 ;
+    enki:evaluee contextuel:GPT_4_1106_preview ;
+    enki:evaluee contextuel:Guanaco_33B ;
+    enki:evaluee contextuel:Guanaco_65B ;
+    enki:evaluee contextuel:H2O_Oasst_OpenLLaMA_13B ;
+    enki:evaluee contextuel:Koala_13B ;
+    enki:evaluee contextuel:LLaMA_13B ;
+    enki:evaluee contextuel:Llama_2_13b_chat ;
+    enki:evaluee contextuel:Llama_2_70b_chat ;
+    enki:evaluee contextuel:Llama_2_7b_chat ;
+    enki:evaluee contextuel:MPT_30B_Instruct ;
+    enki:evaluee contextuel:MPT_30B_chat ;
+    enki:evaluee contextuel:MPT_7B_Chat ;
+    enki:evaluee contextuel:Mistral_7B_Instruct_v0_1 ;
+    enki:evaluee contextuel:Mistral_7B_Instruct_v0_2 ;
+    enki:evaluee contextuel:Mistral_Medium ;
+    enki:evaluee contextuel:Mixtral_8x7b_Instruct_v0_1 ;
+    enki:evaluee contextuel:NV_Llama2_70B_SteerLM_Chat ;
+    enki:evaluee contextuel:Nous_Hermes_13B ;
+    enki:evaluee contextuel:OpenAssistant_LLaMA_30B ;
+    enki:evaluee contextuel:OpenAssistant_Pythia_12B ;
+    enki:evaluee contextuel:OpenChat_3_5 ;
+    enki:evaluee contextuel:OpenChat_3_5_0106 ;
+    enki:evaluee contextuel:PaLM_Chat_Bison_001 ;
+    enki:evaluee contextuel:Qwen1_5_72B_Chat ;
+    enki:evaluee contextuel:Qwen1_5_7B_Chat ;
+    enki:evaluee contextuel:Qwen_14B_Chat ;
+    enki:evaluee contextuel:RWKV_4_Raven_14B ;
+    enki:evaluee contextuel:SOLAR_10_7B_Instruct_v1_0 ;
+    enki:evaluee contextuel:StableLM_Tuned_Alpha_7B ;
+    enki:evaluee contextuel:Starling_LM_7B_alpha ;
+    enki:evaluee contextuel:Tulu_2_DPO_70B ;
+    enki:evaluee contextuel:Tulu_30B ;
+    enki:evaluee contextuel:Vicuna_13B ;
+    enki:evaluee contextuel:Vicuna_13B_16k ;
+    enki:evaluee contextuel:Vicuna_33B ;
+    enki:evaluee contextuel:Vicuna_7B ;
+    enki:evaluee contextuel:Vicuna_7B_16k ;
+    enki:evaluee contextuel:WizardLM_13B_v1_0 ;
+    enki:evaluee contextuel:WizardLM_13B_v1_1 ;
+    enki:evaluee contextuel:WizardLM_13b_v1_2 ;
+    enki:evaluee contextuel:WizardLM_30B ;
+    enki:evaluee contextuel:WizardLM_70B_v1_0 ;
+    enki:evaluee contextuel:XGen_7B_8K_Inst ;
+    enki:evaluee contextuel:Zephyr_7b_alpha ;
+    enki:evaluee contextuel:Zephyr_7b_beta ;
+    enki:metricEvaluated contextuel:Alpaca_13B_MT_Bench ;
+    enki:metricEvaluated contextuel:Baize_v2_13B_MT_Bench ;
+    enki:metricEvaluated contextuel:ChatGLM2_6B_MT_Bench ;
+    enki:metricEvaluated contextuel:ChatGLM_6B_MT_Bench ;
+    enki:metricEvaluated contextuel:Claude_1_MT_Bench ;
+    enki:metricEvaluated contextuel:Claude_2_0_MT_Bench ;
+    enki:metricEvaluated contextuel:Claude_2_1_MT_Bench ;
+    enki:metricEvaluated contextuel:Claude_Instant_1_MT_Bench ;
+    enki:metricEvaluated contextuel:Dolly_V2_12B_MT_Bench ;
+    enki:metricEvaluated contextuel:Falcon_40B_Instruct_MT_Bench ;
+    enki:metricEvaluated contextuel:FastChat_T5_3B_MT_Bench ;
+    enki:metricEvaluated contextuel:GPT4All_13B_Snoozy_MT_Bench ;
+    enki:metricEvaluated contextuel:GPT_3_5_Turbo_0314_MT_Bench ;
+    enki:metricEvaluated contextuel:GPT_3_5_Turbo_0613_MT_Bench ;
+    enki:metricEvaluated contextuel:GPT_3_5_Turbo_1106_MT_Bench ;
+    enki:metricEvaluated contextuel:GPT_4_0314_MT_Bench ;
+    enki:metricEvaluated contextuel:GPT_4_0613_MT_Bench ;
+    enki:metricEvaluated contextuel:GPT_4_1106_preview_MT_Bench ;
+    enki:metricEvaluated contextuel:Guanaco_33B_MT_Bench ;
+    enki:metricEvaluated contextuel:Guanaco_65B_MT_Bench ;
+    enki:metricEvaluated contextuel:H2O_Oasst_OpenLLaMA_13B_MT_Bench ;
+    enki:metricEvaluated contextuel:Koala_13B_MT_Bench ;
+    enki:metricEvaluated contextuel:LLaMA_13B_MT_Bench ;
+    enki:metricEvaluated contextuel:Llama_2_13b_chat_MT_Bench ;
+    enki:metricEvaluated contextuel:Llama_2_70b_chat_MT_Bench ;
+    enki:metricEvaluated contextuel:Llama_2_7b_chat_MT_Bench ;
+    enki:metricEvaluated contextuel:MPT_30B_Instruct_MT_Bench ;
+    enki:metricEvaluated contextuel:MPT_30B_chat_MT_Bench ;
+    enki:metricEvaluated contextuel:MPT_7B_Chat_MT_Bench ;
+    enki:metricEvaluated contextuel:Mistral_7B_Instruct_v0_1_MT_Bench ;
+    enki:metricEvaluated contextuel:Mistral_7B_Instruct_v0_2_MT_Bench ;
+    enki:metricEvaluated contextuel:Mistral_Medium_MT_Bench ;
+    enki:metricEvaluated contextuel:Mixtral_8x7b_Instruct_v0_1_MT_Bench ;
+    enki:metricEvaluated contextuel:NV_Llama2_70B_SteerLM_Chat_MT_Bench ;
+    enki:metricEvaluated contextuel:Nous_Hermes_13B_MT_Bench ;
+    enki:metricEvaluated contextuel:OpenAssistant_LLaMA_30B_MT_Bench ;
+    enki:metricEvaluated contextuel:OpenAssistant_Pythia_12B_MT_Bench ;
+    enki:metricEvaluated contextuel:OpenChat_3_5_0106_MT_Bench ;
+    enki:metricEvaluated contextuel:OpenChat_3_5_MT_Bench ;
+    enki:metricEvaluated contextuel:PaLM_Chat_Bison_001_MT_Bench ;
+    enki:metricEvaluated contextuel:Qwen1_5_72B_Chat_MT_Bench ;
+    enki:metricEvaluated contextuel:Qwen1_5_7B_Chat_MT_Bench ;
+    enki:metricEvaluated contextuel:Qwen_14B_Chat_MT_Bench ;
+    enki:metricEvaluated contextuel:RWKV_4_Raven_14B_MT_Bench ;
+    enki:metricEvaluated contextuel:SOLAR_10_7B_Instruct_v1_0_MT_Bench ;
+    enki:metricEvaluated contextuel:StableLM_Tuned_Alpha_7B_MT_Bench ;
+    enki:metricEvaluated contextuel:Starling_LM_7B_alpha_MT_Bench ;
+    enki:metricEvaluated contextuel:Tulu_2_DPO_70B_MT_Bench ;
+    enki:metricEvaluated contextuel:Tulu_30B_MT_Bench ;
+    enki:metricEvaluated contextuel:Vicuna_13B_16k_MT_Bench ;
+    enki:metricEvaluated contextuel:Vicuna_13B_MT_Bench ;
+    enki:metricEvaluated contextuel:Vicuna_33B_MT_Bench ;
+    enki:metricEvaluated contextuel:Vicuna_7B_16k_MT_Bench ;
+    enki:metricEvaluated contextuel:Vicuna_7B_MT_Bench ;
+    enki:metricEvaluated contextuel:WizardLM_13B_v1_0_MT_Bench ;
+    enki:metricEvaluated contextuel:WizardLM_13B_v1_1_MT_Bench ;
+    enki:metricEvaluated contextuel:WizardLM_13b_v1_2_MT_Bench ;
+    enki:metricEvaluated contextuel:WizardLM_30B_MT_Bench ;
+    enki:metricEvaluated contextuel:WizardLM_70B_v1_0_MT_Bench ;
+    enki:metricEvaluated contextuel:XGen_7B_8K_Inst_MT_Bench ;
+    enki:metricEvaluated contextuel:Zephyr_7b_alpha_MT_Bench ;
+    enki:metricEvaluated contextuel:Zephyr_7b_beta_MT_Bench ;
+    enki:testsCapability contextuel:ContextRetention ;
+    enki:testsCapability contextuel:ConversationalReasoning ;
+    enki:testsCapability contextuel:InstructionFollowing ;
+    enki:testsCapability contextuel:MultiTurnDialogue ;
+    enki:testsCapability contextuel:ResponseHelpfulness .
+
+contextuel:AcademicDomainKnowledge a enki:Capability ;
+    dct:description "The ability of an LLM to demonstrate understanding of specialized subject matter such as law, medicine, physics, or history." ;
+    rdfs:label "Academic Domain Knowledge" .
+
+contextuel:ContextRetention a enki:Capability ;
+    dct:description "The ability of an LLM to remember and appropriately use prior information within an ongoing interaction." ;
+    rdfs:label "Context Retention" .
+
+contextuel:ConversationalReasoning a enki:Capability ;
+    dct:description "The ability of an LLM to maintain logical consistency and coherence throughout a dialogue." ;
+    rdfs:label "Conversational Reasoning" .
+
+contextuel:FactualRecall a enki:Capability ;
+    dct:description "The ability of an LLM to accurately retrieve and reproduce learned factual information from its training data." ;
+    rdfs:label "Factual Recall" .
+
+contextuel:GeneralKnowledgeReasoning a enki:Capability ;
+    dct:description "The ability of an LLM to apply broad academic knowledge across multiple disciplines to correctly answer domain-specific questions." ;
+    rdfs:label "General Knowledge Reasoning" .
+
+contextuel:InstructionFollowing a enki:Capability ;
+    dct:description "The ability of an LLM to understand and correctly execute user-provided instructions." ;
+    rdfs:label "Instruction Following" .
+
+contextuel:MultiStepReasoning a enki:Capability ;
+    dct:description "The ability of an LLM to perform sequential logical operations to arrive at a correct conclusion." ;
+    rdfs:label "Multi-Step Reasoning" .
+
+contextuel:MultiTurnDialogue a enki:Capability ;
+    dct:description "The ability of an LLM to sustain contextually appropriate responses across multiple conversational exchanges." ;
+    rdfs:label "Multi-Turn Dialogue" .
+
+contextuel:ResponseHelpfulness a enki:Capability ;
+    dct:description "The ability of an LLM to generate responses that are useful, relevant, and aligned with user intent." ;
+    rdfs:label "Response Helpfulness" .
+
+contextuel:LM_Arena a enki:AIOrganization ;
+    dct:description "LM Arena is crowdsourced platform for comparing LLMs across various benchmarks." ;
+    dct:identifier "https://arena.ai/" ;
+    rdfs:label "LM Arena" .
+
+contextuel:Alpaca_13B a enki:LLM ;
+    dct:identifier "https://crfm.stanford.edu/2023/03/13/alpaca.html" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "Alpaca-13B" ;
+    enki:hasKnowledgeCutoff "2023/3" .
+
+contextuel:Alpaca_13B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Alpaca_13B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.481 .
+
+contextuel:Alpaca_13B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Alpaca_13B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 4.53 .
+
+contextuel:Baize_v2_13B a enki:LLM ;
+    dct:identifier "https://huggingface.co/project-baize/baize-v2-13b" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "Baize-v2-13B" ;
+    enki:hasKnowledgeCutoff "2023/4" .
+
+contextuel:Baize_v2_13B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Baize_v2_13B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.489 .
+
+contextuel:Baize_v2_13B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Baize_v2_13B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 5.75 .
+
+contextuel:Bard_Gemini_Pro a enki:LLM ;
+    dct:identifier "https://bard.google.com/" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "Bard (Gemini Pro)" ;
+    enki:hasKnowledgeCutoff "Online" .
+
+contextuel:ChatGLM2_6B a enki:LLM ;
+    dct:identifier "https://huggingface.co/THUDM/chatglm2-6b" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "ChatGLM2-6B" ;
+    enki:hasKnowledgeCutoff "2023/6" .
+
+contextuel:ChatGLM2_6B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ChatGLM2_6B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.455 .
+
+contextuel:ChatGLM2_6B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ChatGLM2_6B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 4.96 .
+
+contextuel:ChatGLM3_6B a enki:LLM ;
+    dct:identifier "https://huggingface.co/THUDM/chatglm3-6b" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "ChatGLM3-6B" ;
+    enki:hasKnowledgeCutoff "2023/10" .
+
+contextuel:ChatGLM_6B a enki:LLM ;
+    dct:identifier "https://huggingface.co/THUDM/chatglm-6b" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "ChatGLM-6B" ;
+    enki:hasKnowledgeCutoff "2023/3" .
+
+contextuel:ChatGLM_6B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ChatGLM_6B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.361 .
+
+contextuel:ChatGLM_6B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ChatGLM_6B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 4.5 .
+
+contextuel:Claude_1 a enki:LLM ;
+    dct:identifier "https://www.anthropic.com/index/introducing-claude" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "Claude-1" .
+
+contextuel:Claude_1_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Claude_1 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.77 .
+
+contextuel:Claude_1_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Claude_1 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.9 .
+
+contextuel:Claude_2_0 a enki:LLM ;
+    dct:identifier "https://www.anthropic.com/index/claude-2" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "Claude-2.0" .
+
+contextuel:Claude_2_0_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Claude_2_0 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.785 .
+
+contextuel:Claude_2_0_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Claude_2_0 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 8.06 .
+
+contextuel:Claude_2_1 a enki:LLM ;
+    dct:identifier "https://www.anthropic.com/index/claude-2-1" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "Claude-2.1" .
+
+contextuel:Claude_2_1_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Claude_2_1 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 8.18 .
+
+contextuel:Claude_3_Opus a enki:LLM ;
+    dct:identifier "https://www.anthropic.com/news/claude-3-family" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "Claude 3 Opus" ;
+    enki:hasKnowledgeCutoff "2023/8" .
+
+contextuel:Claude_3_Opus_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Claude_3_Opus ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.868 .
+
+contextuel:Claude_3_Sonnet a enki:LLM ;
+    dct:identifier "https://www.anthropic.com/news/claude-3-family" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "Claude 3 Sonnet" ;
+    enki:hasKnowledgeCutoff "2023/8" .
+
+contextuel:Claude_3_Sonnet_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Claude_3_Sonnet ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.79 .
+
+contextuel:Claude_Instant_1 a enki:LLM ;
+    dct:identifier "https://www.anthropic.com/index/introducing-claude" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "Claude-Instant-1" .
+
+contextuel:Claude_Instant_1_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Claude_Instant_1 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.734 .
+
+contextuel:Claude_Instant_1_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Claude_Instant_1 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.85 .
+
+contextuel:CodeLlama_34B_instruct a enki:LLM ;
+    dct:identifier "https://huggingface.co/codellama/CodeLlama-34b-Instruct-hf" ;
+    dct:license contextuel:Llama_2_Community ;
+    rdfs:label "CodeLlama-34B-instruct" ;
+    enki:hasKnowledgeCutoff "2023/7" .
+
+contextuel:CodeLlama_34B_instruct_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:CodeLlama_34B_instruct ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.537 .
+
+contextuel:CodeLlama_70B_instruct a enki:LLM ;
+    dct:identifier "https://huggingface.co/codellama/CodeLlama-70b-hf" ;
+    dct:license contextuel:Llama_2_Community ;
+    rdfs:label "CodeLlama-70B-instruct" ;
+    enki:hasKnowledgeCutoff "2024/1" .
+
+contextuel:DeepSeek_LLM_67B_Chat a enki:LLM ;
+    dct:identifier "https://huggingface.co/deepseek-ai/deepseek-llm-67b-chat" ;
+    dct:license contextuel:DeepSeek_License ;
+    rdfs:label "DeepSeek-LLM-67B-Chat" ;
+    enki:hasKnowledgeCutoff "2023/11" .
+
+contextuel:DeepSeek_LLM_67B_Chat_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:DeepSeek_LLM_67B_Chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.713 .
+
+contextuel:Dolly_V2_12B a enki:LLM ;
+    dct:identifier "https://huggingface.co/databricks/dolly-v2-12b" ;
+    dct:license contextuel:MIT ;
+    rdfs:label "Dolly-V2-12B" ;
+    enki:hasKnowledgeCutoff "2023/4" .
+
+contextuel:Dolly_V2_12B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Dolly_V2_12B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.257 .
+
+contextuel:Dolly_V2_12B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Dolly_V2_12B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 3.28 .
+
+contextuel:Dolphin_2_2_1_Mistral_7B a enki:LLM ;
+    dct:identifier "https://huggingface.co/ehartford/dolphin-2.2.1-mistral-7b" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "Dolphin-2.2.1-Mistral-7B" ;
+    enki:hasKnowledgeCutoff "2023/10" .
+
+contextuel:falcon_180b_chat a enki:LLM ;
+    dct:identifier "https://huggingface.co/tiiuae/falcon-180B-chat" ;
+    dct:license contextuel:Falcon_180B_TII_License ;
+    rdfs:label "falcon-180b-chat" ;
+    enki:hasKnowledgeCutoff "2023/9" .
+
+contextuel:falcon_180b_chat_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:falcon_180b_chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.68 .
+
+contextuel:Falcon_40B_Instruct a enki:LLM ;
+    dct:identifier "https://huggingface.co/tiiuae/falcon-40b-instruct" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "Falcon-40B-Instruct" ;
+    enki:hasKnowledgeCutoff "2023/5" .
+
+contextuel:Falcon_40B_Instruct_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Falcon_40B_Instruct ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.547 .
+
+contextuel:Falcon_40B_Instruct_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Falcon_40B_Instruct ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 5.17 .
+
+contextuel:FastChat_T5_3B a enki:LLM ;
+    dct:identifier "https://huggingface.co/lmsys/fastchat-t5-3b-v1.0" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "FastChat-T5-3B" ;
+    enki:hasKnowledgeCutoff "2023/4" .
+
+contextuel:FastChat_T5_3B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:FastChat_T5_3B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.477 .
+
+contextuel:FastChat_T5_3B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:FastChat_T5_3B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 3.04 .
+
+contextuel:Gemini_Pro a enki:LLM ;
+    dct:identifier "https://blog.google/technology/ai/gemini-api-developers-cloud/" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "Gemini Pro" ;
+    enki:hasKnowledgeCutoff "2023/4" .
+
+contextuel:Gemini_Pro_Dev_API_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Gemini_Pro_Dev_API ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.718 .
+
+contextuel:Gemini_Pro_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Gemini_Pro ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.718 .
+
+contextuel:Gemini_Pro_Dev_API a enki:LLM ;
+    dct:identifier "https://ai.google.dev/docs/gemini_api_overview" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "Gemini Pro (Dev API)" ;
+    enki:hasKnowledgeCutoff "2023/4" .
+
+contextuel:Gemma_2B_it a enki:LLM ;
+    dct:identifier "https://huggingface.co/google/gemma-2b-it" ;
+    dct:license contextuel:Gemma_license ;
+    rdfs:label "Gemma-2B-it" ;
+    enki:hasKnowledgeCutoff "2024/2" .
+
+contextuel:Gemma_2B_it_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Gemma_2B_it ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.423 .
+
+contextuel:Gemma_7B_it a enki:LLM ;
+    dct:identifier "https://huggingface.co/google/gemma-7b-it" ;
+    dct:license contextuel:Gemma_license ;
+    rdfs:label "Gemma-7B-it" ;
+    enki:hasKnowledgeCutoff "2024/2" .
+
+contextuel:Gemma_7B_it_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Gemma_7B_it ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.643 .
+
+contextuel:GPT4All_13B_Snoozy a enki:LLM ;
+    dct:identifier "https://huggingface.co/nomic-ai/gpt4all-13b-snoozy" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "GPT4All-13B-Snoozy" ;
+    enki:hasKnowledgeCutoff "2023/3" .
+
+contextuel:GPT4All_13B_Snoozy_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:GPT4All_13B_Snoozy ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.43 .
+
+contextuel:GPT4All_13B_Snoozy_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:GPT4All_13B_Snoozy ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 5.41 .
+
+contextuel:GPT_3_5_Turbo_0125 a enki:LLM ;
+    dct:identifier "https://platform.openai.com/docs/models/gpt-3-5-turbo" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "GPT-3.5-Turbo-0125" ;
+    enki:hasKnowledgeCutoff "2021/9" .
+
+contextuel:GPT_3_5_Turbo_0314 a enki:LLM ;
+    dct:identifier "https://platform.openai.com/docs/models/gpt-3-5" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "GPT-3.5-Turbo-0314" ;
+    enki:hasKnowledgeCutoff "2021/9" .
+
+contextuel:GPT_3_5_Turbo_0314_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:GPT_3_5_Turbo_0314 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.7 .
+
+contextuel:GPT_3_5_Turbo_0314_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:GPT_3_5_Turbo_0314 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.94 .
+
+contextuel:GPT_3_5_Turbo_0613 a enki:LLM ;
+    dct:identifier "https://platform.openai.com/docs/models/gpt-3-5" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "GPT-3.5-Turbo-0613" ;
+    enki:hasKnowledgeCutoff "2021/9" .
+
+contextuel:GPT_3_5_Turbo_0613_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:GPT_3_5_Turbo_0613 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 8.39 .
+
+contextuel:GPT_3_5_Turbo_1106 a enki:LLM ;
+    dct:identifier "https://platform.openai.com/docs/models/gpt-3-5" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "GPT-3.5-Turbo-1106" ;
+    enki:hasKnowledgeCutoff "2021/9" .
+
+contextuel:GPT_3_5_Turbo_1106_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:GPT_3_5_Turbo_1106 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 8.32 .
+
+contextuel:GPT_4_0125_preview a enki:LLM ;
+    dct:identifier "https://openai.com/blog/new-models-and-developer-products-announced-at-devday" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "GPT-4-0125-preview" ;
+    enki:hasKnowledgeCutoff "2023/12" .
+
+contextuel:GPT_4_0314 a enki:LLM ;
+    dct:identifier "https://openai.com/research/gpt-4" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "GPT-4-0314" ;
+    enki:hasKnowledgeCutoff "2021/9" .
+
+contextuel:GPT_4_0314_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:GPT_4_0314 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.864 .
+
+contextuel:GPT_4_0314_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:GPT_4_0314 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 8.96 .
+
+contextuel:GPT_4_0613 a enki:LLM ;
+    dct:identifier "https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "GPT-4-0613" ;
+    enki:hasKnowledgeCutoff "2021/9" .
+
+contextuel:GPT_4_0613_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:GPT_4_0613 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 9.18 .
+
+contextuel:GPT_4_1106_preview a enki:LLM ;
+    dct:identifier "https://openai.com/blog/new-models-and-developer-products-announced-at-devday" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "GPT-4-1106-preview" ;
+    enki:hasKnowledgeCutoff "2023/4" .
+
+contextuel:GPT_4_1106_preview_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:GPT_4_1106_preview ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 9.32 .
+
+contextuel:Guanaco_33B a enki:LLM ;
+    dct:identifier "https://huggingface.co/timdettmers/guanaco-33b-merged" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "Guanaco-33B" ;
+    enki:hasKnowledgeCutoff "2023/5" .
+
+contextuel:Guanaco_33B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Guanaco_33B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.576 .
+
+contextuel:Guanaco_33B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Guanaco_33B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.53 .
+
+contextuel:Guanaco_65B a enki:LLM ;
+    dct:identifier "https://huggingface.co/timdettmers/guanaco-65b-merged" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "Guanaco-65B" ;
+    enki:hasKnowledgeCutoff "2023/5" .
+
+contextuel:Guanaco_65B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Guanaco_65B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.621 .
+
+contextuel:Guanaco_65B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Guanaco_65B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.41 .
+
+contextuel:H2O_Oasst_OpenLLaMA_13B a enki:LLM ;
+    dct:identifier "https://huggingface.co/h2oai/h2ogpt-gm-oasst1-en-2048-open-llama-13b" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "H2O-Oasst-OpenLLaMA-13B" ;
+    enki:hasKnowledgeCutoff "2023/6" .
+
+contextuel:H2O_Oasst_OpenLLaMA_13B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:H2O_Oasst_OpenLLaMA_13B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.428 .
+
+contextuel:H2O_Oasst_OpenLLaMA_13B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:H2O_Oasst_OpenLLaMA_13B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 4.63 .
+
+contextuel:Koala_13B a enki:LLM ;
+    dct:identifier "https://bair.berkeley.edu/blog/2023/04/03/koala/" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "Koala-13B" ;
+    enki:hasKnowledgeCutoff "2023/4" .
+
+contextuel:Koala_13B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Koala_13B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.447 .
+
+contextuel:Koala_13B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Koala_13B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 5.35 .
+
+contextuel:LLaMA_13B a enki:LLM ;
+    dct:identifier "https://arxiv.org/abs/2302.13971" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "LLaMA-13B" ;
+    enki:hasKnowledgeCutoff "2023/2" .
+
+contextuel:LLaMA_13B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:LLaMA_13B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.47 .
+
+contextuel:LLaMA_13B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:LLaMA_13B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 2.61 .
+
+contextuel:Llama_2_13b_chat a enki:LLM ;
+    dct:identifier "https://huggingface.co/meta-llama/Llama-2-13b-chat-hf" ;
+    dct:license contextuel:Llama_2_Community ;
+    rdfs:label "Llama-2-13b-chat" ;
+    enki:hasKnowledgeCutoff "2023/7" .
+
+contextuel:Llama_2_13b_chat_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_2_13b_chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.536 .
+
+contextuel:Llama_2_13b_chat_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_2_13b_chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.65 .
+
+contextuel:Llama_2_70b_chat a enki:LLM ;
+    dct:identifier "https://huggingface.co/meta-llama/Llama-2-70b-chat-hf" ;
+    dct:license contextuel:Llama_2_Community ;
+    rdfs:label "Llama-2-70b-chat" ;
+    enki:hasKnowledgeCutoff "2023/7" .
+
+contextuel:Llama_2_70b_chat_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_2_70b_chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.63 .
+
+contextuel:Llama_2_70b_chat_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_2_70b_chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.86 .
+
+contextuel:Llama_2_7b_chat a enki:LLM ;
+    dct:identifier "https://huggingface.co/meta-llama/Llama-2-7b-chat-hf" ;
+    dct:license contextuel:Llama_2_Community ;
+    rdfs:label "Llama-2-7b-chat" ;
+    enki:hasKnowledgeCutoff "2023/7" .
+
+contextuel:Llama_2_7b_chat_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_2_7b_chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.458 .
+
+contextuel:Llama_2_7b_chat_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_2_7b_chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.27 .
+
+contextuel:Mistral_7B_Instruct_v0_1 a enki:LLM ;
+    dct:identifier "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "Mistral-7B-Instruct-v0.1" ;
+    enki:hasKnowledgeCutoff "2023/9" .
+
+contextuel:Mistral_7B_Instruct_v0_1_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_7B_Instruct_v0_1 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.554 .
+
+contextuel:Mistral_7B_Instruct_v0_1_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_7B_Instruct_v0_1 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.84 .
+
+contextuel:Mistral_7B_Instruct_v0_2 a enki:LLM ;
+    dct:identifier "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "Mistral-7B-Instruct-v0.2" ;
+    enki:hasKnowledgeCutoff "2023/12" .
+
+contextuel:Mistral_7B_Instruct_v0_2_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_7B_Instruct_v0_2 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.6 .
+
+contextuel:Mistral_Large_2402 a enki:LLM ;
+    dct:identifier "https://mistral.ai/news/mistral-large/" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "Mistral-Large-2402" .
+
+contextuel:Mistral_Large_2402_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Large_2402 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.812 .
+
+contextuel:Mistral_Medium a enki:LLM ;
+    dct:identifier "https://mistral.ai/news/la-plateforme/" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "Mistral Medium" .
+
+contextuel:Mistral_Medium_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Medium ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.753 .
+
+contextuel:Mistral_Medium_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Medium ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 8.61 .
+
+contextuel:Mistral_Next a enki:LLM ;
+    dct:identifier "https://chat.mistral.ai/chat" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "Mistral-Next" .
+
+contextuel:Mixtral_8x7b_Instruct_v0_1 a enki:LLM ;
+    dct:identifier "https://mistral.ai/news/mixtral-of-experts/" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "Mixtral-8x7b-Instruct-v0.1" ;
+    enki:hasKnowledgeCutoff "2023/12" .
+
+contextuel:Mixtral_8x7b_Instruct_v0_1_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mixtral_8x7b_Instruct_v0_1 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.706 .
+
+contextuel:Mixtral_8x7b_Instruct_v0_1_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mixtral_8x7b_Instruct_v0_1 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 8.3 .
+
+contextuel:MPT_30B_chat a enki:LLM ;
+    dct:identifier "https://huggingface.co/mosaicml/mpt-30b-chat" ;
+    dct:license contextuel:CC_BY_NC_SA_4_0 ;
+    rdfs:label "MPT-30B-chat" ;
+    enki:hasKnowledgeCutoff "2023/6" .
+
+contextuel:MPT_30B_chat_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:MPT_30B_chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.504 .
+
+contextuel:MPT_30B_chat_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:MPT_30B_chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.39 .
+
+contextuel:MPT_30B_Instruct a enki:LLM ;
+    dct:identifier "https://huggingface.co/mosaicml/mpt-30b-instruct" ;
+    dct:license contextuel:CC_BY_SA_3_0 ;
+    rdfs:label "MPT-30B-Instruct" ;
+    enki:hasKnowledgeCutoff "2023/6" .
+
+contextuel:MPT_30B_Instruct_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:MPT_30B_Instruct ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.478 .
+
+contextuel:MPT_30B_Instruct_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:MPT_30B_Instruct ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 5.22 .
+
+contextuel:MPT_7B_Chat a enki:LLM ;
+    dct:identifier "https://huggingface.co/mosaicml/mpt-7b-chat" ;
+    dct:license contextuel:CC_BY_NC_SA_4_0 ;
+    rdfs:label "MPT-7B-Chat" ;
+    enki:hasKnowledgeCutoff "2023/5" .
+
+contextuel:MPT_7B_Chat_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:MPT_7B_Chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.32 .
+
+contextuel:MPT_7B_Chat_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:MPT_7B_Chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 5.42 .
+
+contextuel:Nous_Hermes_13B a enki:LLM ;
+    dct:identifier "https://huggingface.co/NousResearch/Nous-Hermes-13b" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "Nous-Hermes-13B" ;
+    enki:hasKnowledgeCutoff "2023/6" .
+
+contextuel:Nous_Hermes_13B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Nous_Hermes_13B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.493 .
+
+contextuel:Nous_Hermes_13B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Nous_Hermes_13B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 5.51 .
+
+contextuel:Nous_Hermes_2_Mixtral_8x7B_DPO a enki:LLM ;
+    dct:identifier "https://huggingface.co/NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "Nous-Hermes-2-Mixtral-8x7B-DPO" ;
+    enki:hasKnowledgeCutoff "2024/1" .
+
+contextuel:NV_Llama2_70B_SteerLM_Chat a enki:LLM ;
+    dct:identifier "https://huggingface.co/nvidia/Llama2-70B-SteerLM-Chat" ;
+    dct:license contextuel:Llama_2_Community ;
+    rdfs:label "NV-Llama2-70B-SteerLM-Chat" ;
+    enki:hasKnowledgeCutoff "2023/11" .
+
+contextuel:NV_Llama2_70B_SteerLM_Chat_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:NV_Llama2_70B_SteerLM_Chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.685 .
+
+contextuel:NV_Llama2_70B_SteerLM_Chat_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:NV_Llama2_70B_SteerLM_Chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.54 .
+
+contextuel:OLMo_7B_instruct a enki:LLM ;
+    dct:identifier "https://huggingface.co/allenai/OLMo-7B-Instruct" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "OLMo-7B-instruct" ;
+    enki:hasKnowledgeCutoff "2024/2" .
+
+contextuel:OpenAssistant_LLaMA_30B a enki:LLM ;
+    dct:identifier "https://huggingface.co/OpenAssistant/oasst-sft-6-llama-30b-xor" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "OpenAssistant-LLaMA-30B" ;
+    enki:hasKnowledgeCutoff "2023/4" .
+
+contextuel:OpenAssistant_LLaMA_30B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:OpenAssistant_LLaMA_30B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.56 .
+
+contextuel:OpenAssistant_LLaMA_30B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:OpenAssistant_LLaMA_30B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.41 .
+
+contextuel:OpenAssistant_Pythia_12B a enki:LLM ;
+    dct:identifier "https://huggingface.co/OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "OpenAssistant-Pythia-12B" ;
+    enki:hasKnowledgeCutoff "2023/4" .
+
+contextuel:OpenAssistant_Pythia_12B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:OpenAssistant_Pythia_12B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.27 .
+
+contextuel:OpenAssistant_Pythia_12B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:OpenAssistant_Pythia_12B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 4.32 .
+
+contextuel:OpenChat_3_5 a enki:LLM ;
+    dct:identifier "https://huggingface.co/openchat/openchat_3.5" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "OpenChat-3.5" ;
+    enki:hasKnowledgeCutoff "2023/11" .
+
+contextuel:OpenChat_3_5_0106_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:OpenChat_3_5_0106 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.658 .
+
+contextuel:OpenChat_3_5_0106_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:OpenChat_3_5_0106 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.8 .
+
+contextuel:OpenChat_3_5_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:OpenChat_3_5 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.643 .
+
+contextuel:OpenChat_3_5_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:OpenChat_3_5 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.81 .
+
+contextuel:OpenChat_3_5_0106 a enki:LLM ;
+    dct:identifier "https://huggingface.co/openchat/openchat-3.5-0106" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "OpenChat-3.5-0106" ;
+    enki:hasKnowledgeCutoff "2024/1" .
+
+contextuel:OpenHermes_2_5_Mistral_7b a enki:LLM ;
+    dct:identifier "https://huggingface.co/teknium/OpenHermes-2.5-Mistral-7B" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "OpenHermes-2.5-Mistral-7b" ;
+    enki:hasKnowledgeCutoff "2023/11" .
+
+contextuel:PaLM_Chat_Bison_001 a enki:LLM ;
+    dct:identifier "https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models#foundation_models" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "PaLM-Chat-Bison-001" ;
+    enki:hasKnowledgeCutoff "2021/6" .
+
+contextuel:PaLM_Chat_Bison_001_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:PaLM_Chat_Bison_001 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.4 .
+
+contextuel:pplx_70b_online a enki:LLM ;
+    dct:identifier "https://blog.perplexity.ai/blog/introducing-pplx-online-llms" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "pplx-70b-online" ;
+    enki:hasKnowledgeCutoff "Online" .
+
+contextuel:pplx_7b_online a enki:LLM ;
+    dct:identifier "https://blog.perplexity.ai/blog/introducing-pplx-online-llms" ;
+    dct:license contextuel:Proprietary ;
+    rdfs:label "pplx-7b-online" ;
+    enki:hasKnowledgeCutoff "Online" .
+
+contextuel:Qwen1_5_4B_Chat a enki:LLM ;
+    dct:identifier "https://qwenlm.github.io/blog/qwen1.5/" ;
+    dct:license contextuel:Qianwen_LICENSE ;
+    rdfs:label "Qwen1.5-4B-Chat" ;
+    enki:hasKnowledgeCutoff "2024/2" .
+
+contextuel:Qwen1_5_4B_Chat_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwen1_5_4B_Chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.561 .
+
+contextuel:Qwen1_5_72B_Chat a enki:LLM ;
+    dct:identifier "https://qwenlm.github.io/blog/qwen1.5/" ;
+    dct:license contextuel:Qianwen_LICENSE ;
+    rdfs:label "Qwen1.5-72B-Chat" ;
+    enki:hasKnowledgeCutoff "2024/2" .
+
+contextuel:Qwen1_5_72B_Chat_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwen1_5_72B_Chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.775 .
+
+contextuel:Qwen1_5_72B_Chat_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwen1_5_72B_Chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 8.61 .
+
+contextuel:Qwen1_5_7B_Chat a enki:LLM ;
+    dct:identifier "https://qwenlm.github.io/blog/qwen1.5/" ;
+    dct:license contextuel:Qianwen_LICENSE ;
+    rdfs:label "Qwen1.5-7B-Chat" ;
+    enki:hasKnowledgeCutoff "2024/2" .
+
+contextuel:Qwen1_5_7B_Chat_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwen1_5_7B_Chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.61 .
+
+contextuel:Qwen1_5_7B_Chat_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwen1_5_7B_Chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.6 .
+
+contextuel:Qwen_14B_Chat a enki:LLM ;
+    dct:identifier "https://huggingface.co/Qwen/Qwen-14B-Chat" ;
+    dct:license contextuel:Qianwen_LICENSE ;
+    rdfs:label "Qwen-14B-Chat" ;
+    enki:hasKnowledgeCutoff "2023/8" .
+
+contextuel:Qwen_14B_Chat_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwen_14B_Chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.665 .
+
+contextuel:Qwen_14B_Chat_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwen_14B_Chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.96 .
+
+contextuel:RWKV_4_Raven_14B a enki:LLM ;
+    dct:identifier "https://huggingface.co/BlinkDL/rwkv-4-raven" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "RWKV-4-Raven-14B" ;
+    enki:hasKnowledgeCutoff "2023/4" .
+
+contextuel:RWKV_4_Raven_14B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:RWKV_4_Raven_14B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.256 .
+
+contextuel:RWKV_4_Raven_14B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:RWKV_4_Raven_14B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 3.98 .
+
+contextuel:SOLAR_10_7B_Instruct_v1_0 a enki:LLM ;
+    dct:identifier "https://huggingface.co/upstage/SOLAR-10.7B-Instruct-v1.0" ;
+    dct:license contextuel:CC_BY_NC_4_0 ;
+    rdfs:label "SOLAR-10.7B-Instruct-v1.0" ;
+    enki:hasKnowledgeCutoff "2023/11" .
+
+contextuel:SOLAR_10_7B_Instruct_v1_0_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:SOLAR_10_7B_Instruct_v1_0 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.662 .
+
+contextuel:SOLAR_10_7B_Instruct_v1_0_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:SOLAR_10_7B_Instruct_v1_0 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.58 .
+
+contextuel:StableLM_Tuned_Alpha_7B a enki:LLM ;
+    dct:identifier "https://huggingface.co/stabilityai/stablelm-tuned-alpha-7b" ;
+    dct:license contextuel:CC_BY_NC_SA_4_0 ;
+    rdfs:label "StableLM-Tuned-Alpha-7B" ;
+    enki:hasKnowledgeCutoff "2023/4" .
+
+contextuel:StableLM_Tuned_Alpha_7B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:StableLM_Tuned_Alpha_7B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.244 .
+
+contextuel:StableLM_Tuned_Alpha_7B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:StableLM_Tuned_Alpha_7B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 2.75 .
+
+contextuel:Starling_LM_7B_alpha a enki:LLM ;
+    dct:identifier "https://huggingface.co/berkeley-nest/Starling-LM-7B-alpha" ;
+    dct:license contextuel:CC_BY_NC_4_0 ;
+    rdfs:label "Starling-LM-7B-alpha" ;
+    enki:hasKnowledgeCutoff "2023/11" .
+
+contextuel:Starling_LM_7B_alpha_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Starling_LM_7B_alpha ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.639 .
+
+contextuel:Starling_LM_7B_alpha_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Starling_LM_7B_alpha ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 8.09 .
+
+contextuel:StripedHyena_Nous_7B a enki:LLM ;
+    dct:identifier "https://huggingface.co/togethercomputer/StripedHyena-Nous-7B" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "StripedHyena-Nous-7B" ;
+    enki:hasKnowledgeCutoff "2023/12" .
+
+contextuel:Tulu_2_DPO_70B a enki:LLM ;
+    dct:identifier "https://huggingface.co/allenai/tulu-2-dpo-70b" ;
+    dct:license contextuel:AI2_ImpACT_Low_risk ;
+    rdfs:label "Tulu-2-DPO-70B" ;
+    enki:hasKnowledgeCutoff "2023/11" .
+
+contextuel:Tulu_2_DPO_70B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Tulu_2_DPO_70B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.89 .
+
+contextuel:Tulu_30B a enki:LLM ;
+    dct:identifier "https://huggingface.co/allenai/tulu-30b" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "Tulu-30B" ;
+    enki:hasKnowledgeCutoff "2023/6" .
+
+contextuel:Tulu_30B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Tulu_30B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.581 .
+
+contextuel:Tulu_30B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Tulu_30B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.43 .
+
+contextuel:Vicuna_13B a enki:LLM ;
+    dct:identifier "https://huggingface.co/lmsys/vicuna-13b-v1.5" ;
+    dct:license contextuel:Llama_2_Community ;
+    rdfs:label "Vicuna-13B" ;
+    enki:hasKnowledgeCutoff "2023/7" .
+
+contextuel:Vicuna_13B_16k_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Vicuna_13B_16k ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.545 .
+
+contextuel:Vicuna_13B_16k_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Vicuna_13B_16k ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.92 .
+
+contextuel:Vicuna_13B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Vicuna_13B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.558 .
+
+contextuel:Vicuna_13B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Vicuna_13B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.57 .
+
+contextuel:Vicuna_13B_16k a enki:LLM ;
+    dct:identifier "https://huggingface.co/lmsys/vicuna-13b-v1.5-16k" ;
+    dct:license contextuel:Llama_2_Community ;
+    rdfs:label "Vicuna-13B-16k" ;
+    enki:hasKnowledgeCutoff "2023/7" .
+
+contextuel:Vicuna_33B a enki:LLM ;
+    dct:identifier "https://huggingface.co/lmsys/vicuna-33b-v1.3" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "Vicuna-33B" ;
+    enki:hasKnowledgeCutoff "2023/8" .
+
+contextuel:Vicuna_33B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Vicuna_33B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.592 .
+
+contextuel:Vicuna_33B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Vicuna_33B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.12 .
+
+contextuel:Vicuna_7B a enki:LLM ;
+    dct:identifier "https://huggingface.co/lmsys/vicuna-7b-v1.5" ;
+    dct:license contextuel:Llama_2_Community ;
+    rdfs:label "Vicuna-7B" ;
+    enki:hasKnowledgeCutoff "2023/7" .
+
+contextuel:Vicuna_7B_16k_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Vicuna_7B_16k ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.485 .
+
+contextuel:Vicuna_7B_16k_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Vicuna_7B_16k ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.22 .
+
+contextuel:Vicuna_7B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Vicuna_7B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.498 .
+
+contextuel:Vicuna_7B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Vicuna_7B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.17 .
+
+contextuel:Vicuna_7B_16k a enki:LLM ;
+    dct:identifier "https://huggingface.co/lmsys/vicuna-7b-v1.5-16k" ;
+    dct:license contextuel:Llama_2_Community ;
+    rdfs:label "Vicuna-7B-16k" ;
+    enki:hasKnowledgeCutoff "2023/7" .
+
+contextuel:WizardLM_13B_v1_0 a enki:LLM ;
+    dct:identifier "https://huggingface.co/WizardLM/WizardLM-13B-V1.0" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "WizardLM-13B-v1.0" ;
+    enki:hasKnowledgeCutoff "2023/5" .
+
+contextuel:WizardLM_13B_v1_0_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:WizardLM_13B_v1_0 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.523 .
+
+contextuel:WizardLM_13B_v1_0_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:WizardLM_13B_v1_0 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.35 .
+
+contextuel:WizardLM_13B_v1_1 a enki:LLM ;
+    dct:identifier "https://huggingface.co/WizardLM/WizardLM-13B-V1.1" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "WizardLM-13B-v1.1" ;
+    enki:hasKnowledgeCutoff "2023/7" .
+
+contextuel:WizardLM_13B_v1_1_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:WizardLM_13B_v1_1 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.5 .
+
+contextuel:WizardLM_13B_v1_1_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:WizardLM_13B_v1_1 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.76 .
+
+contextuel:WizardLM_13b_v1_2 a enki:LLM ;
+    dct:identifier "https://huggingface.co/WizardLM/WizardLM-13B-V1.2" ;
+    dct:license contextuel:Llama_2_Community ;
+    rdfs:label "WizardLM-13b-v1.2" ;
+    enki:hasKnowledgeCutoff "2023/7" .
+
+contextuel:WizardLM_13b_v1_2_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:WizardLM_13b_v1_2 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.527 .
+
+contextuel:WizardLM_13b_v1_2_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:WizardLM_13b_v1_2 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.2 .
+
+contextuel:WizardLM_30B a enki:LLM ;
+    dct:identifier "https://huggingface.co/WizardLM/WizardLM-30B-V1.0" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "WizardLM-30B" ;
+    enki:hasKnowledgeCutoff "2023/6" .
+
+contextuel:WizardLM_30B_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:WizardLM_30B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.587 .
+
+contextuel:WizardLM_30B_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:WizardLM_30B ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.01 .
+
+contextuel:WizardLM_70B_v1_0 a enki:LLM ;
+    dct:identifier "https://huggingface.co/WizardLM/WizardLM-70B-V1.0" ;
+    dct:license contextuel:Llama_2_Community ;
+    rdfs:label "WizardLM-70B-v1.0" ;
+    enki:hasKnowledgeCutoff "2023/8" .
+
+contextuel:WizardLM_70B_v1_0_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:WizardLM_70B_v1_0 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.637 .
+
+contextuel:WizardLM_70B_v1_0_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:WizardLM_70B_v1_0 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.71 .
+
+contextuel:XGen_7B_8K_Inst a enki:LLM ;
+    dct:identifier "https://huggingface.co/Salesforce/xgen-7b-8k-inst" ;
+    dct:license contextuel:Non_commercial ;
+    rdfs:label "XGen-7B-8K-Inst" ;
+    enki:hasKnowledgeCutoff "2023/7" .
+
+contextuel:XGen_7B_8K_Inst_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:XGen_7B_8K_Inst ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.421 .
+
+contextuel:XGen_7B_8K_Inst_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:XGen_7B_8K_Inst ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 5.55 .
+
+contextuel:Yi_34B_Chat a enki:LLM ;
+    dct:identifier "https://huggingface.co/01-ai/Yi-34B-Chat" ;
+    dct:license contextuel:Yi_License ;
+    rdfs:label "Yi-34B-Chat" ;
+    enki:hasKnowledgeCutoff "2023/6" .
+
+contextuel:Yi_34B_Chat_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Yi_34B_Chat ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.735 .
+
+contextuel:Zephyr_7b_alpha a enki:LLM ;
+    dct:identifier "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha" ;
+    dct:license contextuel:MIT ;
+    rdfs:label "Zephyr-7b-alpha" ;
+    enki:hasKnowledgeCutoff "2023/10" .
+
+contextuel:Zephyr_7b_alpha_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Zephyr_7b_alpha ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.88 .
+
+contextuel:Zephyr_7b_beta a enki:LLM ;
+    dct:identifier "https://huggingface.co/HuggingFaceH4/zephyr-7b-beta" ;
+    dct:license contextuel:MIT ;
+    rdfs:label "Zephyr-7b-beta" ;
+    enki:hasKnowledgeCutoff "2023/10" .
+
+contextuel:Zephyr_7b_beta_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Zephyr_7b_beta ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.614 .
+
+contextuel:Zephyr_7b_beta_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Zephyr_7b_beta ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.34 .
+
