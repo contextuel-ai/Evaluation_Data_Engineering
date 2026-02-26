@@ -24,24 +24,30 @@ HEADER_BLOCK = """@base <https://www.contextuel.ai/spec/Enki/> .
 
 """
 
-# The 6 benchmarks on the HF Open LLM Leaderboard v2
+# The 6 benchmarks + CO2 on the HF Open LLM Leaderboard v2
 BENCHMARKS = {
-    "IFEval":      {"col": "IFEval",      "label": "IFEval"},
-    "BBH":         {"col": "BBH",         "label": "BBH"},
-    "MATH_Lvl_5":  {"col": "MATH Lvl 5",  "label": "MATH Lvl 5"},
-    "GPQA":        {"col": "GPQA",        "label": "GPQA"},
-    "MUSR":        {"col": "MUSR",        "label": "MUSR"},
-    "MMLU_PRO":    {"col": "MMLU-PRO",    "label": "MMLU-PRO"},
+    "IFEval":      {"col": "IFEval",       "label": "IFEval"},
+    "BBH":         {"col": "BBH",          "label": "BBH"},
+    "MATH_Lvl_5":  {"col": "MATH Lvl 5",   "label": "MATH Lvl 5"},
+    "GPQA":        {"col": "GPQA",         "label": "GPQA"},
+    "MUSR":        {"col": "MUSR",         "label": "MUSR"},
+    "MMLU_PRO":    {"col": "MMLU-PRO",     "label": "MMLU-PRO"},
     "CO2":         {"col": "CO₂ cost (kg)", "label": "CO₂ cost (kg)"},
 }
 
-# Capabilities tested by each benchmark (mirroring lmarena_trimmed.ttl pattern)
+# Capabilities tested by each benchmark
 BENCHMARK_CAPABILITIES = {
     "IFEval": [
         ("InstructionFollowing", "Instruction Following",
          "The ability of an LLM to understand and correctly execute user-provided instructions."),
         ("OutputFormatCompliance", "Output Format Compliance",
          "The ability of an LLM to produce outputs that conform to specified formatting constraints."),
+        ("ConstraintSatisfaction", "Constraint Satisfaction",
+         "The ability of an LLM to satisfy multiple simultaneous constraints within a single response."),
+        ("TaskDecomposition", "Task Decomposition",
+         "The ability of an LLM to break down complex instructions into discrete sub-tasks and address each appropriately."),
+        ("PrecisionOfExpression", "Precision of Expression",
+         "The ability of an LLM to generate responses that are exact and unambiguous in wording when explicitly required."),
     ],
     "BBH": [
         ("MultiStepReasoning", "Multi-Step Reasoning",
@@ -50,24 +56,46 @@ BENCHMARK_CAPABILITIES = {
          "The ability of an LLM to follow and execute step-by-step algorithmic procedures."),
         ("LogicalDeduction", "Logical Deduction",
          "The ability of an LLM to derive conclusions from given premises using formal logical rules."),
+        ("CausalReasoning", "Causal Reasoning",
+         "The ability of an LLM to identify and reason about cause-and-effect relationships between events or statements."),
+        ("CounterfactualReasoning", "Counterfactual Reasoning",
+         "The ability of an LLM to reason about hypothetical scenarios and determine what would follow under altered conditions."),
     ],
     "MATH_Lvl_5": [
         ("AdvancedMathematicalReasoning", "Advanced Mathematical Reasoning",
          "The ability of an LLM to solve competition-level mathematics problems requiring deep mathematical knowledge."),
         ("MultiStepReasoning", "Multi-Step Reasoning",
          "The ability of an LLM to perform sequential logical operations to arrive at a correct conclusion."),
+        ("SymbolicManipulation", "Symbolic Manipulation",
+         "The ability of an LLM to correctly perform algebraic, arithmetic, and symbolic transformations."),
+        ("ProofConstruction", "Proof Construction",
+         "The ability of an LLM to construct valid mathematical arguments and formal or semi-formal proofs."),
+        ("AbstractPatternRecognition", "Abstract Pattern Recognition",
+         "The ability of an LLM to identify underlying mathematical structures and patterns from problem descriptions."),
     ],
     "GPQA": [
         ("AcademicDomainKnowledge", "Academic Domain Knowledge",
          "The ability of an LLM to demonstrate understanding of specialized subject matter such as law, medicine, physics, or history."),
         ("GraduateLevelReasoning", "Graduate-Level Reasoning",
          "The ability of an LLM to reason at the level expected of domain experts in graduate-level science."),
+        ("ScientificLiteracy", "Scientific Literacy",
+         "The ability of an LLM to interpret and reason about scientific concepts, experimental methods, and empirical evidence."),
+        ("InterdisciplinarySynthesis", "Interdisciplinary Synthesis",
+         "The ability of an LLM to integrate knowledge from multiple scientific domains to answer complex questions."),
+        ("TechnicalTermComprehension", "Technical Term Comprehension",
+         "The ability of an LLM to correctly understand and use highly specialized terminology in physics, biology, and chemistry."),
     ],
     "MUSR": [
         ("MultiStepReasoning", "Multi-Step Reasoning",
          "The ability of an LLM to perform sequential logical operations to arrive at a correct conclusion."),
         ("LongContextUnderstanding", "Long Context Understanding",
          "The ability of an LLM to comprehend and reason over long narrative passages."),
+        ("NarrativeComprehension", "Narrative Comprehension",
+         "The ability of an LLM to track characters, events, and plot developments across extended text."),
+        ("ImplicitInformationExtraction", "Implicit Information Extraction",
+         "The ability of an LLM to infer unstated facts and relationships from contextual clues in a passage."),
+        ("TemporalReasoning", "Temporal Reasoning",
+         "The ability of an LLM to correctly reason about the ordering, duration, and sequence of events."),
     ],
     "MMLU_PRO": [
         ("AcademicDomainKnowledge", "Academic Domain Knowledge",
@@ -76,7 +104,12 @@ BENCHMARK_CAPABILITIES = {
          "The ability of an LLM to accurately retrieve and reproduce learned factual information from its training data."),
         ("GeneralKnowledgeReasoning", "General Knowledge Reasoning",
          "The ability of an LLM to apply broad academic knowledge across multiple disciplines to correctly answer domain-specific questions."),
+        ("DistractorDiscrimination", "Distractor Discrimination",
+         "The ability of an LLM to distinguish correct answers from plausible but incorrect alternatives in multiple-choice settings."),
+        ("ConceptualTransfer", "Conceptual Transfer",
+         "The ability of an LLM to apply concepts learned in one domain to novel problems in a related but distinct domain."),
     ],
+    # CO2 has no capability (as requested)
 }
 
 # _________ HELPERS __________
@@ -148,6 +181,14 @@ def read_rows(path: Path) -> list[dict]:
     df = pd.read_csv(path)
     print(f"Loaded {len(df)} rows, columns: {list(df.columns)}")
 
+    # Filter to only official provider models
+    if 'Official Providers' in df.columns:
+        before = len(df)
+        df = df[df['Official Providers'].astype(str).str.strip().str.upper() == 'TRUE']
+        print(f"Filtered to Official Providers: {before} → {len(df)} rows")
+    else:
+        print("[WARN] 'Official Providers' column not found. Using all rows.")
+
     # Deduplicate: keep only the first occurrence of each fullname
     df = df.drop_duplicates(subset=["fullname"], keep="first")
     print(f"After dedup by fullname: {len(df)} rows")
@@ -192,6 +233,36 @@ def read_rows(path: Path) -> list[dict]:
 
     return rows
 
+# Mapping from company_name (lowercase from provisioning check) to display label
+COMPANY_LABELS = {
+    'meta': 'Meta',
+    'google': 'Google',
+    'openai': 'OpenAI',
+    'anthropic': 'Anthropic',
+    'microsoft': 'Microsoft',
+    'nvidia': 'Nvidia',
+    'amazon': 'Amazon',
+    'apple': 'Apple',
+    'alibaba': 'Alibaba',
+    'baidu': 'Baidu',
+    'tencent': 'Tencent',
+    'bytedance': 'ByteDance',
+    'mistral': 'Mistral',
+    'cohere': 'Cohere',
+    'deepseek': 'DeepSeek AI',
+    'zhipu': 'Zhipu AI',
+    'xai': 'xAI',
+    'samsung': 'Samsung',
+    'intel': 'Intel',
+    'ibm': 'IBM',
+    'salesforce': 'Salesforce',
+    'databricks': 'Databricks',
+    'huawei': 'Huawei',
+    'baichuan': 'Baichuan',
+    '01ai': '01 AI',
+    'reka': 'Reka',
+}
+
 # _________ BUILD GRAPH __________
 
 ORG_LOCAL = "Hugging_Face"
@@ -212,12 +283,14 @@ def build_graph(rows: list[dict]) -> Graph:
         "The Open LLM Leaderboard is a HuggingFace community benchmark that evaluates open-source LLMs across multiple standardised tasks."
     )))
 
+    # Collect org → model URIs for manufacturer nodes
+    org_models = defaultdict(list)
+
     for r in rows:
         local = local_from_model(r["fullname"])
         model_uri = URIRef(str(C) + local)
 
         g.add((model_uri, RDF.type, ENKI.LLM))
-        # Label is just the model name without org prefix
         model_name = r["fullname"]
         if "/" in model_name:
             model_name = model_name.split("/", 1)[1]
@@ -248,7 +321,6 @@ def build_graph(rows: list[dict]) -> Graph:
             bm_label = BENCHMARKS[bm_key]["label"]
             metric_uri = URIRef(str(C) + f"{local}_{bm_key}")
             g.add((metric_uri, RDF.type, ENKI.EvaluatedMetric))
-            # CO2 assesses CarbonCost, all others assess Quality
             if bm_key == "CO2":
                 g.add((metric_uri, ENKI.metricAssesses, URIRef(str(C) + "CarbonCost")))
             else:
@@ -258,12 +330,25 @@ def build_graph(rows: list[dict]) -> Graph:
             g.add((metric_uri, ENKI.metricUnit, Literal(bm_label)))
             g.add((metric_uri, ENKI.metricValue, Literal(bm_val)))
 
+        # Track org for manufacturer
+        if r["org"]:
+            org_models[r["org"]].append(model_uri)
+
+    # Add LLMManufacturer instances based on org prefix
+    for org_name, model_uris in org_models.items():
+        mfr_local = local_from_label(org_name)
+        mfr_uri = URIRef(str(C) + mfr_local)
+        g.add((mfr_uri, RDF.type, ENKI.LLMManufacturer))
+        g.add((mfr_uri, RDFS.label, Literal(org_name)))
+        for m_uri in model_uris:
+            g.add((mfr_uri, ENKI.manufactures, m_uri))
+
     return g
 
 # _________ CAPABILITIES __________
 
 def add_capabilities(g: Graph):
-    """Add enki:Capability instances, same pattern as lmarena_trimmed.ttl."""
+    """Add enki:Capability instances."""
     seen = set()
     for bm_key, caps in BENCHMARK_CAPABILITIES.items():
         for cap_local, cap_label, cap_desc in caps:
@@ -368,6 +453,7 @@ def reorder_and_serialize(g: Graph, out_path: Path):
     seen_subjects = set()
 
     licenses = sorted(set(g.subjects(RDF.type, DCT.License)), key=lambda s: str(s).lower())
+    manufacturers = sorted(set(g.subjects(RDF.type, ENKI.LLMManufacturer)), key=lambda s: str(s).lower())
     evaluations = sorted(set(g.subjects(RDF.type, ENKI.Evaluation)), key=lambda s: str(s).lower())
     capabilities = sorted(set(g.subjects(RDF.type, ENKI.Capability)), key=lambda s: str(s).lower())
     ai_orgs = sorted(set(g.subjects(RDF.type, ENKI.AIOrganization)), key=lambda s: str(s).lower())
@@ -404,6 +490,7 @@ def reorder_and_serialize(g: Graph, out_path: Path):
                 seen_subjects.add(s)
 
     add_block(licenses)
+    add_block(manufacturers)
     add_block(evaluations)
     add_block(capabilities)
     add_block(ai_orgs)
