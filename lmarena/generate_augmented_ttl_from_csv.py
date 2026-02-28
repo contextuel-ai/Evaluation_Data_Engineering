@@ -70,6 +70,16 @@ def safe_int(val) -> int | None:
     except (ValueError, TypeError):
         return None
 
+def safe_billions(val) -> float | None:
+    """Parse a raw parameter count and convert to billions."""
+    if not val or str(val).strip() in ("", "-", "nan"):
+        return None
+    try:
+        raw = float(str(val).strip())
+        return round(raw / 1e9, 2)
+    except (ValueError, TypeError):
+        return None
+
 def parse_modalities(val: str) -> list[str]:
     """Parse comma or semicolon separated modalities."""
     if not val or val.strip() in ("", "-", "nan"):
@@ -100,10 +110,8 @@ def read_rows(path: Path) -> list[dict]:
             link = (r.get("Link") or "").strip()
             desc = (r.get("description") or "").strip()
 
-            total_params = safe_int(r.get("total_parameter_count"))
+            total_params = safe_billions(r.get("total_parameter_count"))
             max_input = safe_int(r.get("max_input_tokens"))
-            max_output = safe_int(r.get("max_output_tokens"))
-            context_window = safe_int(r.get("context_window_tokens"))
 
             input_modalities = parse_modalities(r.get("input_modality", ""))
             output_modalities = parse_modalities(r.get("output_modality", ""))
@@ -120,8 +128,8 @@ def read_rows(path: Path) -> list[dict]:
                 "description": desc,
                 "total_parameter_count": total_params,
                 "max_input_tokens": max_input,
-                "max_output_tokens": max_output,
-                "context_window_tokens": context_window,
+                "max_output_tokens": safe_int(r.get("max_output_tokens")),
+                "context_window_tokens": safe_int(r.get("context_window_tokens")),
                 "input_modalities": input_modalities,
                 "output_modalities": output_modalities,
             })
@@ -179,10 +187,10 @@ def build_graph(rows: list[dict]) -> Graph:
         if r["cutoff"] and r["cutoff"] not in ("-", "nan", "Online"):
             g.add((model_uri, ENKI.hasKnowledgeCutoff, Literal(r["cutoff"])))
 
-        # Total parameter count
+        # Total parameter count (in billions)
         if r["total_parameter_count"] is not None:
             g.add((model_uri, ENKI.hasTotalParameterCount,
-                   Literal(r["total_parameter_count"], datatype=XSD.nonNegativeInteger)))
+                   Literal(r["total_parameter_count"], datatype=XSD.double)))
 
         # Max context window tokens
         if r["context_window_tokens"] is not None:
