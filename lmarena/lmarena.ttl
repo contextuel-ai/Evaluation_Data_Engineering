@@ -49,16 +49,43 @@ contextuel:Qianwen_LICENSE a dct:License ;
 contextuel:Yi_License a dct:License ;
     rdfs:label "Yi License" .
 
-contextuel:01_AI a enki:LLMManufacturer ;
+contextuel:01_AI a enki:LLMManufacturer,
+        enki:LLMProvider ;
     rdfs:label "01 AI" ;
     enki:manufactures contextuel:Yi_34B_Chat .
 
-contextuel:Alibaba a enki:LLMManufacturer ;
+contextuel:01_AI_Provisioning_Yi_34B_Chat a enki:LLMProvisioning ;
+    rdfs:label "01 AI provisioning of Yi-34B-Chat" ;
+    enki:provider contextuel:01_AI ;
+    enki:provides contextuel:Yi_34B_Chat .
+
+contextuel:Alibaba a enki:LLMManufacturer,
+        enki:LLMProvider ;
     rdfs:label "Alibaba" ;
     enki:manufactures contextuel:Qwen1_5_4B_Chat ;
     enki:manufactures contextuel:Qwen1_5_72B_Chat ;
     enki:manufactures contextuel:Qwen1_5_7B_Chat ;
     enki:manufactures contextuel:Qwen_14B_Chat .
+
+contextuel:Alibaba_Provisioning_Qwen1_5_4B_Chat a enki:LLMProvisioning ;
+    rdfs:label "Alibaba provisioning of Qwen1.5-4B-Chat" ;
+    enki:provider contextuel:Alibaba ;
+    enki:provides contextuel:Qwen1_5_4B_Chat .
+
+contextuel:Alibaba_Provisioning_Qwen1_5_72B_Chat a enki:LLMProvisioning ;
+    rdfs:label "Alibaba provisioning of Qwen1.5-72B-Chat" ;
+    enki:provider contextuel:Alibaba ;
+    enki:provides contextuel:Qwen1_5_72B_Chat .
+
+contextuel:Alibaba_Provisioning_Qwen1_5_7B_Chat a enki:LLMProvisioning ;
+    rdfs:label "Alibaba provisioning of Qwen1.5-7B-Chat" ;
+    enki:provider contextuel:Alibaba ;
+    enki:provides contextuel:Qwen1_5_7B_Chat .
+
+contextuel:Alibaba_Provisioning_Qwen_14B_Chat a enki:LLMProvisioning ;
+    rdfs:label "Alibaba provisioning of Qwen-14B-Chat" ;
+    enki:provider contextuel:Alibaba ;
+    enki:provides contextuel:Qwen_14B_Chat .
 
 contextuel:Allen_AI a enki:LLMManufacturer ;
     rdfs:label "Allen AI" ;
@@ -69,7 +96,8 @@ contextuel:AllenAI_UW a enki:LLMManufacturer ;
     enki:manufactures contextuel:Tulu_2_DPO_70B ;
     enki:manufactures contextuel:Tulu_30B .
 
-contextuel:Anthropic a enki:LLMManufacturer ;
+contextuel:Anthropic a enki:LLMManufacturer,
+        enki:LLMProvider ;
     rdfs:label "Anthropic" ;
     enki:manufactures contextuel:Claude_1 ;
     enki:manufactures contextuel:Claude_2_0 ;
@@ -77,6 +105,36 @@ contextuel:Anthropic a enki:LLMManufacturer ;
     enki:manufactures contextuel:Claude_3_Opus ;
     enki:manufactures contextuel:Claude_3_Sonnet ;
     enki:manufactures contextuel:Claude_Instant_1 .
+
+contextuel:Anthropic_Provisioning_Claude_1 a enki:LLMProvisioning ;
+    rdfs:label "Anthropic provisioning of Claude-1" ;
+    enki:provider contextuel:Anthropic ;
+    enki:provides contextuel:Claude_1 .
+
+contextuel:Anthropic_Provisioning_Claude_2_0 a enki:LLMProvisioning ;
+    rdfs:label "Anthropic provisioning of Claude-2.0" ;
+    enki:provider contextuel:Anthropic ;
+    enki:provides contextuel:Claude_2_0 .
+
+contextuel:Anthropic_Provisioning_Claude_2_1 a enki:LLMProvisioning ;
+    rdfs:label "Anthropic provisioning of Claude-2.1" ;
+    enki:provider contextuel:Anthropic ;
+    enki:provides contextuel:Claude_2_1 .
+
+contextuel:Anthropic_Provisioning_Claude_3_Opus a enki:LLMProvisioning ;
+    rdfs:label "Anthropic provisioning of Claude 3 Opus" ;
+    enki:provider contextuel:Anthropic ;
+    enki:provides contextuel:Claude_3_Opus .
+
+contextuel:Anthropic_Provisioning_Claude_3_Sonnet a enki:LLMProvisioning ;
+    rdfs:label "Anthropic provisioning of Claude 3 Sonnet" ;
+    enki:provider contextuel:Anthropic ;
+    enki:provides contextuel:Claude_3_Sonnet .
+
+contextuel:Anthropic_Provisioning_Claude_Instant_1 a enki:LLMProvisioning ;
+    rdfs:label "Anthropic provisioning of Claude-Instant-1" ;
+    enki:provider contextuel:Anthropic ;
+    enki:provides contextuel:Claude_Instant_1 .
 
 contextuel:Cognitive_Computations a enki:LLMManufacturer ;
     rdfs:label "Cognitive Computations" ;
@@ -86,11 +144,18 @@ contextuel:Databricks a enki:LLMManufacturer ;
     rdfs:label "Databricks" ;
     enki:manufactures contextuel:Dolly_V2_12B .
 
-contextuel:DeepSeek_AI a enki:LLMManufacturer ;
+contextuel:DeepSeek_AI a enki:LLMManufacturer,
+        enki:LLMProvider ;
     rdfs:label "DeepSeek AI" ;
     enki:manufactures contextuel:DeepSeek_LLM_67B_Chat .
 
-contextuel:Google a enki:LLMManufacturer ;
+contextuel:DeepSeek_AI_Provisioning_DeepSeek_LLM_67B_Chat a enki:LLMProvisioning ;
+    rdfs:label "DeepSeek AI provisioning of DeepSeek-LLM-67B-Chat" ;
+    enki:provider contextuel:DeepSeek_AI ;
+    enki:provides contextuel:DeepSeek_LLM_67B_Chat .
+
+contextuel:Google a enki:LLMManufacturer,
+        enki:LLMProvider ;
     rdfs:label "Google" ;
     enki:manufactures contextuel:Bard_Gemini_Pro ;
     enki:manufactures contextuel:Gemini_Pro ;
@@ -98,6 +163,36 @@ contextuel:Google a enki:LLMManufacturer ;
     enki:manufactures contextuel:Gemma_2B_it ;
     enki:manufactures contextuel:Gemma_7B_it ;
     enki:manufactures contextuel:PaLM_Chat_Bison_001 .
+
+contextuel:Google_Provisioning_Bard_Gemini_Pro a enki:LLMProvisioning ;
+    rdfs:label "Google provisioning of Bard (Gemini Pro)" ;
+    enki:provider contextuel:Google ;
+    enki:provides contextuel:Bard_Gemini_Pro .
+
+contextuel:Google_Provisioning_Gemini_Pro a enki:LLMProvisioning ;
+    rdfs:label "Google provisioning of Gemini Pro" ;
+    enki:provider contextuel:Google ;
+    enki:provides contextuel:Gemini_Pro .
+
+contextuel:Google_Provisioning_Gemini_Pro_Dev_API a enki:LLMProvisioning ;
+    rdfs:label "Google provisioning of Gemini Pro (Dev API)" ;
+    enki:provider contextuel:Google ;
+    enki:provides contextuel:Gemini_Pro_Dev_API .
+
+contextuel:Google_Provisioning_Gemma_2B_it a enki:LLMProvisioning ;
+    rdfs:label "Google provisioning of Gemma-2B-it" ;
+    enki:provider contextuel:Google ;
+    enki:provides contextuel:Gemma_2B_it .
+
+contextuel:Google_Provisioning_Gemma_7B_it a enki:LLMProvisioning ;
+    rdfs:label "Google provisioning of Gemma-7B-it" ;
+    enki:provider contextuel:Google ;
+    enki:provides contextuel:Gemma_7B_it .
+
+contextuel:Google_Provisioning_PaLM_Chat_Bison_001 a enki:LLMProvisioning ;
+    rdfs:label "Google provisioning of PaLM-Chat-Bison-001" ;
+    enki:provider contextuel:Google ;
+    enki:provides contextuel:PaLM_Chat_Bison_001 .
 
 contextuel:h2oai a enki:LLMManufacturer ;
     rdfs:label "h2oai" ;
@@ -117,7 +212,8 @@ contextuel:LMSYS a enki:LLMManufacturer ;
     enki:manufactures contextuel:Vicuna_7B ;
     enki:manufactures contextuel:Vicuna_7B_16k .
 
-contextuel:Meta a enki:LLMManufacturer ;
+contextuel:Meta a enki:LLMManufacturer,
+        enki:LLMProvider ;
     rdfs:label "Meta" ;
     enki:manufactures contextuel:CodeLlama_34B_instruct ;
     enki:manufactures contextuel:CodeLlama_70B_instruct ;
@@ -125,6 +221,36 @@ contextuel:Meta a enki:LLMManufacturer ;
     enki:manufactures contextuel:Llama_2_13b_chat ;
     enki:manufactures contextuel:Llama_2_70b_chat ;
     enki:manufactures contextuel:Llama_2_7b_chat .
+
+contextuel:Meta_Provisioning_CodeLlama_34B_instruct a enki:LLMProvisioning ;
+    rdfs:label "Meta provisioning of CodeLlama-34B-instruct" ;
+    enki:provider contextuel:Meta ;
+    enki:provides contextuel:CodeLlama_34B_instruct .
+
+contextuel:Meta_Provisioning_CodeLlama_70B_instruct a enki:LLMProvisioning ;
+    rdfs:label "Meta provisioning of CodeLlama-70B-instruct" ;
+    enki:provider contextuel:Meta ;
+    enki:provides contextuel:CodeLlama_70B_instruct .
+
+contextuel:Meta_Provisioning_LLaMA_13B a enki:LLMProvisioning ;
+    rdfs:label "Meta provisioning of LLaMA-13B" ;
+    enki:provider contextuel:Meta ;
+    enki:provides contextuel:LLaMA_13B .
+
+contextuel:Meta_Provisioning_Llama_2_13b_chat a enki:LLMProvisioning ;
+    rdfs:label "Meta provisioning of Llama-2-13b-chat" ;
+    enki:provider contextuel:Meta ;
+    enki:provides contextuel:Llama_2_13b_chat .
+
+contextuel:Meta_Provisioning_Llama_2_70b_chat a enki:LLMProvisioning ;
+    rdfs:label "Meta provisioning of Llama-2-70b-chat" ;
+    enki:provider contextuel:Meta ;
+    enki:provides contextuel:Llama_2_70b_chat .
+
+contextuel:Meta_Provisioning_Llama_2_7b_chat a enki:LLMProvisioning ;
+    rdfs:label "Meta provisioning of Llama-2-7b-chat" ;
+    enki:provider contextuel:Meta ;
+    enki:provides contextuel:Llama_2_7b_chat .
 
 contextuel:Microsoft a enki:LLMManufacturer ;
     rdfs:label "Microsoft" ;
@@ -134,7 +260,8 @@ contextuel:Microsoft a enki:LLMManufacturer ;
     enki:manufactures contextuel:WizardLM_30B ;
     enki:manufactures contextuel:WizardLM_70B_v1_0 .
 
-contextuel:Mistral a enki:LLMManufacturer ;
+contextuel:Mistral a enki:LLMManufacturer,
+        enki:LLMProvider ;
     rdfs:label "Mistral" ;
     enki:manufactures contextuel:Mistral_7B_Instruct_v0_1 ;
     enki:manufactures contextuel:Mistral_7B_Instruct_v0_2 ;
@@ -142,6 +269,36 @@ contextuel:Mistral a enki:LLMManufacturer ;
     enki:manufactures contextuel:Mistral_Medium ;
     enki:manufactures contextuel:Mistral_Next ;
     enki:manufactures contextuel:Mixtral_8x7b_Instruct_v0_1 .
+
+contextuel:Mistral_Provisioning_Mistral_7B_Instruct_v0_1 a enki:LLMProvisioning ;
+    rdfs:label "Mistral provisioning of Mistral-7B-Instruct-v0.1" ;
+    enki:provider contextuel:Mistral ;
+    enki:provides contextuel:Mistral_7B_Instruct_v0_1 .
+
+contextuel:Mistral_Provisioning_Mistral_7B_Instruct_v0_2 a enki:LLMProvisioning ;
+    rdfs:label "Mistral provisioning of Mistral-7B-Instruct-v0.2" ;
+    enki:provider contextuel:Mistral ;
+    enki:provides contextuel:Mistral_7B_Instruct_v0_2 .
+
+contextuel:Mistral_Provisioning_Mistral_Large_2402 a enki:LLMProvisioning ;
+    rdfs:label "Mistral provisioning of Mistral-Large-2402" ;
+    enki:provider contextuel:Mistral ;
+    enki:provides contextuel:Mistral_Large_2402 .
+
+contextuel:Mistral_Provisioning_Mistral_Medium a enki:LLMProvisioning ;
+    rdfs:label "Mistral provisioning of Mistral Medium" ;
+    enki:provider contextuel:Mistral ;
+    enki:provides contextuel:Mistral_Medium .
+
+contextuel:Mistral_Provisioning_Mistral_Next a enki:LLMProvisioning ;
+    rdfs:label "Mistral provisioning of Mistral-Next" ;
+    enki:provider contextuel:Mistral ;
+    enki:provides contextuel:Mistral_Next .
+
+contextuel:Mistral_Provisioning_Mixtral_8x7b_Instruct_v0_1 a enki:LLMProvisioning ;
+    rdfs:label "Mistral provisioning of Mixtral-8x7b-Instruct-v0.1" ;
+    enki:provider contextuel:Mistral ;
+    enki:provides contextuel:Mixtral_8x7b_Instruct_v0_1 .
 
 contextuel:MosaicML a enki:LLMManufacturer ;
     rdfs:label "MosaicML" ;
@@ -159,11 +316,18 @@ contextuel:NousResearch a enki:LLMManufacturer ;
     enki:manufactures contextuel:Nous_Hermes_2_Mixtral_8x7B_DPO ;
     enki:manufactures contextuel:OpenHermes_2_5_Mistral_7b .
 
-contextuel:Nvidia a enki:LLMManufacturer ;
+contextuel:Nvidia a enki:LLMManufacturer,
+        enki:LLMProvider ;
     rdfs:label "Nvidia" ;
     enki:manufactures contextuel:NV_Llama2_70B_SteerLM_Chat .
 
-contextuel:OpenAI a enki:LLMManufacturer ;
+contextuel:Nvidia_Provisioning_NV_Llama2_70B_SteerLM_Chat a enki:LLMProvisioning ;
+    rdfs:label "Nvidia provisioning of NV-Llama2-70B-SteerLM-Chat" ;
+    enki:provider contextuel:Nvidia ;
+    enki:provides contextuel:NV_Llama2_70B_SteerLM_Chat .
+
+contextuel:OpenAI a enki:LLMManufacturer,
+        enki:LLMProvider ;
     rdfs:label "OpenAI" ;
     enki:manufactures contextuel:GPT_3_5_Turbo_0125 ;
     enki:manufactures contextuel:GPT_3_5_Turbo_0314 ;
@@ -173,6 +337,46 @@ contextuel:OpenAI a enki:LLMManufacturer ;
     enki:manufactures contextuel:GPT_4_0314 ;
     enki:manufactures contextuel:GPT_4_0613 ;
     enki:manufactures contextuel:GPT_4_1106_preview .
+
+contextuel:OpenAI_Provisioning_GPT_3_5_Turbo_0125 a enki:LLMProvisioning ;
+    rdfs:label "OpenAI provisioning of GPT-3.5-Turbo-0125" ;
+    enki:provider contextuel:OpenAI ;
+    enki:provides contextuel:GPT_3_5_Turbo_0125 .
+
+contextuel:OpenAI_Provisioning_GPT_3_5_Turbo_0314 a enki:LLMProvisioning ;
+    rdfs:label "OpenAI provisioning of GPT-3.5-Turbo-0314" ;
+    enki:provider contextuel:OpenAI ;
+    enki:provides contextuel:GPT_3_5_Turbo_0314 .
+
+contextuel:OpenAI_Provisioning_GPT_3_5_Turbo_0613 a enki:LLMProvisioning ;
+    rdfs:label "OpenAI provisioning of GPT-3.5-Turbo-0613" ;
+    enki:provider contextuel:OpenAI ;
+    enki:provides contextuel:GPT_3_5_Turbo_0613 .
+
+contextuel:OpenAI_Provisioning_GPT_3_5_Turbo_1106 a enki:LLMProvisioning ;
+    rdfs:label "OpenAI provisioning of GPT-3.5-Turbo-1106" ;
+    enki:provider contextuel:OpenAI ;
+    enki:provides contextuel:GPT_3_5_Turbo_1106 .
+
+contextuel:OpenAI_Provisioning_GPT_4_0125_preview a enki:LLMProvisioning ;
+    rdfs:label "OpenAI provisioning of GPT-4-0125-preview" ;
+    enki:provider contextuel:OpenAI ;
+    enki:provides contextuel:GPT_4_0125_preview .
+
+contextuel:OpenAI_Provisioning_GPT_4_0314 a enki:LLMProvisioning ;
+    rdfs:label "OpenAI provisioning of GPT-4-0314" ;
+    enki:provider contextuel:OpenAI ;
+    enki:provides contextuel:GPT_4_0314 .
+
+contextuel:OpenAI_Provisioning_GPT_4_0613 a enki:LLMProvisioning ;
+    rdfs:label "OpenAI provisioning of GPT-4-0613" ;
+    enki:provider contextuel:OpenAI ;
+    enki:provides contextuel:GPT_4_0613 .
+
+contextuel:OpenAI_Provisioning_GPT_4_1106_preview a enki:LLMProvisioning ;
+    rdfs:label "OpenAI provisioning of GPT-4-1106-preview" ;
+    enki:provider contextuel:OpenAI ;
+    enki:provides contextuel:GPT_4_1106_preview .
 
 contextuel:OpenAssistant a enki:LLMManufacturer ;
     rdfs:label "OpenAssistant" ;
@@ -184,10 +388,21 @@ contextuel:OpenChat a enki:LLMManufacturer ;
     enki:manufactures contextuel:OpenChat_3_5 ;
     enki:manufactures contextuel:OpenChat_3_5_0106 .
 
-contextuel:Perplexity_AI a enki:LLMManufacturer ;
+contextuel:Perplexity_AI a enki:LLMManufacturer,
+        enki:LLMProvider ;
     rdfs:label "Perplexity AI" ;
     enki:manufactures contextuel:pplx_70b_online ;
     enki:manufactures contextuel:pplx_7b_online .
+
+contextuel:Perplexity_AI_Provisioning_pplx_70b_online a enki:LLMProvisioning ;
+    rdfs:label "Perplexity AI provisioning of pplx-70b-online" ;
+    enki:provider contextuel:Perplexity_AI ;
+    enki:provides contextuel:pplx_70b_online .
+
+contextuel:Perplexity_AI_Provisioning_pplx_7b_online a enki:LLMProvisioning ;
+    rdfs:label "Perplexity AI provisioning of pplx-7b-online" ;
+    enki:provider contextuel:Perplexity_AI ;
+    enki:provides contextuel:pplx_7b_online .
 
 contextuel:RWKV a enki:LLMManufacturer ;
     rdfs:label "RWKV" ;
@@ -854,13 +1069,6 @@ contextuel:Gemini_Pro a enki:LLM ;
     rdfs:label "Gemini Pro" ;
     enki:hasKnowledgeCutoff "2023/4" .
 
-contextuel:Gemini_Pro_Dev_API_MMLU a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Gemini_Pro_Dev_API ;
-    enki:metricAssigner contextuel:LM_Arena ;
-    enki:metricUnit "MMLU" ;
-    enki:metricValue 0.718 .
-
 contextuel:Gemini_Pro_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
     enki:metricAssignee contextuel:Gemini_Pro ;
@@ -873,6 +1081,13 @@ contextuel:Gemini_Pro_Dev_API a enki:LLM ;
     dct:license contextuel:Proprietary ;
     rdfs:label "Gemini Pro (Dev API)" ;
     enki:hasKnowledgeCutoff "2023/4" .
+
+contextuel:Gemini_Pro_Dev_API_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Gemini_Pro_Dev_API ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.718 .
 
 contextuel:Gemma_2B_it a enki:LLM ;
     dct:identifier "https://huggingface.co/google/gemma-2b-it" ;
@@ -1431,20 +1646,6 @@ contextuel:OpenChat_3_5 a enki:LLM ;
     rdfs:label "OpenChat-3.5" ;
     enki:hasKnowledgeCutoff "2023/11" .
 
-contextuel:OpenChat_3_5_0106_MMLU a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:OpenChat_3_5_0106 ;
-    enki:metricAssigner contextuel:LM_Arena ;
-    enki:metricUnit "MMLU" ;
-    enki:metricValue 0.658 .
-
-contextuel:OpenChat_3_5_0106_MT_Bench a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:OpenChat_3_5_0106 ;
-    enki:metricAssigner contextuel:LM_Arena ;
-    enki:metricUnit "MT-Bench" ;
-    enki:metricValue 7.8 .
-
 contextuel:OpenChat_3_5_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
     enki:metricAssignee contextuel:OpenChat_3_5 ;
@@ -1464,6 +1665,20 @@ contextuel:OpenChat_3_5_0106 a enki:LLM ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "OpenChat-3.5-0106" ;
     enki:hasKnowledgeCutoff "2024/1" .
+
+contextuel:OpenChat_3_5_0106_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:OpenChat_3_5_0106 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.658 .
+
+contextuel:OpenChat_3_5_0106_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:OpenChat_3_5_0106 ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 7.8 .
 
 contextuel:OpenHermes_2_5_Mistral_7b a enki:LLM ;
     dct:identifier "https://huggingface.co/teknium/OpenHermes-2.5-Mistral-7B" ;
@@ -1694,20 +1909,6 @@ contextuel:Vicuna_13B a enki:LLM ;
     rdfs:label "Vicuna-13B" ;
     enki:hasKnowledgeCutoff "2023/7" .
 
-contextuel:Vicuna_13B_16k_MMLU a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Vicuna_13B_16k ;
-    enki:metricAssigner contextuel:LM_Arena ;
-    enki:metricUnit "MMLU" ;
-    enki:metricValue 0.545 .
-
-contextuel:Vicuna_13B_16k_MT_Bench a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Vicuna_13B_16k ;
-    enki:metricAssigner contextuel:LM_Arena ;
-    enki:metricUnit "MT-Bench" ;
-    enki:metricValue 6.92 .
-
 contextuel:Vicuna_13B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
     enki:metricAssignee contextuel:Vicuna_13B ;
@@ -1727,6 +1928,20 @@ contextuel:Vicuna_13B_16k a enki:LLM ;
     dct:license contextuel:Llama_2_Community ;
     rdfs:label "Vicuna-13B-16k" ;
     enki:hasKnowledgeCutoff "2023/7" .
+
+contextuel:Vicuna_13B_16k_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Vicuna_13B_16k ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.545 .
+
+contextuel:Vicuna_13B_16k_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Vicuna_13B_16k ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.92 .
 
 contextuel:Vicuna_33B a enki:LLM ;
     dct:identifier "https://huggingface.co/lmsys/vicuna-33b-v1.3" ;
@@ -1754,20 +1969,6 @@ contextuel:Vicuna_7B a enki:LLM ;
     rdfs:label "Vicuna-7B" ;
     enki:hasKnowledgeCutoff "2023/7" .
 
-contextuel:Vicuna_7B_16k_MMLU a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Vicuna_7B_16k ;
-    enki:metricAssigner contextuel:LM_Arena ;
-    enki:metricUnit "MMLU" ;
-    enki:metricValue 0.485 .
-
-contextuel:Vicuna_7B_16k_MT_Bench a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Vicuna_7B_16k ;
-    enki:metricAssigner contextuel:LM_Arena ;
-    enki:metricUnit "MT-Bench" ;
-    enki:metricValue 6.22 .
-
 contextuel:Vicuna_7B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
     enki:metricAssignee contextuel:Vicuna_7B ;
@@ -1787,6 +1988,20 @@ contextuel:Vicuna_7B_16k a enki:LLM ;
     dct:license contextuel:Llama_2_Community ;
     rdfs:label "Vicuna-7B-16k" ;
     enki:hasKnowledgeCutoff "2023/7" .
+
+contextuel:Vicuna_7B_16k_MMLU a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Vicuna_7B_16k ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MMLU" ;
+    enki:metricValue 0.485 .
+
+contextuel:Vicuna_7B_16k_MT_Bench a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Vicuna_7B_16k ;
+    enki:metricAssigner contextuel:LM_Arena ;
+    enki:metricUnit "MT-Bench" ;
+    enki:metricValue 6.22 .
 
 contextuel:WizardLM_13B_v1_0 a enki:LLM ;
     dct:identifier "https://huggingface.co/WizardLM/WizardLM-13B-V1.0" ;

@@ -1,12 +1,13 @@
 from pathlib import Path
 import csv
 import re
+from collections import OrderedDict, defaultdict
 from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS
 from rdflib.namespace import XSD
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parent
 SOURCE_CSV = ROOT / "lmarena.csv"
-OUT_TTL = ROOT / "lmarena_trimmed.ttl"
+OUT_TTL = ROOT / "lmarena.ttl"
 BACKUP = OUT_TTL.with_suffix(".ttl.bak")
 
 ENKI = Namespace("https://www.contextuel.ai/spec/Enki/")
@@ -22,6 +23,41 @@ HEADER_BLOCK = """@base <https://www.contextuel.ai/spec/Enki/> .
 @prefix contextuel: <https://www.contextuel.ai/spec/Contextuel/> .
 
 """
+
+# _________ PROVISIONING DETECTION __________
+
+# Orgs known to serve their own models (including open-weight ones) via a hosted API.
+# If a model's org is in this set, it gets provisioning triples regardless of license.
+KNOWN_API_PROVIDERS = {
+    "openai", "anthropic", "google", "mistral", "mistralai",
+    "cohere", "perplexity ai", "amazon", "alibaba",
+    "01 ai", "deepseek ai", "deepseek", "zhipu ai",
+    "xai", "nvidia", "ibm", "ai21 labs",
+    "meta",  # Meta serves Llama via llama-api
+}
+
+def is_provisioned(row: dict) -> bool:
+    """
+    Determine if a model is API-provisioned by its manufacturer.
+    Rules:
+      1. Proprietary license → always provisioned (no other way to use it)
+      2. Org is a known API provider → provisioned (they serve it via their API)
+      3. Otherwise → not provisioned (download-only)
+    """
+    lic = (row.get("license") or "").strip().lower()
+    org = (row.get("org") or "").strip().lower()
+
+    # Rule 1: proprietary models are always served via API
+    if lic == "proprietary":
+        return True
+
+    # Rule 2: known API providers serve their own models
+    if org in KNOWN_API_PROVIDERS:
+        return True
+
+    return False
+
+# _________ HELPERS __________
 
 def key_slug(s: str) -> str:
     s = (s or "").strip()
@@ -143,19 +179,19 @@ def build_graph(rows):
     g.bind("rdfs", RDFS); g.bind("xsd", XSD)
 
     lm_arena = URIRef(str(LM) + local_from_label("LM Arena"))
-    eval_mt = URIRef(str(LM) + local_from_label("LM Arena MT-Bench"))
-    eval_mmlu = URIRef(str(LM) + local_from_label("LM Arena MMLU"))
-
-    lm_arena = URIRef(str(LM) + local_from_label("LM Arena"))
     g.add((lm_arena, RDF.type, ENKI.AIOrganization))
     g.add((lm_arena, RDFS.label, Literal("LM Arena")))
     g.add((lm_arena, DCT.identifier, Literal("https://arena.ai/")))
     g.add((lm_arena, DCT.description, Literal("LM Arena is crowdsourced platform for comparing LLMs across various benchmarks.")))
 
+    # Collect provisioning data as we iterate
+    # provider_org_label → [(model_uri, model_local, model_label)]
+    provider_provisionings = defaultdict(list)
+
     for r in rows:
-        # use the label to create the URI local so capitalization matches the rdfs:label
         local = local_from_label(r["label"] or r["id"])
         model_uri = URIRef(str(LM) + local)
+        model_label = r["label"] or r["id"]
         g.add((model_uri, RDF.type, ENKI.LLM))
         g.add((model_uri, RDFS.label, Literal(r["label"])))
 
@@ -176,11 +212,16 @@ def build_graph(rows):
             g.add((model_uri, ENKI.hasKnowledgeCutoff, Literal(r["cutoff"])))
 
         if r["org"] and r["org"].strip() and r["org"].strip() != "-":
-            org_local = local_from_label(r["org"])
+            org_label = r["org"].strip()
+            org_local = local_from_label(org_label)
             org_uri = URIRef(str(LM) + org_local)
             g.add((org_uri, RDF.type, ENKI.LLMManufacturer))
-            g.add((org_uri, RDFS.label, Literal(r["org"])))
+            g.add((org_uri, RDFS.label, Literal(org_label)))
             g.add((org_uri, ENKI.manufactures, model_uri))
+
+            # Check provisioning dynamically
+            if is_provisioned(r):
+                provider_provisionings[org_label].append((model_uri, local, model_label))
 
         mt = r["mtbench"]
         if mt and mt.strip() and mt.strip() != "-":
@@ -210,12 +251,30 @@ def build_graph(rows):
             except Exception:
                 pass
 
+    # Add LLMProvider + LLMProvisioning triples
+    for org_label, models in provider_provisionings.items():
+        org_local = local_from_label(org_label)
+        org_uri = URIRef(str(LM) + org_local)
+
+        # Add LLMProvider type (URI already exists as LLMManufacturer)
+        g.add((org_uri, RDF.type, ENKI.LLMProvider))
+
+        for model_uri, model_local, model_label in models:
+            prov_local = f"{org_local}_Provisioning_{model_local}"
+            prov_uri = URIRef(str(LM) + prov_local)
+            g.add((prov_uri, RDF.type, ENKI.LLMProvisioning))
+            g.add((prov_uri, RDFS.label, Literal(f"{org_label} provisioning of {model_label}")))
+            g.add((prov_uri, ENKI.provider, org_uri))
+            g.add((prov_uri, ENKI.provides, model_uri))
+
+    provisioned_count = sum(len(m) for m in provider_provisionings.values())
+    print(f"Provisioned models: {provisioned_count} across {len(provider_provisionings)} providers")
+
     return g
 
 def add_arena_evaluations(g, rows):
     lm_arena = URIRef(str(LM) + local_from_label("LM Arena"))
 
-    # create evaluation URIs from rdfs:label so local parts preserve label capitalization
     e_mt = URIRef(str(LM) + "LM_Arena_MT_Bench")
     e_mmlu = URIRef(str(LM) + "LM_Arena_MMLU")
     g.add((e_mt, RDF.type, ENKI.Evaluation))
@@ -226,7 +285,7 @@ def add_arena_evaluations(g, rows):
     g.add((e_mt, ENKI.evaluator, lm_arena))
     g.add((e_mmlu, ENKI.evaluator, lm_arena))
 
-            # --- MMLU Capabilities ---
+    # --- MMLU Capabilities ---
     c1 = URIRef(str(LM) + local_from_label("GeneralKnowledgeReasoning"))
     c2 = URIRef(str(LM) + local_from_label("MultiStepReasoning"))
     c3 = URIRef(str(LM) + local_from_label("FactualRecall"))
@@ -315,51 +374,27 @@ def add_arena_evaluations(g, rows):
         has_mmlu = mmlu_str and mmlu_str != "-"
 
         if has_mt:
-            local = local_from_label(r["label"] or r["id"])
             metric_uri = URIRef(str(LM) + f"{local}_MT_Bench")
             g.add((e_mt, ENKI.evaluee, model_uri))
             g.add((e_mt, ENKI.metricEvaluated, metric_uri))
 
         if has_mmlu:
-            local = local_from_label(r["label"] or r["id"])
             metric_uri = URIRef(str(LM) + f"{local}_MMLU")
             g.add((e_mmlu, ENKI.evaluee, model_uri))
             g.add((e_mmlu, ENKI.metricEvaluated, metric_uri))
 
-def serialize_graph(g: Graph, out_path: Path):
-    ttl = g.serialize(format="turtle")
-    final = HEADER_BLOCK + "\n" + "\n".join([ln for ln in ttl.splitlines() if not ln.startswith("@prefix") and not ln.startswith("@base")]) + "\n"
-    if out_path.exists():
-        BACKUP.write_text(out_path.read_text(encoding="utf-8"), encoding="utf-8")
-    out_path.write_text(final, encoding="utf-8")
-    print("Wrote trimmed TTL to", out_path, "(backup at", BACKUP, ")")
-
 def reorder_and_serialize(g: Graph, out_path: Path):
-    """
-    Write TTL in this order:
-      1) Licenses
-      2) LLMManufacturers
-      3) Evaluations
-      4) Capabilities
-      5) LM_Arena AIOrganization (and any other AIOrganization subjects, with LM_Arena first if present)
-      6) Each LLM immediately followed by its corresponding EvaluatedMetrics
-      7) Remaining subjects (anything not covered above)
-    """
-    from collections import OrderedDict, defaultdict
     from urllib.parse import urldefrag
 
-    # ---------- helpers ----------
-    def local_name(u: URIRef) -> str:
-        """Best-effort local name extraction for grouping (keeps underscores, etc.)."""
+    def local_name_of(u: URIRef) -> str:
         s = str(u)
         s, _frag = urldefrag(s)
         if "#" in str(u):
             return str(u).split("#")[-1]
         return s.rstrip("/").split("/")[-1]
 
-    # Prefix map ordered longest-first so contextuel: matches before enki:
     PREFIX_MAP = OrderedDict([
-        (str(LM),   "contextuel:"),  # LM is your contextuel namespace in your script
+        (str(LM),   "contextuel:"),
         (str(ENKI), "enki:"),
         (str(DCT),  "dct:"),
         (str(RDF),  "rdf:"),
@@ -378,7 +413,6 @@ def reorder_and_serialize(g: Graph, out_path: Path):
         if isinstance(o, URIRef):
             return curie(o)
         if isinstance(o, Literal):
-            # preserve datatype-aware rendering
             if o.datatype == XSD.integer:
                 return str(int(o))
             if o.datatype in (XSD.float, XSD.double):
@@ -386,7 +420,6 @@ def reorder_and_serialize(g: Graph, out_path: Path):
             if o.datatype == XSD.decimal:
                 return str(o)
             escaped = str(o).replace("\\", "\\\\").replace('"', '\\"')
-            # keep language tags/datatype if present and non-numeric
             if o.language:
                 return f"\"{escaped}\"@{o.language}"
             if o.datatype:
@@ -399,8 +432,6 @@ def reorder_and_serialize(g: Graph, out_path: Path):
         for s in subject_list:
             preds = sorted(set(g.predicates(s)), key=lambda p: str(p))
             block = []
-
-            # types first (comma-separated after 'a')
             types = sorted(set(g.objects(s, RDF.type)), key=lambda o: str(o))
             if types:
                 if len(types) == 1:
@@ -409,32 +440,28 @@ def reorder_and_serialize(g: Graph, out_path: Path):
                     type_strs = ",\n        ".join(curie(t) for t in types)
                     block.append(f"{curie(s)} a {type_strs}")
             else:
-                # subjects with no rdf:type still get a header line
                 block.append(f"{curie(s)}")
-
-            # remaining predicates alphabetically
             for p in preds:
                 if p == RDF.type:
                     continue
                 objs = sorted(set(g.objects(s, p)), key=lambda o: str(o))
                 for o in objs:
                     block.append(f"    {curie(p)} {format_obj(o)}")
-
             block_lines.append(" ;\n".join(block) + " .")
             block_lines.append("")
         return block_lines
 
-    # ---------- collect typed subjects ----------
     seen_subjects = set()
 
     licenses = sorted(set(g.subjects(RDF.type, DCT.License)), key=lambda s: str(s).lower())
+    # Manufacturers/Providers (same URIs when dual-typed)
     manufacturers = sorted(set(g.subjects(RDF.type, ENKI.LLMManufacturer)), key=lambda s: str(s).lower())
+    provisionings = sorted(set(g.subjects(RDF.type, ENKI.LLMProvisioning)), key=lambda s: str(s).lower())
     evaluations = sorted(set(g.subjects(RDF.type, ENKI.Evaluation)), key=lambda s: str(s).lower())
     capabilities = sorted(set(g.subjects(RDF.type, ENKI.Capability)), key=lambda s: str(s).lower())
 
-    # AIOrganization: put LM_Arena first if present, then the rest
     ai_orgs_all = sorted(set(g.subjects(RDF.type, ENKI.AIOrganization)), key=lambda s: str(s).lower())
-    lm_arena_uri = URIRef(str(LM) + "LM_Arena")  # assumes LM == contextuel namespace
+    lm_arena_uri = URIRef(str(LM) + "LM_Arena")
     ai_orgs = []
     if lm_arena_uri in ai_orgs_all:
         ai_orgs.append(lm_arena_uri)
@@ -442,42 +469,38 @@ def reorder_and_serialize(g: Graph, out_path: Path):
     else:
         ai_orgs = ai_orgs_all
 
-    # ---------- LLMs + their metrics interleaving ----------
     llms = sorted(set(g.subjects(RDF.type, ENKI.LLM)), key=lambda s: str(s).lower())
     metrics = set(g.subjects(RDF.type, ENKI.EvaluatedMetric))
 
-    # Build a fast index from metric local-name prefix -> metric subjects.
-    # We’ll group metrics by "the LLM local name" inferred from metric subject local name.
-    # Expected patterns:
-    #   <Model>_MMLU, <Model>_MT_Bench, ... (suffix is benchmark/metric family)
-    # If your model local names themselves contain underscores, this still works
-    # because we match by "startswith(llm_local + '_')".
-    metrics_by_llm = defaultdict(list)
-    metric_locals = {m: local_name(m) for m in metrics}
+    # Group provisionings by their provider org
+    provisionings_by_org = defaultdict(list)
+    for p in provisionings:
+        for org_uri in g.objects(p, ENKI.provider):
+            provisionings_by_org[org_uri].append(p)
+    for org_uri in provisionings_by_org:
+        provisionings_by_org[org_uri] = sorted(
+            provisionings_by_org[org_uri], key=lambda s: str(s).lower()
+        )
 
-    # Precompute for speed: list of (metric_subject, local_string)
+    # Group metrics by LLM
+    metrics_by_llm = defaultdict(list)
+    metric_locals = {m: local_name_of(m) for m in metrics}
     metric_items = list(metric_locals.items())
 
-    for llm in llms:
-        llm_loc = local_name(llm)
-        # 1) strict: metrics whose local starts with "{llm_loc}_"
+    # Sort LLMs by local name length DESCENDING so longer names match first
+    llms_by_length = sorted(llms, key=lambda u: len(local_name_of(u)), reverse=True)
+    claimed_metrics = set()
+
+    for llm in llms_by_length:
+        llm_loc = local_name_of(llm)
         for m, mloc in metric_items:
+            if m in claimed_metrics:
+                continue
             if mloc.startswith(llm_loc + "_"):
                 metrics_by_llm[llm].append(m)
-
-        # 2) optional fallback: if nothing matched, try label-based matching
-        if not metrics_by_llm[llm]:
-            llm_labels = {str(o).lower() for o in g.objects(llm, RDFS.label)}
-            if llm_labels:
-                for m in metrics:
-                    m_labels = {str(o).lower() for o in g.objects(m, RDFS.label)}
-                    if m_labels and (llm_labels & m_labels):
-                        metrics_by_llm[llm].append(m)
-
-        # stable order for metrics under each LLM
+                claimed_metrics.add(m)
         metrics_by_llm[llm] = sorted(set(metrics_by_llm[llm]), key=lambda s: str(s).lower())
 
-    # ---------- build final subject ordering ----------
     ordered_subjects = []
 
     def add_block(subjects):
@@ -486,13 +509,32 @@ def reorder_and_serialize(g: Graph, out_path: Path):
                 ordered_subjects.append(s)
                 seen_subjects.add(s)
 
+    # 1. Licenses
     add_block(licenses)
-    add_block(manufacturers)
+
+    # 2. Manufacturers/Providers, each followed by their provisionings
+    for mfr in manufacturers:
+        if mfr not in seen_subjects:
+            ordered_subjects.append(mfr)
+            seen_subjects.add(mfr)
+        for p in provisionings_by_org.get(mfr, []):
+            if p not in seen_subjects:
+                ordered_subjects.append(p)
+                seen_subjects.add(p)
+
+    # 3. Any remaining provisionings
+    add_block(provisionings)
+
+    # 4. Evaluations
     add_block(evaluations)
+
+    # 5. Capabilities
     add_block(capabilities)
+
+    # 6. AI Orgs
     add_block(ai_orgs)
 
-    # Interleave: LLM, its metrics, next LLM, its metrics...
+    # 7. LLMs, each followed by their metrics
     for llm in llms:
         if llm in seen_subjects:
             continue
@@ -503,21 +545,14 @@ def reorder_and_serialize(g: Graph, out_path: Path):
                 ordered_subjects.append(m)
                 seen_subjects.add(m)
 
-    # ---------- remaining subjects (covers “all the triple types” you didn’t enumerate) ----------
-    # This includes any: datasets, providers, benchmark entities, blank-node subjects, etc.
-    remaining = []
+    # 8. Anything remaining
     for s in sorted(set(g.subjects()), key=lambda s: str(s).lower()):
         if s not in seen_subjects:
-            remaining.append(s)
+            ordered_subjects.append(s)
             seen_subjects.add(s)
 
-    # ---------- write ----------
-    lines = []
-    lines.extend(serialize_subjects(ordered_subjects))
-    if remaining:
-        lines.extend(serialize_subjects(remaining))
+    lines = serialize_subjects(ordered_subjects)
 
-    # backup (assumes BACKUP + HEADER_BLOCK exist in your script; keep your prior logic)
     if out_path.exists():
         BACKUP.write_text(out_path.read_text(encoding="utf-8"), encoding="utf-8")
 
@@ -535,7 +570,6 @@ def main():
         return
     g = build_graph(rows)
     add_arena_evaluations(g, rows)
-    # write once using the ordered serializer (don't call serialize_graph first)
     reorder_and_serialize(g, OUT_TTL)
 
 if __name__ == "__main__":
