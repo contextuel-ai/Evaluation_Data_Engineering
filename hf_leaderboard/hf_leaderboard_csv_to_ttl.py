@@ -109,7 +109,6 @@ BENCHMARK_CAPABILITIES = {
         ("ConceptualTransfer", "Conceptual Transfer",
          "The ability of an LLM to apply concepts learned in one domain to novel problems in a related but distinct domain."),
     ],
-    # CO2 has no capability (as requested)
 }
 
 # _________ HELPERS __________
@@ -181,14 +180,6 @@ def read_rows(path: Path) -> list[dict]:
     df = pd.read_csv(path)
     print(f"Loaded {len(df)} rows, columns: {list(df.columns)}")
 
-    # Filter to only official provider models
-    if 'Official Providers' in df.columns:
-        before = len(df)
-        df = df[df['Official Providers'].astype(str).str.strip().str.upper() == 'TRUE']
-        print(f"Filtered to Official Providers: {before} → {len(df)} rows")
-    else:
-        print("[WARN] 'Official Providers' column not found. Using all rows.")
-
     # Deduplicate: keep only the first occurrence of each fullname
     df = df.drop_duplicates(subset=["fullname"], keep="first")
     print(f"After dedup by fullname: {len(df)} rows")
@@ -221,6 +212,12 @@ def read_rows(path: Path) -> list[dict]:
                 except (ValueError, TypeError):
                     pass
 
+        # Determine if this is an official provider model
+        official = False
+        if 'Official Providers' in df.columns:
+            op_val = str(r.get("Official Providers", "")).strip().upper()
+            official = op_val == "TRUE"
+
         row = {
             "fullname": fullname,
             "label": fullname,
@@ -228,40 +225,14 @@ def read_rows(path: Path) -> list[dict]:
             "license": lic,
             "params_b": params_str,
             "benchmarks": benchmarks,
+            "official_provider": official,
         }
         rows.append(row)
 
-    return rows
+    official_count = sum(1 for r in rows if r["official_provider"])
+    print(f"Total models: {len(rows)}, Official Providers: {official_count}")
 
-# Mapping from company_name (lowercase from provisioning check) to display label
-COMPANY_LABELS = {
-    'meta': 'Meta',
-    'google': 'Google',
-    'openai': 'OpenAI',
-    'anthropic': 'Anthropic',
-    'microsoft': 'Microsoft',
-    'nvidia': 'Nvidia',
-    'amazon': 'Amazon',
-    'apple': 'Apple',
-    'alibaba': 'Alibaba',
-    'baidu': 'Baidu',
-    'tencent': 'Tencent',
-    'bytedance': 'ByteDance',
-    'mistral': 'Mistral',
-    'cohere': 'Cohere',
-    'deepseek': 'DeepSeek AI',
-    'zhipu': 'Zhipu AI',
-    'xai': 'xAI',
-    'samsung': 'Samsung',
-    'intel': 'Intel',
-    'ibm': 'IBM',
-    'salesforce': 'Salesforce',
-    'databricks': 'Databricks',
-    'huawei': 'Huawei',
-    'baichuan': 'Baichuan',
-    '01ai': '01 AI',
-    'reka': 'Reka',
-}
+    return rows
 
 # _________ BUILD GRAPH __________
 
@@ -275,6 +246,7 @@ def build_graph(rows: list[dict]) -> Graph:
     g.bind("rdfs", RDFS)
     g.bind("xsd", XSD)
 
+    # HuggingFace as evaluator org
     hf_org = URIRef(str(C) + ORG_LOCAL)
     g.add((hf_org, RDF.type, ENKI.AIOrganization))
     g.add((hf_org, RDFS.label, Literal("Hugging Face")))
@@ -283,8 +255,10 @@ def build_graph(rows: list[dict]) -> Graph:
         "The Open LLM Leaderboard is a HuggingFace community benchmark that evaluates open-source LLMs across multiple standardised tasks."
     )))
 
-    # Collect org → model URIs for manufacturer nodes
+    # Collect org → model URIs for manufacturer nodes (official only)
     org_models = defaultdict(list)
+    # Collect org → (model_uri, model_local, org_label) for provisioning (official only)
+    org_provisionings = defaultdict(list)
 
     for r in rows:
         local = local_from_model(r["fullname"])
@@ -330,18 +304,37 @@ def build_graph(rows: list[dict]) -> Graph:
             g.add((metric_uri, ENKI.metricUnit, Literal(bm_label)))
             g.add((metric_uri, ENKI.metricValue, Literal(bm_val)))
 
-        # Track org for manufacturer
-        if r["org"]:
+        # Official provider → LLMManufacturer + LLMProvider + LLMProvisioning
+        if r["official_provider"] and r["org"]:
             org_models[r["org"]].append(model_uri)
+            org_provisionings[r["org"]].append((model_uri, local, model_name))
 
-    # Add LLMManufacturer instances based on org prefix
+    # Add LLMManufacturer + LLMProvider instances for official provider orgs
     for org_name, model_uris in org_models.items():
-        mfr_local = local_from_label(org_name)
-        mfr_uri = URIRef(str(C) + mfr_local)
-        g.add((mfr_uri, RDF.type, ENKI.LLMManufacturer))
-        g.add((mfr_uri, RDFS.label, Literal(org_name)))
+        org_local = local_from_label(org_name)
+        org_uri = URIRef(str(C) + org_local)
+
+        # Manufacturer
+        g.add((org_uri, RDF.type, ENKI.LLMManufacturer))
+        g.add((org_uri, RDFS.label, Literal(org_name)))
         for m_uri in model_uris:
-            g.add((mfr_uri, ENKI.manufactures, m_uri))
+            g.add((org_uri, ENKI.manufactures, m_uri))
+
+        # Provider
+        g.add((org_uri, RDF.type, ENKI.LLMProvider))
+
+    # Add LLMProvisioning instances
+    for org_name, prov_list in org_provisionings.items():
+        org_local = local_from_label(org_name)
+        org_uri = URIRef(str(C) + org_local)
+
+        for model_uri, model_local, model_name in prov_list:
+            prov_local = f"{org_local}_Provisioning_{model_local}"
+            prov_uri = URIRef(str(C) + prov_local)
+            g.add((prov_uri, RDF.type, ENKI.LLMProvisioning))
+            g.add((prov_uri, RDFS.label, Literal(f"{org_name} provisioning of {model_name}")))
+            g.add((prov_uri, ENKI.provider, org_uri))
+            g.add((prov_uri, ENKI.provides, model_uri))
 
     return g
 
@@ -453,7 +446,9 @@ def reorder_and_serialize(g: Graph, out_path: Path):
     seen_subjects = set()
 
     licenses = sorted(set(g.subjects(RDF.type, DCT.License)), key=lambda s: str(s).lower())
+    # Manufacturers/Providers (same URIs, dual-typed)
     manufacturers = sorted(set(g.subjects(RDF.type, ENKI.LLMManufacturer)), key=lambda s: str(s).lower())
+    provisionings = sorted(set(g.subjects(RDF.type, ENKI.LLMProvisioning)), key=lambda s: str(s).lower())
     evaluations = sorted(set(g.subjects(RDF.type, ENKI.Evaluation)), key=lambda s: str(s).lower())
     capabilities = sorted(set(g.subjects(RDF.type, ENKI.Capability)), key=lambda s: str(s).lower())
     ai_orgs = sorted(set(g.subjects(RDF.type, ENKI.AIOrganization)), key=lambda s: str(s).lower())
@@ -463,6 +458,16 @@ def reorder_and_serialize(g: Graph, out_path: Path):
     def local_name_of(u):
         s = str(u)
         return s.rstrip("/").split("/")[-1]
+
+    # Group provisionings by their provider org
+    provisionings_by_org = defaultdict(list)
+    for p in provisionings:
+        for org_uri in g.objects(p, ENKI.provider):
+            provisionings_by_org[org_uri].append(p)
+    for org_uri in provisionings_by_org:
+        provisionings_by_org[org_uri] = sorted(
+            provisionings_by_org[org_uri], key=lambda s: str(s).lower()
+        )
 
     metrics_by_llm = defaultdict(list)
 
@@ -489,12 +494,32 @@ def reorder_and_serialize(g: Graph, out_path: Path):
                 ordered_subjects.append(s)
                 seen_subjects.add(s)
 
+    # 1. Licenses
     add_block(licenses)
-    add_block(manufacturers)
+
+    # 2. Manufacturers/Providers, each followed by their provisionings
+    for mfr in manufacturers:
+        if mfr not in seen_subjects:
+            ordered_subjects.append(mfr)
+            seen_subjects.add(mfr)
+        for p in provisionings_by_org.get(mfr, []):
+            if p not in seen_subjects:
+                ordered_subjects.append(p)
+                seen_subjects.add(p)
+
+    # 3. Any remaining provisionings (shouldn't happen, but safety net)
+    add_block(provisionings)
+
+    # 4. Evaluations
     add_block(evaluations)
+
+    # 5. Capabilities
     add_block(capabilities)
+
+    # 6. AI Orgs (HuggingFace)
     add_block(ai_orgs)
 
+    # 7. LLMs, each followed by their metrics
     for llm in llms:
         if llm in seen_subjects:
             continue
@@ -505,6 +530,7 @@ def reorder_and_serialize(g: Graph, out_path: Path):
                 ordered_subjects.append(m)
                 seen_subjects.add(m)
 
+    # 8. Anything remaining
     for s in sorted(set(g.subjects()), key=lambda s: str(s).lower()):
         if s not in seen_subjects:
             ordered_subjects.append(s)
