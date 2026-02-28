@@ -1,0 +1,153 @@
+@base <https://www.contextuel.ai/spec/Enki/> .
+@prefix enki: <https://www.contextuel.ai/spec/Enki/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix contextuel: <https://www.contextuel.ai/spec/Contextuel/> .
+
+# ============================================================
+# PROPOSED NEW CAPABILITIES
+# ============================================================
+
+# ------------------------------------------------------------
+# MathematicalReasoning
+# ------------------------------------------------------------
+# Justification: MATH Lvl 5 Hard specifically tests complex
+# mathematical problem-solving with exact-answer matching,
+# formal notation, and symbolic manipulation. Distinct from
+# FormalReasoning (which covers logic/procedures) because
+# mathematical reasoning requires domain-specific notation
+# and numerical derivation.
+#
+# Tested by: MATH_Lvl_5
+# Parent:    MultiStepReasoning
+# ------------------------------------------------------------
+contextuel:MathematicalReasoning a enki:Capability ;
+    rdfs:label "Mathematical Reasoning" ;
+    dct:description "The ability of an LLM to solve mathematical problems requiring formal symbolic manipulation, numerical computation, and multi-step logical derivation across domains such as algebra, geometry, number theory, combinatorics, and calculus." ;
+    enki:subsumedByCapability contextuel:MultiStepReasoning .
+
+contextuel:MultiStepReasoning
+    enki:subsumesCapability contextuel:MathematicalReasoning .
+
+# ------------------------------------------------------------
+# FormalReasoning (consolidates LogicalDeduction + AlgorithmicReasoning)
+# ------------------------------------------------------------
+# Justification: BBH tasks span both deductive logic (Boolean
+# expressions, syllogisms, formal fallacies) and procedural
+# simulation (navigate, tracking shuffled objects, web of lies).
+# These share the core property of applying deterministic,
+# structured rules step-by-step. Splitting them yields two
+# capabilities that are both mapped exclusively to BBH with
+# significant overlap in what they describe. Consolidating
+# preserves the distinction from softer reasoning modes
+# (CommonsenseReasoning) without artificial granularity.
+#
+# Tested by: BBH
+# Parent:    MultiStepReasoning
+# ------------------------------------------------------------
+contextuel:FormalReasoning a enki:Capability ;
+    rdfs:label "Formal Reasoning" ;
+    dct:description "The ability of an LLM to apply structured logical rules and simulate procedural execution, including syllogistic reasoning, Boolean logic evaluation, truth-table analysis, state tracking, and step-by-step algorithmic operations." ;
+    enki:subsumedByCapability contextuel:MultiStepReasoning .
+
+contextuel:MultiStepReasoning
+    enki:subsumesCapability contextuel:FormalReasoning .
+
+# ------------------------------------------------------------
+# CommonsenseReasoning
+# ------------------------------------------------------------
+# Justification: MUSR tests reasoning over narratives where
+# the model must integrate implicit world knowledge and
+# commonsense assumptions. Distinct from FormalReasoning
+# (no deterministic rules) and from CausalReasoning (broader
+# than cause-and-effect alone — includes social understanding,
+# spatial reasoning, everyday physics).
+#
+# Tested by: MUSR
+# Parent:    MultiStepReasoning
+# ------------------------------------------------------------
+contextuel:CommonsenseReasoning a enki:Capability ;
+    rdfs:label "Commonsense Reasoning" ;
+    dct:description "The ability of an LLM to draw plausible inferences based on implicit world knowledge, everyday physical and social understanding, and narrative comprehension, even when the reasoning steps are not formally specified." ;
+    enki:subsumedByCapability contextuel:MultiStepReasoning .
+
+contextuel:MultiStepReasoning
+    enki:subsumesCapability contextuel:CommonsenseReasoning .
+
+# ------------------------------------------------------------
+# CausalReasoning
+# ------------------------------------------------------------
+# Justification: Both BBH ("causal judgment") and MUSR
+# (murder mysteries, event attribution) require identifying
+# cause-and-effect relationships. This capability spans the
+# formal/commonsense divide — causal reasoning can be either
+# deductive (controlled experiments) or abductive (narrative
+# inference). It is the only capability mapped to both BBH
+# and MUSR, confirming it is a cross-cutting concern rather
+# than a subset of either FormalReasoning or Commonsense-
+# Reasoning alone.
+#
+# Tested by: BBH, MUSR
+# Parent:    MultiStepReasoning
+# ------------------------------------------------------------
+contextuel:CausalReasoning a enki:Capability ;
+    rdfs:label "Causal Reasoning" ;
+    dct:description "The ability of an LLM to identify, evaluate, and reason about cause-and-effect relationships between events, actions, and outcomes, including counterfactual reasoning and distinguishing correlation from causation." ;
+    enki:subsumedByCapability contextuel:MultiStepReasoning .
+
+contextuel:MultiStepReasoning
+    enki:subsumesCapability contextuel:CausalReasoning .
+
+# ------------------------------------------------------------
+# ExpertLevelProblemSolving
+# ------------------------------------------------------------
+# Justification: GPQA is designed so domain experts achieve
+# ~65% accuracy while non-experts with web access achieve ~34%.
+# This tests the intersection of deep domain expertise with
+# graduate-level reasoning. Dual parentage under both
+# AcademicDomainKnowledge and MultiStepReasoning reflects
+# that neither alone is sufficient.
+#
+# Tested by: GPQA
+# Parents:   AcademicDomainKnowledge, MultiStepReasoning
+# ------------------------------------------------------------
+contextuel:ExpertLevelProblemSolving a enki:Capability ;
+    rdfs:label "Expert-Level Problem Solving" ;
+    dct:description "The ability of an LLM to solve problems that require graduate-level or professional-level expertise in a specialized domain, integrating deep domain knowledge with sophisticated reasoning that resists simple lookup or surface-level understanding." ;
+    enki:subsumedByCapability contextuel:AcademicDomainKnowledge ;
+    enki:subsumedByCapability contextuel:MultiStepReasoning .
+
+contextuel:AcademicDomainKnowledge
+    enki:subsumesCapability contextuel:ExpertLevelProblemSolving .
+
+contextuel:MultiStepReasoning
+    enki:subsumesCapability contextuel:ExpertLevelProblemSolving .
+
+# ============================================================
+# CONSOLIDATED HIERARCHY
+# ============================================================
+#
+# Reasoning
+# ├── MultiStepReasoning
+# │   ├── MathematicalReasoning          ← NEW (MATH Lvl5)
+# │   ├── FormalReasoning                ← NEW (BBH) [consolidates LogicalDeduction + AlgorithmicReasoning]
+# │   ├── CommonsenseReasoning           ← NEW (MUSR)
+# │   ├── CausalReasoning               ← NEW (BBH, MUSR) [cross-cutting]
+# │   └── ExpertLevelProblemSolving      ← NEW (GPQA) [also under AcademicDomainKnowledge]
+# ├── GeneralKnowledgeReasoning
+# │
+# Knowledge
+# ├── AcademicDomainKnowledge
+# │   └── ExpertLevelProblemSolving      ← NEW (GPQA)
+# ├── FactualRecall
+# ├── GeneralKnowledgeReasoning
+# │
+# ConversationalReasoning
+# ├── InstructionFollowing               ← used by IFEval
+# ├── ContextRetention
+# ├── MultiTurnDialogue
+# └── ResponseHelpfulness
+#
+# ============================================================
