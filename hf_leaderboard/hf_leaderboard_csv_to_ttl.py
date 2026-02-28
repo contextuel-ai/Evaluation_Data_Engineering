@@ -169,6 +169,22 @@ def extract_org(fullname: str) -> str:
         return fullname.split("/")[0].strip()
     return ""
 
+def extract_base_model_org(base_model: str) -> str:
+    """Extract the org from a base model string like 'meta-llama/Meta-Llama-3-8B'.
+    Returns '' if not parseable (e.g. 'Removed', merge strings, empty)."""
+    if not base_model:
+        return ""
+    bm = base_model.strip()
+    # Skip non-model values
+    if bm.lower() in ("removed", "nan", "", "-"):
+        return ""
+    # Skip merge indicators (contain '(Merge)' or similar)
+    if "(Merge)" in bm or "(merge)" in bm:
+        return ""
+    if "/" in bm:
+        return bm.split("/")[0].strip()
+    return ""
+
 # _________ READ CSV __________
 
 def read_rows(path: Path) -> list[dict]:
@@ -218,6 +234,12 @@ def read_rows(path: Path) -> list[dict]:
             op_val = str(r.get("Official Providers", "")).strip().upper()
             official = op_val == "TRUE"
 
+        # Extract base model to determine the true manufacturer
+        base_model_raw = str(r.get("Base Model", "")).strip()
+        if base_model_raw == "nan":
+            base_model_raw = ""
+        base_model_org = extract_base_model_org(base_model_raw)
+
         row = {
             "fullname": fullname,
             "label": fullname,
@@ -226,6 +248,8 @@ def read_rows(path: Path) -> list[dict]:
             "params_b": params_str,
             "benchmarks": benchmarks,
             "official_provider": official,
+            "base_model_raw": base_model_raw,
+            "base_model_org": base_model_org,
         }
         rows.append(row)
 
@@ -255,10 +279,11 @@ def build_graph(rows: list[dict]) -> Graph:
         "The Open LLM Leaderboard is a HuggingFace community benchmark that evaluates open-source LLMs across multiple standardised tasks."
     )))
 
-    # Collect org → model URIs for manufacturer nodes (official only)
-    org_models = defaultdict(list)
-    # Collect org → (model_uri, model_local, org_label) for provisioning (official only)
-    org_provisionings = defaultdict(list)
+    # Collect manufacturer and provisioner relationships
+    # manufacturer_org → set of model URIs
+    manufacturer_models = defaultdict(set)
+    # provisioner_org → list of (model_uri, model_local, model_label)
+    provisioner_provisionings = defaultdict(list)
 
     for r in rows:
         local = local_from_model(r["fullname"])
@@ -304,37 +329,65 @@ def build_graph(rows: list[dict]) -> Graph:
             g.add((metric_uri, ENKI.metricUnit, Literal(bm_label)))
             g.add((metric_uri, ENKI.metricValue, Literal(bm_val)))
 
-        # Official provider → LLMManufacturer + LLMProvider + LLMProvisioning
-        if r["official_provider"] and r["org"]:
-            org_models[r["org"]].append(model_uri)
-            org_provisionings[r["org"]].append((model_uri, local, model_name))
+        # --- Manufacturer vs Provisioner logic ---
+        # Only process official provider models for org-level triples
+        if not r["official_provider"] or not r["org"]:
+            continue
 
-    # Add LLMManufacturer + LLMProvider instances for official provider orgs
-    for org_name, model_uris in org_models.items():
+        submitting_org = r["org"]
+        base_org = r["base_model_org"]
+
+        # Determine who the manufacturer is:
+        #   - If base_model_org is parseable and differs from the submitting org,
+        #     the base_model_org is the manufacturer.
+        #   - If base_model_org matches the submitting org, or is empty/unparseable
+        #     (self-submission or original model), the submitting org is the manufacturer.
+        if base_org and base_org.lower() != submitting_org.lower():
+            # The submitting org fine-tuned/adapted someone else's model.
+            # Base org = manufacturer, submitting org = provisioner (they serve it).
+            manufacturer_models[base_org].add(model_uri)
+            provisioner_provisionings[submitting_org].append(
+                (model_uri, local, model_name)
+            )
+        else:
+            # Self-submitted original model: org is both manufacturer and provisioner
+            manufacturer_models[submitting_org].add(model_uri)
+            provisioner_provisionings[submitting_org].append(
+                (model_uri, local, model_name)
+            )
+
+    # Add LLMManufacturer instances
+    for org_name, model_uris in manufacturer_models.items():
         org_local = local_from_label(org_name)
         org_uri = URIRef(str(C) + org_local)
-
-        # Manufacturer
         g.add((org_uri, RDF.type, ENKI.LLMManufacturer))
         g.add((org_uri, RDFS.label, Literal(org_name)))
-        for m_uri in model_uris:
+        for m_uri in sorted(model_uris, key=lambda u: str(u).lower()):
             g.add((org_uri, ENKI.manufactures, m_uri))
 
-        # Provider
-        g.add((org_uri, RDF.type, ENKI.LLMProvider))
-
-    # Add LLMProvisioning instances
-    for org_name, prov_list in org_provisionings.items():
+    # Add LLMProvider + LLMProvisioning instances
+    for org_name, prov_list in provisioner_provisionings.items():
         org_local = local_from_label(org_name)
         org_uri = URIRef(str(C) + org_local)
+        g.add((org_uri, RDF.type, ENKI.LLMProvider))
 
-        for model_uri, model_local, model_name in prov_list:
+        for model_uri, model_local, model_label in prov_list:
             prov_local = f"{org_local}_Provisioning_{model_local}"
             prov_uri = URIRef(str(C) + prov_local)
             g.add((prov_uri, RDF.type, ENKI.LLMProvisioning))
-            g.add((prov_uri, RDFS.label, Literal(f"{org_name} provisioning of {model_name}")))
+            g.add((prov_uri, RDFS.label, Literal(f"{org_name} provisioning of {model_label}")))
             g.add((prov_uri, ENKI.provider, org_uri))
             g.add((prov_uri, ENKI.provides, model_uri))
+
+    # Stats
+    mfr_count = sum(len(m) for m in manufacturer_models.values())
+    prov_count = sum(len(p) for p in provisioner_provisionings.values())
+    dual_orgs = set(manufacturer_models.keys()) & set(provisioner_provisionings.keys())
+    prov_only = set(provisioner_provisionings.keys()) - set(manufacturer_models.keys())
+    mfr_only = set(manufacturer_models.keys()) - set(provisioner_provisionings.keys())
+    print(f"Manufacturers: {len(manufacturer_models)} orgs ({mfr_count} models)")
+    print(f"Provisioners:  {len(provisioner_provisionings)} orgs ({prov_count} provisionings)")
+    print(f"Dual (mfr+prov): {len(dual_orgs)} | Mfr-only: {len(mfr_only)} | Prov-only: {len(prov_only)}")
 
     return g
 
