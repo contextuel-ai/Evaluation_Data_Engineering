@@ -297,9 +297,8 @@ def build_graph(rows: list[dict]) -> Graph:
             g.add((metric_uri, ENKI.metricUnit, Literal(bm_label)))
             g.add((metric_uri, ENKI.metricValue, Literal(bm_val)))
 
-        # --- Manufacturer vs Provisioner logic ---
-        # Only process official provider models for org-level triples
-        if not r["official_provider"] or not r["org"]:
+        # --- Manufacturer logic (all models with an org) ---
+        if not r["org"]:
             continue
 
         submitting_org = r["org"]
@@ -311,18 +310,23 @@ def build_graph(rows: list[dict]) -> Graph:
         #   - If base_model_org matches the submitting org, or is empty/unparseable
         #     (self-submission or original model), the submitting org is the manufacturer.
         if base_org and base_org.lower() != submitting_org.lower():
-            # The submitting org fine-tuned/adapted someone else's model.
-            # Base org = manufacturer, submitting org = provisioner (they serve it).
             manufacturer_models[base_org].add(model_uri)
-            provisioner_provisionings[submitting_org].append(
-                (model_uri, local, model_name)
-            )
         else:
-            # Self-submitted original model: org is both manufacturer and provisioner
             manufacturer_models[submitting_org].add(model_uri)
-            provisioner_provisionings[submitting_org].append(
-                (model_uri, local, model_name)
-            )
+
+        # --- Provisioner logic (only Official Providers) ---
+        if r["official_provider"]:
+            if base_org and base_org.lower() != submitting_org.lower():
+                # The submitting org fine-tuned/adapted someone else's model
+                # and serves it via API → submitting org is the provisioner.
+                provisioner_provisionings[submitting_org].append(
+                    (model_uri, local, model_name)
+                )
+            else:
+                # Self-submitted original model: org is also the provisioner.
+                provisioner_provisionings[submitting_org].append(
+                    (model_uri, local, model_name)
+                )
 
     # Add LLMManufacturer instances
     for org_name, model_uris in manufacturer_models.items():
