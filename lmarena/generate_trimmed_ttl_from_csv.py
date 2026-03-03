@@ -67,6 +67,33 @@ def key_slug(s: str) -> str:
     s = s.strip("_")
     return (s or "unnamed").lower()
 
+def extract_params_billion(name: str) -> float | None:
+    """
+    Extract the total parameter count (in billions) from a model name.
+
+    Recognises patterns like '70B', '1.5B', '350M', '270M'.
+    Returns None if no parameter count is found.
+
+    Heuristics:
+      - Match <number>(B|b) or <number>(M|m) at word boundaries.
+      - Skip MoE active-parameter tokens like 'A22B', 'x7b'.
+      - If multiple matches, take the largest (total params > active params).
+    """
+    matches = re.findall(r'(?<![AaXx])(\d+(?:\.\d+)?)\s*([BbMm])\b', name)
+    if not matches:
+        return None
+    candidates = []
+    for num_str, suffix in matches:
+        try:
+            val = float(num_str)
+        except ValueError:
+            continue
+        if suffix.upper() == 'B':
+            candidates.append(val)
+        elif suffix.upper() == 'M':
+            candidates.append(val / 1000.0)
+    return max(candidates) if candidates else None
+
 # NEW: preserve case from rdfs:label when producing a safe local name
 def local_from_label(s: str) -> str:
     s = (s or "").strip()
@@ -200,6 +227,12 @@ def build_graph(rows):
                 g.add((model_uri, DCT.identifier, Literal(r["link"])))
             except Exception:
                 pass
+
+        # Parameters (extracted from model name)
+        params_b = extract_params_billion(model_label)
+        if params_b is not None:
+            g.add((model_uri, ENKI.hasTotalParameterCount,
+                   Literal(params_b, datatype=XSD.double)))
 
         if r["license"] and r["license"].strip() and r["license"].strip() != "-":
             lic_local = normalize_license_local(r["license"])

@@ -213,6 +213,34 @@ def safe_float(val: str) -> float | None:
         return None
 
 
+def extract_params_billion(name: str) -> float | None:
+    """
+    Extract the total parameter count (in billions) from a model name.
+
+    Recognises patterns like '70B', '1.5B', '350M', '270M'.
+    Returns None if no parameter count is found.
+
+    Heuristics:
+      - Match <number>(B|b) or <number>(M|m) at word boundaries.
+      - Skip MoE active-parameter tokens like 'A22B', 'x7b'.
+      - If multiple matches, take the largest (total params > active params).
+    """
+    matches = re.findall(r'(?<![AaXx])(\d+(?:\.\d+)?)\s*([BbMm])\b', name)
+    if not matches:
+        return None
+    candidates = []
+    for num_str, suffix in matches:
+        try:
+            val = float(num_str)
+        except ValueError:
+            continue
+        if suffix.upper() == 'B':
+            candidates.append(val)
+        elif suffix.upper() == 'M':
+            candidates.append(val / 1000.0)
+    return max(candidates) if candidates else None
+
+
 # _________ EVALUATOR ORG __________
 
 ORG_LOCAL = "Artificial_Analysis"
@@ -309,6 +337,12 @@ def build_graph(rows: list[dict]) -> Graph:
             aa_link = f"https://artificialanalysis.ai/models/{r['slug']}"
             g.add((model_uri, DCT.identifier, Literal(aa_link)))
 
+        # Parameters (extracted from model name)
+        params_b = extract_params_billion(r["model_name"])
+        if params_b is not None:
+            g.add((model_uri, ENKI.hasTotalParameterCount,
+                   Literal(params_b, datatype=XSD.double)))
+
         # Quality benchmark scores as EvaluatedMetric
         for bm_key, bm_val in r["benchmarks"].items():
             bm_label = BENCHMARKS[bm_key]["label"]
@@ -325,7 +359,7 @@ def build_graph(rows: list[dict]) -> Graph:
             sm_label = SPEED_METRICS[sm_key]["label"]
             metric_uri = URIRef(str(C) + f"{local}_{sm_key}")
             g.add((metric_uri, RDF.type, ENKI.EvaluatedMetric))
-            g.add((metric_uri, ENKI.metricAssesses, latency_uri))
+            g.add((metric_uri, ENKI.metricAssesses, URIRef(str(C) + "Latency")))
             g.add((metric_uri, ENKI.metricAssignee, model_uri))
             g.add((metric_uri, ENKI.metricAssigner, aa_org))
             g.add((metric_uri, ENKI.metricUnit, Literal(sm_label)))
@@ -336,7 +370,7 @@ def build_graph(rows: list[dict]) -> Graph:
             pm_label = PRICE_METRICS[pm_key]["label"]
             metric_uri = URIRef(str(C) + f"{local}_{pm_key}")
             g.add((metric_uri, RDF.type, ENKI.EvaluatedMetric))
-            g.add((metric_uri, ENKI.metricAssesses, cost_uri))
+            g.add((metric_uri, ENKI.metricAssesses, URIRef(str(C) + "Cost")))
             g.add((metric_uri, ENKI.metricAssignee, model_uri))
             g.add((metric_uri, ENKI.metricAssigner, aa_org))
             g.add((metric_uri, ENKI.metricUnit, Literal(pm_label)))

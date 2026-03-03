@@ -51,16 +51,11 @@ contextuel:Gemma a dct:License ;
 contextuel:Gpl_3_0 a dct:License ;
     rdfs:label "gpl-3.0" .
 
+contextuel:License_Llama3 a dct:License ;
+    rdfs:label "llama3" .
+
 contextuel:Llama2 a dct:License ;
     rdfs:label "llama2" .
-
-contextuel:Llama3 a dct:License,
-        enki:LLM ;
-    dct:identifier "https://huggingface.co/sabersaleh/Llama3" ;
-    dct:license contextuel:Mit ;
-    rdfs:label "Llama3" ;
-    rdfs:label "llama3" ;
-    enki:hasTotalParameterCount 8.03 .
 
 contextuel:Llama3_1 a dct:License ;
     rdfs:label "llama3.1" .
@@ -74958,7 +74953,7 @@ contextuel:Airavata_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Al_Dente_V1_8b a enki:LLM ;
     dct:identifier "https://huggingface.co/pankajmathur/Al_Dente_v1_8b" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Al_Dente_v1_8b" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -77042,7 +77037,7 @@ contextuel:Apollo_V2_32B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:ARC1 a enki:LLM ;
     dct:identifier "https://huggingface.co/iRyanBell/ARC1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "ARC1" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -77097,7 +77092,7 @@ contextuel:ARC1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:ARC1_II a enki:LLM ;
     dct:identifier "https://huggingface.co/iRyanBell/ARC1-II" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "ARC1-II" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -77811,7 +77806,7 @@ contextuel:ArlowGPT_8B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:ArmoRM_Llama3_8B_V0_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/RLHFlow/ArmoRM-Llama3-8B-v0.1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "ArmoRM-Llama3-8B-v0.1" ;
     enki:hasTotalParameterCount 7.511 .
 
@@ -80932,7 +80927,7 @@ contextuel:Bacon_And_Food_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Badger_Kappa_Llama_3_8b a enki:LLM ;
     dct:identifier "https://huggingface.co/maldv/badger-kappa-llama-3-8b" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "badger-kappa-llama-3-8b" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -92629,7 +92624,7 @@ contextuel:Calme_2_2_Llama3_1_70b_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Calme_2_2_Llama3_70b a enki:LLM ;
     dct:identifier "https://huggingface.co/MaziyarPanahi/calme-2.2-llama3-70b" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "calme-2.2-llama3-70b" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -93013,7 +93008,7 @@ contextuel:Calme_2_3_Llama3_1_70b_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Calme_2_3_Llama3_70b a enki:LLM ;
     dct:identifier "https://huggingface.co/MaziyarPanahi/calme-2.3-llama3-70b" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "calme-2.3-llama3-70b" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -93288,7 +93283,7 @@ contextuel:Calme_2_3_Rys_78b_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Calme_2_4_Llama3_70b a enki:LLM ;
     dct:identifier "https://huggingface.co/MaziyarPanahi/calme-2.4-llama3-70b" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "calme-2.4-llama3-70b" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -98383,7 +98378,7 @@ contextuel:COCO_7B_Instruct_1M_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Code_Llama_Bagel_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/theprint/Code-Llama-Bagel-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Code-Llama-Bagel-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -106035,7 +106030,7 @@ contextuel:DeepSeek_V2_Grand_Horror_SMB_R1_Distill_Llama_3_1_Uncensored_16_5B_MU
 
 contextuel:Deepthink_Llama_3_8B_Preview a enki:LLM ;
     dct:identifier "https://huggingface.co/prithivMLmods/Deepthink-Llama-3-8B-Preview" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Deepthink-Llama-3-8B-Preview" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -108496,7 +108491,7 @@ contextuel:Dolphin3_Llama3_2_Smart_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Dolphin_2_9_1_Llama_3_70b a enki:LLM ;
     dct:identifier "https://huggingface.co/cognitivecomputations/dolphin-2.9.1-llama-3-70b" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "dolphin-2.9.1-llama-3-70b" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -110468,7 +110463,7 @@ contextuel:Dumpling_Qwen2_5_7B_1k_R64_2e_5_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Dusk_Rainbow a enki:LLM ;
     dct:identifier "https://huggingface.co/SicariusSicariiStuff/Dusk_Rainbow" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Dusk_Rainbow" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -113986,7 +113981,7 @@ contextuel:Elusive_Dragon_Heart_8B_LINEAR_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Emotional_Llama_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/OEvortex/Emotional-llama-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Emotional-llama-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -114700,7 +114695,7 @@ contextuel:Eridanus_Opus_14B_R999_MUSR a enki:EvaluatedMetric ;
 
 contextuel:EtherealRainbow_V0_2_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/invisietch/EtherealRainbow-v0.2-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "EtherealRainbow-v0.2-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -114755,7 +114750,7 @@ contextuel:EtherealRainbow_V0_2_8B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:EtherealRainbow_V0_3_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/invisietch/EtherealRainbow-v0.3-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "EtherealRainbow-v0.3-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -137542,7 +137537,7 @@ contextuel:Hermes3_L3_1_DirtyHarry_8B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Hermes_2_Pro_Llama_3_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/NousResearch/Hermes-2-Pro-Llama-3-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Hermes-2-Pro-Llama-3-8B" ;
     enki:hasTotalParameterCount 8.031 .
 
@@ -137707,7 +137702,7 @@ contextuel:Hermes_2_Theta_Llama_3_8B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Hermes_3_Llama_3_1_70B a enki:LLM ;
     dct:identifier "https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-70B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Hermes-3-Llama-3.1-70B" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -137816,7 +137811,7 @@ contextuel:Hermes_3_Llama_3_1_70B_Lorablated_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Hermes_3_Llama_3_1_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Hermes-3-Llama-3.1-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -137926,7 +137921,7 @@ contextuel:Hermes_3_Llama_3_1_8B_TIES_With_Base_Embeds_Initialized_To_Special_In
 
 contextuel:Hermes_3_Llama_3_2_3B a enki:LLM ;
     dct:identifier "https://huggingface.co/NousResearch/Hermes-3-Llama-3.2-3B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Hermes-3-Llama-3.2-3B" ;
     enki:hasTotalParameterCount 3.213 .
 
@@ -139455,7 +139450,7 @@ contextuel:Huihui_Ai_abliteratedV2_Qwen2_5_14B_Inst_BaseMerge_TIES_MUSR a enki:E
 
 contextuel:Humanish_LLama3_8B_Instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/HumanLLMs/Humanish-LLama3-8B-Instruct" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Humanish-LLama3-8B-Instruct" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -145171,7 +145166,7 @@ contextuel:Inf_Silent_Kunoichi_V0_2_2x7B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Infinirc_Llama3_8B_2G_Release_V1_0 a enki:LLM ;
     dct:identifier "https://huggingface.co/Infinirc/Infinirc-Llama3-8B-2G-Release-v1.0" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Infinirc-Llama3-8B-2G-Release-v1.0" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -155091,7 +155086,7 @@ contextuel:L3_8B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:L3_8B_Lunaris_V1 a enki:LLM ;
     dct:identifier "https://huggingface.co/Sao10K/L3-8B-Lunaris-v1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "L3-8B-Lunaris-v1" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -156019,7 +156014,7 @@ contextuel:L3_Nymeria_V2_8B_MUSR a enki:EvaluatedMetric ;
 contextuel:L3_Pneuma_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/Kquant03/L3-Pneuma-8B" ;
     dct:identifier "https://huggingface.co/Replete-AI/L3-Pneuma-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "L3-Pneuma-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -156352,7 +156347,7 @@ contextuel:L3_SthenoMaid_8B_V1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:L3_Umbral_Mind_RP_V2_0_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/Casual-Autopsy/L3-Umbral-Mind-RP-v2.0-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "L3-Umbral-Mind-RP-v2.0-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -161426,6 +161421,61 @@ contextuel:Llama2_7B_SPO_MUSR a enki:EvaluatedMetric ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 6.728385416666669 .
 
+contextuel:Llama3 a enki:LLM ;
+    dct:identifier "https://huggingface.co/sabersaleh/Llama3" ;
+    dct:license contextuel:Mit ;
+    rdfs:label "Llama3" ;
+    enki:hasTotalParameterCount 8.03 .
+
+contextuel:Llama3_BBH a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama3 ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "BBH" ;
+    enki:metricValue 26.70679448256402 .
+
+contextuel:Llama3_CO2 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:CarbonCost ;
+    enki:metricAssignee contextuel:Llama3 ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "CO₂ cost (kg)" ;
+    enki:metricValue 1.3932662824351283 .
+
+contextuel:Llama3_GPQA a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama3 ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "GPQA" ;
+    enki:metricValue 8.05369127516779 .
+
+contextuel:Llama3_IFEval a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama3 ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "IFEval" ;
+    enki:metricValue 33.20777758569484 .
+
+contextuel:Llama3_MATH_Lvl_5 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama3 ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MATH Lvl 5" ;
+    enki:metricValue 5.664652567975831 .
+
+contextuel:Llama3_MMLU_PRO a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama3 ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MMLU-PRO" ;
+    enki:metricValue 24.017434988179662 .
+
+contextuel:Llama3_MUSR a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama3 ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MUSR" ;
+    enki:metricValue 7.101302083333334 .
+
 contextuel:Llama31_8B_En_Emo_V4 a enki:LLM ;
     dct:identifier "https://huggingface.co/iFaz/llama31_8B_en_emo_v4" ;
     rdfs:label "llama31_8B_en_emo_v4" ;
@@ -162087,7 +162137,7 @@ contextuel:Llama3_01_300_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama3_13_45b_Instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/win10/llama3-13.45b-Instruct" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama3-13.45b-Instruct" ;
     enki:hasTotalParameterCount 13.265 .
 
@@ -162964,7 +163014,7 @@ contextuel:Llama3_1_8B_ShiningValiant2_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama3_1_8b_Spaetzle_V90 a enki:LLM ;
     dct:identifier "https://huggingface.co/cstr/llama3.1-8b-spaetzle-v90" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama3.1-8b-spaetzle-v90" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -163128,7 +163178,7 @@ contextuel:Llama3_1_Aloe_Beta_8B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama3_1_Cc_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/nbeerbower/llama3.1-cc-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama3.1-cc-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -164721,7 +164771,7 @@ contextuel:Llama3_3_70B_CogniLink_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama3_70B_Fireplace a enki:LLM ;
     dct:identifier "https://huggingface.co/ValiantLabs/Llama3-70B-Fireplace" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama3-70B-Fireplace" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -164776,7 +164826,7 @@ contextuel:Llama3_70B_Fireplace_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama3_70B_ShiningValiant2 a enki:LLM ;
     dct:identifier "https://huggingface.co/ValiantLabs/Llama3-70B-ShiningValiant2" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama3-70B-ShiningValiant2" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -165048,7 +165098,7 @@ contextuel:Llama3_8B_Abliterated_Spectrum_Slerp_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama3_8b_Cpt_Sahabatai_V1_Instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/GoToCompany/llama3-8b-cpt-sahabatai-v1-instruct" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama3-8b-cpt-sahabatai-v1-instruct" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -165539,7 +165589,7 @@ contextuel:Llama3_B8_Ft_Dis_MUSR a enki:EvaluatedMetric ;
 
 contextuel:LLaMA3_Iterative_DPO_Final a enki:LLM ;
     dct:identifier "https://huggingface.co/RLHFlow/LLaMA3-iterative-DPO-final" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "LLaMA3-iterative-DPO-final" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -165648,7 +165698,7 @@ contextuel:Llama3_Jallabi_40B_S_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama3_Med42_70B a enki:LLM ;
     dct:identifier "https://huggingface.co/m42-health/Llama3-Med42-70B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama3-Med42-70B" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -165757,7 +165807,7 @@ contextuel:Llama3_Medical_Tuned_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama3_OpenBioLLM_70B a enki:LLM ;
     dct:identifier "https://huggingface.co/aaditya/Llama3-OpenBioLLM-70B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama3-OpenBioLLM-70B" ;
     enki:hasTotalParameterCount 70.0 .
 
@@ -165867,7 +165917,7 @@ contextuel:Llama3_SimPO_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama3_TenyxChat_70B a enki:LLM ;
     dct:identifier "https://huggingface.co/tenyx/Llama3-TenyxChat-70B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama3-TenyxChat-70B" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -166966,7 +167016,7 @@ contextuel:Llama_3_1_8B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_1_8B_ArliAI_RPMax_V1_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/ArliAI/Llama-3.1-8B-ArliAI-RPMax-v1.1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3.1-8B-ArliAI-RPMax-v1.1" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -168783,60 +168833,6 @@ contextuel:Llama_3_1_8B_Instruct_Zeus_MUSR a enki:EvaluatedMetric ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 8.569791666666662 .
 
-contextuel:Llama_3_1_8b_ITA a enki:LLM ;
-    dct:identifier "https://huggingface.co/DeepMount00/Llama-3.1-8b-ITA" ;
-    rdfs:label "Llama-3.1-8b-ITA" ;
-    enki:hasTotalParameterCount 8.03 .
-
-contextuel:Llama_3_1_8b_ITA_BBH a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "BBH" ;
-    enki:metricValue 30.933181176860177 .
-
-contextuel:Llama_3_1_8b_ITA_CO2 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:CarbonCost ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "CO₂ cost (kg)" ;
-    enki:metricValue 2.5075735912307806 .
-
-contextuel:Llama_3_1_8b_ITA_GPQA a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "GPQA" ;
-    enki:metricValue 5.033557046979867 .
-
-contextuel:Llama_3_1_8b_ITA_IFEval a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "IFEval" ;
-    enki:metricValue 79.16727616058725 .
-
-contextuel:Llama_3_1_8b_ITA_MATH_Lvl_5 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MATH Lvl 5" ;
-    enki:metricValue 10.876132930513595 .
-
-contextuel:Llama_3_1_8b_ITA_MMLU_PRO a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MMLU-PRO" ;
-    enki:metricValue 31.959219858156025 .
-
-contextuel:Llama_3_1_8b_ITA_MUSR a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MUSR" ;
-    enki:metricValue 11.399218749999998 .
-
 contextuel:Llama_3_1_8b_Ita a enki:LLM ;
     dct:identifier "https://huggingface.co/DeepMount00/Llama-3.1-8b-Ita" ;
     rdfs:label "Llama-3.1-8b-Ita" ;
@@ -168890,6 +168886,60 @@ contextuel:Llama_3_1_8b_Ita_MUSR a enki:EvaluatedMetric ;
     enki:metricAssigner contextuel:Hugging_Face ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 15.156510416666665 .
+
+contextuel:Llama_3_1_8b_ITA a enki:LLM ;
+    dct:identifier "https://huggingface.co/DeepMount00/Llama-3.1-8b-ITA" ;
+    rdfs:label "Llama-3.1-8b-ITA" ;
+    enki:hasTotalParameterCount 8.03 .
+
+contextuel:Llama_3_1_8b_ITA_BBH a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "BBH" ;
+    enki:metricValue 30.933181176860177 .
+
+contextuel:Llama_3_1_8b_ITA_CO2 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:CarbonCost ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "CO₂ cost (kg)" ;
+    enki:metricValue 2.5075735912307806 .
+
+contextuel:Llama_3_1_8b_ITA_GPQA a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "GPQA" ;
+    enki:metricValue 5.033557046979867 .
+
+contextuel:Llama_3_1_8b_ITA_IFEval a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "IFEval" ;
+    enki:metricValue 79.16727616058725 .
+
+contextuel:Llama_3_1_8b_ITA_MATH_Lvl_5 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MATH Lvl 5" ;
+    enki:metricValue 10.876132930513595 .
+
+contextuel:Llama_3_1_8b_ITA_MMLU_PRO a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MMLU-PRO" ;
+    enki:metricValue 31.959219858156025 .
+
+contextuel:Llama_3_1_8b_ITA_MUSR a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MUSR" ;
+    enki:metricValue 11.399218749999998 .
 
 contextuel:Llama_3_1_8B_Lexi_Uncensored a enki:LLM ;
     dct:identifier "https://huggingface.co/Orenguteng/Llama-3.1-8B-Lexi-Uncensored" ;
@@ -170484,7 +170534,7 @@ contextuel:Llama_3_1_8b_Typhoon_V1_03_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_1_8B_Ultra_Instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/Dampfinchen/Llama-3.1-8B-Ultra-Instruct" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3.1-8B-Ultra-Instruct" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -170757,7 +170807,7 @@ contextuel:Llama_3_1_Bonsaikraft_8B_Instruct_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_1_Distilled a enki:LLM ;
     dct:identifier "https://huggingface.co/DeepMount00/Llama-3.1-Distilled" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3.1-Distilled" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -171635,7 +171685,7 @@ contextuel:Llama_3_1_SuperNova_8B_Lite_TIES_With_Base_MUSR a enki:EvaluatedMetri
 
 contextuel:Llama_3_1_SuperNova_Lite a enki:LLM ;
     dct:identifier "https://huggingface.co/arcee-ai/Llama-3.1-SuperNova-Lite" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3.1-SuperNova-Lite" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -176131,7 +176181,7 @@ contextuel:Llama_3_3_70B_Instruct_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_6_3b_V0_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/pszemraj/Llama-3-6.3b-v0.1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-6.3b-v0.1" ;
     enki:hasTotalParameterCount 6.3 .
 
@@ -176186,7 +176236,7 @@ contextuel:Llama_3_6_3b_V0_1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_70B_Instruct_Abliterated a enki:LLM ;
     dct:identifier "https://huggingface.co/failspy/llama-3-70B-Instruct-abliterated" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama-3-70B-Instruct-abliterated" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -176241,7 +176291,7 @@ contextuel:Llama_3_70B_Instruct_Abliterated_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_70B_Instruct_V0_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/MaziyarPanahi/Llama-3-70B-Instruct-v0.1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-70B-Instruct-v0.1" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -176296,7 +176346,7 @@ contextuel:Llama_3_70B_Instruct_V0_1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_70B_Japanese_Suzume_Vector_V0_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/mmnga/Llama-3-70B-japanese-suzume-vector-v0.1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-70B-japanese-suzume-vector-v0.1" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -176351,7 +176401,7 @@ contextuel:Llama_3_70B_Japanese_Suzume_Vector_V0_1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_70B_Orpo_V0_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/dfurman/Llama-3-70B-Orpo-v0.1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-70B-Orpo-v0.1" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -176406,7 +176456,7 @@ contextuel:Llama_3_70B_Orpo_V0_1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_70B_Synthia_V3_5 a enki:LLM ;
     dct:identifier "https://huggingface.co/migtissera/Llama-3-70B-Synthia-v3.5" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-70B-Synthia-v3.5" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -176461,7 +176511,7 @@ contextuel:Llama_3_70B_Synthia_V3_5_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_70Bx2_MOE a enki:LLM ;
     dct:identifier "https://huggingface.co/cloudyu/Llama-3-70Bx2-MOE" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-70Bx2-MOE" ;
     enki:hasTotalParameterCount 126.926 .
 
@@ -176679,7 +176729,7 @@ contextuel:Llama_3_8b_Bnb_4b_Kowiki231101_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8B_Instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/AI-Sweden-Models/Llama-3-8B-instruct" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8B-instruct" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -176734,7 +176784,7 @@ contextuel:Llama_3_8B_Instruct_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8B_Instruct_Abliterated a enki:LLM ;
     dct:identifier "https://huggingface.co/failspy/Llama-3-8B-Instruct-abliterated" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8B-Instruct-abliterated" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -178218,7 +178268,7 @@ contextuel:Llama_3_8b_Instruct_Fpo_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8b_Instruct_Gapo_V2_Bert_F1_Beta10_Gamma0_3_Lr1_0e_6_1minus_Rerun a enki:LLM ;
     dct:identifier "https://huggingface.co/Jimmy19991222/llama-3-8b-instruct-gapo-v2-bert-f1-beta10-gamma0.3-lr1.0e-6-1minus-rerun" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama-3-8b-instruct-gapo-v2-bert-f1-beta10-gamma0.3-lr1.0e-6-1minus-rerun" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -178273,7 +178323,7 @@ contextuel:Llama_3_8b_Instruct_Gapo_V2_Bert_F1_Beta10_Gamma0_3_Lr1_0e_6_1minus_R
 
 contextuel:Llama_3_8b_Instruct_Gapo_V2_Bert_F1_Beta10_Gamma0_3_Lr1_0e_6_Scale_Log a enki:LLM ;
     dct:identifier "https://huggingface.co/Jimmy19991222/llama-3-8b-instruct-gapo-v2-bert_f1-beta10-gamma0.3-lr1.0e-6-scale-log" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama-3-8b-instruct-gapo-v2-bert_f1-beta10-gamma0.3-lr1.0e-6-scale-log" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -178328,7 +178378,7 @@ contextuel:Llama_3_8b_Instruct_Gapo_V2_Bert_F1_Beta10_Gamma0_3_Lr1_0e_6_Scale_Lo
 
 contextuel:Llama_3_8b_Instruct_Gapo_V2_Bert_P_Beta10_Gamma0_3_Lr1_0e_6_Scale_Log a enki:LLM ;
     dct:identifier "https://huggingface.co/Jimmy19991222/llama-3-8b-instruct-gapo-v2-bert_p-beta10-gamma0.3-lr1.0e-6-scale-log" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama-3-8b-instruct-gapo-v2-bert_p-beta10-gamma0.3-lr1.0e-6-scale-log" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -178437,7 +178487,7 @@ contextuel:Llama_3_8b_Instruct_Gapo_V2_Bleu_Beta0_1_No_Length_Scale_Gamma0_4_MUS
 
 contextuel:Llama_3_8b_Instruct_Gapo_V2_Rouge2_Beta10_1minus_Gamma0_3_Rerun a enki:LLM ;
     dct:identifier "https://huggingface.co/Jimmy19991222/llama-3-8b-instruct-gapo-v2-rouge2-beta10-1minus-gamma0.3-rerun" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama-3-8b-instruct-gapo-v2-rouge2-beta10-1minus-gamma0.3-rerun" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -178492,7 +178542,7 @@ contextuel:Llama_3_8b_Instruct_Gapo_V2_Rouge2_Beta10_1minus_Gamma0_3_Rerun_MUSR 
 
 contextuel:Llama_3_8b_Instruct_Gapo_V2_Rouge2_Beta10_Gamma0_3_Lr1_0e_6_Scale_Log a enki:LLM ;
     dct:identifier "https://huggingface.co/Jimmy19991222/llama-3-8b-instruct-gapo-v2-rouge2-beta10-gamma0.3-lr1.0e-6-scale-log" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama-3-8b-instruct-gapo-v2-rouge2-beta10-gamma0.3-lr1.0e-6-scale-log" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -178547,7 +178597,7 @@ contextuel:Llama_3_8b_Instruct_Gapo_V2_Rouge2_Beta10_Gamma0_3_Lr1_0e_6_Scale_Log
 
 contextuel:Llama_3_8b_Instruct_Gapo_V2_rougeL_Beta10_Gamma0_3_Lr1_0e_6_Scale_Log a enki:LLM ;
     dct:identifier "https://huggingface.co/Jimmy19991222/llama-3-8b-instruct-gapo-v2-rougeL-beta10-gamma0.3-lr1.0e-6-scale-log" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama-3-8b-instruct-gapo-v2-rougeL-beta10-gamma0.3-lr1.0e-6-scale-log" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -178602,7 +178652,7 @@ contextuel:Llama_3_8b_Instruct_Gapo_V2_rougeL_Beta10_Gamma0_3_Lr1_0e_6_Scale_Log
 
 contextuel:Llama_3_8B_Instruct_Gradient_1048k a enki:LLM ;
     dct:identifier "https://huggingface.co/gradientai/Llama-3-8B-Instruct-Gradient-1048k" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8B-Instruct-Gradient-1048k" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -178767,7 +178817,7 @@ contextuel:Llama_3_8B_Instruct_MopeyMule_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8B_Instruct_MultiMoose a enki:LLM ;
     dct:identifier "https://huggingface.co/stupidity-ai/Llama-3-8B-Instruct-MultiMoose" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8B-Instruct-MultiMoose" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -180612,7 +180662,7 @@ contextuel:Llama_3_8B_Instruct_V0_9_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8b_Ita a enki:LLM ;
     dct:identifier "https://huggingface.co/DeepMount00/Llama-3-8b-Ita" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8b-Ita" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -180667,7 +180717,7 @@ contextuel:Llama_3_8b_Ita_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8B_Magpie_Align_SFT_V0_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/Magpie-Align/Llama-3-8B-Magpie-Align-SFT-v0.1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8B-Magpie-Align-SFT-v0.1" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -180722,7 +180772,7 @@ contextuel:Llama_3_8B_Magpie_Align_SFT_V0_1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8B_Magpie_Align_SFT_V0_3 a enki:LLM ;
     dct:identifier "https://huggingface.co/Magpie-Align/Llama-3-8B-Magpie-Align-SFT-v0.3" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8B-Magpie-Align-SFT-v0.3" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -180777,7 +180827,7 @@ contextuel:Llama_3_8B_Magpie_Align_SFT_V0_3_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8B_Magpie_Align_V0_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/Magpie-Align/Llama-3-8B-Magpie-Align-v0.1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8B-Magpie-Align-v0.1" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -180832,7 +180882,7 @@ contextuel:Llama_3_8B_Magpie_Align_V0_1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8B_Magpie_Align_V0_3 a enki:LLM ;
     dct:identifier "https://huggingface.co/Magpie-Align/Llama-3-8B-Magpie-Align-v0.3" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8B-Magpie-Align-v0.3" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -180942,7 +180992,7 @@ contextuel:Llama_3_8b_Merged_Linear_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8B_Orpo_V0_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/dfurman/Llama-3-8B-Orpo-v0.1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8B-Orpo-v0.1" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -181051,7 +181101,7 @@ contextuel:Llama_3_8b_Po1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8B_ProLong_512k_Base a enki:LLM ;
     dct:identifier "https://huggingface.co/princeton-nlp/Llama-3-8B-ProLong-512k-Base" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8B-ProLong-512k-Base" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -181106,7 +181156,7 @@ contextuel:Llama_3_8B_ProLong_512k_Base_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8B_ProLong_512k_Instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/princeton-nlp/Llama-3-8B-ProLong-512k-Instruct" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8B-ProLong-512k-Instruct" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -181161,7 +181211,7 @@ contextuel:Llama_3_8B_ProLong_512k_Instruct_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8B_ProLong_64k_Base a enki:LLM ;
     dct:identifier "https://huggingface.co/princeton-nlp/Llama-3-8B-ProLong-64k-Base" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8B-ProLong-64k-Base" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -181216,7 +181266,7 @@ contextuel:Llama_3_8B_ProLong_64k_Base_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8B_ProLong_64k_Instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/princeton-nlp/Llama-3-8B-ProLong-64k-Instruct" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8B-ProLong-64k-Instruct" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -181271,7 +181321,7 @@ contextuel:Llama_3_8B_ProLong_64k_Instruct_MUSR a enki:EvaluatedMetric ;
 
 contextuel:LLaMA_3_8B_SFR_Iterative_DPO_R a enki:LLM ;
     dct:identifier "https://huggingface.co/Salesforce/LLaMA-3-8B-SFR-Iterative-DPO-R" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "LLaMA-3-8B-SFR-Iterative-DPO-R" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -181380,7 +181430,7 @@ contextuel:Llama_3_8b_Stock_Merge_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_8B_Synthia_V3_5 a enki:LLM ;
     dct:identifier "https://huggingface.co/migtissera/Llama-3-8B-Synthia-v3.5" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-8B-Synthia-v3.5" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -182030,7 +182080,7 @@ contextuel:Llama_3_Base_8B_SFT_SLiC_HF_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_Cantonese_8B_Instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/lordjia/Llama-3-Cantonese-8B-Instruct" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-Cantonese-8B-Instruct" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -182085,7 +182135,7 @@ contextuel:Llama_3_Cantonese_8B_Instruct_MUSR a enki:EvaluatedMetric ;
 
 contextuel:LLaMa_3_CursedStock_V2_0_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/PJMixers/LLaMa-3-CursedStock-v2.0-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "LLaMa-3-CursedStock-v2.0-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -182140,7 +182190,7 @@ contextuel:LLaMa_3_CursedStock_V2_0_8B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_Groq_8B_Tool_Use a enki:LLM ;
     dct:identifier "https://huggingface.co/Groq/Llama-3-Groq-8B-Tool-Use" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-Groq-8B-Tool-Use" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -182954,7 +183004,7 @@ contextuel:Llama_3_Instruct_8B_RRHF_V0_2_MUSR a enki:EvaluatedMetric ;
 contextuel:Llama_3_Instruct_8B_SimPO a enki:LLM ;
     dct:identifier "https://huggingface.co/haoranxu/Llama-3-Instruct-8B-SimPO" ;
     dct:identifier "https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-SimPO" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-Instruct-8B-SimPO" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -183016,7 +183066,7 @@ contextuel:Llama_3_Instruct_8B_SimPO_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_Instruct_8B_SimPO_ExPO a enki:LLM ;
     dct:identifier "https://huggingface.co/chujiezheng/Llama-3-Instruct-8B-SimPO-ExPO" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-Instruct-8B-SimPO-ExPO" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -183071,7 +183121,7 @@ contextuel:Llama_3_Instruct_8B_SimPO_ExPO_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_Instruct_8B_SimPO_SPPO_Iter3_Merge a enki:LLM ;
     dct:identifier "https://huggingface.co/grimjim/Llama-3-Instruct-8B-SimPO-SPPO-Iter3-merge" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-Instruct-8B-SimPO-SPPO-Iter3-merge" ;
     enki:hasTotalParameterCount 8.0 .
 
@@ -183461,7 +183511,7 @@ contextuel:Llama_3_Instruct_8B_SPPO_Iter3_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_Instruct_8B_SPPO_Iter3_SimPO_Merge a enki:LLM ;
     dct:identifier "https://huggingface.co/grimjim/Llama-3-Instruct-8B-SPPO-Iter3-SimPO-merge" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-Instruct-8B-SPPO-Iter3-SimPO-merge" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -183516,7 +183566,7 @@ contextuel:Llama_3_Instruct_8B_SPPO_Iter3_SimPO_Merge_MUSR a enki:EvaluatedMetri
 
 contextuel:Llama_3_Korean_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/VIRNECT/llama-3-Korean-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama-3-Korean-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -183571,7 +183621,7 @@ contextuel:Llama_3_Korean_8B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_Korean_8B_R_V_0_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/VIRNECT/llama-3-Korean-8B-r-v-0.1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama-3-Korean-8B-r-v-0.1" ;
     enki:hasTotalParameterCount 16.061 .
 
@@ -183626,7 +183676,7 @@ contextuel:Llama_3_Korean_8B_R_V_0_1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_Korean_Bllossom_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/MLP-KTLim/llama-3-Korean-Bllossom-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama-3-Korean-Bllossom-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -184064,7 +184114,7 @@ contextuel:Llama_3_Nephilim_V3_8B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_NeuralHercules_5_0_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/Locutusque/Llama-3-NeuralHercules-5.0-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-NeuralHercules-5.0-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -184119,7 +184169,7 @@ contextuel:Llama_3_NeuralHercules_5_0_8B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_NeuralMahou_8b a enki:LLM ;
     dct:identifier "https://huggingface.co/lemon07r/llama-3-NeuralMahou-8b" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama-3-NeuralMahou-8b" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -184229,7 +184279,7 @@ contextuel:Llama_3_Reactor_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_RedMagic4_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/lemon07r/Llama-3-RedMagic4-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-RedMagic4-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -184504,7 +184554,7 @@ contextuel:Llama_3_Smaug_8B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_Swallow_8B_Instruct_V0_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/tokyotech-llm/Llama-3-Swallow-8B-Instruct-v0.1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-3-Swallow-8B-Instruct-v0.1" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -184559,7 +184609,7 @@ contextuel:Llama_3_Swallow_8B_Instruct_V0_1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_Yanyuedao_8b_Instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/Sakalti/llama-3-yanyuedao-8b-instruct" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llama-3-yanyuedao-8b-instruct" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -186472,7 +186522,7 @@ contextuel:LLaMA_Pro_8B_Instruct_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_Salad_4x8B_V3 a enki:LLM ;
     dct:identifier "https://huggingface.co/HiroseKoichi/Llama-Salad-4x8B-V3" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-Salad-4x8B-V3" ;
     enki:hasTotalParameterCount 24.942 .
 
@@ -186581,7 +186631,7 @@ contextuel:Llama_Slerp_Merge_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_Spark a enki:LLM ;
     dct:identifier "https://huggingface.co/arcee-ai/Llama-Spark" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Llama-Spark" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -186963,7 +187013,7 @@ contextuel:Llamaft_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llamamerge a enki:LLM ;
     dct:identifier "https://huggingface.co/sumink/llamamerge" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "llamamerge" ;
     enki:hasTotalParameterCount 13.016 .
 
@@ -187018,7 +187068,7 @@ contextuel:Llamamerge_MUSR a enki:EvaluatedMetric ;
 
 contextuel:LLaMAntino_3_ANITA_8B_Inst_DPO_ITA a enki:LLM ;
     dct:identifier "https://huggingface.co/swap-uniba/LLaMAntino-3-ANITA-8B-Inst-DPO-ITA" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "LLaMAntino-3-ANITA-8B-Inst-DPO-ITA" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -191401,7 +191451,7 @@ contextuel:Magro_7B_V1_1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Mahou_1_2a_Llama3_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/flammenai/Mahou-1.2a-llama3-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Mahou-1.2a-llama3-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -192715,7 +192765,7 @@ contextuel:Megatron_Opus_14B_2_0_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Megatron_Opus_14B_2_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/prithivMLmods/Megatron-Opus-14B-2.1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Megatron-Opus-14B-2.1" ;
     enki:hasTotalParameterCount 14.66 .
 
@@ -195166,7 +195216,7 @@ contextuel:Meta_Llama_3_1_8B_Instruct_TIES_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Meta_Llama_3_70B a enki:LLM ;
     dct:identifier "https://huggingface.co/meta-llama/Meta-Llama-3-70B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Meta-Llama-3-70B" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -195221,7 +195271,7 @@ contextuel:Meta_Llama_3_70B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Meta_Llama_3_70B_Instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Meta-Llama-3-70B-Instruct" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -195276,7 +195326,7 @@ contextuel:Meta_Llama_3_70B_Instruct_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Meta_Llama_3_70B_Instruct_Abliterated_V3_5 a enki:LLM ;
     dct:identifier "https://huggingface.co/failspy/Meta-Llama-3-70B-Instruct-abliterated-v3.5" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Meta-Llama-3-70B-Instruct-abliterated-v3.5" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -195331,7 +195381,7 @@ contextuel:Meta_Llama_3_70B_Instruct_Abliterated_V3_5_MUSR a enki:EvaluatedMetri
 
 contextuel:Meta_Llama_3_7B_28Layers a enki:LLM ;
     dct:identifier "https://huggingface.co/aloobun/Meta-Llama-3-7B-28Layers" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Meta-Llama-3-7B-28Layers" ;
     enki:hasTotalParameterCount 7.158 .
 
@@ -195386,7 +195436,7 @@ contextuel:Meta_Llama_3_7B_28Layers_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Meta_Llama_3_8B a enki:LLM ;
     dct:identifier "https://huggingface.co/meta-llama/Meta-Llama-3-8B" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Meta-Llama-3-8B" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -195441,7 +195491,7 @@ contextuel:Meta_Llama_3_8B_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Meta_Llama_3_8B_Instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Meta-Llama-3-8B-Instruct" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -195496,7 +195546,7 @@ contextuel:Meta_Llama_3_8B_Instruct_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Meta_Llama_3_8B_Instruct_Abliterated_V3 a enki:LLM ;
     dct:identifier "https://huggingface.co/failspy/Meta-Llama-3-8B-Instruct-abliterated-v3" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Meta-Llama-3-8B-Instruct-abliterated-v3" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -195606,7 +195656,7 @@ contextuel:Meta_Llama_3_8b_Instruct_Hf_Ortho_Baukit_34fail_3000total_Bf16_MUSR a
 
 contextuel:Meta_Llama_3_8Bee a enki:LLM ;
     dct:identifier "https://huggingface.co/BEE-spoke-data/Meta-Llama-3-8Bee" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Meta-Llama-3-8Bee" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -195661,7 +195711,7 @@ contextuel:Meta_Llama_3_8Bee_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Meta_LLama_3_Cat_Smaug_LLama_70b a enki:LLM ;
     dct:identifier "https://huggingface.co/gbueno86/Meta-LLama-3-Cat-Smaug-LLama-70b" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Meta-LLama-3-Cat-Smaug-LLama-70b" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -197460,7 +197510,7 @@ contextuel:MFANNv0_20_MUSR a enki:EvaluatedMetric ;
 
 contextuel:MFANNv0_21 a enki:LLM ;
     dct:identifier "https://huggingface.co/netcat420/MFANNv0.21" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "MFANNv0.21" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -218806,7 +218856,7 @@ contextuel:Neuralcoven_7B_Slerp_MUSR a enki:EvaluatedMetric ;
 
 contextuel:NeuralDaredevil_8B_Abliterated a enki:LLM ;
     dct:identifier "https://huggingface.co/mlabonne/NeuralDaredevil-8B-abliterated" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "NeuralDaredevil-8B-abliterated" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -225532,7 +225582,7 @@ contextuel:Openchat_3_5_1210_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Openchat_3_6_8b_20240522 a enki:LLM ;
     dct:identifier "https://huggingface.co/openchat/openchat-3.6-8b-20240522" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "openchat-3.6-8b-20240522" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -227291,7 +227341,7 @@ contextuel:Orca_Mini_V3_7b_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Orca_Mini_V5_8b a enki:LLM ;
     dct:identifier "https://huggingface.co/pankajmathur/orca_mini_v5_8b" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "orca_mini_v5_8b" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -227346,7 +227396,7 @@ contextuel:Orca_Mini_V5_8b_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Orca_Mini_V5_8b_Dpo a enki:LLM ;
     dct:identifier "https://huggingface.co/pankajmathur/orca_mini_v5_8b_dpo" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "orca_mini_v5_8b_dpo" ;
     enki:hasTotalParameterCount 8.0 .
 
@@ -227401,7 +227451,7 @@ contextuel:Orca_Mini_V5_8b_Dpo_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Orca_Mini_V5_8b_Orpo a enki:LLM ;
     dct:identifier "https://huggingface.co/pankajmathur/orca_mini_v5_8b_orpo" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "orca_mini_v5_8b_orpo" ;
     enki:hasTotalParameterCount 8.0 .
 
@@ -227456,7 +227506,7 @@ contextuel:Orca_Mini_V5_8b_Orpo_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Orca_Mini_V6_8b a enki:LLM ;
     dct:identifier "https://huggingface.co/pankajmathur/orca_mini_v6_8b" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "orca_mini_v6_8b" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -227511,7 +227561,7 @@ contextuel:Orca_Mini_V6_8b_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Orca_Mini_V6_8b_Dpo a enki:LLM ;
     dct:identifier "https://huggingface.co/pankajmathur/orca_mini_v6_8b_dpo" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "orca_mini_v6_8b_dpo" ;
     enki:hasTotalParameterCount 8.0 .
 
@@ -265625,61 +265675,6 @@ contextuel:QwenSlerp12_7B_MUSR a enki:EvaluatedMetric ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 16.134895833333335 .
 
-contextuel:Qwenslerp2_14B a enki:LLM ;
-    dct:identifier "https://huggingface.co/allknowingroger/Qwenslerp2-14B" ;
-    dct:license contextuel:Apache_2_0 ;
-    rdfs:label "Qwenslerp2-14B" ;
-    enki:hasTotalParameterCount 14.77 .
-
-contextuel:Qwenslerp2_14B_BBH a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "BBH" ;
-    enki:metricValue 50.30369191199753 .
-
-contextuel:Qwenslerp2_14B_CO2 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:CarbonCost ;
-    enki:metricAssignee contextuel:Qwenslerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "CO₂ cost (kg)" ;
-    enki:metricValue 4.528886847953466 .
-
-contextuel:Qwenslerp2_14B_GPQA a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "GPQA" ;
-    enki:metricValue 15.771812080536916 .
-
-contextuel:Qwenslerp2_14B_IFEval a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "IFEval" ;
-    enki:metricValue 50.07136619724553 .
-
-contextuel:Qwenslerp2_14B_MATH_Lvl_5 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MATH Lvl 5" ;
-    enki:metricValue 44.5619335347432 .
-
-contextuel:Qwenslerp2_14B_MMLU_PRO a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MMLU-PRO" ;
-    enki:metricValue 48.92324172576833 .
-
-contextuel:Qwenslerp2_14B_MUSR a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MUSR" ;
-    enki:metricValue 18.883854166666666 .
-
 contextuel:QwenSlerp2_14B a enki:LLM ;
     dct:identifier "https://huggingface.co/hotmailuser/QwenSlerp2-14B" ;
     dct:license contextuel:Apache_2_0 ;
@@ -265734,6 +265729,61 @@ contextuel:QwenSlerp2_14B_MUSR a enki:EvaluatedMetric ;
     enki:metricAssigner contextuel:Hugging_Face ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 19.348697916666666 .
+
+contextuel:Qwenslerp2_14B a enki:LLM ;
+    dct:identifier "https://huggingface.co/allknowingroger/Qwenslerp2-14B" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "Qwenslerp2-14B" ;
+    enki:hasTotalParameterCount 14.77 .
+
+contextuel:Qwenslerp2_14B_BBH a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "BBH" ;
+    enki:metricValue 50.30369191199753 .
+
+contextuel:Qwenslerp2_14B_CO2 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:CarbonCost ;
+    enki:metricAssignee contextuel:Qwenslerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "CO₂ cost (kg)" ;
+    enki:metricValue 4.528886847953466 .
+
+contextuel:Qwenslerp2_14B_GPQA a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "GPQA" ;
+    enki:metricValue 15.771812080536916 .
+
+contextuel:Qwenslerp2_14B_IFEval a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "IFEval" ;
+    enki:metricValue 50.07136619724553 .
+
+contextuel:Qwenslerp2_14B_MATH_Lvl_5 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MATH Lvl 5" ;
+    enki:metricValue 44.5619335347432 .
+
+contextuel:Qwenslerp2_14B_MMLU_PRO a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MMLU-PRO" ;
+    enki:metricValue 48.92324172576833 .
+
+contextuel:Qwenslerp2_14B_MUSR a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MUSR" ;
+    enki:metricValue 18.883854166666666 .
 
 contextuel:QwenSlerp2_3B a enki:LLM ;
     dct:identifier "https://huggingface.co/hotmailuser/QwenSlerp2-3B" ;
@@ -265845,61 +265895,6 @@ contextuel:Qwenslerp2_7B_MUSR a enki:EvaluatedMetric ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 12.817187500000005 .
 
-contextuel:QwenSlerp3_14B a enki:LLM ;
-    dct:identifier "https://huggingface.co/hotmailuser/QwenSlerp3-14B" ;
-    dct:license contextuel:Apache_2_0 ;
-    rdfs:label "QwenSlerp3-14B" ;
-    enki:hasTotalParameterCount 14.766 .
-
-contextuel:QwenSlerp3_14B_BBH a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:QwenSlerp3_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "BBH" ;
-    enki:metricValue 46.50024294429596 .
-
-contextuel:QwenSlerp3_14B_CO2 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:CarbonCost ;
-    enki:metricAssignee contextuel:QwenSlerp3_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "CO₂ cost (kg)" ;
-    enki:metricValue 3.705657276969295 .
-
-contextuel:QwenSlerp3_14B_GPQA a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:QwenSlerp3_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "GPQA" ;
-    enki:metricValue 15.548098434004473 .
-
-contextuel:QwenSlerp3_14B_IFEval a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:QwenSlerp3_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "IFEval" ;
-    enki:metricValue 66.32291209546227 .
-
-contextuel:QwenSlerp3_14B_MATH_Lvl_5 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:QwenSlerp3_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MATH Lvl 5" ;
-    enki:metricValue 43.05135951661632 .
-
-contextuel:QwenSlerp3_14B_MMLU_PRO a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:QwenSlerp3_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MMLU-PRO" ;
-    enki:metricValue 47.362588652482266 .
-
-contextuel:QwenSlerp3_14B_MUSR a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:QwenSlerp3_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MUSR" ;
-    enki:metricValue 19.964322916666664 .
-
 contextuel:Qwenslerp3_14B a enki:LLM ;
     dct:identifier "https://huggingface.co/allknowingroger/Qwenslerp3-14B" ;
     dct:license contextuel:Apache_2_0 ;
@@ -265954,6 +265949,61 @@ contextuel:Qwenslerp3_14B_MUSR a enki:EvaluatedMetric ;
     enki:metricAssigner contextuel:Hugging_Face ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 18.017187499999995 .
+
+contextuel:QwenSlerp3_14B a enki:LLM ;
+    dct:identifier "https://huggingface.co/hotmailuser/QwenSlerp3-14B" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "QwenSlerp3-14B" ;
+    enki:hasTotalParameterCount 14.766 .
+
+contextuel:QwenSlerp3_14B_BBH a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:QwenSlerp3_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "BBH" ;
+    enki:metricValue 46.50024294429596 .
+
+contextuel:QwenSlerp3_14B_CO2 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:CarbonCost ;
+    enki:metricAssignee contextuel:QwenSlerp3_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "CO₂ cost (kg)" ;
+    enki:metricValue 3.705657276969295 .
+
+contextuel:QwenSlerp3_14B_GPQA a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:QwenSlerp3_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "GPQA" ;
+    enki:metricValue 15.548098434004473 .
+
+contextuel:QwenSlerp3_14B_IFEval a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:QwenSlerp3_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "IFEval" ;
+    enki:metricValue 66.32291209546227 .
+
+contextuel:QwenSlerp3_14B_MATH_Lvl_5 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:QwenSlerp3_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MATH Lvl 5" ;
+    enki:metricValue 43.05135951661632 .
+
+contextuel:QwenSlerp3_14B_MMLU_PRO a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:QwenSlerp3_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MMLU-PRO" ;
+    enki:metricValue 47.362588652482266 .
+
+contextuel:QwenSlerp3_14B_MUSR a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:QwenSlerp3_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MUSR" ;
+    enki:metricValue 19.964322916666664 .
 
 contextuel:Qwenslerp3_7B a enki:LLM ;
     dct:identifier "https://huggingface.co/allknowingroger/Qwenslerp3-7B" ;
@@ -277609,7 +277659,7 @@ contextuel:RZA_14B_Sce_MUSR a enki:EvaluatedMetric ;
 
 contextuel:S1_Llama_3_2_3Bx4_MoE a enki:LLM ;
     dct:identifier "https://huggingface.co/cloudyu/S1-Llama-3.2-3Bx4-MoE" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "S1-Llama-3.2-3Bx4-MoE" ;
     enki:hasTotalParameterCount 9.555 .
 
@@ -278103,7 +278153,7 @@ contextuel:Sagui_7B_Instruct_V0_1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:SahabatAI_Llama_11B_Test a enki:LLM ;
     dct:identifier "https://huggingface.co/gmonsoon/SahabatAI-Llama-11B-Test" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "SahabatAI-Llama-11B-Test" ;
     enki:hasTotalParameterCount 11.52 .
 
@@ -278158,7 +278208,7 @@ contextuel:SahabatAI_Llama_11B_Test_MUSR a enki:EvaluatedMetric ;
 
 contextuel:SahabatAI_MediChatIndo_8B_V1 a enki:LLM ;
     dct:identifier "https://huggingface.co/gmonsoon/SahabatAI-MediChatIndo-8B-v1" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "SahabatAI-MediChatIndo-8B-v1" ;
     enki:hasTotalParameterCount 8.03 .
 
@@ -283516,7 +283566,7 @@ contextuel:SKY_Ko_Llama3_1_8B_Lora_Epoch1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:SKY_Ko_Llama3_2_1B_Lora_Epoch3 a enki:LLM ;
     dct:identifier "https://huggingface.co/SkyOrbis/SKY-Ko-Llama3.2-1B-lora-epoch3" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "SKY-Ko-Llama3.2-1B-lora-epoch3" ;
     enki:hasTotalParameterCount 1.236 .
 
@@ -283571,7 +283621,7 @@ contextuel:SKY_Ko_Llama3_2_1B_Lora_Epoch3_MUSR a enki:EvaluatedMetric ;
 
 contextuel:SKY_Ko_Llama3_2_1B_Lora_Epoch5 a enki:LLM ;
     dct:identifier "https://huggingface.co/SkyOrbis/SKY-Ko-Llama3.2-1B-lora-epoch5" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "SKY-Ko-Llama3.2-1B-lora-epoch5" ;
     enki:hasTotalParameterCount 1.236 .
 
@@ -285582,7 +285632,7 @@ contextuel:Smaug_72B_V0_1_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Smaug_Llama_3_70B_Instruct_32K a enki:LLM ;
     dct:identifier "https://huggingface.co/abacusai/Smaug-Llama-3-70B-Instruct-32K" ;
-    dct:license contextuel:Llama3 ;
+    dct:license contextuel:License_Llama3 ;
     rdfs:label "Smaug-Llama-3-70B-Instruct-32K" ;
     enki:hasTotalParameterCount 70.554 .
 
@@ -315342,55 +315392,6 @@ contextuel:ECE_PRYMMAL_0_5B_FT_V3_MUSR_MUSR a enki:EvaluatedMetric ;
     enki:metricValue 3.2539062500000004 .
 
 contextuel:HuggingFaceH4 a enki:LLMProvider .
-
-contextuel:Llama3_BBH a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama3 ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "BBH" ;
-    enki:metricValue 26.70679448256402 .
-
-contextuel:Llama3_CO2 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:CarbonCost ;
-    enki:metricAssignee contextuel:Llama3 ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "CO₂ cost (kg)" ;
-    enki:metricValue 1.3932662824351283 .
-
-contextuel:Llama3_GPQA a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama3 ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "GPQA" ;
-    enki:metricValue 8.05369127516779 .
-
-contextuel:Llama3_IFEval a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama3 ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "IFEval" ;
-    enki:metricValue 33.20777758569484 .
-
-contextuel:Llama3_MATH_Lvl_5 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama3 ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MATH Lvl 5" ;
-    enki:metricValue 5.664652567975831 .
-
-contextuel:Llama3_MMLU_PRO a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama3 ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MMLU-PRO" ;
-    enki:metricValue 24.017434988179662 .
-
-contextuel:Llama3_MUSR a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama3 ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MUSR" ;
-    enki:metricValue 7.101302083333334 .
 
 contextuel:Nexusflow a enki:LLMProvider .
 

@@ -124,6 +124,33 @@ def local_from_model(s: str) -> str:
             cap_parts.append(p[0].upper() + p[1:])
     return "_".join(cap_parts) or "Unnamed"
 
+def extract_params_billion(name: str) -> float | None:
+    """
+    Extract the total parameter count (in billions) from a model name.
+
+    Recognises patterns like '70B', '1.5B', '350M', '270M'.
+    Returns None if no parameter count is found.
+
+    Heuristics:
+      - Match <number>(B|b) or <number>(M|m) at word boundaries.
+      - Skip MoE active-parameter tokens like 'A22B', 'x7b'.
+      - If multiple matches, take the largest (total params > active params).
+    """
+    matches = re.findall(r'(?<![AaXx])(\d+(?:\.\d+)?)\s*([BbMm])\b', name)
+    if not matches:
+        return None
+    candidates = []
+    for num_str, suffix in matches:
+        try:
+            val = float(num_str)
+        except ValueError:
+            continue
+        if suffix.upper() == 'B':
+            candidates.append(val)
+        elif suffix.upper() == 'M':
+            candidates.append(val / 1000.0)
+    return max(candidates) if candidates else None
+
 def normalize_license_local(lic: str) -> str:
     if not lic:
         return ""
@@ -247,6 +274,12 @@ def build_graph(rows: list[dict]) -> Graph:
         "The Open LLM Leaderboard is a HuggingFace community benchmark that evaluates open-source LLMs across multiple standardised tasks."
     )))
 
+    # Pre-collect all model URI locals so we can detect license/model collisions
+    model_locals = {local_from_model(r["fullname"]) for r in rows if r["fullname"]}
+
+    # Track which license locals needed collision-avoidance prefixing
+    prefixed_licenses = set()
+
     # Collect manufacturer and provisioner relationships
     # manufacturer_org → set of model URIs
     manufacturer_models = defaultdict(set)
@@ -270,18 +303,27 @@ def build_graph(rows: list[dict]) -> Graph:
         # License
         if r["license"] and r["license"] != "-":
             lic_local = normalize_license_local(r["license"])
+            # Prefix with License_ only when the license local collides with a model local
+            if lic_local in model_locals:
+                prefixed_licenses.add((r["license"], lic_local))
+                lic_local = f"License_{lic_local}"
             lic_uri = URIRef(str(C) + lic_local)
             g.add((lic_uri, RDF.type, DCT.License))
             g.add((lic_uri, RDFS.label, Literal(r["license"])))
             g.add((model_uri, DCT.license, lic_uri))
 
-        # Parameters
+        # Parameters (CSV value first, then name-based extraction as fallback)
+        params_b = None
         if r["params_b"]:
             try:
-                g.add((model_uri, ENKI.hasTotalParameterCount,
-                       Literal(float(r["params_b"]), datatype=XSD.double)))
+                params_b = float(r["params_b"])
             except (ValueError, TypeError):
                 pass
+        if params_b is None:
+            params_b = extract_params_billion(r["fullname"])
+        if params_b is not None:
+            g.add((model_uri, ENKI.hasTotalParameterCount,
+                   Literal(params_b, datatype=XSD.double)))
 
         # Benchmark scores as EvaluatedMetric
         for bm_key, bm_val in r["benchmarks"].items():
@@ -360,6 +402,12 @@ def build_graph(rows: list[dict]) -> Graph:
     print(f"Manufacturers: {len(manufacturer_models)} orgs ({mfr_count} models)")
     print(f"Provisioners:  {len(provisioner_provisionings)} orgs ({prov_count} provisionings)")
     print(f"Dual (mfr+prov): {len(dual_orgs)} | Mfr-only: {len(mfr_only)} | Prov-only: {len(prov_only)}")
+    if prefixed_licenses:
+        print(f"License URI collisions resolved ({len(prefixed_licenses)}):")
+        for lic_label, lic_local in sorted(prefixed_licenses):
+            print(f"  '{lic_label}' ({lic_local}) → License_{lic_local}")
+    else:
+        print("No license/model URI collisions detected.")
 
     return g
 
