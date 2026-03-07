@@ -580,6 +580,17 @@ def reorder_and_serialize(g: Graph, out_path: Path):
                 ordered_subjects.append(p)
                 seen_subjects.add(p)
 
+    # 2b. Provider-only orgs (not also manufacturers), each followed by their provisionings
+    providers = sorted(set(g.subjects(RDF.type, ENKI.LLMProvider)), key=lambda s: str(s).lower())
+    for prov_org in providers:
+        if prov_org not in seen_subjects:
+            ordered_subjects.append(prov_org)
+            seen_subjects.add(prov_org)
+        for p in provisionings_by_org.get(prov_org, []):
+            if p not in seen_subjects:
+                ordered_subjects.append(p)
+                seen_subjects.add(p)
+
     # 3. Any remaining provisionings (shouldn't happen, but safety net)
     add_block(provisionings)
 
