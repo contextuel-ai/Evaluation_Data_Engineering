@@ -300,65 +300,19 @@ def add_arena_evaluations(g: Graph, rows: list[dict]):
     g.add((e_mt, ENKI.evaluator, lm_arena))
     g.add((e_mmlu, ENKI.evaluator, lm_arena))
 
-    # --- MMLU Capabilities ---
+    # --- Capability URIs (instances declared in proposed_capabilities.ttl) ---
+    # MMLU
     c1 = URIRef(str(LM) + local_from_label("GeneralKnowledgeReasoning"))
     c2 = URIRef(str(LM) + local_from_label("MultiStepReasoning"))
     c3 = URIRef(str(LM) + local_from_label("FactualRecall"))
     c4 = URIRef(str(LM) + local_from_label("AcademicDomainKnowledge"))
 
-    g.add((c1, RDF.type, ENKI.Capability))
-    g.add((c1, RDFS.label, Literal("General Knowledge Reasoning")))
-    g.add((c1, DCT.description, Literal(
-        "The ability of an LLM to apply broad academic knowledge across multiple disciplines to correctly answer domain-specific questions."
-    )))
-    g.add((c2, RDF.type, ENKI.Capability))
-    g.add((c2, RDFS.label, Literal("Multi-Step Reasoning")))
-    g.add((c2, DCT.description, Literal(
-        "The ability of an LLM to perform sequential logical operations to arrive at a correct conclusion."
-    )))
-    g.add((c3, RDF.type, ENKI.Capability))
-    g.add((c3, RDFS.label, Literal("Factual Recall")))
-    g.add((c3, DCT.description, Literal(
-        "The ability of an LLM to accurately retrieve and reproduce learned factual information from its training data."
-    )))
-    g.add((c4, RDF.type, ENKI.Capability))
-    g.add((c4, RDFS.label, Literal("Academic Domain Knowledge")))
-    g.add((c4, DCT.description, Literal(
-        "The ability of an LLM to demonstrate understanding of specialized subject matter such as law, medicine, physics, or history."
-    )))
-
-    # --- MT-Bench Capabilities ---
+    # MT-Bench
     c5 = URIRef(str(LM) + local_from_label("InstructionFollowing"))
     c6 = URIRef(str(LM) + local_from_label("ConversationalReasoning"))
     c7 = URIRef(str(LM) + local_from_label("MultiTurnDialogue"))
     c8 = URIRef(str(LM) + local_from_label("ContextRetention"))
     c9 = URIRef(str(LM) + local_from_label("ResponseHelpfulness"))
-
-    g.add((c5, RDF.type, ENKI.Capability))
-    g.add((c5, RDFS.label, Literal("Instruction Following")))
-    g.add((c5, DCT.description, Literal(
-        "The ability of an LLM to understand and correctly execute user-provided instructions."
-    )))
-    g.add((c6, RDF.type, ENKI.Capability))
-    g.add((c6, RDFS.label, Literal("Conversational Reasoning")))
-    g.add((c6, DCT.description, Literal(
-        "The ability of an LLM to maintain logical consistency and coherence throughout a dialogue."
-    )))
-    g.add((c7, RDF.type, ENKI.Capability))
-    g.add((c7, RDFS.label, Literal("Multi-Turn Dialogue")))
-    g.add((c7, DCT.description, Literal(
-        "The ability of an LLM to sustain contextually appropriate responses across multiple conversational exchanges."
-    )))
-    g.add((c8, RDF.type, ENKI.Capability))
-    g.add((c8, RDFS.label, Literal("Context Retention")))
-    g.add((c8, DCT.description, Literal(
-        "The ability of an LLM to remember and appropriately use prior information within an ongoing interaction."
-    )))
-    g.add((c9, RDF.type, ENKI.Capability))
-    g.add((c9, RDFS.label, Literal("Response Helpfulness")))
-    g.add((c9, DCT.description, Literal(
-        "The ability of an LLM to generate responses that are useful, relevant, and aligned with user intent."
-    )))
 
     g.add((e_mmlu, ENKI.testsCapability, c1))
     g.add((e_mmlu, ENKI.testsCapability, c2))
@@ -467,7 +421,6 @@ def reorder_and_serialize(g: Graph, out_path: Path):
     manufacturers = sorted(set(g.subjects(RDF.type, ENKI.LLMManufacturer)), key=lambda s: str(s).lower())
     provisionings = sorted(set(g.subjects(RDF.type, ENKI.LLMProvisioning)), key=lambda s: str(s).lower())
     evaluations = sorted(set(g.subjects(RDF.type, ENKI.Evaluation)), key=lambda s: str(s).lower())
-    capabilities = sorted(set(g.subjects(RDF.type, ENKI.Capability)), key=lambda s: str(s).lower())
 
     ai_orgs_all = sorted(set(g.subjects(RDF.type, ENKI.AIOrganization)), key=lambda s: str(s).lower())
     lm_arena_uri = URIRef(str(LM) + "LM_Arena")
@@ -538,13 +491,10 @@ def reorder_and_serialize(g: Graph, out_path: Path):
     # 5. Evaluations
     add_block(evaluations)
 
-    # 6. Capabilities
-    add_block(capabilities)
-
-    # 7. AI Orgs
+    # 6. AI Orgs
     add_block(ai_orgs)
 
-    # 8. LLMs, each followed by their metrics
+    # 7. LLMs, each followed by their metrics
     for llm in llms:
         if llm in seen_subjects:
             continue
@@ -555,7 +505,7 @@ def reorder_and_serialize(g: Graph, out_path: Path):
                 ordered_subjects.append(m)
                 seen_subjects.add(m)
 
-    # 9. Anything remaining
+    # 8. Anything remaining
     for s in sorted(set(g.subjects()), key=lambda s: str(s).lower()):
         if s not in seen_subjects:
             ordered_subjects.append(s)

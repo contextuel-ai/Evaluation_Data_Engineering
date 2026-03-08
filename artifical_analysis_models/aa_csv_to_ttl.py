@@ -418,18 +418,9 @@ def build_graph(rows: list[dict]) -> Graph:
 
 # _________ CAPABILITIES __________
 
-def add_capabilities(g: Graph):
-    """Add enki:Capability instances (quality benchmarks only — speed/price are not capabilities)."""
-    seen = set()
-    for bm_key, caps in BENCHMARK_CAPABILITIES.items():
-        for cap_local, cap_label, cap_desc in caps:
-            if cap_local in seen:
-                continue
-            seen.add(cap_local)
-            cap_uri = URIRef(str(C) + cap_local)
-            g.add((cap_uri, RDF.type, ENKI.Capability))
-            g.add((cap_uri, RDFS.label, Literal(cap_label)))
-            g.add((cap_uri, DCT.description, Literal(cap_desc)))
+# _________ CAPABILITIES __________
+# Capability instances are declared in proposed_capabilities.ttl.
+# We only emit testsCapability links from Evaluations here.
 
 
 # _________ EVALUATIONS __________
@@ -559,7 +550,6 @@ def reorder_and_serialize(g: Graph, out_path: Path):
     manufacturers = sorted(set(g.subjects(RDF.type, ENKI.LLMManufacturer)), key=lambda s: str(s).lower())
     provisionings = sorted(set(g.subjects(RDF.type, ENKI.LLMProvisioning)), key=lambda s: str(s).lower())
     evaluations = sorted(set(g.subjects(RDF.type, ENKI.Evaluation)), key=lambda s: str(s).lower())
-    capabilities = sorted(set(g.subjects(RDF.type, ENKI.Capability)), key=lambda s: str(s).lower())
     ai_orgs = sorted(set(g.subjects(RDF.type, ENKI.AIOrganization)), key=lambda s: str(s).lower())
     llms = sorted(set(g.subjects(RDF.type, ENKI.LLM)), key=lambda s: str(s).lower())
     metrics = set(g.subjects(RDF.type, ENKI.EvaluatedMetric))
@@ -625,13 +615,10 @@ def reorder_and_serialize(g: Graph, out_path: Path):
     # 5. Evaluations
     add_block(evaluations)
 
-    # 6. Capabilities
-    add_block(capabilities)
-
-    # 7. AI Orgs
+    # 6. AI Orgs
     add_block(ai_orgs)
 
-    # 8. LLMs, each followed by their metrics
+    # 7. LLMs, each followed by their metrics
     for llm in llms:
         if llm in seen_subjects:
             continue
@@ -642,7 +629,7 @@ def reorder_and_serialize(g: Graph, out_path: Path):
                 ordered_subjects.append(m)
                 seen_subjects.add(m)
 
-    # 9. Anything remaining
+    # 8. Anything remaining
     for s in sorted(set(g.subjects()), key=lambda s: str(s).lower()):
         if s not in seen_subjects:
             ordered_subjects.append(s)
@@ -671,7 +658,6 @@ def main():
 
     print(f"Building graph from {len(rows)} models...")
     g = build_graph(rows)
-    add_capabilities(g)
     add_evaluations(g, rows)
     reorder_and_serialize(g, OUTPUT_TTL)
 
