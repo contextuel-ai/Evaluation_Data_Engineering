@@ -257,7 +257,7 @@ def read_rows(path: Path) -> list[dict]:
 
 ORG_LOCAL = "Hugging_Face"
 
-def build_graph(rows: list[dict]) -> Graph:
+def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
     g = Graph()
     g.bind("enki", ENKI)
     g.bind("contextuel", C)
@@ -281,10 +281,11 @@ def build_graph(rows: list[dict]) -> Graph:
     prefixed_licenses = set()
 
     # Collect manufacturer and provisioner relationships
-    # manufacturer_org → set of model URIs
     manufacturer_models = defaultdict(set)
-    # provisioner_org → list of (model_uri, model_local, model_label)
     provisioner_provisionings = defaultdict(list)
+
+    # model_uri → [metric_uri, …] for serialisation ordering
+    metrics_by_llm: dict[URIRef, list[URIRef]] = defaultdict(list)
 
     for r in rows:
         local = local_from_model(r["fullname"])
@@ -338,6 +339,7 @@ def build_graph(rows: list[dict]) -> Graph:
             g.add((metric_uri, ENKI.metricAssigner, hf_org))
             g.add((metric_uri, ENKI.metricUnit, Literal(bm_label)))
             g.add((metric_uri, ENKI.metricValue, Literal(bm_val)))
+            metrics_by_llm[model_uri].append(metric_uri)
 
         # --- Manufacturer logic (all models with an org) ---
         if not r["org"]:
@@ -409,11 +411,16 @@ def build_graph(rows: list[dict]) -> Graph:
     else:
         print("No license/model URI collisions detected.")
 
-    return g
+    # Sort each model's metrics for deterministic output
+    for model_uri in metrics_by_llm:
+        metrics_by_llm[model_uri] = sorted(metrics_by_llm[model_uri], key=lambda s: str(s).lower())
+
+    return g, metrics_by_llm
 
 # _________ EVALUATIONS __________
 
 def add_evaluations(g: Graph, rows: list[dict]):
+    """Add Evaluation triples (evaluees, metricEvaluated, testsCapability)."""
     hf_org = URIRef(str(C) + ORG_LOCAL)
 
     eval_uris = {}
@@ -442,7 +449,7 @@ def add_evaluations(g: Graph, rows: list[dict]):
 
 # _________ SERIALISATION __________
 
-def reorder_and_serialize(g: Graph, out_path: Path):
+def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef, list[URIRef]]):
     PREFIX_MAP = OrderedDict([
         (str(C),     "contextuel:"),
         (str(ENKI),  "enki:"),
@@ -510,11 +517,6 @@ def reorder_and_serialize(g: Graph, out_path: Path):
     evaluations = sorted(set(g.subjects(RDF.type, ENKI.Evaluation)), key=lambda s: str(s).lower())
     ai_orgs = sorted(set(g.subjects(RDF.type, ENKI.AIOrganization)), key=lambda s: str(s).lower())
     llms = sorted(set(g.subjects(RDF.type, ENKI.LLM)), key=lambda s: str(s).lower())
-    metrics = set(g.subjects(RDF.type, ENKI.EvaluatedMetric))
-
-    def local_name_of(u):
-        s = str(u)
-        return s.rstrip("/").split("/")[-1]
 
     # Group provisionings by their provider org
     provisionings_by_org = defaultdict(list)
@@ -525,23 +527,6 @@ def reorder_and_serialize(g: Graph, out_path: Path):
         provisionings_by_org[org_uri] = sorted(
             provisionings_by_org[org_uri], key=lambda s: str(s).lower()
         )
-
-    metrics_by_llm = defaultdict(list)
-
-    # Sort LLMs by local name length DESCENDING so longer names match first
-    llms_by_length = sorted(llms, key=lambda u: len(local_name_of(u)), reverse=True)
-    claimed_metrics = set()
-
-    for llm in llms_by_length:
-        llm_loc = local_name_of(llm)
-        for m in metrics:
-            if m in claimed_metrics:
-                continue
-            mloc = local_name_of(m)
-            if mloc.startswith(llm_loc + "_"):
-                metrics_by_llm[llm].append(m)
-                claimed_metrics.add(m)
-        metrics_by_llm[llm] = sorted(set(metrics_by_llm[llm]), key=lambda s: str(s).lower())
 
     ordered_subjects = []
 
@@ -622,9 +607,9 @@ def main():
         return
 
     print(f"Building graph from {len(rows)} models...")
-    g = build_graph(rows)
+    g, metrics_by_llm = build_graph(rows)
     add_evaluations(g, rows)
-    reorder_and_serialize(g, OUTPUT_TTL)
+    reorder_and_serialize(g, OUTPUT_TTL, metrics_by_llm)
 
 if __name__ == "__main__":
     main()

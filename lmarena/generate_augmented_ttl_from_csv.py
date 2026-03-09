@@ -139,13 +139,16 @@ def read_rows(path: Path) -> list[dict]:
 
 # _________ BUILD GRAPH __________
 
-def build_graph(rows: list[dict]) -> Graph:
+def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
     g = Graph()
     g.bind("enki", ENKI)
     g.bind("contextuel", LM)
     g.bind("dct", DCT)
     g.bind("rdfs", RDFS)
     g.bind("xsd", XSD)
+
+    # Metrics-by-LLM map — populated as metrics are created
+    metrics_by_llm: dict[URIRef, list[URIRef]] = defaultdict(list)
 
     # LM Arena org
     lm_arena = URIRef(str(LM) + local_from_label("LM Arena"))
@@ -248,6 +251,7 @@ def build_graph(rows: list[dict]) -> Graph:
                 g.add((metric_uri, ENKI.metricAssigner, lm_arena))
                 g.add((metric_uri, ENKI.metricUnit, Literal("MT-Bench")))
                 g.add((metric_uri, ENKI.metricAssesses, LM.Quality))
+                metrics_by_llm[model_uri].append(metric_uri)
             except (ValueError, TypeError):
                 pass
 
@@ -263,6 +267,7 @@ def build_graph(rows: list[dict]) -> Graph:
                 g.add((metric_uri, ENKI.metricAssigner, lm_arena))
                 g.add((metric_uri, ENKI.metricUnit, Literal("MMLU")))
                 g.add((metric_uri, ENKI.metricAssesses, LM.Quality))
+                metrics_by_llm[model_uri].append(metric_uri)
             except (ValueError, TypeError):
                 pass
 
@@ -283,7 +288,11 @@ def build_graph(rows: list[dict]) -> Graph:
     provisioned_count = sum(len(m) for m in provider_provisionings.values())
     print(f"Provisioned models: {provisioned_count} across {len(provider_provisionings)} providers")
 
-    return g
+    # Sort each model's metrics for deterministic output
+    for model_uri in metrics_by_llm:
+        metrics_by_llm[model_uri] = sorted(metrics_by_llm[model_uri], key=lambda s: str(s).lower())
+
+    return g, metrics_by_llm
 
 # _________ CAPABILITIES + EVALUATIONS __________
 
@@ -344,15 +353,7 @@ def add_arena_evaluations(g: Graph, rows: list[dict]):
 
 # _________ SERIALISATION __________
 
-def reorder_and_serialize(g: Graph, out_path: Path):
-    from urllib.parse import urldefrag
-
-    def local_name_of(u: URIRef) -> str:
-        s = str(u)
-        s, _frag = urldefrag(s)
-        if "#" in str(u):
-            return str(u).split("#")[-1]
-        return s.rstrip("/").split("/")[-1]
+def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef, list[URIRef]]):
 
     PREFIX_MAP = OrderedDict([
         (str(LM),   "contextuel:"),
@@ -432,7 +433,6 @@ def reorder_and_serialize(g: Graph, out_path: Path):
         ai_orgs = ai_orgs_all
 
     llms = sorted(set(g.subjects(RDF.type, ENKI.LLM)), key=lambda s: str(s).lower())
-    metrics = set(g.subjects(RDF.type, ENKI.EvaluatedMetric))
 
     # Group provisionings by provider org
     provisionings_by_org = defaultdict(list)
@@ -443,23 +443,6 @@ def reorder_and_serialize(g: Graph, out_path: Path):
         provisionings_by_org[org_uri] = sorted(
             provisionings_by_org[org_uri], key=lambda s: str(s).lower()
         )
-
-    # Group metrics by LLM
-    metrics_by_llm = defaultdict(list)
-    metric_locals = {m: local_name_of(m) for m in metrics}
-    metric_items = list(metric_locals.items())
-    llms_by_length = sorted(llms, key=lambda u: len(local_name_of(u)), reverse=True)
-    claimed_metrics = set()
-
-    for llm in llms_by_length:
-        llm_loc = local_name_of(llm)
-        for m, mloc in metric_items:
-            if m in claimed_metrics:
-                continue
-            if mloc.startswith(llm_loc + "_"):
-                metrics_by_llm[llm].append(m)
-                claimed_metrics.add(m)
-        metrics_by_llm[llm] = sorted(set(metrics_by_llm[llm]), key=lambda s: str(s).lower())
 
     ordered_subjects = []
 
@@ -532,9 +515,9 @@ def main():
         return
 
     print(f"Building graph from {len(rows)} models...")
-    g = build_graph(rows)
+    g, metrics_by_llm = build_graph(rows)
     add_arena_evaluations(g, rows)
-    reorder_and_serialize(g, OUT_TTL)
+    reorder_and_serialize(g, OUT_TTL, metrics_by_llm)
 
 if __name__ == "__main__":
     main()

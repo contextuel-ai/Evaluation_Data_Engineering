@@ -71356,46 +71356,6 @@ contextuel:HF_Open_LLM_Leaderboard_MUSR a enki:Evaluation ;
     enki:testsCapability contextuel:CommonsenseReasoning ;
     enki:testsCapability contextuel:MultiStepReasoning .
 
-contextuel:AcademicDomainKnowledge a enki:Capability ;
-    dct:description "The ability of an LLM to demonstrate understanding of specialized subject matter such as law, medicine, physics, or history." ;
-    rdfs:label "Academic Domain Knowledge" .
-
-contextuel:CausalReasoning a enki:Capability ;
-    dct:description "The ability of an LLM to identify, evaluate, and reason about cause-and-effect relationships between events, actions, and outcomes, including counterfactual reasoning and distinguishing correlation from causation." ;
-    rdfs:label "Causal Reasoning" .
-
-contextuel:CommonsenseReasoning a enki:Capability ;
-    dct:description "The ability of an LLM to draw plausible inferences based on implicit world knowledge, everyday physical and social understanding, and narrative comprehension, even when the reasoning steps are not formally specified." ;
-    rdfs:label "Commonsense Reasoning" .
-
-contextuel:ExpertLevelProblemSolving a enki:Capability ;
-    dct:description "The ability of an LLM to solve problems that require graduate-level or professional-level expertise in a specialized domain, integrating deep domain knowledge with sophisticated reasoning that resists simple lookup or surface-level understanding." ;
-    rdfs:label "Expert-Level Problem Solving" .
-
-contextuel:FactualRecall a enki:Capability ;
-    dct:description "The ability of an LLM to accurately retrieve and reproduce learned factual information from its training data." ;
-    rdfs:label "Factual Recall" .
-
-contextuel:FormalReasoning a enki:Capability ;
-    dct:description "The ability of an LLM to apply structured logical rules and simulate procedural execution, including syllogistic reasoning, Boolean logic evaluation, truth-table analysis, state tracking, and step-by-step algorithmic operations." ;
-    rdfs:label "Formal Reasoning" .
-
-contextuel:GeneralKnowledgeReasoning a enki:Capability ;
-    dct:description "The ability of an LLM to apply broad academic knowledge across multiple disciplines to correctly answer domain-specific questions." ;
-    rdfs:label "General Knowledge Reasoning" .
-
-contextuel:InstructionFollowing a enki:Capability ;
-    dct:description "The ability of an LLM to understand and correctly execute user-provided instructions." ;
-    rdfs:label "Instruction Following" .
-
-contextuel:MathematicalReasoning a enki:Capability ;
-    dct:description "The ability of an LLM to solve mathematical problems requiring formal symbolic manipulation, numerical computation, and multi-step logical derivation across domains such as algebra, geometry, number theory, combinatorics, and calculus." ;
-    rdfs:label "Mathematical Reasoning" .
-
-contextuel:MultiStepReasoning a enki:Capability ;
-    dct:description "The ability of an LLM to perform sequential logical operations to arrive at a correct conclusion." ;
-    rdfs:label "Multi-Step Reasoning" .
-
 contextuel:Hugging_Face a enki:AIOrganization ;
     dct:description "The Open LLM Leaderboard is a HuggingFace community benchmark that evaluates open-source LLMs across multiple standardised tasks." ;
     dct:identifier "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard" ;
@@ -168843,60 +168803,6 @@ contextuel:Llama_3_1_8B_Instruct_Zeus_MUSR a enki:EvaluatedMetric ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 8.569791666666662 .
 
-contextuel:Llama_3_1_8b_ITA a enki:LLM ;
-    dct:identifier "https://huggingface.co/DeepMount00/Llama-3.1-8b-ITA" ;
-    rdfs:label "Llama-3.1-8b-ITA" ;
-    enki:hasTotalParameterCount 8.03 .
-
-contextuel:Llama_3_1_8b_ITA_BBH a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "BBH" ;
-    enki:metricValue 30.933181176860177 .
-
-contextuel:Llama_3_1_8b_ITA_CO2 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:CarbonCost ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "CO₂ cost (kg)" ;
-    enki:metricValue 2.5075735912307806 .
-
-contextuel:Llama_3_1_8b_ITA_GPQA a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "GPQA" ;
-    enki:metricValue 5.033557046979867 .
-
-contextuel:Llama_3_1_8b_ITA_IFEval a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "IFEval" ;
-    enki:metricValue 79.16727616058725 .
-
-contextuel:Llama_3_1_8b_ITA_MATH_Lvl_5 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MATH Lvl 5" ;
-    enki:metricValue 10.876132930513595 .
-
-contextuel:Llama_3_1_8b_ITA_MMLU_PRO a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MMLU-PRO" ;
-    enki:metricValue 31.959219858156025 .
-
-contextuel:Llama_3_1_8b_ITA_MUSR a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MUSR" ;
-    enki:metricValue 11.399218749999998 .
-
 contextuel:Llama_3_1_8b_Ita a enki:LLM ;
     dct:identifier "https://huggingface.co/DeepMount00/Llama-3.1-8b-Ita" ;
     rdfs:label "Llama-3.1-8b-Ita" ;
@@ -168950,6 +168856,60 @@ contextuel:Llama_3_1_8b_Ita_MUSR a enki:EvaluatedMetric ;
     enki:metricAssigner contextuel:Hugging_Face ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 15.156510416666665 .
+
+contextuel:Llama_3_1_8b_ITA a enki:LLM ;
+    dct:identifier "https://huggingface.co/DeepMount00/Llama-3.1-8b-ITA" ;
+    rdfs:label "Llama-3.1-8b-ITA" ;
+    enki:hasTotalParameterCount 8.03 .
+
+contextuel:Llama_3_1_8b_ITA_BBH a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "BBH" ;
+    enki:metricValue 30.933181176860177 .
+
+contextuel:Llama_3_1_8b_ITA_CO2 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:CarbonCost ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "CO₂ cost (kg)" ;
+    enki:metricValue 2.5075735912307806 .
+
+contextuel:Llama_3_1_8b_ITA_GPQA a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "GPQA" ;
+    enki:metricValue 5.033557046979867 .
+
+contextuel:Llama_3_1_8b_ITA_IFEval a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "IFEval" ;
+    enki:metricValue 79.16727616058725 .
+
+contextuel:Llama_3_1_8b_ITA_MATH_Lvl_5 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MATH Lvl 5" ;
+    enki:metricValue 10.876132930513595 .
+
+contextuel:Llama_3_1_8b_ITA_MMLU_PRO a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MMLU-PRO" ;
+    enki:metricValue 31.959219858156025 .
+
+contextuel:Llama_3_1_8b_ITA_MUSR a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_ITA ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MUSR" ;
+    enki:metricValue 11.399218749999998 .
 
 contextuel:Llama_3_1_8B_Lexi_Uncensored a enki:LLM ;
     dct:identifier "https://huggingface.co/Orenguteng/Llama-3.1-8B-Lexi-Uncensored" ;
@@ -222524,60 +222484,6 @@ contextuel:Occiglot_7b_Es_En_Instruct_MUSR a enki:EvaluatedMetric ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 4.452083333333333 .
 
-contextuel:ODB_14b_Sce a enki:LLM ;
-    dct:identifier "https://huggingface.co/Quazim0t0/ODB-14b-sce" ;
-    rdfs:label "ODB-14b-sce" ;
-    enki:hasTotalParameterCount 14.66 .
-
-contextuel:ODB_14b_Sce_BBH a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14b_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "BBH" ;
-    enki:metricValue 56.192610781815496 .
-
-contextuel:ODB_14b_Sce_CO2 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:CarbonCost ;
-    enki:metricAssignee contextuel:ODB_14b_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "CO₂ cost (kg)" ;
-    enki:metricValue 0.9916176982845046 .
-
-contextuel:ODB_14b_Sce_GPQA a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14b_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "GPQA" ;
-    enki:metricValue 14.988814317673372 .
-
-contextuel:ODB_14b_Sce_IFEval a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14b_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "IFEval" ;
-    enki:metricValue 70.15973173402128 .
-
-contextuel:ODB_14b_Sce_MATH_Lvl_5 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14b_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MATH Lvl 5" ;
-    enki:metricValue 41.1631419939577 .
-
-contextuel:ODB_14b_Sce_MMLU_PRO a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14b_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MMLU-PRO" ;
-    enki:metricValue 49.01558806146573 .
-
-contextuel:ODB_14b_Sce_MUSR a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14b_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MUSR" ;
-    enki:metricValue 16.49947916666667 .
-
 contextuel:ODB_14B_Sce a enki:LLM ;
     dct:identifier "https://huggingface.co/Quazim0t0/ODB-14B-sce" ;
     rdfs:label "ODB-14B-sce" ;
@@ -222631,6 +222537,60 @@ contextuel:ODB_14B_Sce_MUSR a enki:EvaluatedMetric ;
     enki:metricAssigner contextuel:Hugging_Face ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 7.277343750000001 .
+
+contextuel:ODB_14b_Sce a enki:LLM ;
+    dct:identifier "https://huggingface.co/Quazim0t0/ODB-14b-sce" ;
+    rdfs:label "ODB-14b-sce" ;
+    enki:hasTotalParameterCount 14.66 .
+
+contextuel:ODB_14b_Sce_BBH a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14b_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "BBH" ;
+    enki:metricValue 56.192610781815496 .
+
+contextuel:ODB_14b_Sce_CO2 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:CarbonCost ;
+    enki:metricAssignee contextuel:ODB_14b_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "CO₂ cost (kg)" ;
+    enki:metricValue 0.9916176982845046 .
+
+contextuel:ODB_14b_Sce_GPQA a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14b_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "GPQA" ;
+    enki:metricValue 14.988814317673372 .
+
+contextuel:ODB_14b_Sce_IFEval a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14b_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "IFEval" ;
+    enki:metricValue 70.15973173402128 .
+
+contextuel:ODB_14b_Sce_MATH_Lvl_5 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14b_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MATH Lvl 5" ;
+    enki:metricValue 41.1631419939577 .
+
+contextuel:ODB_14b_Sce_MMLU_PRO a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14b_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MMLU-PRO" ;
+    enki:metricValue 49.01558806146573 .
+
+contextuel:ODB_14b_Sce_MUSR a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14b_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MUSR" ;
+    enki:metricValue 16.49947916666667 .
 
 contextuel:Odin_9B a enki:LLM ;
     dct:identifier "https://huggingface.co/Delta-Vector/Odin-9B" ;

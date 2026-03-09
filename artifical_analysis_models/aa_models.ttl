@@ -15151,46 +15151,6 @@ contextuel:Artificial_Analysis_Time_To_First_Token_S a enki:Evaluation ;
     enki:metricEvaluated contextuel:Sonar_Pro_Time_To_First_Token ;
     enki:metricEvaluated contextuel:Sonar_Time_To_First_Token .
 
-contextuel:AcademicDomainKnowledge a enki:Capability ;
-    dct:description "The ability of an LLM to demonstrate understanding of specialized subject matter such as law, medicine, physics, or history." ;
-    rdfs:label "Academic Domain Knowledge" .
-
-contextuel:CodeGeneration a enki:Capability ;
-    dct:description "The ability of an LLM to produce syntactically correct, functional, and idiomatic source code from natural-language specifications, partial implementations, or test cases." ;
-    rdfs:label "Code Generation" .
-
-contextuel:ExpertLevelProblemSolving a enki:Capability ;
-    dct:description "The ability of an LLM to solve problems that require graduate-level or professional-level expertise in a specialized domain, integrating deep domain knowledge with sophisticated reasoning that resists simple lookup or surface-level understanding." ;
-    rdfs:label "Expert-Level Problem Solving" .
-
-contextuel:FactualRecall a enki:Capability ;
-    dct:description "The ability of an LLM to accurately retrieve and reproduce learned factual information from its training data." ;
-    rdfs:label "Factual Recall" .
-
-contextuel:GeneralKnowledgeReasoning a enki:Capability ;
-    dct:description "The ability of an LLM to apply broad academic knowledge across multiple disciplines to correctly answer domain-specific questions." ;
-    rdfs:label "General Knowledge Reasoning" .
-
-contextuel:InstructionFollowing a enki:Capability ;
-    dct:description "The ability of an LLM to understand and correctly execute user-provided instructions." ;
-    rdfs:label "Instruction Following" .
-
-contextuel:LongContextReasoning a enki:Capability ;
-    dct:description "The ability of an LLM to accurately retrieve, synthesise, and reason over information distributed across long input contexts, including multi-document comprehension, needle-in-a-haystack recall, and cross-passage inference." ;
-    rdfs:label "Long-Context Reasoning" .
-
-contextuel:MathematicalReasoning a enki:Capability ;
-    dct:description "The ability of an LLM to solve mathematical problems requiring formal symbolic manipulation, numerical computation, and multi-step logical derivation across domains such as algebra, geometry, number theory, combinatorics, and calculus." ;
-    rdfs:label "Mathematical Reasoning" .
-
-contextuel:MultiStepReasoning a enki:Capability ;
-    dct:description "The ability of an LLM to perform sequential logical operations to arrive at a correct conclusion." ;
-    rdfs:label "Multi-Step Reasoning" .
-
-contextuel:ToolUse a enki:Capability ;
-    dct:description "The ability of an LLM to correctly select, parameterise, and sequence external tools, APIs, or command-line utilities to accomplish a task that cannot be completed with text generation alone." ;
-    rdfs:label "Tool Use" .
-
 contextuel:Artificial_Analysis a enki:AIOrganization ;
     dct:description "Artificial Analysis provides independent benchmarks, speed tests, and pricing data for LLM API providers." ;
     dct:identifier "https://artificialanalysis.ai/" ;

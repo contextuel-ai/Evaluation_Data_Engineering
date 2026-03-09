@@ -769,7 +769,8 @@ contextuel:Alpaca_13B a enki:LLM ;
     dct:identifier "https://crfm.stanford.edu/2023/03/13/alpaca.html" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "Alpaca-13B" ;
-    enki:hasKnowledgeCutoff "2023/3" .
+    enki:hasKnowledgeCutoff "2023/3" ;
+    enki:hasTotalParameterCount 13.0 .
 
 contextuel:Alpaca_13B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -789,7 +790,8 @@ contextuel:Baize_v2_13B a enki:LLM ;
     dct:identifier "https://huggingface.co/project-baize/baize-v2-13b" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "Baize-v2-13B" ;
-    enki:hasKnowledgeCutoff "2023/4" .
+    enki:hasKnowledgeCutoff "2023/4" ;
+    enki:hasTotalParameterCount 13.0 .
 
 contextuel:Baize_v2_13B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -815,7 +817,8 @@ contextuel:ChatGLM2_6B a enki:LLM ;
     dct:identifier "https://huggingface.co/THUDM/chatglm2-6b" ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "ChatGLM2-6B" ;
-    enki:hasKnowledgeCutoff "2023/6" .
+    enki:hasKnowledgeCutoff "2023/6" ;
+    enki:hasTotalParameterCount 6.0 .
 
 contextuel:ChatGLM2_6B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -835,13 +838,15 @@ contextuel:ChatGLM3_6B a enki:LLM ;
     dct:identifier "https://huggingface.co/THUDM/chatglm3-6b" ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "ChatGLM3-6B" ;
-    enki:hasKnowledgeCutoff "2023/10" .
+    enki:hasKnowledgeCutoff "2023/10" ;
+    enki:hasTotalParameterCount 6.0 .
 
 contextuel:ChatGLM_6B a enki:LLM ;
     dct:identifier "https://huggingface.co/THUDM/chatglm-6b" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "ChatGLM-6B" ;
-    enki:hasKnowledgeCutoff "2023/3" .
+    enki:hasKnowledgeCutoff "2023/3" ;
+    enki:hasTotalParameterCount 6.0 .
 
 contextuel:ChatGLM_6B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -956,7 +961,8 @@ contextuel:CodeLlama_34B_instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/codellama/CodeLlama-34b-Instruct-hf" ;
     dct:license contextuel:Llama_2_Community ;
     rdfs:label "CodeLlama-34B-instruct" ;
-    enki:hasKnowledgeCutoff "2023/7" .
+    enki:hasKnowledgeCutoff "2023/7" ;
+    enki:hasTotalParameterCount 34.0 .
 
 contextuel:CodeLlama_34B_instruct_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -969,13 +975,15 @@ contextuel:CodeLlama_70B_instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/codellama/CodeLlama-70b-hf" ;
     dct:license contextuel:Llama_2_Community ;
     rdfs:label "CodeLlama-70B-instruct" ;
-    enki:hasKnowledgeCutoff "2024/1" .
+    enki:hasKnowledgeCutoff "2024/1" ;
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:DeepSeek_LLM_67B_Chat a enki:LLM ;
     dct:identifier "https://huggingface.co/deepseek-ai/deepseek-llm-67b-chat" ;
     dct:license contextuel:DeepSeek_License ;
     rdfs:label "DeepSeek-LLM-67B-Chat" ;
-    enki:hasKnowledgeCutoff "2023/11" .
+    enki:hasKnowledgeCutoff "2023/11" ;
+    enki:hasTotalParameterCount 67.0 .
 
 contextuel:DeepSeek_LLM_67B_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -988,7 +996,8 @@ contextuel:Dolly_V2_12B a enki:LLM ;
     dct:identifier "https://huggingface.co/databricks/dolly-v2-12b" ;
     dct:license contextuel:MIT ;
     rdfs:label "Dolly-V2-12B" ;
-    enki:hasKnowledgeCutoff "2023/4" .
+    enki:hasKnowledgeCutoff "2023/4" ;
+    enki:hasTotalParameterCount 12.0 .
 
 contextuel:Dolly_V2_12B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1008,13 +1017,15 @@ contextuel:Dolphin_2_2_1_Mistral_7B a enki:LLM ;
     dct:identifier "https://huggingface.co/ehartford/dolphin-2.2.1-mistral-7b" ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "Dolphin-2.2.1-Mistral-7B" ;
-    enki:hasKnowledgeCutoff "2023/10" .
+    enki:hasKnowledgeCutoff "2023/10" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:falcon_180b_chat a enki:LLM ;
     dct:identifier "https://huggingface.co/tiiuae/falcon-180B-chat" ;
     dct:license contextuel:Falcon_180B_TII_License ;
     rdfs:label "falcon-180b-chat" ;
-    enki:hasKnowledgeCutoff "2023/9" .
+    enki:hasKnowledgeCutoff "2023/9" ;
+    enki:hasTotalParameterCount 180.0 .
 
 contextuel:falcon_180b_chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1027,7 +1038,8 @@ contextuel:Falcon_40B_Instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/tiiuae/falcon-40b-instruct" ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "Falcon-40B-Instruct" ;
-    enki:hasKnowledgeCutoff "2023/5" .
+    enki:hasKnowledgeCutoff "2023/5" ;
+    enki:hasTotalParameterCount 40.0 .
 
 contextuel:Falcon_40B_Instruct_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1047,7 +1059,8 @@ contextuel:FastChat_T5_3B a enki:LLM ;
     dct:identifier "https://huggingface.co/lmsys/fastchat-t5-3b-v1.0" ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "FastChat-T5-3B" ;
-    enki:hasKnowledgeCutoff "2023/4" .
+    enki:hasKnowledgeCutoff "2023/4" ;
+    enki:hasTotalParameterCount 3.0 .
 
 contextuel:FastChat_T5_3B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1093,7 +1106,8 @@ contextuel:Gemma_2B_it a enki:LLM ;
     dct:identifier "https://huggingface.co/google/gemma-2b-it" ;
     dct:license contextuel:Gemma_license ;
     rdfs:label "Gemma-2B-it" ;
-    enki:hasKnowledgeCutoff "2024/2" .
+    enki:hasKnowledgeCutoff "2024/2" ;
+    enki:hasTotalParameterCount 2.0 .
 
 contextuel:Gemma_2B_it_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1106,7 +1120,8 @@ contextuel:Gemma_7B_it a enki:LLM ;
     dct:identifier "https://huggingface.co/google/gemma-7b-it" ;
     dct:license contextuel:Gemma_license ;
     rdfs:label "Gemma-7B-it" ;
-    enki:hasKnowledgeCutoff "2024/2" .
+    enki:hasKnowledgeCutoff "2024/2" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Gemma_7B_it_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1119,7 +1134,8 @@ contextuel:GPT4All_13B_Snoozy a enki:LLM ;
     dct:identifier "https://huggingface.co/nomic-ai/gpt4all-13b-snoozy" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "GPT4All-13B-Snoozy" ;
-    enki:hasKnowledgeCutoff "2023/3" .
+    enki:hasKnowledgeCutoff "2023/3" ;
+    enki:hasTotalParameterCount 13.0 .
 
 contextuel:GPT4All_13B_Snoozy_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1243,7 +1259,8 @@ contextuel:Guanaco_33B a enki:LLM ;
     dct:identifier "https://huggingface.co/timdettmers/guanaco-33b-merged" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "Guanaco-33B" ;
-    enki:hasKnowledgeCutoff "2023/5" .
+    enki:hasKnowledgeCutoff "2023/5" ;
+    enki:hasTotalParameterCount 33.0 .
 
 contextuel:Guanaco_33B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1263,7 +1280,8 @@ contextuel:Guanaco_65B a enki:LLM ;
     dct:identifier "https://huggingface.co/timdettmers/guanaco-65b-merged" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "Guanaco-65B" ;
-    enki:hasKnowledgeCutoff "2023/5" .
+    enki:hasKnowledgeCutoff "2023/5" ;
+    enki:hasTotalParameterCount 65.0 .
 
 contextuel:Guanaco_65B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1283,7 +1301,8 @@ contextuel:H2O_Oasst_OpenLLaMA_13B a enki:LLM ;
     dct:identifier "https://huggingface.co/h2oai/h2ogpt-gm-oasst1-en-2048-open-llama-13b" ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "H2O-Oasst-OpenLLaMA-13B" ;
-    enki:hasKnowledgeCutoff "2023/6" .
+    enki:hasKnowledgeCutoff "2023/6" ;
+    enki:hasTotalParameterCount 13.0 .
 
 contextuel:H2O_Oasst_OpenLLaMA_13B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1303,7 +1322,8 @@ contextuel:Koala_13B a enki:LLM ;
     dct:identifier "https://bair.berkeley.edu/blog/2023/04/03/koala/" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "Koala-13B" ;
-    enki:hasKnowledgeCutoff "2023/4" .
+    enki:hasKnowledgeCutoff "2023/4" ;
+    enki:hasTotalParameterCount 13.0 .
 
 contextuel:Koala_13B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1323,7 +1343,8 @@ contextuel:LLaMA_13B a enki:LLM ;
     dct:identifier "https://arxiv.org/abs/2302.13971" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "LLaMA-13B" ;
-    enki:hasKnowledgeCutoff "2023/2" .
+    enki:hasKnowledgeCutoff "2023/2" ;
+    enki:hasTotalParameterCount 13.0 .
 
 contextuel:LLaMA_13B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1343,7 +1364,8 @@ contextuel:Llama_2_13b_chat a enki:LLM ;
     dct:identifier "https://huggingface.co/meta-llama/Llama-2-13b-chat-hf" ;
     dct:license contextuel:Llama_2_Community ;
     rdfs:label "Llama-2-13b-chat" ;
-    enki:hasKnowledgeCutoff "2023/7" .
+    enki:hasKnowledgeCutoff "2023/7" ;
+    enki:hasTotalParameterCount 13.0 .
 
 contextuel:Llama_2_13b_chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1363,7 +1385,8 @@ contextuel:Llama_2_70b_chat a enki:LLM ;
     dct:identifier "https://huggingface.co/meta-llama/Llama-2-70b-chat-hf" ;
     dct:license contextuel:Llama_2_Community ;
     rdfs:label "Llama-2-70b-chat" ;
-    enki:hasKnowledgeCutoff "2023/7" .
+    enki:hasKnowledgeCutoff "2023/7" ;
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:Llama_2_70b_chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1383,7 +1406,8 @@ contextuel:Llama_2_7b_chat a enki:LLM ;
     dct:identifier "https://huggingface.co/meta-llama/Llama-2-7b-chat-hf" ;
     dct:license contextuel:Llama_2_Community ;
     rdfs:label "Llama-2-7b-chat" ;
-    enki:hasKnowledgeCutoff "2023/7" .
+    enki:hasKnowledgeCutoff "2023/7" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Llama_2_7b_chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1403,7 +1427,8 @@ contextuel:Mistral_7B_Instruct_v0_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1" ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "Mistral-7B-Instruct-v0.1" ;
-    enki:hasKnowledgeCutoff "2023/9" .
+    enki:hasKnowledgeCutoff "2023/9" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Mistral_7B_Instruct_v0_1_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1423,7 +1448,8 @@ contextuel:Mistral_7B_Instruct_v0_2 a enki:LLM ;
     dct:identifier "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2" ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "Mistral-7B-Instruct-v0.2" ;
-    enki:hasKnowledgeCutoff "2023/12" .
+    enki:hasKnowledgeCutoff "2023/12" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Mistral_7B_Instruct_v0_2_MT_Bench a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1492,7 +1518,8 @@ contextuel:MPT_30B_chat a enki:LLM ;
     dct:identifier "https://huggingface.co/mosaicml/mpt-30b-chat" ;
     dct:license contextuel:CC_BY_NC_SA_4_0 ;
     rdfs:label "MPT-30B-chat" ;
-    enki:hasKnowledgeCutoff "2023/6" .
+    enki:hasKnowledgeCutoff "2023/6" ;
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:MPT_30B_chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1512,7 +1539,8 @@ contextuel:MPT_30B_Instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/mosaicml/mpt-30b-instruct" ;
     dct:license contextuel:CC_BY_SA_3_0 ;
     rdfs:label "MPT-30B-Instruct" ;
-    enki:hasKnowledgeCutoff "2023/6" .
+    enki:hasKnowledgeCutoff "2023/6" ;
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:MPT_30B_Instruct_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1532,7 +1560,8 @@ contextuel:MPT_7B_Chat a enki:LLM ;
     dct:identifier "https://huggingface.co/mosaicml/mpt-7b-chat" ;
     dct:license contextuel:CC_BY_NC_SA_4_0 ;
     rdfs:label "MPT-7B-Chat" ;
-    enki:hasKnowledgeCutoff "2023/5" .
+    enki:hasKnowledgeCutoff "2023/5" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:MPT_7B_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1552,7 +1581,8 @@ contextuel:Nous_Hermes_13B a enki:LLM ;
     dct:identifier "https://huggingface.co/NousResearch/Nous-Hermes-13b" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "Nous-Hermes-13B" ;
-    enki:hasKnowledgeCutoff "2023/6" .
+    enki:hasKnowledgeCutoff "2023/6" ;
+    enki:hasTotalParameterCount 13.0 .
 
 contextuel:Nous_Hermes_13B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1578,7 +1608,8 @@ contextuel:NV_Llama2_70B_SteerLM_Chat a enki:LLM ;
     dct:identifier "https://huggingface.co/nvidia/Llama2-70B-SteerLM-Chat" ;
     dct:license contextuel:Llama_2_Community ;
     rdfs:label "NV-Llama2-70B-SteerLM-Chat" ;
-    enki:hasKnowledgeCutoff "2023/11" .
+    enki:hasKnowledgeCutoff "2023/11" ;
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:NV_Llama2_70B_SteerLM_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1598,13 +1629,15 @@ contextuel:OLMo_7B_instruct a enki:LLM ;
     dct:identifier "https://huggingface.co/allenai/OLMo-7B-Instruct" ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "OLMo-7B-instruct" ;
-    enki:hasKnowledgeCutoff "2024/2" .
+    enki:hasKnowledgeCutoff "2024/2" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:OpenAssistant_LLaMA_30B a enki:LLM ;
     dct:identifier "https://huggingface.co/OpenAssistant/oasst-sft-6-llama-30b-xor" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "OpenAssistant-LLaMA-30B" ;
-    enki:hasKnowledgeCutoff "2023/4" .
+    enki:hasKnowledgeCutoff "2023/4" ;
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:OpenAssistant_LLaMA_30B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1624,7 +1657,8 @@ contextuel:OpenAssistant_Pythia_12B a enki:LLM ;
     dct:identifier "https://huggingface.co/OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5" ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "OpenAssistant-Pythia-12B" ;
-    enki:hasKnowledgeCutoff "2023/4" .
+    enki:hasKnowledgeCutoff "2023/4" ;
+    enki:hasTotalParameterCount 12.0 .
 
 contextuel:OpenAssistant_Pythia_12B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1684,7 +1718,8 @@ contextuel:OpenHermes_2_5_Mistral_7b a enki:LLM ;
     dct:identifier "https://huggingface.co/teknium/OpenHermes-2.5-Mistral-7B" ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "OpenHermes-2.5-Mistral-7b" ;
-    enki:hasKnowledgeCutoff "2023/11" .
+    enki:hasKnowledgeCutoff "2023/11" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:PaLM_Chat_Bison_001 a enki:LLM ;
     dct:identifier "https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models#foundation_models" ;
@@ -1703,19 +1738,22 @@ contextuel:pplx_70b_online a enki:LLM ;
     dct:identifier "https://blog.perplexity.ai/blog/introducing-pplx-online-llms" ;
     dct:license contextuel:Proprietary ;
     rdfs:label "pplx-70b-online" ;
-    enki:hasKnowledgeCutoff "Online" .
+    enki:hasKnowledgeCutoff "Online" ;
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:pplx_7b_online a enki:LLM ;
     dct:identifier "https://blog.perplexity.ai/blog/introducing-pplx-online-llms" ;
     dct:license contextuel:Proprietary ;
     rdfs:label "pplx-7b-online" ;
-    enki:hasKnowledgeCutoff "Online" .
+    enki:hasKnowledgeCutoff "Online" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Qwen1_5_4B_Chat a enki:LLM ;
     dct:identifier "https://qwenlm.github.io/blog/qwen1.5/" ;
     dct:license contextuel:Qianwen_LICENSE ;
     rdfs:label "Qwen1.5-4B-Chat" ;
-    enki:hasKnowledgeCutoff "2024/2" .
+    enki:hasKnowledgeCutoff "2024/2" ;
+    enki:hasTotalParameterCount 4.0 .
 
 contextuel:Qwen1_5_4B_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1728,7 +1766,8 @@ contextuel:Qwen1_5_72B_Chat a enki:LLM ;
     dct:identifier "https://qwenlm.github.io/blog/qwen1.5/" ;
     dct:license contextuel:Qianwen_LICENSE ;
     rdfs:label "Qwen1.5-72B-Chat" ;
-    enki:hasKnowledgeCutoff "2024/2" .
+    enki:hasKnowledgeCutoff "2024/2" ;
+    enki:hasTotalParameterCount 72.0 .
 
 contextuel:Qwen1_5_72B_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1748,7 +1787,8 @@ contextuel:Qwen1_5_7B_Chat a enki:LLM ;
     dct:identifier "https://qwenlm.github.io/blog/qwen1.5/" ;
     dct:license contextuel:Qianwen_LICENSE ;
     rdfs:label "Qwen1.5-7B-Chat" ;
-    enki:hasKnowledgeCutoff "2024/2" .
+    enki:hasKnowledgeCutoff "2024/2" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Qwen1_5_7B_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1768,7 +1808,8 @@ contextuel:Qwen_14B_Chat a enki:LLM ;
     dct:identifier "https://huggingface.co/Qwen/Qwen-14B-Chat" ;
     dct:license contextuel:Qianwen_LICENSE ;
     rdfs:label "Qwen-14B-Chat" ;
-    enki:hasKnowledgeCutoff "2023/8" .
+    enki:hasKnowledgeCutoff "2023/8" ;
+    enki:hasTotalParameterCount 14.0 .
 
 contextuel:Qwen_14B_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1788,7 +1829,8 @@ contextuel:RWKV_4_Raven_14B a enki:LLM ;
     dct:identifier "https://huggingface.co/BlinkDL/rwkv-4-raven" ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "RWKV-4-Raven-14B" ;
-    enki:hasKnowledgeCutoff "2023/4" .
+    enki:hasKnowledgeCutoff "2023/4" ;
+    enki:hasTotalParameterCount 14.0 .
 
 contextuel:RWKV_4_Raven_14B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1808,7 +1850,8 @@ contextuel:SOLAR_10_7B_Instruct_v1_0 a enki:LLM ;
     dct:identifier "https://huggingface.co/upstage/SOLAR-10.7B-Instruct-v1.0" ;
     dct:license contextuel:CC_BY_NC_4_0 ;
     rdfs:label "SOLAR-10.7B-Instruct-v1.0" ;
-    enki:hasKnowledgeCutoff "2023/11" .
+    enki:hasKnowledgeCutoff "2023/11" ;
+    enki:hasTotalParameterCount 10.7 .
 
 contextuel:SOLAR_10_7B_Instruct_v1_0_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1828,7 +1871,8 @@ contextuel:StableLM_Tuned_Alpha_7B a enki:LLM ;
     dct:identifier "https://huggingface.co/stabilityai/stablelm-tuned-alpha-7b" ;
     dct:license contextuel:CC_BY_NC_SA_4_0 ;
     rdfs:label "StableLM-Tuned-Alpha-7B" ;
-    enki:hasKnowledgeCutoff "2023/4" .
+    enki:hasKnowledgeCutoff "2023/4" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:StableLM_Tuned_Alpha_7B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1848,7 +1892,8 @@ contextuel:Starling_LM_7B_alpha a enki:LLM ;
     dct:identifier "https://huggingface.co/berkeley-nest/Starling-LM-7B-alpha" ;
     dct:license contextuel:CC_BY_NC_4_0 ;
     rdfs:label "Starling-LM-7B-alpha" ;
-    enki:hasKnowledgeCutoff "2023/11" .
+    enki:hasKnowledgeCutoff "2023/11" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Starling_LM_7B_alpha_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1868,13 +1913,15 @@ contextuel:StripedHyena_Nous_7B a enki:LLM ;
     dct:identifier "https://huggingface.co/togethercomputer/StripedHyena-Nous-7B" ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "StripedHyena-Nous-7B" ;
-    enki:hasKnowledgeCutoff "2023/12" .
+    enki:hasKnowledgeCutoff "2023/12" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Tulu_2_DPO_70B a enki:LLM ;
     dct:identifier "https://huggingface.co/allenai/tulu-2-dpo-70b" ;
     dct:license contextuel:AI2_ImpACT_Low_risk ;
     rdfs:label "Tulu-2-DPO-70B" ;
-    enki:hasKnowledgeCutoff "2023/11" .
+    enki:hasKnowledgeCutoff "2023/11" ;
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:Tulu_2_DPO_70B_MT_Bench a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1887,7 +1934,8 @@ contextuel:Tulu_30B a enki:LLM ;
     dct:identifier "https://huggingface.co/allenai/tulu-30b" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "Tulu-30B" ;
-    enki:hasKnowledgeCutoff "2023/6" .
+    enki:hasKnowledgeCutoff "2023/6" ;
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:Tulu_30B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1907,7 +1955,8 @@ contextuel:Vicuna_13B a enki:LLM ;
     dct:identifier "https://huggingface.co/lmsys/vicuna-13b-v1.5" ;
     dct:license contextuel:Llama_2_Community ;
     rdfs:label "Vicuna-13B" ;
-    enki:hasKnowledgeCutoff "2023/7" .
+    enki:hasKnowledgeCutoff "2023/7" ;
+    enki:hasTotalParameterCount 13.0 .
 
 contextuel:Vicuna_13B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1927,7 +1976,8 @@ contextuel:Vicuna_13B_16k a enki:LLM ;
     dct:identifier "https://huggingface.co/lmsys/vicuna-13b-v1.5-16k" ;
     dct:license contextuel:Llama_2_Community ;
     rdfs:label "Vicuna-13B-16k" ;
-    enki:hasKnowledgeCutoff "2023/7" .
+    enki:hasKnowledgeCutoff "2023/7" ;
+    enki:hasTotalParameterCount 13.0 .
 
 contextuel:Vicuna_13B_16k_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1947,7 +1997,8 @@ contextuel:Vicuna_33B a enki:LLM ;
     dct:identifier "https://huggingface.co/lmsys/vicuna-33b-v1.3" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "Vicuna-33B" ;
-    enki:hasKnowledgeCutoff "2023/8" .
+    enki:hasKnowledgeCutoff "2023/8" ;
+    enki:hasTotalParameterCount 33.0 .
 
 contextuel:Vicuna_33B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1967,7 +2018,8 @@ contextuel:Vicuna_7B a enki:LLM ;
     dct:identifier "https://huggingface.co/lmsys/vicuna-7b-v1.5" ;
     dct:license contextuel:Llama_2_Community ;
     rdfs:label "Vicuna-7B" ;
-    enki:hasKnowledgeCutoff "2023/7" .
+    enki:hasKnowledgeCutoff "2023/7" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Vicuna_7B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1987,7 +2039,8 @@ contextuel:Vicuna_7B_16k a enki:LLM ;
     dct:identifier "https://huggingface.co/lmsys/vicuna-7b-v1.5-16k" ;
     dct:license contextuel:Llama_2_Community ;
     rdfs:label "Vicuna-7B-16k" ;
-    enki:hasKnowledgeCutoff "2023/7" .
+    enki:hasKnowledgeCutoff "2023/7" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Vicuna_7B_16k_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2007,7 +2060,8 @@ contextuel:WizardLM_13B_v1_0 a enki:LLM ;
     dct:identifier "https://huggingface.co/WizardLM/WizardLM-13B-V1.0" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "WizardLM-13B-v1.0" ;
-    enki:hasKnowledgeCutoff "2023/5" .
+    enki:hasKnowledgeCutoff "2023/5" ;
+    enki:hasTotalParameterCount 13.0 .
 
 contextuel:WizardLM_13B_v1_0_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2027,7 +2081,8 @@ contextuel:WizardLM_13B_v1_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/WizardLM/WizardLM-13B-V1.1" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "WizardLM-13B-v1.1" ;
-    enki:hasKnowledgeCutoff "2023/7" .
+    enki:hasKnowledgeCutoff "2023/7" ;
+    enki:hasTotalParameterCount 13.0 .
 
 contextuel:WizardLM_13B_v1_1_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2047,7 +2102,8 @@ contextuel:WizardLM_13b_v1_2 a enki:LLM ;
     dct:identifier "https://huggingface.co/WizardLM/WizardLM-13B-V1.2" ;
     dct:license contextuel:Llama_2_Community ;
     rdfs:label "WizardLM-13b-v1.2" ;
-    enki:hasKnowledgeCutoff "2023/7" .
+    enki:hasKnowledgeCutoff "2023/7" ;
+    enki:hasTotalParameterCount 13.0 .
 
 contextuel:WizardLM_13b_v1_2_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2067,7 +2123,8 @@ contextuel:WizardLM_30B a enki:LLM ;
     dct:identifier "https://huggingface.co/WizardLM/WizardLM-30B-V1.0" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "WizardLM-30B" ;
-    enki:hasKnowledgeCutoff "2023/6" .
+    enki:hasKnowledgeCutoff "2023/6" ;
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:WizardLM_30B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2087,7 +2144,8 @@ contextuel:WizardLM_70B_v1_0 a enki:LLM ;
     dct:identifier "https://huggingface.co/WizardLM/WizardLM-70B-V1.0" ;
     dct:license contextuel:Llama_2_Community ;
     rdfs:label "WizardLM-70B-v1.0" ;
-    enki:hasKnowledgeCutoff "2023/8" .
+    enki:hasKnowledgeCutoff "2023/8" ;
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:WizardLM_70B_v1_0_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2107,7 +2165,8 @@ contextuel:XGen_7B_8K_Inst a enki:LLM ;
     dct:identifier "https://huggingface.co/Salesforce/xgen-7b-8k-inst" ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "XGen-7B-8K-Inst" ;
-    enki:hasKnowledgeCutoff "2023/7" .
+    enki:hasKnowledgeCutoff "2023/7" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:XGen_7B_8K_Inst_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2127,7 +2186,8 @@ contextuel:Yi_34B_Chat a enki:LLM ;
     dct:identifier "https://huggingface.co/01-ai/Yi-34B-Chat" ;
     dct:license contextuel:Yi_License ;
     rdfs:label "Yi-34B-Chat" ;
-    enki:hasKnowledgeCutoff "2023/6" .
+    enki:hasKnowledgeCutoff "2023/6" ;
+    enki:hasTotalParameterCount 34.0 .
 
 contextuel:Yi_34B_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2140,7 +2200,8 @@ contextuel:Zephyr_7b_alpha a enki:LLM ;
     dct:identifier "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha" ;
     dct:license contextuel:MIT ;
     rdfs:label "Zephyr-7b-alpha" ;
-    enki:hasKnowledgeCutoff "2023/10" .
+    enki:hasKnowledgeCutoff "2023/10" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Zephyr_7b_alpha_MT_Bench a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2153,7 +2214,8 @@ contextuel:Zephyr_7b_beta a enki:LLM ;
     dct:identifier "https://huggingface.co/HuggingFaceH4/zephyr-7b-beta" ;
     dct:license contextuel:MIT ;
     rdfs:label "Zephyr-7b-beta" ;
-    enki:hasKnowledgeCutoff "2023/10" .
+    enki:hasKnowledgeCutoff "2023/10" ;
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Zephyr_7b_beta_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;

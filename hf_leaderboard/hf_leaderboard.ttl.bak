@@ -8729,6 +8729,8 @@ contextuel:ZHLiu627 a enki:LLMManufacturer ;
     enki:manufactures contextuel:Zephyr_7b_Gemma_Dpo_Avg ;
     enki:manufactures contextuel:Zephyr_7b_Gemma_Rpo_Avg .
 
+contextuel:Argilla a enki:LLMProvider .
+
 contextuel:Argilla_Provisioning_Notus_7b_V1 a enki:LLMProvisioning ;
     rdfs:label "argilla provisioning of notus-7b-v1" ;
     enki:provider contextuel:Argilla ;
@@ -8739,10 +8741,14 @@ contextuel:Argilla_Provisioning_Notux_8x7b_V1 a enki:LLMProvisioning ;
     enki:provider contextuel:Argilla ;
     enki:provides contextuel:Notux_8x7b_V1 .
 
+contextuel:Argilla_Warehouse a enki:LLMProvider .
+
 contextuel:Argilla_Warehouse_Provisioning_Llama_3_1_8B_MagPie_Ultra a enki:LLMProvisioning ;
     rdfs:label "argilla-warehouse provisioning of Llama-3.1-8B-MagPie-Ultra" ;
     enki:provider contextuel:Argilla_Warehouse ;
     enki:provides contextuel:Llama_3_1_8B_MagPie_Ultra .
+
+contextuel:HuggingFaceH4 a enki:LLMProvider .
 
 contextuel:HuggingFaceH4_Provisioning_Zephyr_7b_Alpha a enki:LLMProvisioning ;
     rdfs:label "HuggingFaceH4 provisioning of zephyr-7b-alpha" ;
@@ -8764,10 +8770,14 @@ contextuel:HuggingFaceH4_Provisioning_Zephyr_Orpo_141b_A35b_V0_1 a enki:LLMProvi
     enki:provider contextuel:HuggingFaceH4 ;
     enki:provides contextuel:Zephyr_Orpo_141b_A35b_V0_1 .
 
+contextuel:Nexusflow a enki:LLMProvider .
+
 contextuel:Nexusflow_Provisioning_NexusRaven_V2_13B a enki:LLMProvisioning ;
     rdfs:label "Nexusflow provisioning of NexusRaven-V2-13B" ;
     enki:provider contextuel:Nexusflow ;
     enki:provides contextuel:NexusRaven_V2_13B .
+
+contextuel:Teknium a enki:LLMProvider .
 
 contextuel:Teknium_Provisioning_CollectiveCognition_V1_1_Mistral_7B a enki:LLMProvisioning ;
     rdfs:label "teknium provisioning of CollectiveCognition-v1.1-Mistral-7B" ;
@@ -168833,60 +168843,6 @@ contextuel:Llama_3_1_8B_Instruct_Zeus_MUSR a enki:EvaluatedMetric ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 8.569791666666662 .
 
-contextuel:Llama_3_1_8b_Ita a enki:LLM ;
-    dct:identifier "https://huggingface.co/DeepMount00/Llama-3.1-8b-Ita" ;
-    rdfs:label "Llama-3.1-8b-Ita" ;
-    enki:hasTotalParameterCount 0.0 .
-
-contextuel:Llama_3_1_8b_Ita_BBH a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_Ita ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "BBH" ;
-    enki:metricValue 31.333639113507697 .
-
-contextuel:Llama_3_1_8b_Ita_CO2 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:CarbonCost ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_Ita ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "CO₂ cost (kg)" ;
-    enki:metricValue 0.9062470550284772 .
-
-contextuel:Llama_3_1_8b_Ita_GPQA a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_Ita ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "GPQA" ;
-    enki:metricValue 7.494407158836691 .
-
-contextuel:Llama_3_1_8b_Ita_IFEval a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_Ita ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "IFEval" ;
-    enki:metricValue 53.64843060856306 .
-
-contextuel:Llama_3_1_8b_Ita_MATH_Lvl_5 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_Ita ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MATH Lvl 5" ;
-    enki:metricValue 17.069486404833835 .
-
-contextuel:Llama_3_1_8b_Ita_MMLU_PRO a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_Ita ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MMLU-PRO" ;
-    enki:metricValue 32.89191784869976 .
-
-contextuel:Llama_3_1_8b_Ita_MUSR a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Llama_3_1_8b_Ita ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MUSR" ;
-    enki:metricValue 15.156510416666665 .
-
 contextuel:Llama_3_1_8b_ITA a enki:LLM ;
     dct:identifier "https://huggingface.co/DeepMount00/Llama-3.1-8b-ITA" ;
     rdfs:label "Llama-3.1-8b-ITA" ;
@@ -168940,6 +168896,60 @@ contextuel:Llama_3_1_8b_ITA_MUSR a enki:EvaluatedMetric ;
     enki:metricAssigner contextuel:Hugging_Face ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 11.399218749999998 .
+
+contextuel:Llama_3_1_8b_Ita a enki:LLM ;
+    dct:identifier "https://huggingface.co/DeepMount00/Llama-3.1-8b-Ita" ;
+    rdfs:label "Llama-3.1-8b-Ita" ;
+    enki:hasTotalParameterCount 0.0 .
+
+contextuel:Llama_3_1_8b_Ita_BBH a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_Ita ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "BBH" ;
+    enki:metricValue 31.333639113507697 .
+
+contextuel:Llama_3_1_8b_Ita_CO2 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:CarbonCost ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_Ita ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "CO₂ cost (kg)" ;
+    enki:metricValue 0.9062470550284772 .
+
+contextuel:Llama_3_1_8b_Ita_GPQA a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_Ita ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "GPQA" ;
+    enki:metricValue 7.494407158836691 .
+
+contextuel:Llama_3_1_8b_Ita_IFEval a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_Ita ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "IFEval" ;
+    enki:metricValue 53.64843060856306 .
+
+contextuel:Llama_3_1_8b_Ita_MATH_Lvl_5 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_Ita ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MATH Lvl 5" ;
+    enki:metricValue 17.069486404833835 .
+
+contextuel:Llama_3_1_8b_Ita_MMLU_PRO a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_Ita ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MMLU-PRO" ;
+    enki:metricValue 32.89191784869976 .
+
+contextuel:Llama_3_1_8b_Ita_MUSR a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Llama_3_1_8b_Ita ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MUSR" ;
+    enki:metricValue 15.156510416666665 .
 
 contextuel:Llama_3_1_8B_Lexi_Uncensored a enki:LLM ;
     dct:identifier "https://huggingface.co/Orenguteng/Llama-3.1-8B-Lexi-Uncensored" ;
@@ -222514,60 +222524,6 @@ contextuel:Occiglot_7b_Es_En_Instruct_MUSR a enki:EvaluatedMetric ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 4.452083333333333 .
 
-contextuel:ODB_14B_Sce a enki:LLM ;
-    dct:identifier "https://huggingface.co/Quazim0t0/ODB-14B-sce" ;
-    rdfs:label "ODB-14B-sce" ;
-    enki:hasTotalParameterCount 0.0 .
-
-contextuel:ODB_14B_Sce_BBH a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14B_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "BBH" ;
-    enki:metricValue 50.69950430097801 .
-
-contextuel:ODB_14B_Sce_CO2 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:CarbonCost ;
-    enki:metricAssignee contextuel:ODB_14B_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "CO₂ cost (kg)" ;
-    enki:metricValue 2.98336784194147 .
-
-contextuel:ODB_14B_Sce_GPQA a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14B_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "GPQA" ;
-    enki:metricValue 2.1252796420581683 .
-
-contextuel:ODB_14B_Sce_IFEval a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14B_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "IFEval" ;
-    enki:metricValue 29.2235712354331 .
-
-contextuel:ODB_14B_Sce_MATH_Lvl_5 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14B_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MATH Lvl 5" ;
-    enki:metricValue 25.45317220543807 .
-
-contextuel:ODB_14B_Sce_MMLU_PRO a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14B_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MMLU-PRO" ;
-    enki:metricValue 46.74386820330969 .
-
-contextuel:ODB_14B_Sce_MUSR a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14B_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MUSR" ;
-    enki:metricValue 7.277343750000001 .
-
 contextuel:ODB_14b_Sce a enki:LLM ;
     dct:identifier "https://huggingface.co/Quazim0t0/ODB-14b-sce" ;
     rdfs:label "ODB-14b-sce" ;
@@ -222621,6 +222577,60 @@ contextuel:ODB_14b_Sce_MUSR a enki:EvaluatedMetric ;
     enki:metricAssigner contextuel:Hugging_Face ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 16.49947916666667 .
+
+contextuel:ODB_14B_Sce a enki:LLM ;
+    dct:identifier "https://huggingface.co/Quazim0t0/ODB-14B-sce" ;
+    rdfs:label "ODB-14B-sce" ;
+    enki:hasTotalParameterCount 0.0 .
+
+contextuel:ODB_14B_Sce_BBH a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14B_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "BBH" ;
+    enki:metricValue 50.69950430097801 .
+
+contextuel:ODB_14B_Sce_CO2 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:CarbonCost ;
+    enki:metricAssignee contextuel:ODB_14B_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "CO₂ cost (kg)" ;
+    enki:metricValue 2.98336784194147 .
+
+contextuel:ODB_14B_Sce_GPQA a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14B_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "GPQA" ;
+    enki:metricValue 2.1252796420581683 .
+
+contextuel:ODB_14B_Sce_IFEval a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14B_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "IFEval" ;
+    enki:metricValue 29.2235712354331 .
+
+contextuel:ODB_14B_Sce_MATH_Lvl_5 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14B_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MATH Lvl 5" ;
+    enki:metricValue 25.45317220543807 .
+
+contextuel:ODB_14B_Sce_MMLU_PRO a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14B_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MMLU-PRO" ;
+    enki:metricValue 46.74386820330969 .
+
+contextuel:ODB_14B_Sce_MUSR a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14B_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MUSR" ;
+    enki:metricValue 7.277343750000001 .
 
 contextuel:Odin_9B a enki:LLM ;
     dct:identifier "https://huggingface.co/Delta-Vector/Odin-9B" ;
@@ -265675,61 +265685,6 @@ contextuel:QwenSlerp12_7B_MUSR a enki:EvaluatedMetric ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 16.134895833333335 .
 
-contextuel:QwenSlerp2_14B a enki:LLM ;
-    dct:identifier "https://huggingface.co/hotmailuser/QwenSlerp2-14B" ;
-    dct:license contextuel:Apache_2_0 ;
-    rdfs:label "QwenSlerp2-14B" ;
-    enki:hasTotalParameterCount 14.766 .
-
-contextuel:QwenSlerp2_14B_BBH a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:QwenSlerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "BBH" ;
-    enki:metricValue 49.684327104915155 .
-
-contextuel:QwenSlerp2_14B_CO2 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:CarbonCost ;
-    enki:metricAssignee contextuel:QwenSlerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "CO₂ cost (kg)" ;
-    enki:metricValue 3.701076932485308 .
-
-contextuel:QwenSlerp2_14B_GPQA a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:QwenSlerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "GPQA" ;
-    enki:metricValue 17.4496644295302 .
-
-contextuel:QwenSlerp2_14B_IFEval a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:QwenSlerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "IFEval" ;
-    enki:metricValue 70.36707048409332 .
-
-contextuel:QwenSlerp2_14B_MATH_Lvl_5 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:QwenSlerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MATH Lvl 5" ;
-    enki:metricValue 39.65256797583081 .
-
-contextuel:QwenSlerp2_14B_MMLU_PRO a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:QwenSlerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MMLU-PRO" ;
-    enki:metricValue 48.65543735224587 .
-
-contextuel:QwenSlerp2_14B_MUSR a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:QwenSlerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MUSR" ;
-    enki:metricValue 19.348697916666666 .
-
 contextuel:Qwenslerp2_14B a enki:LLM ;
     dct:identifier "https://huggingface.co/allknowingroger/Qwenslerp2-14B" ;
     dct:license contextuel:Apache_2_0 ;
@@ -265784,6 +265739,61 @@ contextuel:Qwenslerp2_14B_MUSR a enki:EvaluatedMetric ;
     enki:metricAssigner contextuel:Hugging_Face ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 18.883854166666666 .
+
+contextuel:QwenSlerp2_14B a enki:LLM ;
+    dct:identifier "https://huggingface.co/hotmailuser/QwenSlerp2-14B" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "QwenSlerp2-14B" ;
+    enki:hasTotalParameterCount 14.766 .
+
+contextuel:QwenSlerp2_14B_BBH a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:QwenSlerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "BBH" ;
+    enki:metricValue 49.684327104915155 .
+
+contextuel:QwenSlerp2_14B_CO2 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:CarbonCost ;
+    enki:metricAssignee contextuel:QwenSlerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "CO₂ cost (kg)" ;
+    enki:metricValue 3.701076932485308 .
+
+contextuel:QwenSlerp2_14B_GPQA a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:QwenSlerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "GPQA" ;
+    enki:metricValue 17.4496644295302 .
+
+contextuel:QwenSlerp2_14B_IFEval a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:QwenSlerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "IFEval" ;
+    enki:metricValue 70.36707048409332 .
+
+contextuel:QwenSlerp2_14B_MATH_Lvl_5 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:QwenSlerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MATH Lvl 5" ;
+    enki:metricValue 39.65256797583081 .
+
+contextuel:QwenSlerp2_14B_MMLU_PRO a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:QwenSlerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MMLU-PRO" ;
+    enki:metricValue 48.65543735224587 .
+
+contextuel:QwenSlerp2_14B_MUSR a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:QwenSlerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MUSR" ;
+    enki:metricValue 19.348697916666666 .
 
 contextuel:QwenSlerp2_3B a enki:LLM ;
     dct:identifier "https://huggingface.co/hotmailuser/QwenSlerp2-3B" ;
@@ -315338,10 +315348,6 @@ contextuel:ZYH_LLM_Qwen2_5_14B_V4_MUSR a enki:EvaluatedMetric ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 15.661718749999997 .
 
-contextuel:Argilla a enki:LLMProvider .
-
-contextuel:Argilla_Warehouse a enki:LLMProvider .
-
 contextuel:ECE_PRYMMAL_0_5B_FT_V3_MUSR_BBH a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
     enki:metricAssignee contextuel:ECE_PRYMMAL_0_5B_FT_V3_MUSR ;
@@ -315390,10 +315396,6 @@ contextuel:ECE_PRYMMAL_0_5B_FT_V3_MUSR_MUSR a enki:EvaluatedMetric ;
     enki:metricAssigner contextuel:Hugging_Face ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 3.2539062500000004 .
-
-contextuel:HuggingFaceH4 a enki:LLMProvider .
-
-contextuel:Nexusflow a enki:LLMProvider .
 
 contextuel:NJS26_BBH a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -315492,6 +315494,4 @@ contextuel:SmolLM_1_7B_Instruct_IFEval_MUSR a enki:EvaluatedMetric ;
     enki:metricAssigner contextuel:Hugging_Face ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 1.5950520833333328 .
-
-contextuel:Teknium a enki:LLMProvider .
 
