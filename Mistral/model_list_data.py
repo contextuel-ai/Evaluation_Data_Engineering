@@ -118,22 +118,31 @@ def extract_context_window(text: str) -> Optional[int]:
     return None
 
 
-def extract_price_pair(text: str) -> Dict[str, Optional[float]]:
+def extract_price_pair(html: str) -> Dict[str, Optional[float]]:
     """
-    Parse input/output pricing from page text.
-    Mistral docs show patterns like:
-      PRICE$0.5 /M TOKENS ... $1.5 /M TOKENS
-    or sometimes just a single price block.
+    Parse input/output pricing from the raw HTML.
+    Mistral docs render prices as: $<!-- -->0.5 ... /M Tokens
+    We search the raw HTML for this pattern.
     """
-    prices = re.findall(r"\$([\d.]+)\s*/M\s*TOKENS", text, re.IGNORECASE)
-    if len(prices) >= 2:
+    # Match "$<!-- -->X.XX" followed (eventually) by "/M Tokens"
+    prices = re.findall(
+        r'\$(?:<!--\s*-->)?\s*([\d.]+).*?/M\s*Tokens',
+        html,
+        re.IGNORECASE | re.DOTALL,
+    )
+    # De-dup consecutive duplicates (page sometimes renders same block twice)
+    unique = []
+    for p in prices:
+        if not unique or unique[-1] != p:
+            unique.append(p)
+    if len(unique) >= 2:
         return {
-            "input_usd_per_1m_tokens": float(prices[0]),
-            "output_usd_per_1m_tokens": float(prices[1]),
+            "input_usd_per_1m_tokens": float(unique[0]),
+            "output_usd_per_1m_tokens": float(unique[1]),
         }
-    if len(prices) == 1:
+    if len(unique) == 1:
         return {
-            "input_usd_per_1m_tokens": float(prices[0]),
+            "input_usd_per_1m_tokens": float(unique[0]),
             "output_usd_per_1m_tokens": None,
         }
     return {
@@ -181,56 +190,69 @@ def extract_license_tier(text: str) -> Optional[str]:
     return None
 
 
-def extract_description(soup: BeautifulSoup) -> Optional[str]:
+def extract_description(soup: BeautifulSoup, text: str) -> Optional[str]:
     """
-    The model description is usually the first paragraph under the H1 title,
-    before the stats block.
+    The model description on Mistral docs pages is typically inside an
+    <article> tag that is a sibling of the <h1> title.
     """
     h1 = soup.find("h1")
     if not h1:
         return None
-    # Walk siblings after h1 looking for a <p> tag
+
+    # Primary: look for an <article> sibling after the H1
+    for sibling in h1.find_next_siblings():
+        if sibling.name == "article":
+            # The article contains the description plus the full model card.
+            # The description is the initial text before the stats/features.
+            article_text = clean_text(sibling.get_text(" ", strip=True))
+            # Truncate at known section markers
+            for marker in ["SPEED", "PERFORMANCE", "MODALITIES", "CONTEXT",
+                           "PRICE", "FEATURES", "WEIGHTS", "FINETUNING"]:
+                idx = article_text.find(marker)
+                if idx > 0:
+                    article_text = article_text[:idx].strip()
+                    break
+            if article_text and len(article_text) > 10:
+                return article_text
+        if sibling.name in ("h2", "h3"):
+            break
+
+    # Fallback: look for a <p> sibling
     for sibling in h1.find_next_siblings():
         if sibling.name == "p":
             desc = clean_text(sibling.get_text(" ", strip=True))
             if desc and len(desc) > 10:
                 return desc
-        # Stop before we hit another heading or a major section
-        if sibling.name in ("h2", "h3", "section", "div"):
+        if sibling.name in ("h2", "h3", "section"):
             break
+
     return None
 
 
-def extract_modality_icons(text: str) -> Dict[str, List[str]]:
+def extract_modality_icons(text: str, api_capabilities: Optional[Dict] = None) -> Dict[str, List[str]]:
     """
-    Infer modalities from the modality section on the page.
-    The Mistral docs show modality icons (Text, Image, Audio, Video, Document)
-    in the MODALITIES section. We look for text references near that section.
+    Determine modalities primarily from API capabilities, with doc-text fallback.
+    API capabilities dict may contain: vision, audio, audio_transcription, ocr.
     """
     input_modalities = ["text"]  # all models accept text
     output_modalities = ["text"]  # all generative models output text
 
-    lower = text.lower()
-
-    # Multimodal markers: image/vision input
-    if any(kw in lower for kw in ("multimodal", "vision", "image input", "image understanding")):
-        if "image" not in input_modalities:
+    if api_capabilities:
+        if api_capabilities.get("vision"):
             input_modalities.append("image")
-
-    # Audio markers
-    if any(kw in lower for kw in ("audio input", "voxtral", "transcri")):
-        if "audio" not in input_modalities:
+        if api_capabilities.get("audio") or api_capabilities.get("audio_transcription"):
             input_modalities.append("audio")
+        if api_capabilities.get("ocr") and "image" not in input_modalities:
+            input_modalities.append("image")
+    else:
+        # Fallback: infer from the model description text only (not full page)
+        lower = text.lower()
 
-    # Document / OCR markers
-    if any(kw in lower for kw in ("ocr", "document")):
-        if "image" not in input_modalities:
-            input_modalities.append("image")  # OCR takes image/document input
-
-    # Code-specific models still just text in/out
-    # Image generation output — not current for Mistral, but future-proof
-    if "image generation" in lower:
-        if "image" not in output_modalities:
+        if "multimodal" in lower or "vision" in lower:
+            input_modalities.append("image")
+        if "audio input" in lower or lower.startswith("voxtral"):
+            input_modalities.append("audio")
+        if "image generation" in lower:
             output_modalities.append("image")
 
     return {
@@ -275,6 +297,36 @@ def extract_features(soup: BeautifulSoup) -> List[str]:
     return features
 
 
+def extract_speed_performance(html: str) -> Dict[str, Optional[int]]:
+    """
+    Extract speed and performance ratings from bar indicators on the page.
+
+    Each metric is rendered as a row of 4 bars (divs with class
+    ``bg-primary-soft``).  Filled bars have ``opacity-100``; unfilled
+    bars have ``opacity-30``.  We count filled bars to get a rating
+    from 0–4.
+    """
+    result: Dict[str, Optional[int]] = {
+        "speed_rating": None,
+        "performance_rating": None,
+    }
+
+    for label, key in [("Speed", "speed_rating"),
+                       ("Performance", "performance_rating")]:
+        # Find the section header, e.g. ">Speed</span>"
+        idx = html.find(f">{label}</span>")
+        if idx < 0:
+            continue
+        # Look at the next ~800 chars for the bar divs
+        chunk = html[idx:idx + 800]
+        bars = re.findall(r"bg-primary-soft[^>]*opacity-(\d+)", chunk)
+        if bars:
+            filled = sum(1 for b in bars if b == "100")
+            result[key] = filled
+
+    return result
+
+
 def extract_parameter_info(text: str) -> Dict[str, Optional[Any]]:
     """
     Extract parameter counts from description text.
@@ -306,9 +358,11 @@ def extract_parameter_info(text: str) -> Dict[str, Optional[Any]]:
     }
 
 
-def scrape_model_page(slug: str, url: str) -> Dict[str, Any]:
+def scrape_model_page(slug: str, url: str,
+                      api_capabilities: Optional[Dict] = None) -> Dict[str, Any]:
     """
     Scrape an individual Mistral model documentation page for metadata.
+    api_capabilities, if provided, comes from the API /v1/models response.
     """
     html = fetch_html(url)
 
@@ -327,15 +381,18 @@ def scrape_model_page(slug: str, url: str) -> Dict[str, Any]:
     model_name = clean_text(h1.get_text(strip=True)) if h1 else slug
 
     api_id = extract_api_id(text)
-    description = extract_description(soup)
+    description = extract_description(soup, text)
     context_window = extract_context_window(text)
-    price_info = extract_price_pair(text)
+    price_info = extract_price_pair(html)
     release_date = extract_release_date(text)
     version = extract_version(text)
     license_tier = extract_license_tier(text)
-    modalities = extract_modality_icons(text)
+    modalities = extract_modality_icons(
+        description or model_name, api_capabilities
+    )
     features = extract_features(soup)
     params = extract_parameter_info(text)
+    speed_perf = extract_speed_performance(html)
 
     return {
         "slug": slug,
@@ -351,6 +408,7 @@ def scrape_model_page(slug: str, url: str) -> Dict[str, Any]:
         **price_info,
         **modalities,
         **params,
+        **speed_perf,
         "features": features,
     }
 
@@ -424,7 +482,10 @@ def build_mistral_model_records() -> Dict[str, Any]:
         doc_info: Dict[str, Any] = {}
         if matched_slug:
             doc_url = slug_map[matched_slug]
-            doc_info = scrape_model_page(matched_slug, doc_url)
+            doc_info = scrape_model_page(
+                matched_slug, doc_url,
+                api_capabilities=model.get("capabilities"),
+            )
             scraped_slugs.add(matched_slug)
             time.sleep(0.3)
 
