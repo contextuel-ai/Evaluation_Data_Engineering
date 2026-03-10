@@ -70,13 +70,13 @@ def safe_int(val) -> int | None:
     except (ValueError, TypeError):
         return None
 
-def safe_billions(val) -> float | None:
-    """Parse a raw parameter count and convert to billions."""
+def safe_param_count(val) -> int | None:
+    """Parse a raw parameter count and return as integer."""
     if not val or str(val).strip() in ("", "-", "nan"):
         return None
     try:
         raw = float(str(val).strip())
-        return round(raw / 1e9, 2)
+        return int(raw)
     except (ValueError, TypeError):
         return None
 
@@ -110,7 +110,7 @@ def read_rows(path: Path) -> list[dict]:
             link = (r.get("Link") or "").strip()
             desc = (r.get("description") or "").strip()
 
-            total_params = safe_billions(r.get("total_parameter_count"))
+            total_params = safe_param_count(r.get("total_parameter_count"))
             max_input = safe_int(r.get("max_input_tokens"))
 
             input_modalities = parse_modalities(r.get("input_modality", ""))
@@ -190,10 +190,10 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
         if r["cutoff"] and r["cutoff"] not in ("-", "nan", "Online"):
             g.add((model_uri, ENKI.hasKnowledgeCutoff, Literal(r["cutoff"])))
 
-        # Total parameter count (in billions)
+        # Total parameter count
         if r["total_parameter_count"] is not None:
             g.add((model_uri, ENKI.hasTotalParameterCount,
-                   Literal(r["total_parameter_count"], datatype=XSD.double)))
+                   Literal(r["total_parameter_count"], datatype=XSD.nonNegativeInteger)))
 
         # Max context window tokens
         if r["context_window_tokens"] is not None:
@@ -375,7 +375,7 @@ def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef,
         if isinstance(o, URIRef):
             return curie(o)
         if isinstance(o, Literal):
-            if o.datatype == XSD.integer:
+            if o.datatype in (XSD.integer, XSD.nonNegativeInteger):
                 return str(int(o))
             if o.datatype == XSD.nonNegativeInteger:
                 return f'"{int(o)}"^^xsd:nonNegativeInteger'

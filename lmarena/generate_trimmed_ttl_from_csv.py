@@ -235,7 +235,7 @@ def build_graph(rows) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
         params_b = extract_params_billion(model_label)
         if params_b is not None:
             g.add((model_uri, ENKI.hasTotalParameterCount,
-                   Literal(params_b, datatype=XSD.double)))
+                   Literal(int(params_b * 1e9), datatype=XSD.nonNegativeInteger)))
 
         if r["license"] and r["license"].strip() and r["license"].strip() != "-":
             lic_local = normalize_license_local(r["license"])
@@ -394,7 +394,7 @@ def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef,
         if isinstance(o, URIRef):
             return curie(o)
         if isinstance(o, Literal):
-            if o.datatype == XSD.integer:
+            if o.datatype in (XSD.integer, XSD.nonNegativeInteger):
                 return str(int(o))
             if o.datatype in (XSD.float, XSD.double):
                 return str(float(o))

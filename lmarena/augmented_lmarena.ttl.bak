@@ -727,42 +727,6 @@ contextuel:LM_Arena_MT_Bench a enki:Evaluation ;
     enki:testsCapability contextuel:MultiTurnDialogue ;
     enki:testsCapability contextuel:ResponseHelpfulness .
 
-contextuel:AcademicDomainKnowledge a enki:Capability ;
-    dct:description "The ability of an LLM to demonstrate understanding of specialized subject matter such as law, medicine, physics, or history." ;
-    rdfs:label "Academic Domain Knowledge" .
-
-contextuel:ContextRetention a enki:Capability ;
-    dct:description "The ability of an LLM to remember and appropriately use prior information within an ongoing interaction." ;
-    rdfs:label "Context Retention" .
-
-contextuel:ConversationalReasoning a enki:Capability ;
-    dct:description "The ability of an LLM to maintain logical consistency and coherence throughout a dialogue." ;
-    rdfs:label "Conversational Reasoning" .
-
-contextuel:FactualRecall a enki:Capability ;
-    dct:description "The ability of an LLM to accurately retrieve and reproduce learned factual information from its training data." ;
-    rdfs:label "Factual Recall" .
-
-contextuel:GeneralKnowledgeReasoning a enki:Capability ;
-    dct:description "The ability of an LLM to apply broad academic knowledge across multiple disciplines to correctly answer domain-specific questions." ;
-    rdfs:label "General Knowledge Reasoning" .
-
-contextuel:InstructionFollowing a enki:Capability ;
-    dct:description "The ability of an LLM to understand and correctly execute user-provided instructions." ;
-    rdfs:label "Instruction Following" .
-
-contextuel:MultiStepReasoning a enki:Capability ;
-    dct:description "The ability of an LLM to perform sequential logical operations to arrive at a correct conclusion." ;
-    rdfs:label "Multi-Step Reasoning" .
-
-contextuel:MultiTurnDialogue a enki:Capability ;
-    dct:description "The ability of an LLM to sustain contextually appropriate responses across multiple conversational exchanges." ;
-    rdfs:label "Multi-Turn Dialogue" .
-
-contextuel:ResponseHelpfulness a enki:Capability ;
-    dct:description "The ability of an LLM to generate responses that are useful, relevant, and aligned with user intent." ;
-    rdfs:label "Response Helpfulness" .
-
 contextuel:LM_Arena a enki:AIOrganization ;
     dct:description "LM Arena is crowdsourced platform for comparing LLMs across various benchmarks." ;
     dct:identifier "https://arena.ai/" ;

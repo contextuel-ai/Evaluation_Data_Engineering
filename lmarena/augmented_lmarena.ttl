@@ -759,10 +759,10 @@ contextuel:Baize_v2_13B a enki:LLM ;
     rdfs:label "Baize-v2-13B" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/4" ;
-    enki:hasMaxContextWindowTokens "2048"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "2048"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 2048 ;
+    enki:hasMaxInputTokens 2048 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 13.0 .
+    enki:hasTotalParameterCount 13000000000 .
 
 contextuel:Baize_v2_13B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -790,9 +790,9 @@ contextuel:ChatGLM2_6B a enki:LLM ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "ChatGLM2-6B" ;
     enki:hasKnowledgeCutoff "2023/6" ;
-    enki:hasMaxContextWindowTokens "32768"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "32768"^^xsd:nonNegativeInteger ;
-    enki:hasTotalParameterCount 6.0 .
+    enki:hasMaxContextWindowTokens 32768 ;
+    enki:hasMaxInputTokens 32768 ;
+    enki:hasTotalParameterCount 6000000000 .
 
 contextuel:ChatGLM2_6B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -820,9 +820,9 @@ contextuel:ChatGLM_6B a enki:LLM ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "ChatGLM-6B" ;
     enki:hasKnowledgeCutoff "2023/3" ;
-    enki:hasMaxContextWindowTokens "2048"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "2048"^^xsd:nonNegativeInteger ;
-    enki:hasTotalParameterCount 6.0 .
+    enki:hasMaxContextWindowTokens 2048 ;
+    enki:hasMaxInputTokens 2048 ;
+    enki:hasTotalParameterCount 6000000000 .
 
 contextuel:ChatGLM_6B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -864,7 +864,7 @@ contextuel:Claude_2_0 a enki:LLM ;
     dct:license contextuel:Proprietary ;
     rdfs:label "Claude-2.0" ;
     enki:hasInputModality contextuel:text ;
-    enki:hasMaxInputTokens "100000"^^xsd:nonNegativeInteger ;
+    enki:hasMaxInputTokens 100000 ;
     enki:hasOutputModality contextuel:text .
 
 contextuel:Claude_2_0_MMLU a enki:EvaluatedMetric ;
@@ -886,7 +886,7 @@ contextuel:Claude_2_1 a enki:LLM ;
     dct:identifier "https://www.anthropic.com/index/claude-2-1" ;
     dct:license contextuel:Proprietary ;
     rdfs:label "Claude-2.1" ;
-    enki:hasMaxContextWindowTokens "200000"^^xsd:nonNegativeInteger .
+    enki:hasMaxContextWindowTokens 200000 .
 
 contextuel:Claude_2_1_MT_Bench a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -950,10 +950,10 @@ contextuel:CodeLlama_34B_instruct a enki:LLM ;
     rdfs:label "CodeLlama-34B-instruct" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/7" ;
-    enki:hasMaxContextWindowTokens "16384"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "16384"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 16384 ;
+    enki:hasMaxInputTokens 16384 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 34.0 .
+    enki:hasTotalParameterCount 34000000000 .
 
 contextuel:CodeLlama_34B_instruct_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -969,10 +969,10 @@ contextuel:CodeLlama_70B_instruct a enki:LLM ;
     rdfs:label "CodeLlama-70B-instruct" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2024/1" ;
-    enki:hasMaxContextWindowTokens "16384"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "16384"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 16384 ;
+    enki:hasMaxInputTokens 16384 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 70.0 .
+    enki:hasTotalParameterCount 70000000000 .
 
 contextuel:DeepSeek_LLM_67B_Chat a enki:LLM ;
     dct:description "DeepSeek-LLM-67B-Chat is a text-based conversational language model developed by DeepSeek AI." ;
@@ -981,10 +981,10 @@ contextuel:DeepSeek_LLM_67B_Chat a enki:LLM ;
     rdfs:label "DeepSeek-LLM-67B-Chat" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/11" ;
-    enki:hasMaxContextWindowTokens "4096"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "4096"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 4096 ;
+    enki:hasMaxInputTokens 4096 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 67.0 .
+    enki:hasTotalParameterCount 67000000000 .
 
 contextuel:DeepSeek_LLM_67B_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1020,10 +1020,10 @@ contextuel:Dolphin_2_2_1_Mistral_7B a enki:LLM ;
     rdfs:label "Dolphin-2.2.1-Mistral-7B" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/10" ;
-    enki:hasMaxContextWindowTokens "32768"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "32768"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 32768 ;
+    enki:hasMaxInputTokens 32768 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:falcon_180b_chat a enki:LLM ;
     dct:description "falcon-180b-chat is a text-to-text model developed by tiiuae with a total of 180,000,000,000 parameters." ;
@@ -1033,7 +1033,7 @@ contextuel:falcon_180b_chat a enki:LLM ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/9" ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 180.0 .
+    enki:hasTotalParameterCount 180000000000 .
 
 contextuel:falcon_180b_chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1049,10 +1049,10 @@ contextuel:Falcon_40B_Instruct a enki:LLM ;
     rdfs:label "Falcon-40B-Instruct" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/5" ;
-    enki:hasMaxContextWindowTokens "2048"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "2048"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 2048 ;
+    enki:hasMaxInputTokens 2048 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 40.0 .
+    enki:hasTotalParameterCount 40000000000 .
 
 contextuel:Falcon_40B_Instruct_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1075,10 +1075,10 @@ contextuel:FastChat_T5_3B a enki:LLM ;
     rdfs:label "FastChat-T5-3B" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/4" ;
-    enki:hasMaxContextWindowTokens "512"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "512"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 512 ;
+    enki:hasMaxInputTokens 512 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 3.0 .
+    enki:hasTotalParameterCount 3000000000 .
 
 contextuel:FastChat_T5_3B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1130,7 +1130,7 @@ contextuel:Gemma_2B_it a enki:LLM ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2024/2" ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 2.0 .
+    enki:hasTotalParameterCount 2000000000 .
 
 contextuel:Gemma_2B_it_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1147,7 +1147,7 @@ contextuel:Gemma_7B_it a enki:LLM ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2024/2" ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:Gemma_7B_it_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1163,10 +1163,10 @@ contextuel:GPT4All_13B_Snoozy a enki:LLM ;
     rdfs:label "GPT4All-13B-Snoozy" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/3" ;
-    enki:hasMaxContextWindowTokens "2048"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "2048"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 2048 ;
+    enki:hasMaxInputTokens 2048 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 13.0 .
+    enki:hasTotalParameterCount 13000000000 .
 
 contextuel:GPT4All_13B_Snoozy_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1303,10 +1303,10 @@ contextuel:Guanaco_33B a enki:LLM ;
     rdfs:label "Guanaco-33B" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/5" ;
-    enki:hasMaxContextWindowTokens "2048"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "2048"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 2048 ;
+    enki:hasMaxInputTokens 2048 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 33.0 .
+    enki:hasTotalParameterCount 33000000000 .
 
 contextuel:Guanaco_33B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1329,10 +1329,10 @@ contextuel:Guanaco_65B a enki:LLM ;
     rdfs:label "Guanaco-65B" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/5" ;
-    enki:hasMaxContextWindowTokens "2048"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "2048"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 2048 ;
+    enki:hasMaxInputTokens 2048 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 65.0 .
+    enki:hasTotalParameterCount 65000000000 .
 
 contextuel:Guanaco_65B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1354,7 +1354,7 @@ contextuel:H2O_Oasst_OpenLLaMA_13B a enki:LLM ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "H2O-Oasst-OpenLLaMA-13B" ;
     enki:hasKnowledgeCutoff "2023/6" ;
-    enki:hasTotalParameterCount 13.0 .
+    enki:hasTotalParameterCount 13000000000 .
 
 contextuel:H2O_Oasst_OpenLLaMA_13B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1376,7 +1376,7 @@ contextuel:Koala_13B a enki:LLM ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "Koala-13B" ;
     enki:hasKnowledgeCutoff "2023/4" ;
-    enki:hasTotalParameterCount 13.0 .
+    enki:hasTotalParameterCount 13000000000 .
 
 contextuel:Koala_13B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1398,7 +1398,7 @@ contextuel:LLaMA_13B a enki:LLM ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "LLaMA-13B" ;
     enki:hasKnowledgeCutoff "2023/2" ;
-    enki:hasTotalParameterCount 13.0 .
+    enki:hasTotalParameterCount 13000000000 .
 
 contextuel:LLaMA_13B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1422,7 +1422,7 @@ contextuel:Llama_2_13b_chat a enki:LLM ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/7" ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 13.0 .
+    enki:hasTotalParameterCount 13000000000 .
 
 contextuel:Llama_2_13b_chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1446,7 +1446,7 @@ contextuel:Llama_2_70b_chat a enki:LLM ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/7" ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 70.0 .
+    enki:hasTotalParameterCount 70000000000 .
 
 contextuel:Llama_2_70b_chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1470,7 +1470,7 @@ contextuel:Llama_2_7b_chat a enki:LLM ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/7" ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:Llama_2_7b_chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1493,10 +1493,10 @@ contextuel:Mistral_7B_Instruct_v0_1 a enki:LLM ;
     rdfs:label "Mistral-7B-Instruct-v0.1" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/9" ;
-    enki:hasMaxContextWindowTokens "32768"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "32768"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 32768 ;
+    enki:hasMaxInputTokens 32768 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:Mistral_7B_Instruct_v0_1_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1519,10 +1519,10 @@ contextuel:Mistral_7B_Instruct_v0_2 a enki:LLM ;
     rdfs:label "Mistral-7B-Instruct-v0.2" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/12" ;
-    enki:hasMaxContextWindowTokens "32768"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "32768"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 32768 ;
+    enki:hasMaxInputTokens 32768 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:Mistral_7B_Instruct_v0_2_MT_Bench a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1536,7 +1536,7 @@ contextuel:Mistral_Large_2402 a enki:LLM ;
     dct:identifier "https://mistral.ai/news/mistral-large/" ;
     dct:license contextuel:Proprietary ;
     rdfs:label "Mistral-Large-2402" ;
-    enki:hasMaxContextWindowTokens "32000"^^xsd:nonNegativeInteger .
+    enki:hasMaxContextWindowTokens 32000 .
 
 contextuel:Mistral_Large_2402_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1579,7 +1579,7 @@ contextuel:Mixtral_8x7b_Instruct_v0_1 a enki:LLM ;
     rdfs:label "Mixtral-8x7b-Instruct-v0.1" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/12" ;
-    enki:hasMaxContextWindowTokens "32000"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 32000 ;
     enki:hasOutputModality contextuel:text .
 
 contextuel:Mixtral_8x7b_Instruct_v0_1_MMLU a enki:EvaluatedMetric ;
@@ -1602,7 +1602,7 @@ contextuel:MPT_30B_chat a enki:LLM ;
     dct:license contextuel:CC_BY_NC_SA_4_0 ;
     rdfs:label "MPT-30B-chat" ;
     enki:hasKnowledgeCutoff "2023/6" ;
-    enki:hasTotalParameterCount 30.0 .
+    enki:hasTotalParameterCount 30000000000 .
 
 contextuel:MPT_30B_chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1624,7 +1624,7 @@ contextuel:MPT_30B_Instruct a enki:LLM ;
     dct:license contextuel:CC_BY_SA_3_0 ;
     rdfs:label "MPT-30B-Instruct" ;
     enki:hasKnowledgeCutoff "2023/6" ;
-    enki:hasTotalParameterCount 30.0 .
+    enki:hasTotalParameterCount 30000000000 .
 
 contextuel:MPT_30B_Instruct_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1646,7 +1646,7 @@ contextuel:MPT_7B_Chat a enki:LLM ;
     dct:license contextuel:CC_BY_NC_SA_4_0 ;
     rdfs:label "MPT-7B-Chat" ;
     enki:hasKnowledgeCutoff "2023/5" ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:MPT_7B_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1669,10 +1669,10 @@ contextuel:Nous_Hermes_13B a enki:LLM ;
     rdfs:label "Nous-Hermes-13B" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/6" ;
-    enki:hasMaxContextWindowTokens "2048"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "2048"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 2048 ;
+    enki:hasMaxInputTokens 2048 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 13.0 .
+    enki:hasTotalParameterCount 13000000000 .
 
 contextuel:Nous_Hermes_13B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1695,8 +1695,8 @@ contextuel:Nous_Hermes_2_Mixtral_8x7B_DPO a enki:LLM ;
     rdfs:label "Nous-Hermes-2-Mixtral-8x7B-DPO" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2024/1" ;
-    enki:hasMaxContextWindowTokens "32768"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "32768"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 32768 ;
+    enki:hasMaxInputTokens 32768 ;
     enki:hasOutputModality contextuel:text .
 
 contextuel:NV_Llama2_70B_SteerLM_Chat a enki:LLM ;
@@ -1707,7 +1707,7 @@ contextuel:NV_Llama2_70B_SteerLM_Chat a enki:LLM ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/11" ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 70.0 .
+    enki:hasTotalParameterCount 70000000000 .
 
 contextuel:NV_Llama2_70B_SteerLM_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1730,10 +1730,10 @@ contextuel:OLMo_7B_instruct a enki:LLM ;
     rdfs:label "OLMo-7B-instruct" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2024/2" ;
-    enki:hasMaxContextWindowTokens "2048"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "2048"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 2048 ;
+    enki:hasMaxInputTokens 2048 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:OpenAssistant_LLaMA_30B a enki:LLM ;
     dct:description "OpenAssistant-LLaMA-30B is a 30 billion parameter language model developed by OpenAssistant." ;
@@ -1741,7 +1741,7 @@ contextuel:OpenAssistant_LLaMA_30B a enki:LLM ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "OpenAssistant-LLaMA-30B" ;
     enki:hasKnowledgeCutoff "2023/4" ;
-    enki:hasTotalParameterCount 30.0 .
+    enki:hasTotalParameterCount 30000000000 .
 
 contextuel:OpenAssistant_LLaMA_30B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1764,10 +1764,10 @@ contextuel:OpenAssistant_Pythia_12B a enki:LLM ;
     rdfs:label "OpenAssistant-Pythia-12B" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/4" ;
-    enki:hasMaxContextWindowTokens "2048"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "2048"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 2048 ;
+    enki:hasMaxInputTokens 2048 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 12.0 .
+    enki:hasTotalParameterCount 12000000000 .
 
 contextuel:OpenAssistant_Pythia_12B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1790,8 +1790,8 @@ contextuel:OpenChat_3_5 a enki:LLM ;
     rdfs:label "OpenChat-3.5" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/11" ;
-    enki:hasMaxContextWindowTokens "8192"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "8192"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 8192 ;
+    enki:hasMaxInputTokens 8192 ;
     enki:hasOutputModality contextuel:text .
 
 contextuel:OpenChat_3_5_MMLU a enki:EvaluatedMetric ;
@@ -1815,8 +1815,8 @@ contextuel:OpenChat_3_5_0106 a enki:LLM ;
     rdfs:label "OpenChat-3.5-0106" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2024/1" ;
-    enki:hasMaxContextWindowTokens "8192"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "8192"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 8192 ;
+    enki:hasMaxInputTokens 8192 ;
     enki:hasOutputModality contextuel:text .
 
 contextuel:OpenChat_3_5_0106_MMLU a enki:EvaluatedMetric ;
@@ -1840,10 +1840,10 @@ contextuel:OpenHermes_2_5_Mistral_7b a enki:LLM ;
     rdfs:label "OpenHermes-2.5-Mistral-7b" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/11" ;
-    enki:hasMaxContextWindowTokens "32768"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "32768"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 32768 ;
+    enki:hasMaxInputTokens 32768 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:PaLM_Chat_Bison_001 a enki:LLM ;
     dct:identifier "https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models#foundation_models" ;
@@ -1863,14 +1863,14 @@ contextuel:pplx_70b_online a enki:LLM ;
     dct:identifier "https://blog.perplexity.ai/blog/introducing-pplx-online-llms" ;
     dct:license contextuel:Proprietary ;
     rdfs:label "pplx-70b-online" ;
-    enki:hasTotalParameterCount 70.0 .
+    enki:hasTotalParameterCount 70000000000 .
 
 contextuel:pplx_7b_online a enki:LLM ;
     dct:description "pplx-7b-online is a large language model developed by Anthropic." ;
     dct:identifier "https://blog.perplexity.ai/blog/introducing-pplx-online-llms" ;
     dct:license contextuel:Proprietary ;
     rdfs:label "pplx-7b-online" ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:Qwen1_5_4B_Chat a enki:LLM ;
     dct:description "Qwen1.5-4B-Chat is a 4 billion parameter language model developed by Qwen for chat applications." ;
@@ -1878,7 +1878,7 @@ contextuel:Qwen1_5_4B_Chat a enki:LLM ;
     dct:license contextuel:Qianwen_LICENSE ;
     rdfs:label "Qwen1.5-4B-Chat" ;
     enki:hasKnowledgeCutoff "2024/2" ;
-    enki:hasTotalParameterCount 4.0 .
+    enki:hasTotalParameterCount 4000000000 .
 
 contextuel:Qwen1_5_4B_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1893,7 +1893,7 @@ contextuel:Qwen1_5_72B_Chat a enki:LLM ;
     dct:license contextuel:Qianwen_LICENSE ;
     rdfs:label "Qwen1.5-72B-Chat" ;
     enki:hasKnowledgeCutoff "2024/2" ;
-    enki:hasTotalParameterCount 72.0 .
+    enki:hasTotalParameterCount 72000000000 .
 
 contextuel:Qwen1_5_72B_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1915,7 +1915,7 @@ contextuel:Qwen1_5_7B_Chat a enki:LLM ;
     dct:license contextuel:Qianwen_LICENSE ;
     rdfs:label "Qwen1.5-7B-Chat" ;
     enki:hasKnowledgeCutoff "2024/2" ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:Qwen1_5_7B_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1938,10 +1938,10 @@ contextuel:Qwen_14B_Chat a enki:LLM ;
     rdfs:label "Qwen-14B-Chat" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/8" ;
-    enki:hasMaxContextWindowTokens "8192"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "8192"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 8192 ;
+    enki:hasMaxInputTokens 8192 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 14.0 .
+    enki:hasTotalParameterCount 14000000000 .
 
 contextuel:Qwen_14B_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -1984,10 +1984,10 @@ contextuel:SOLAR_10_7B_Instruct_v1_0 a enki:LLM ;
     rdfs:label "SOLAR-10.7B-Instruct-v1.0" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/11" ;
-    enki:hasMaxContextWindowTokens "4096"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "4096"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 4096 ;
+    enki:hasMaxInputTokens 4096 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 10.7 .
+    enki:hasTotalParameterCount 10700000000 .
 
 contextuel:SOLAR_10_7B_Instruct_v1_0_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2010,10 +2010,10 @@ contextuel:StableLM_Tuned_Alpha_7B a enki:LLM ;
     rdfs:label "StableLM-Tuned-Alpha-7B" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/4" ;
-    enki:hasMaxContextWindowTokens "4096"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "4096"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 4096 ;
+    enki:hasMaxInputTokens 4096 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:StableLM_Tuned_Alpha_7B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2036,10 +2036,10 @@ contextuel:Starling_LM_7B_alpha a enki:LLM ;
     rdfs:label "Starling-LM-7B-alpha" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/11" ;
-    enki:hasMaxContextWindowTokens "8192"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "8192"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 8192 ;
+    enki:hasMaxInputTokens 8192 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:Starling_LM_7B_alpha_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2063,7 +2063,7 @@ contextuel:StripedHyena_Nous_7B a enki:LLM ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/12" ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:Tulu_2_DPO_70B a enki:LLM ;
     dct:description "Tulu-2-DPO-70B is a text-to-text model developed by allenai based on the Llama-2-70b-hf model." ;
@@ -2072,10 +2072,10 @@ contextuel:Tulu_2_DPO_70B a enki:LLM ;
     rdfs:label "Tulu-2-DPO-70B" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/11" ;
-    enki:hasMaxContextWindowTokens "8192"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "8192"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 8192 ;
+    enki:hasMaxInputTokens 8192 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 70.0 .
+    enki:hasTotalParameterCount 70000000000 .
 
 contextuel:Tulu_2_DPO_70B_MT_Bench a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2091,10 +2091,10 @@ contextuel:Tulu_30B a enki:LLM ;
     rdfs:label "Tulu-30B" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/6" ;
-    enki:hasMaxContextWindowTokens "2048"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "2048"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 2048 ;
+    enki:hasMaxInputTokens 2048 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 30.0 .
+    enki:hasTotalParameterCount 30000000000 .
 
 contextuel:Tulu_30B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2117,10 +2117,10 @@ contextuel:Vicuna_13B a enki:LLM ;
     rdfs:label "Vicuna-13B" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/7" ;
-    enki:hasMaxContextWindowTokens "4096"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "4096"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 4096 ;
+    enki:hasMaxInputTokens 4096 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 13.0 .
+    enki:hasTotalParameterCount 13000000000 .
 
 contextuel:Vicuna_13B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2143,10 +2143,10 @@ contextuel:Vicuna_13B_16k a enki:LLM ;
     rdfs:label "Vicuna-13B-16k" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/7" ;
-    enki:hasMaxContextWindowTokens "4096"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "4096"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 4096 ;
+    enki:hasMaxInputTokens 4096 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 13.0 .
+    enki:hasTotalParameterCount 13000000000 .
 
 contextuel:Vicuna_13B_16k_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2169,10 +2169,10 @@ contextuel:Vicuna_33B a enki:LLM ;
     rdfs:label "Vicuna-33B" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/8" ;
-    enki:hasMaxContextWindowTokens "2048"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "2048"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 2048 ;
+    enki:hasMaxInputTokens 2048 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 33.0 .
+    enki:hasTotalParameterCount 33000000000 .
 
 contextuel:Vicuna_33B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2215,10 +2215,10 @@ contextuel:Vicuna_7B_16k a enki:LLM ;
     rdfs:label "Vicuna-7B-16k" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/7" ;
-    enki:hasMaxContextWindowTokens "4096"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "4096"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 4096 ;
+    enki:hasMaxInputTokens 4096 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:Vicuna_7B_16k_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2241,10 +2241,10 @@ contextuel:WizardLM_13B_v1_0 a enki:LLM ;
     rdfs:label "WizardLM-13B-v1.0" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/5" ;
-    enki:hasMaxContextWindowTokens "2048"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "2048"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 2048 ;
+    enki:hasMaxInputTokens 2048 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 13.0 .
+    enki:hasTotalParameterCount 13000000000 .
 
 contextuel:WizardLM_13B_v1_0_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2266,7 +2266,7 @@ contextuel:WizardLM_13B_v1_1 a enki:LLM ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "WizardLM-13B-v1.1" ;
     enki:hasKnowledgeCutoff "2023/7" ;
-    enki:hasTotalParameterCount 13.0 .
+    enki:hasTotalParameterCount 13000000000 .
 
 contextuel:WizardLM_13B_v1_1_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2289,10 +2289,10 @@ contextuel:WizardLM_13b_v1_2 a enki:LLM ;
     rdfs:label "WizardLM-13b-v1.2" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/7" ;
-    enki:hasMaxContextWindowTokens "4096"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "4096"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 4096 ;
+    enki:hasMaxInputTokens 4096 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 13.0 .
+    enki:hasTotalParameterCount 13000000000 .
 
 contextuel:WizardLM_13b_v1_2_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2314,7 +2314,7 @@ contextuel:WizardLM_30B a enki:LLM ;
     dct:license contextuel:Non_commercial ;
     rdfs:label "WizardLM-30B" ;
     enki:hasKnowledgeCutoff "2023/6" ;
-    enki:hasTotalParameterCount 30.0 .
+    enki:hasTotalParameterCount 30000000000 .
 
 contextuel:WizardLM_30B_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2337,10 +2337,10 @@ contextuel:WizardLM_70B_v1_0 a enki:LLM ;
     rdfs:label "WizardLM-70B-v1.0" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/8" ;
-    enki:hasMaxContextWindowTokens "4096"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "4096"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 4096 ;
+    enki:hasMaxInputTokens 4096 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 70.0 .
+    enki:hasTotalParameterCount 70000000000 .
 
 contextuel:WizardLM_70B_v1_0_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2363,10 +2363,10 @@ contextuel:XGen_7B_8K_Inst a enki:LLM ;
     rdfs:label "XGen-7B-8K-Inst" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/7" ;
-    enki:hasMaxContextWindowTokens "8192"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "8192"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 8192 ;
+    enki:hasMaxInputTokens 8192 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:XGen_7B_8K_Inst_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2389,10 +2389,10 @@ contextuel:Yi_34B_Chat a enki:LLM ;
     rdfs:label "Yi-34B-Chat" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/6" ;
-    enki:hasMaxContextWindowTokens "4096"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "4096"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 4096 ;
+    enki:hasMaxInputTokens 4096 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 34.0 .
+    enki:hasTotalParameterCount 34000000000 .
 
 contextuel:Yi_34B_Chat_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2408,10 +2408,10 @@ contextuel:Zephyr_7b_alpha a enki:LLM ;
     rdfs:label "Zephyr-7b-alpha" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/10" ;
-    enki:hasMaxContextWindowTokens "32768"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "32768"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 32768 ;
+    enki:hasMaxInputTokens 32768 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:Zephyr_7b_alpha_MT_Bench a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -2427,10 +2427,10 @@ contextuel:Zephyr_7b_beta a enki:LLM ;
     rdfs:label "Zephyr-7b-beta" ;
     enki:hasInputModality contextuel:text ;
     enki:hasKnowledgeCutoff "2023/10" ;
-    enki:hasMaxContextWindowTokens "32768"^^xsd:nonNegativeInteger ;
-    enki:hasMaxInputTokens "32768"^^xsd:nonNegativeInteger ;
+    enki:hasMaxContextWindowTokens 32768 ;
+    enki:hasMaxInputTokens 32768 ;
     enki:hasOutputModality contextuel:text ;
-    enki:hasTotalParameterCount 7.0 .
+    enki:hasTotalParameterCount 7000000000 .
 
 contextuel:Zephyr_7b_beta_MMLU a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
