@@ -55,6 +55,10 @@ contextuel:AI21_Labs_Provisioning_Jamba_Reasoning_3B a enki:LLMProvisioning ;
 contextuel:Alibaba a enki:LLMManufacturer,
         enki:LLMProvider ;
     rdfs:label "Alibaba" ;
+    enki:manufactures contextuel:DeepSeek_R1_0528_Qwen3_8B ;
+    enki:manufactures contextuel:DeepSeek_R1_Distill_Qwen_14B ;
+    enki:manufactures contextuel:DeepSeek_R1_Distill_Qwen_1_5B ;
+    enki:manufactures contextuel:DeepSeek_R1_Distill_Qwen_32B ;
     enki:manufactures contextuel:QwQ_32B ;
     enki:manufactures contextuel:QwQ_32B_Preview ;
     enki:manufactures contextuel:Qwen1_5_Chat_110B ;
@@ -401,7 +405,6 @@ contextuel:Alibaba_Provisioning_QwQ_32B_Preview a enki:LLMProvisioning ;
 contextuel:Allen_Institute_For_AI a enki:LLMManufacturer,
         enki:LLMProvider ;
     rdfs:label "Allen Institute for AI" ;
-    enki:manufactures contextuel:Llama_3_1_Tulu3_405B ;
     enki:manufactures contextuel:Molmo2_8B ;
     enki:manufactures contextuel:Molmo_7B_D ;
     enki:manufactures contextuel:OLMo_2_32B ;
@@ -803,12 +806,6 @@ contextuel:DeepSeek a enki:LLMManufacturer,
     enki:manufactures contextuel:DeepSeek_Coder_V2_Lite_Instruct ;
     enki:manufactures contextuel:DeepSeek_LLM_67B_Chat_V1 ;
     enki:manufactures contextuel:DeepSeek_R1_0528_May_25 ;
-    enki:manufactures contextuel:DeepSeek_R1_0528_Qwen3_8B ;
-    enki:manufactures contextuel:DeepSeek_R1_Distill_Llama_70B ;
-    enki:manufactures contextuel:DeepSeek_R1_Distill_Llama_8B ;
-    enki:manufactures contextuel:DeepSeek_R1_Distill_Qwen_14B ;
-    enki:manufactures contextuel:DeepSeek_R1_Distill_Qwen_1_5B ;
-    enki:manufactures contextuel:DeepSeek_R1_Distill_Qwen_32B ;
     enki:manufactures contextuel:DeepSeek_R1_Jan_25 ;
     enki:manufactures contextuel:DeepSeek_V2_5 ;
     enki:manufactures contextuel:DeepSeek_V2_5_Dec_24 ;
@@ -1463,22 +1460,38 @@ contextuel:MBZUAI_Institute_Of_Foundation_Models_Provisioning_K2_V2_Medium a enk
 contextuel:Meta a enki:LLMManufacturer,
         enki:LLMProvider ;
     rdfs:label "Meta" ;
+    enki:manufactures contextuel:DeepHermes_3_Llama_3_1_8B_Preview_Non_Reasoning ;
+    enki:manufactures contextuel:DeepSeek_R1_Distill_Llama_70B ;
+    enki:manufactures contextuel:DeepSeek_R1_Distill_Llama_8B ;
+    enki:manufactures contextuel:Hermes_3_Llama_3_1_70B ;
+    enki:manufactures contextuel:Hermes_4_Llama_3_1_405B_Non_Reasoning ;
+    enki:manufactures contextuel:Hermes_4_Llama_3_1_405B_Reasoning ;
+    enki:manufactures contextuel:Hermes_4_Llama_3_1_70B_Non_Reasoning ;
+    enki:manufactures contextuel:Hermes_4_Llama_3_1_70B_Reasoning ;
     enki:manufactures contextuel:Llama_2_Chat_13B ;
     enki:manufactures contextuel:Llama_2_Chat_70B ;
     enki:manufactures contextuel:Llama_2_Chat_7B ;
     enki:manufactures contextuel:Llama_3_1_Instruct_405B ;
     enki:manufactures contextuel:Llama_3_1_Instruct_70B ;
     enki:manufactures contextuel:Llama_3_1_Instruct_8B ;
+    enki:manufactures contextuel:Llama_3_1_Nemotron_Instruct_70B ;
+    enki:manufactures contextuel:Llama_3_1_Nemotron_Nano_4B_V1_1_Reasoning ;
+    enki:manufactures contextuel:Llama_3_1_Nemotron_Ultra_253B_V1_Reasoning ;
+    enki:manufactures contextuel:Llama_3_1_Tulu3_405B ;
     enki:manufactures contextuel:Llama_3_2_Instruct_11B_Vision ;
     enki:manufactures contextuel:Llama_3_2_Instruct_1B ;
     enki:manufactures contextuel:Llama_3_2_Instruct_3B ;
     enki:manufactures contextuel:Llama_3_2_Instruct_90B_Vision ;
     enki:manufactures contextuel:Llama_3_3_Instruct_70B ;
+    enki:manufactures contextuel:Llama_3_3_Nemotron_Super_49B_V1_Non_Reasoning ;
+    enki:manufactures contextuel:Llama_3_3_Nemotron_Super_49B_V1_Reasoning ;
     enki:manufactures contextuel:Llama_3_Instruct_70B ;
     enki:manufactures contextuel:Llama_3_Instruct_8B ;
     enki:manufactures contextuel:Llama_4_Maverick ;
     enki:manufactures contextuel:Llama_4_Scout ;
-    enki:manufactures contextuel:Llama_65B .
+    enki:manufactures contextuel:Llama_65B ;
+    enki:manufactures contextuel:Llama_Nemotron_Super_49B_V1_5_Non_Reasoning ;
+    enki:manufactures contextuel:Llama_Nemotron_Super_49B_V1_5_Reasoning .
 
 contextuel:Meta_Provisioning_Llama_2_Chat_13B a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 2 Chat 13B" ;
@@ -1625,6 +1638,7 @@ contextuel:MiniMax_Provisioning_MiniMax_M2_5 a enki:LLMProvisioning ;
 contextuel:Mistral a enki:LLMManufacturer,
         enki:LLMProvider ;
     rdfs:label "Mistral" ;
+    enki:manufactures contextuel:DeepHermes_3_Mistral_24B_Preview_Non_Reasoning ;
     enki:manufactures contextuel:Devstral_2 ;
     enki:manufactures contextuel:Devstral_Medium ;
     enki:manufactures contextuel:Devstral_Small_2 ;
@@ -1820,16 +1834,7 @@ contextuel:Naver_Provisioning_HyperCLOVA_X_SEED_Think_32B a enki:LLMProvisioning
     enki:provider contextuel:Naver ;
     enki:provides contextuel:HyperCLOVA_X_SEED_Think_32B .
 
-contextuel:Nous_Research a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Nous Research" ;
-    enki:manufactures contextuel:DeepHermes_3_Llama_3_1_8B_Preview_Non_Reasoning ;
-    enki:manufactures contextuel:DeepHermes_3_Mistral_24B_Preview_Non_Reasoning ;
-    enki:manufactures contextuel:Hermes_3_Llama_3_1_70B ;
-    enki:manufactures contextuel:Hermes_4_Llama_3_1_405B_Non_Reasoning ;
-    enki:manufactures contextuel:Hermes_4_Llama_3_1_405B_Reasoning ;
-    enki:manufactures contextuel:Hermes_4_Llama_3_1_70B_Non_Reasoning ;
-    enki:manufactures contextuel:Hermes_4_Llama_3_1_70B_Reasoning .
+contextuel:Nous_Research a enki:LLMProvider .
 
 contextuel:Nous_Research_Provisioning_DeepHermes_3_Llama_3_1_8B_Preview_Non_Reasoning a enki:LLMProvisioning ;
     rdfs:label "Nous Research provisioning of DeepHermes 3 - Llama-3.1 8B Preview (Non-reasoning)" ;
@@ -1869,13 +1874,6 @@ contextuel:Nous_Research_Provisioning_Hermes_4_Llama_3_1_70B_Reasoning a enki:LL
 contextuel:NVIDIA a enki:LLMManufacturer,
         enki:LLMProvider ;
     rdfs:label "NVIDIA" ;
-    enki:manufactures contextuel:Llama_3_1_Nemotron_Instruct_70B ;
-    enki:manufactures contextuel:Llama_3_1_Nemotron_Nano_4B_V1_1_Reasoning ;
-    enki:manufactures contextuel:Llama_3_1_Nemotron_Ultra_253B_V1_Reasoning ;
-    enki:manufactures contextuel:Llama_3_3_Nemotron_Super_49B_V1_Non_Reasoning ;
-    enki:manufactures contextuel:Llama_3_3_Nemotron_Super_49B_V1_Reasoning ;
-    enki:manufactures contextuel:Llama_Nemotron_Super_49B_V1_5_Non_Reasoning ;
-    enki:manufactures contextuel:Llama_Nemotron_Super_49B_V1_5_Reasoning ;
     enki:manufactures contextuel:NVIDIA_Nemotron_3_Nano_30B_A3B_Non_Reasoning ;
     enki:manufactures contextuel:NVIDIA_Nemotron_3_Nano_30B_A3B_Reasoning ;
     enki:manufactures contextuel:NVIDIA_Nemotron_Nano_12B_V2_VL_Non_Reasoning ;

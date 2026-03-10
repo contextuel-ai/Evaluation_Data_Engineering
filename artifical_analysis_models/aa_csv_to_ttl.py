@@ -241,6 +241,41 @@ def extract_params_billion(name: str) -> float | None:
     return max(candidates) if candidates else None
 
 
+# _________ BASE-MODEL ORIGIN DETECTION __________
+
+# Map: (substring found in model name → original developer org name).
+# Order matters: more specific patterns first to avoid false positives.
+# Only entries whose original developer commonly differs from the AA
+# "creator" field are listed.
+BASE_MODEL_FAMILIES = [
+    ("Llama",    "Meta"),
+    ("Qwen",     "Alibaba"),
+    ("Mixtral",  "Mistral"),
+    ("Mistral",  "Mistral"),
+    ("Gemma",    "Google"),
+    ("Phi-",     "Microsoft Azure"),
+]
+
+
+def infer_base_model_org(model_name: str, creator: str) -> str | None:
+    """
+    If the model name contains a known base-model family AND the AA
+    creator differs from that family's original developer, return the
+    original developer name.  Otherwise return None (creator *is* the
+    original developer, or is at least the fine-tuner who trained a
+    genuinely new model).
+    """
+    lower = model_name.lower()
+    for pattern, orig_dev in BASE_MODEL_FAMILIES:
+        if pattern.lower() in lower:
+            # The creator is not the original developer
+            if orig_dev.lower() != creator.lower():
+                return orig_dev
+            # Creator matches the original developer — no split needed
+            return None
+    return None
+
+
 # _________ EVALUATOR ORG __________
 
 ORG_LOCAL = "Artificial_Analysis"
@@ -323,8 +358,22 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
         "Artificial Analysis provides independent benchmarks, speed tests, and pricing data for LLM API providers."
     )))
 
-    # Collect manufacturer and provisioner relationships
-    # In AA, every creator is both manufacturer and provider (all API-served)
+    # Collect manufacturer and provisioner relationships.
+    #
+    # Unlike the original assumption ("every creator is both manufacturer
+    # and provider"), some AA "creators" fine-tuned or distilled a model
+    # whose base architecture was developed by a different organisation.
+    #
+    # Logic (mirrors the HF leaderboard script's base-model reasoning):
+    #   - If the model name reveals a known base-model family whose
+    #     original developer differs from the AA creator:
+    #       • The *original developer* is the manufacturer.
+    #       • The AA creator (who fine-tuned / distilled / hosts) is
+    #         the provisioner.
+    #   - Otherwise the creator is both manufacturer and provisioner.
+    #
+    # All AA models are API-served, so every creator gets provisioning
+    # triples regardless.
     manufacturer_models = defaultdict(set)
     provisioner_provisionings = defaultdict(list)
 
@@ -382,10 +431,21 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
             g.add((metric_uri, ENKI.metricValue, Literal(pm_val)))
             metrics_by_llm[model_uri].append(metric_uri)
 
-        # Manufacturer and provisioner (all AA models are API-provisioned)
+        # Manufacturer and provisioner
         if r["creator"]:
             creator_name = r["creator"]
-            manufacturer_models[creator_name].add(model_uri)
+            base_org = infer_base_model_org(r["model_name"], creator_name)
+
+            if base_org:
+                # Base model was developed by a different org.
+                # Original developer → manufacturer.
+                # AA creator (fine-tuner / distiller) → provisioner only.
+                manufacturer_models[base_org].add(model_uri)
+            else:
+                # Creator is the original developer → manufacturer.
+                manufacturer_models[creator_name].add(model_uri)
+
+            # All AA models are API-served → creator is always provisioner.
             provisioner_provisionings[creator_name].append(
                 (model_uri, local, r["model_name"])
             )
@@ -558,6 +618,7 @@ def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef,
     licenses = sorted(set(g.subjects(RDF.type, DCT.License)), key=lambda s: str(s).lower())
     criteria = sorted(set(g.subjects(RDF.type, ENKI.Criterion)), key=lambda s: str(s).lower())
     manufacturers = sorted(set(g.subjects(RDF.type, ENKI.LLMManufacturer)), key=lambda s: str(s).lower())
+    providers = sorted(set(g.subjects(RDF.type, ENKI.LLMProvider)), key=lambda s: str(s).lower())
     provisionings = sorted(set(g.subjects(RDF.type, ENKI.LLMProvisioning)), key=lambda s: str(s).lower())
     evaluations = sorted(set(g.subjects(RDF.type, ENKI.Evaluation)), key=lambda s: str(s).lower())
     ai_orgs = sorted(set(g.subjects(RDF.type, ENKI.AIOrganization)), key=lambda s: str(s).lower())
@@ -572,6 +633,14 @@ def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef,
         provisionings_by_org[org_uri] = sorted(
             provisionings_by_org[org_uri], key=lambda s: str(s).lower()
         )
+
+    # Merge manufacturers + providers into a single sorted list so that
+    # provider-only orgs (e.g. fine-tuners that host someone else's base
+    # model) are emitted alongside manufacturers, not stranded at the end.
+    mfr_prov_orgs = sorted(
+        set(manufacturers) | set(providers),
+        key=lambda s: str(s).lower(),
+    )
 
     ordered_subjects = []
 
@@ -588,11 +657,11 @@ def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef,
     add_block(criteria)
 
     # 3. Manufacturers/Providers, each followed by their provisionings
-    for mfr in manufacturers:
-        if mfr not in seen_subjects:
-            ordered_subjects.append(mfr)
-            seen_subjects.add(mfr)
-        for p in provisionings_by_org.get(mfr, []):
+    for org in mfr_prov_orgs:
+        if org not in seen_subjects:
+            ordered_subjects.append(org)
+            seen_subjects.add(org)
+        for p in provisionings_by_org.get(org, []):
             if p not in seen_subjects:
                 ordered_subjects.append(p)
                 seen_subjects.add(p)
