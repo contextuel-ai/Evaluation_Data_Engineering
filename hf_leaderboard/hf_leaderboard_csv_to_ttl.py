@@ -373,8 +373,12 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
                 )
 
     # Add LLMManufacturer instances
+    skipped_org_collisions = []
     for org_name, model_uris in manufacturer_models.items():
         org_local = local_from_label(org_name)
+        if org_local in model_locals:
+            skipped_org_collisions.append(org_name)
+            continue
         org_uri = URIRef(str(C) + org_local)
         g.add((org_uri, RDF.type, ENKI.LLMManufacturer))
         g.add((org_uri, RDFS.label, Literal(org_name)))
@@ -384,6 +388,9 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
     # Add LLMProvider + LLMProvisioning instances
     for org_name, prov_list in provisioner_provisionings.items():
         org_local = local_from_label(org_name)
+        if org_local in model_locals:
+            # Already reported in the manufacturer loop (or will be below)
+            continue
         org_uri = URIRef(str(C) + org_local)
         g.add((org_uri, RDF.type, ENKI.LLMProvider))
 
@@ -410,6 +417,10 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
             print(f"  '{lic_label}' ({lic_local}) → License_{lic_local}")
     else:
         print("No license/model URI collisions detected.")
+    if skipped_org_collisions:
+        print(f"Org/model URI collisions — skipped org triples ({len(skipped_org_collisions)}):")
+        for org_name in sorted(skipped_org_collisions):
+            print(f"  '{org_name}' collides with model URI contextuel:{local_from_label(org_name)}")
 
     # Sort each model's metrics for deterministic output
     for model_uri in metrics_by_llm:

@@ -5366,13 +5366,6 @@ contextuel:Nitral_AI a enki:LLMManufacturer ;
     enki:manufactures contextuel:Hathor_Tahsin_L3_8B_V0_85 ;
     enki:manufactures contextuel:Nera_Noctis_12B .
 
-contextuel:NJS26 a enki:LLM,
-        enki:LLMManufacturer ;
-    dct:identifier "https://huggingface.co/Supichi/NJS26" ;
-    rdfs:label "NJS26" ;
-    enki:hasTotalParameterCount 7.242 ;
-    enki:manufactures contextuel:NJS_777 .
-
 contextuel:NLPark a enki:LLMManufacturer ;
     rdfs:label "NLPark" ;
     enki:manufactures contextuel:AnFeng_V3_1_Avocet ;
@@ -219649,6 +219642,60 @@ contextuel:Nimbus_Miqu_V0_1_70B_MUSR a enki:EvaluatedMetric ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 9.330729166666666 .
 
+contextuel:NJS26 a enki:LLM ;
+    dct:identifier "https://huggingface.co/Supichi/NJS26" ;
+    rdfs:label "NJS26" ;
+    enki:hasTotalParameterCount 7.242 .
+
+contextuel:NJS26_BBH a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:NJS26 ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "BBH" ;
+    enki:metricValue 26.847431929671945 .
+
+contextuel:NJS26_CO2 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:CarbonCost ;
+    enki:metricAssignee contextuel:NJS26 ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "CO₂ cost (kg)" ;
+    enki:metricValue 0.4169590959348428 .
+
+contextuel:NJS26_GPQA a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:NJS26 ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "GPQA" ;
+    enki:metricValue 9.060402684563762 .
+
+contextuel:NJS26_IFEval a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:NJS26 ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "IFEval" ;
+    enki:metricValue 4.481331755298164 .
+
+contextuel:NJS26_MATH_Lvl_5 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:NJS26 ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MATH Lvl 5" ;
+    enki:metricValue 3.2477341389728096 .
+
+contextuel:NJS26_MMLU_PRO a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:NJS26 ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MMLU-PRO" ;
+    enki:metricValue 22.63223995271868 .
+
+contextuel:NJS26_MUSR a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:NJS26 ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MUSR" ;
+    enki:metricValue 5.709114583333332 .
+
 contextuel:NJS_777 a enki:LLM ;
     dct:identifier "https://huggingface.co/NJS26/NJS_777" ;
     rdfs:label "NJS_777" ;
@@ -315356,55 +315403,6 @@ contextuel:ECE_PRYMMAL_0_5B_FT_V3_MUSR_MUSR a enki:EvaluatedMetric ;
     enki:metricAssigner contextuel:Hugging_Face ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 3.2539062500000004 .
-
-contextuel:NJS26_BBH a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:NJS26 ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "BBH" ;
-    enki:metricValue 26.847431929671945 .
-
-contextuel:NJS26_CO2 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:CarbonCost ;
-    enki:metricAssignee contextuel:NJS26 ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "CO₂ cost (kg)" ;
-    enki:metricValue 0.4169590959348428 .
-
-contextuel:NJS26_GPQA a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:NJS26 ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "GPQA" ;
-    enki:metricValue 9.060402684563762 .
-
-contextuel:NJS26_IFEval a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:NJS26 ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "IFEval" ;
-    enki:metricValue 4.481331755298164 .
-
-contextuel:NJS26_MATH_Lvl_5 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:NJS26 ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MATH Lvl 5" ;
-    enki:metricValue 3.2477341389728096 .
-
-contextuel:NJS26_MMLU_PRO a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:NJS26 ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MMLU-PRO" ;
-    enki:metricValue 22.63223995271868 .
-
-contextuel:NJS26_MUSR a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:NJS26 ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MUSR" ;
-    enki:metricValue 5.709114583333332 .
 
 contextuel:SmolLM_1_7B_Instruct_IFEval_BBH a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
