@@ -14,7 +14,7 @@ ENKI = Namespace("https://www.contextuel.ai/spec/Enki/")
 LM = Namespace("https://www.contextuel.ai/spec/Enki/lmarena_triples/")
 DCT = Namespace("http://purl.org/dc/terms/")
 
-HEADER_BLOCK = """@base <https://www.contextuel.ai/spec/Enki/> .
+HEADER_BLOCK = """@base <https://www.contextuel.ai/spec/Contextuel/> .
 @prefix enki: <https://www.contextuel.ai/spec/Enki/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -56,6 +56,35 @@ def is_provisioned(row: dict) -> bool:
         return True
 
     return False
+
+# _________ ORG URI RENAMES __________
+# Map CSV org labels to canonical URI locals for cross-dataset consistency.
+# These orgs appear in organizations.ttl under these canonical names.
+ORG_RENAME = {
+    "Google":       "GoogleAI",
+    "Meta":         "MetaAI",
+    "Microsoft":    "MicrosoftAI",
+    "Nvidia":       "NvidiaNGC",
+    "Salesforce":   "SalesforceAI",
+    "Stanford":     "StanfordAI",
+    "UC Berkeley":  "UC_Berkeley_AI",
+    "UCSD":         "UCSD_AI",
+    "UW":           "UW_AI",
+}
+
+# Org deduplication: merge these CSV org labels into a single canonical org.
+ORG_MERGE = {
+    "AllenAI/UW": "Allen_AI",   # same org as "Allen AI"
+}
+
+# _________ LICENSE RENAMES __________
+# Map CSV license labels to canonical license URI locals.
+# These licenses are defined in licenses.ttl.
+LICENSE_RENAME = {
+    "Non-commercial":  "CC_BY_NC_4_0",
+    "Qianwen LICENSE": "Apache_2_0",
+    "Yi License":      "Apache_2_0",
+}
 
 # _________ HELPERS __________
 
@@ -193,12 +222,26 @@ def normalize_license_local(lic: str) -> str:
     if not lic:
         return ""
     l = lic.strip()
+    # Check explicit rename mapping first (e.g. Non-commercial → CC_BY_NC_4_0)
+    if l in LICENSE_RENAME:
+        return LICENSE_RENAME[l]
     # Normalize all variants of "Apache 2.0" / "Apache-2.0" to one canonical form
     if re.match(r'(?i)^apache[ _\-.]?2[ _\-.]?0$', l):
         return local_from_label("Apache 2.0")
     # For all other licenses, derive the URI local directly from the label text
     # preserving the original capitalization
     return local_from_label(l)
+
+
+def org_uri_local(org_label: str) -> str:
+    """Resolve a CSV org label to its canonical URI local name.
+    Applies ORG_MERGE first (dedup), then ORG_RENAME, then falls back to local_from_label."""
+    if org_label in ORG_MERGE:
+        return ORG_MERGE[org_label]
+    if org_label in ORG_RENAME:
+        return ORG_RENAME[org_label]
+    return local_from_label(org_label)
+
 
 def build_graph(rows) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
     g = Graph()
@@ -208,11 +251,10 @@ def build_graph(rows) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
     # Metrics-by-LLM map — populated as metrics are created
     metrics_by_llm: dict[URIRef, list[URIRef]] = defaultdict(list)
 
+    # LM Arena evaluator org — definitional triples (type, label, identifier,
+    # description) now live in organizations.ttl. We only need the URI here
+    # so that metric triples can reference it.
     lm_arena = URIRef(str(LM) + local_from_label("LM Arena"))
-    g.add((lm_arena, RDF.type, ENKI.AIOrganization))
-    g.add((lm_arena, RDFS.label, Literal("LM Arena")))
-    g.add((lm_arena, DCT.identifier, Literal("https://arena.ai/")))
-    g.add((lm_arena, DCT.description, Literal("LM Arena is crowdsourced platform for comparing LLMs across various benchmarks.")))
 
     # Collect provisioning data as we iterate
     # provider_org_label → [(model_uri, model_local, model_label)]
@@ -231,28 +273,27 @@ def build_graph(rows) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
             except Exception:
                 pass
 
-        # Parameters (extracted from model name)
+        # Parameters (extracted from model name) — stored as float in billions
         params_b = extract_params_billion(model_label)
         if params_b is not None:
-            g.add((model_uri, ENKI.hasTotalParameterCount,
-                   Literal(int(params_b * 1e9), datatype=XSD.nonNegativeInteger)))
+            g.add((model_uri, ENKI.hasTotalParameterCount, Literal(float(params_b))))
 
         if r["license"] and r["license"].strip() and r["license"].strip() != "-":
             lic_local = normalize_license_local(r["license"])
             lic_uri = URIRef(str(LM) + lic_local)
-            g.add((lic_uri, RDF.type, DCT.License))
-            g.add((lic_uri, RDFS.label, Literal(r["license"])))
+            # License definitional triples (type, label) live in licenses.ttl.
+            # We only emit the model → license reference here.
             g.add((model_uri, DCT.license, lic_uri))
 
-        if r["cutoff"] and r["cutoff"].strip() and r["cutoff"].strip() != "-":
+        if r["cutoff"] and r["cutoff"].strip() and r["cutoff"].strip() not in ("-", "Online"):
             g.add((model_uri, ENKI.hasKnowledgeCutoff, Literal(r["cutoff"])))
 
         if r["org"] and r["org"].strip() and r["org"].strip() != "-":
             org_label = r["org"].strip()
-            org_local = local_from_label(org_label)
+            org_local = org_uri_local(org_label)
             org_uri = URIRef(str(LM) + org_local)
-            g.add((org_uri, RDF.type, ENKI.LLMManufacturer))
-            g.add((org_uri, RDFS.label, Literal(org_label)))
+            # Org definitional triples (type, label) live in organizations.ttl.
+            # We only emit the manufactures relationship here.
             g.add((org_uri, ENKI.manufactures, model_uri))
 
             # Check provisioning dynamically
@@ -289,13 +330,10 @@ def build_graph(rows) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
             except Exception:
                 pass
 
-    # Add LLMProvider + LLMProvisioning triples
+    # Add LLMProvisioning triples (no LLMProvider type — that lives in organizations.ttl)
     for org_label, models in provider_provisionings.items():
-        org_local = local_from_label(org_label)
+        org_local = org_uri_local(org_label)
         org_uri = URIRef(str(LM) + org_local)
-
-        # Add LLMProvider type (URI already exists as LLMManufacturer)
-        g.add((org_uri, RDF.type, ENKI.LLMProvider))
 
         for model_uri, model_local, model_label in models:
             prov_local = f"{org_local}_Provisioning_{model_local}"
@@ -394,12 +432,25 @@ def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef,
         if isinstance(o, URIRef):
             return curie(o)
         if isinstance(o, Literal):
-            if o.datatype in (XSD.integer, XSD.nonNegativeInteger):
+            if o.datatype == XSD.integer:
                 return str(int(o))
+            if o.datatype == XSD.nonNegativeInteger:
+                return f'"{int(o)}"^^xsd:nonNegativeInteger'
             if o.datatype in (XSD.float, XSD.double):
                 return str(float(o))
             if o.datatype == XSD.decimal:
                 return str(o)
+            # Plain numeric literals (no explicit datatype) — emit bare value
+            val_str = str(o)
+            if o.datatype is None:
+                try:
+                    fv = float(val_str)
+                    # Emit as bare number (e.g. 13.0 or 4.53)
+                    if fv == int(fv) and "." not in val_str:
+                        return val_str
+                    return val_str
+                except (ValueError, TypeError):
+                    pass
             escaped = str(o).replace("\\", "\\\\").replace('"', '\\"')
             if o.language:
                 return f"\"{escaped}\"@{o.language}"
@@ -414,41 +465,37 @@ def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef,
             preds = sorted(set(g.predicates(s)), key=lambda p: str(p))
             block = []
             types = sorted(set(g.objects(s, RDF.type)), key=lambda o: str(o))
+            has_type = bool(types)
             if types:
                 if len(types) == 1:
                     block.append(f"{curie(s)} a {curie(types[0])}")
                 else:
                     type_strs = ",\n        ".join(curie(t) for t in types)
                     block.append(f"{curie(s)} a {type_strs}")
-            else:
-                block.append(f"{curie(s)}")
             for p in preds:
                 if p == RDF.type:
                     continue
                 objs = sorted(set(g.objects(s, p)), key=lambda o: str(o))
                 for o in objs:
                     block.append(f"    {curie(p)} {format_obj(o)}")
-            block_lines.append(" ;\n".join(block) + " .")
+            if not has_type and block:
+                # No rdf:type — subject stands alone, predicates follow with \n then ; between them
+                result = f"{curie(s)}\n" + " ;\n".join(block) + " ."
+            else:
+                result = " ;\n".join(block) + " ."
+            block_lines.append(result)
             block_lines.append("")
         return block_lines
 
     seen_subjects = set()
 
-    licenses = sorted(set(g.subjects(RDF.type, DCT.License)), key=lambda s: str(s).lower())
-    # Manufacturers/Providers (same URIs when dual-typed)
-    manufacturers = sorted(set(g.subjects(RDF.type, ENKI.LLMManufacturer)), key=lambda s: str(s).lower())
+    # Org subjects: identified by having enki:manufactures predicate (no rdf:type in this file)
+    org_subjects = sorted(
+        set(g.subjects(ENKI.manufactures, None)),
+        key=lambda s: str(s).lower(),
+    )
     provisionings = sorted(set(g.subjects(RDF.type, ENKI.LLMProvisioning)), key=lambda s: str(s).lower())
     evaluations = sorted(set(g.subjects(RDF.type, ENKI.Evaluation)), key=lambda s: str(s).lower())
-
-    ai_orgs_all = sorted(set(g.subjects(RDF.type, ENKI.AIOrganization)), key=lambda s: str(s).lower())
-    lm_arena_uri = URIRef(str(LM) + "LM_Arena")
-    ai_orgs = []
-    if lm_arena_uri in ai_orgs_all:
-        ai_orgs.append(lm_arena_uri)
-        ai_orgs.extend([s for s in ai_orgs_all if s != lm_arena_uri])
-    else:
-        ai_orgs = ai_orgs_all
-
     llms = sorted(set(g.subjects(RDF.type, ENKI.LLM)), key=lambda s: str(s).lower())
 
     # Group provisionings by their provider org
@@ -469,29 +516,23 @@ def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef,
                 ordered_subjects.append(s)
                 seen_subjects.add(s)
 
-    # 1. Licenses
-    add_block(licenses)
-
-    # 2. Manufacturers/Providers, each followed by their provisionings
-    for mfr in manufacturers:
-        if mfr not in seen_subjects:
-            ordered_subjects.append(mfr)
-            seen_subjects.add(mfr)
-        for p in provisionings_by_org.get(mfr, []):
+    # 1. Orgs (manufactures + provisionings), each followed by their provisionings
+    for org in org_subjects:
+        if org not in seen_subjects:
+            ordered_subjects.append(org)
+            seen_subjects.add(org)
+        for p in provisionings_by_org.get(org, []):
             if p not in seen_subjects:
                 ordered_subjects.append(p)
                 seen_subjects.add(p)
 
-    # 3. Any remaining provisionings
+    # 2. Any remaining provisionings
     add_block(provisionings)
 
-    # 4. Evaluations
+    # 3. Evaluations
     add_block(evaluations)
 
-    # 5. AI Orgs
-    add_block(ai_orgs)
-
-    # 6. LLMs, each followed by their metrics
+    # 4. LLMs, each followed by their metrics
     for llm in llms:
         if llm in seen_subjects:
             continue

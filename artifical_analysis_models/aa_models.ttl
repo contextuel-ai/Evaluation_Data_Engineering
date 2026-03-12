@@ -1,4 +1,4 @@
-@base <https://www.contextuel.ai/spec/Enki/> .
+@base <https://www.contextuel.ai/spec/Contextuel/> .
 @prefix enki: <https://www.contextuel.ai/spec/Enki/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -6,9 +6,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix contextuel: <https://www.contextuel.ai/spec/Contextuel/> .
 
-contextuel:AI21_Labs a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "AI21 Labs" ;
+contextuel:AI21_Labs
     enki:manufactures contextuel:Jamba_1_5_Large ;
     enki:manufactures contextuel:Jamba_1_5_Mini ;
     enki:manufactures contextuel:Jamba_1_6_Large ;
@@ -52,9 +50,7 @@ contextuel:AI21_Labs_Provisioning_Jamba_Reasoning_3B a enki:LLMProvisioning ;
     enki:provider contextuel:AI21_Labs ;
     enki:provides contextuel:Jamba_Reasoning_3B .
 
-contextuel:Alibaba a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Alibaba" ;
+contextuel:Alibaba
     enki:manufactures contextuel:QwQ_32B ;
     enki:manufactures contextuel:QwQ_32B_Preview ;
     enki:manufactures contextuel:Qwen1_5_Chat_110B ;
@@ -398,9 +394,7 @@ contextuel:Alibaba_Provisioning_QwQ_32B_Preview a enki:LLMProvisioning ;
     enki:provider contextuel:Alibaba ;
     enki:provides contextuel:QwQ_32B_Preview .
 
-contextuel:Allen_Institute_For_AI a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Allen Institute for AI" ;
+contextuel:Allen_AI
     enki:manufactures contextuel:Llama_3_1_Tulu3_405B ;
     enki:manufactures contextuel:Molmo2_8B ;
     enki:manufactures contextuel:Molmo_7B_D ;
@@ -412,59 +406,57 @@ contextuel:Allen_Institute_For_AI a enki:LLMManufacturer,
     enki:manufactures contextuel:Olmo_3_7B_Instruct ;
     enki:manufactures contextuel:Olmo_3_7B_Think .
 
-contextuel:Allen_Institute_For_AI_Provisioning_Llama_3_1_Tulu3_405B a enki:LLMProvisioning ;
+contextuel:Allen_AI_Provisioning_Llama_3_1_Tulu3_405B a enki:LLMProvisioning ;
     rdfs:label "Allen Institute for AI provisioning of Llama 3.1 Tulu3 405B" ;
-    enki:provider contextuel:Allen_Institute_For_AI ;
+    enki:provider contextuel:Allen_AI ;
     enki:provides contextuel:Llama_3_1_Tulu3_405B .
 
-contextuel:Allen_Institute_For_AI_Provisioning_Molmo2_8B a enki:LLMProvisioning ;
+contextuel:Allen_AI_Provisioning_Molmo2_8B a enki:LLMProvisioning ;
     rdfs:label "Allen Institute for AI provisioning of Molmo2-8B" ;
-    enki:provider contextuel:Allen_Institute_For_AI ;
+    enki:provider contextuel:Allen_AI ;
     enki:provides contextuel:Molmo2_8B .
 
-contextuel:Allen_Institute_For_AI_Provisioning_Molmo_7B_D a enki:LLMProvisioning ;
+contextuel:Allen_AI_Provisioning_Molmo_7B_D a enki:LLMProvisioning ;
     rdfs:label "Allen Institute for AI provisioning of Molmo 7B-D" ;
-    enki:provider contextuel:Allen_Institute_For_AI ;
+    enki:provider contextuel:Allen_AI ;
     enki:provides contextuel:Molmo_7B_D .
 
-contextuel:Allen_Institute_For_AI_Provisioning_OLMo_2_32B a enki:LLMProvisioning ;
+contextuel:Allen_AI_Provisioning_OLMo_2_32B a enki:LLMProvisioning ;
     rdfs:label "Allen Institute for AI provisioning of OLMo 2 32B" ;
-    enki:provider contextuel:Allen_Institute_For_AI ;
+    enki:provider contextuel:Allen_AI ;
     enki:provides contextuel:OLMo_2_32B .
 
-contextuel:Allen_Institute_For_AI_Provisioning_OLMo_2_7B a enki:LLMProvisioning ;
+contextuel:Allen_AI_Provisioning_OLMo_2_7B a enki:LLMProvisioning ;
     rdfs:label "Allen Institute for AI provisioning of OLMo 2 7B" ;
-    enki:provider contextuel:Allen_Institute_For_AI ;
+    enki:provider contextuel:Allen_AI ;
     enki:provides contextuel:OLMo_2_7B .
 
-contextuel:Allen_Institute_For_AI_Provisioning_Olmo_3_1_32B_Instruct a enki:LLMProvisioning ;
+contextuel:Allen_AI_Provisioning_Olmo_3_1_32B_Instruct a enki:LLMProvisioning ;
     rdfs:label "Allen Institute for AI provisioning of Olmo 3.1 32B Instruct" ;
-    enki:provider contextuel:Allen_Institute_For_AI ;
+    enki:provider contextuel:Allen_AI ;
     enki:provides contextuel:Olmo_3_1_32B_Instruct .
 
-contextuel:Allen_Institute_For_AI_Provisioning_Olmo_3_1_32B_Think a enki:LLMProvisioning ;
+contextuel:Allen_AI_Provisioning_Olmo_3_1_32B_Think a enki:LLMProvisioning ;
     rdfs:label "Allen Institute for AI provisioning of Olmo 3.1 32B Think" ;
-    enki:provider contextuel:Allen_Institute_For_AI ;
+    enki:provider contextuel:Allen_AI ;
     enki:provides contextuel:Olmo_3_1_32B_Think .
 
-contextuel:Allen_Institute_For_AI_Provisioning_Olmo_3_32B_Think a enki:LLMProvisioning ;
+contextuel:Allen_AI_Provisioning_Olmo_3_32B_Think a enki:LLMProvisioning ;
     rdfs:label "Allen Institute for AI provisioning of Olmo 3 32B Think" ;
-    enki:provider contextuel:Allen_Institute_For_AI ;
+    enki:provider contextuel:Allen_AI ;
     enki:provides contextuel:Olmo_3_32B_Think .
 
-contextuel:Allen_Institute_For_AI_Provisioning_Olmo_3_7B_Instruct a enki:LLMProvisioning ;
+contextuel:Allen_AI_Provisioning_Olmo_3_7B_Instruct a enki:LLMProvisioning ;
     rdfs:label "Allen Institute for AI provisioning of Olmo 3 7B Instruct" ;
-    enki:provider contextuel:Allen_Institute_For_AI ;
+    enki:provider contextuel:Allen_AI ;
     enki:provides contextuel:Olmo_3_7B_Instruct .
 
-contextuel:Allen_Institute_For_AI_Provisioning_Olmo_3_7B_Think a enki:LLMProvisioning ;
+contextuel:Allen_AI_Provisioning_Olmo_3_7B_Think a enki:LLMProvisioning ;
     rdfs:label "Allen Institute for AI provisioning of Olmo 3 7B Think" ;
-    enki:provider contextuel:Allen_Institute_For_AI ;
+    enki:provider contextuel:Allen_AI ;
     enki:provides contextuel:Olmo_3_7B_Think .
 
-contextuel:Amazon a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Amazon" ;
+contextuel:Amazon
     enki:manufactures contextuel:Nova_2_0_Lite_Low ;
     enki:manufactures contextuel:Nova_2_0_Lite_Medium ;
     enki:manufactures contextuel:Nova_2_0_Lite_Non_Reasoning ;
@@ -544,9 +536,7 @@ contextuel:Amazon_Provisioning_Nova_Pro a enki:LLMProvisioning ;
     enki:provider contextuel:Amazon ;
     enki:provides contextuel:Nova_Pro .
 
-contextuel:Anthropic a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Anthropic" ;
+contextuel:Anthropic
     enki:manufactures contextuel:Claude_2_0 ;
     enki:manufactures contextuel:Claude_2_1 ;
     enki:manufactures contextuel:Claude_3_5_Haiku ;
@@ -716,9 +706,7 @@ contextuel:Anthropic_Provisioning_Claude_Sonnet_4_6_Non_Reasoning_Low_Effort a e
     enki:provider contextuel:Anthropic ;
     enki:provides contextuel:Claude_Sonnet_4_6_Non_Reasoning_Low_Effort .
 
-contextuel:Baidu a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Baidu" ;
+contextuel:Baidu
     enki:manufactures contextuel:ERNIE_4_5_300B_A47B ;
     enki:manufactures contextuel:ERNIE_5_0_Thinking_Preview .
 
@@ -732,9 +720,7 @@ contextuel:Baidu_Provisioning_ERNIE_5_0_Thinking_Preview a enki:LLMProvisioning 
     enki:provider contextuel:Baidu ;
     enki:provides contextuel:ERNIE_5_0_Thinking_Preview .
 
-contextuel:ByteDance_Seed a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "ByteDance Seed" ;
+contextuel:ByteDance_Seed
     enki:manufactures contextuel:Doubao_Seed_Code ;
     enki:manufactures contextuel:Seed_OSS_36B_Instruct .
 
@@ -748,9 +734,7 @@ contextuel:ByteDance_Seed_Provisioning_Seed_OSS_36B_Instruct a enki:LLMProvision
     enki:provider contextuel:ByteDance_Seed ;
     enki:provides contextuel:Seed_OSS_36B_Instruct .
 
-contextuel:Cohere a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Cohere" ;
+contextuel:Cohere
     enki:manufactures contextuel:Command_A ;
     enki:manufactures contextuel:Command_R_Apr_24 ;
     enki:manufactures contextuel:Command_R_Mar_24 ;
@@ -776,9 +760,7 @@ contextuel:Cohere_Provisioning_Tiny_Aya_Global a enki:LLMProvisioning ;
     enki:provider contextuel:Cohere ;
     enki:provides contextuel:Tiny_Aya_Global .
 
-contextuel:Databricks a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Databricks" ;
+contextuel:Databricks
     enki:manufactures contextuel:DBRX_Instruct .
 
 contextuel:Databricks_Provisioning_DBRX_Instruct a enki:LLMProvisioning ;
@@ -786,9 +768,7 @@ contextuel:Databricks_Provisioning_DBRX_Instruct a enki:LLMProvisioning ;
     enki:provider contextuel:Databricks ;
     enki:provides contextuel:DBRX_Instruct .
 
-contextuel:Deep_Cogito a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Deep Cogito" ;
+contextuel:Deep_Cogito
     enki:manufactures contextuel:Cogito_V2_1_Reasoning .
 
 contextuel:Deep_Cogito_Provisioning_Cogito_V2_1_Reasoning a enki:LLMProvisioning ;
@@ -796,9 +776,7 @@ contextuel:Deep_Cogito_Provisioning_Cogito_V2_1_Reasoning a enki:LLMProvisioning
     enki:provider contextuel:Deep_Cogito ;
     enki:provides contextuel:Cogito_V2_1_Reasoning .
 
-contextuel:DeepSeek a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "DeepSeek" ;
+contextuel:DeepSeek
     enki:manufactures contextuel:DeepSeek_Coder_V2 ;
     enki:manufactures contextuel:DeepSeek_Coder_V2_Lite_Instruct ;
     enki:manufactures contextuel:DeepSeek_LLM_67B_Chat_V1 ;
@@ -950,9 +928,7 @@ contextuel:DeepSeek_Provisioning_DeepSeek_V3_Dec_24 a enki:LLMProvisioning ;
     enki:provider contextuel:DeepSeek ;
     enki:provides contextuel:DeepSeek_V3_Dec_24 .
 
-contextuel:Google a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Google" ;
+contextuel:GoogleAI
     enki:manufactures contextuel:Gemini_1_0_Pro ;
     enki:manufactures contextuel:Gemini_1_0_Ultra ;
     enki:manufactures contextuel:Gemini_1_5_Flash_8B ;
@@ -995,214 +971,212 @@ contextuel:Google a enki:LLMManufacturer,
     enki:manufactures contextuel:Gemma_3n_E4B_Instruct_Preview_May_25 ;
     enki:manufactures contextuel:PALM_2 .
 
-contextuel:Google_Provisioning_Gemini_1_0_Pro a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_1_0_Pro a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 1.0 Pro" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_1_0_Pro .
 
-contextuel:Google_Provisioning_Gemini_1_0_Ultra a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_1_0_Ultra a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 1.0 Ultra" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_1_0_Ultra .
 
-contextuel:Google_Provisioning_Gemini_1_5_Flash_8B a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_1_5_Flash_8B a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 1.5 Flash-8B" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_1_5_Flash_8B .
 
-contextuel:Google_Provisioning_Gemini_1_5_Flash_May_24 a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_1_5_Flash_May_24 a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 1.5 Flash (May '24)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_1_5_Flash_May_24 .
 
-contextuel:Google_Provisioning_Gemini_1_5_Flash_Sep_24 a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_1_5_Flash_Sep_24 a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 1.5 Flash (Sep '24)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_1_5_Flash_Sep_24 .
 
-contextuel:Google_Provisioning_Gemini_1_5_Pro_May_24 a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_1_5_Pro_May_24 a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 1.5 Pro (May '24)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_1_5_Pro_May_24 .
 
-contextuel:Google_Provisioning_Gemini_1_5_Pro_Sep_24 a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_1_5_Pro_Sep_24 a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 1.5 Pro (Sep '24)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_1_5_Pro_Sep_24 .
 
-contextuel:Google_Provisioning_Gemini_2_0_Flash_Experimental a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_0_Flash_Experimental a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.0 Flash (experimental)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_0_Flash_Experimental .
 
-contextuel:Google_Provisioning_Gemini_2_0_Flash_Feb_25 a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_0_Flash_Feb_25 a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.0 Flash (Feb '25)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_0_Flash_Feb_25 .
 
-contextuel:Google_Provisioning_Gemini_2_0_Flash_Lite_Feb_25 a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_0_Flash_Lite_Feb_25 a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.0 Flash-Lite (Feb '25)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_0_Flash_Lite_Feb_25 .
 
-contextuel:Google_Provisioning_Gemini_2_0_Flash_Lite_Preview a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_0_Flash_Lite_Preview a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.0 Flash-Lite (Preview)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_0_Flash_Lite_Preview .
 
-contextuel:Google_Provisioning_Gemini_2_0_Flash_Thinking_Experimental_Dec_24 a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_0_Flash_Thinking_Experimental_Dec_24 a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.0 Flash Thinking Experimental (Dec '24)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_0_Flash_Thinking_Experimental_Dec_24 .
 
-contextuel:Google_Provisioning_Gemini_2_0_Flash_Thinking_Experimental_Jan_25 a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_0_Flash_Thinking_Experimental_Jan_25 a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.0 Flash Thinking Experimental (Jan '25)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_0_Flash_Thinking_Experimental_Jan_25 .
 
-contextuel:Google_Provisioning_Gemini_2_0_Pro_Experimental_Feb_25 a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_0_Pro_Experimental_Feb_25 a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.0 Pro Experimental (Feb '25)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_0_Pro_Experimental_Feb_25 .
 
-contextuel:Google_Provisioning_Gemini_2_5_Flash_Lite_Non_Reasoning a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_5_Flash_Lite_Non_Reasoning a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.5 Flash-Lite (Non-reasoning)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_5_Flash_Lite_Non_Reasoning .
 
-contextuel:Google_Provisioning_Gemini_2_5_Flash_Lite_Preview_Sep_25_Non_Reasoning a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_5_Flash_Lite_Preview_Sep_25_Non_Reasoning a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.5 Flash-Lite Preview (Sep '25) (Non-reasoning)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_5_Flash_Lite_Preview_Sep_25_Non_Reasoning .
 
-contextuel:Google_Provisioning_Gemini_2_5_Flash_Lite_Preview_Sep_25_Reasoning a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_5_Flash_Lite_Preview_Sep_25_Reasoning a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.5 Flash-Lite Preview (Sep '25) (Reasoning)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_5_Flash_Lite_Preview_Sep_25_Reasoning .
 
-contextuel:Google_Provisioning_Gemini_2_5_Flash_Lite_Reasoning a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_5_Flash_Lite_Reasoning a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.5 Flash-Lite (Reasoning)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_5_Flash_Lite_Reasoning .
 
-contextuel:Google_Provisioning_Gemini_2_5_Flash_Non_Reasoning a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_5_Flash_Non_Reasoning a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.5 Flash (Non-reasoning)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_5_Flash_Non_Reasoning .
 
-contextuel:Google_Provisioning_Gemini_2_5_Flash_Preview_Non_Reasoning a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_5_Flash_Preview_Non_Reasoning a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.5 Flash Preview (Non-reasoning)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_5_Flash_Preview_Non_Reasoning .
 
-contextuel:Google_Provisioning_Gemini_2_5_Flash_Preview_Reasoning a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_5_Flash_Preview_Reasoning a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.5 Flash Preview (Reasoning)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_5_Flash_Preview_Reasoning .
 
-contextuel:Google_Provisioning_Gemini_2_5_Flash_Preview_Sep_25_Non_Reasoning a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_5_Flash_Preview_Sep_25_Non_Reasoning a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.5 Flash Preview (Sep '25) (Non-reasoning)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_5_Flash_Preview_Sep_25_Non_Reasoning .
 
-contextuel:Google_Provisioning_Gemini_2_5_Flash_Preview_Sep_25_Reasoning a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_5_Flash_Preview_Sep_25_Reasoning a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.5 Flash Preview (Sep '25) (Reasoning)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_5_Flash_Preview_Sep_25_Reasoning .
 
-contextuel:Google_Provisioning_Gemini_2_5_Flash_Reasoning a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_5_Flash_Reasoning a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.5 Flash (Reasoning)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_5_Flash_Reasoning .
 
-contextuel:Google_Provisioning_Gemini_2_5_Pro a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_5_Pro a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.5 Pro" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_5_Pro .
 
-contextuel:Google_Provisioning_Gemini_2_5_Pro_Preview_Mar_25 a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_5_Pro_Preview_Mar_25 a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.5 Pro Preview (Mar' 25)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_5_Pro_Preview_Mar_25 .
 
-contextuel:Google_Provisioning_Gemini_2_5_Pro_Preview_May_25 a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_2_5_Pro_Preview_May_25 a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 2.5 Pro Preview (May' 25)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_2_5_Pro_Preview_May_25 .
 
-contextuel:Google_Provisioning_Gemini_3_1_Pro_Preview a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_3_1_Pro_Preview a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 3.1 Pro Preview" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_3_1_Pro_Preview .
 
-contextuel:Google_Provisioning_Gemini_3_Flash_Preview_Non_Reasoning a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_3_Flash_Preview_Non_Reasoning a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 3 Flash Preview (Non-reasoning)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_3_Flash_Preview_Non_Reasoning .
 
-contextuel:Google_Provisioning_Gemini_3_Flash_Preview_Reasoning a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_3_Flash_Preview_Reasoning a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 3 Flash Preview (Reasoning)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_3_Flash_Preview_Reasoning .
 
-contextuel:Google_Provisioning_Gemini_3_Pro_Preview_High a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_3_Pro_Preview_High a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 3 Pro Preview (high)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_3_Pro_Preview_High .
 
-contextuel:Google_Provisioning_Gemini_3_Pro_Preview_Low a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemini_3_Pro_Preview_Low a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemini 3 Pro Preview (low)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemini_3_Pro_Preview_Low .
 
-contextuel:Google_Provisioning_Gemma_3_12B_Instruct a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemma_3_12B_Instruct a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemma 3 12B Instruct" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemma_3_12B_Instruct .
 
-contextuel:Google_Provisioning_Gemma_3_1B_Instruct a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemma_3_1B_Instruct a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemma 3 1B Instruct" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemma_3_1B_Instruct .
 
-contextuel:Google_Provisioning_Gemma_3_270M a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemma_3_270M a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemma 3 270M" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemma_3_270M .
 
-contextuel:Google_Provisioning_Gemma_3_27B_Instruct a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemma_3_27B_Instruct a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemma 3 27B Instruct" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemma_3_27B_Instruct .
 
-contextuel:Google_Provisioning_Gemma_3_4B_Instruct a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemma_3_4B_Instruct a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemma 3 4B Instruct" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemma_3_4B_Instruct .
 
-contextuel:Google_Provisioning_Gemma_3n_E2B_Instruct a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemma_3n_E2B_Instruct a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemma 3n E2B Instruct" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemma_3n_E2B_Instruct .
 
-contextuel:Google_Provisioning_Gemma_3n_E4B_Instruct a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemma_3n_E4B_Instruct a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemma 3n E4B Instruct" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemma_3n_E4B_Instruct .
 
-contextuel:Google_Provisioning_Gemma_3n_E4B_Instruct_Preview_May_25 a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_Gemma_3n_E4B_Instruct_Preview_May_25 a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of Gemma 3n E4B Instruct Preview (May '25)" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:Gemma_3n_E4B_Instruct_Preview_May_25 .
 
-contextuel:Google_Provisioning_PALM_2 a enki:LLMProvisioning ;
+contextuel:GoogleAI_Provisioning_PALM_2 a enki:LLMProvisioning ;
     rdfs:label "Google provisioning of PALM-2" ;
-    enki:provider contextuel:Google ;
+    enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:PALM_2 .
 
-contextuel:IBM a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "IBM" ;
+contextuel:IBM
     enki:manufactures contextuel:Granite_3_3_8B_Non_Reasoning ;
     enki:manufactures contextuel:Granite_4_0_1B ;
     enki:manufactures contextuel:Granite_4_0_350M ;
@@ -1246,9 +1220,7 @@ contextuel:IBM_Provisioning_Granite_4_0_Micro a enki:LLMProvisioning ;
     enki:provider contextuel:IBM ;
     enki:provides contextuel:Granite_4_0_Micro .
 
-contextuel:InclusionAI a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "InclusionAI" ;
+contextuel:InclusionAI
     enki:manufactures contextuel:Ling_1T ;
     enki:manufactures contextuel:Ling_Flash_2_0 ;
     enki:manufactures contextuel:Ling_Mini_2_0 ;
@@ -1280,9 +1252,7 @@ contextuel:InclusionAI_Provisioning_Ring_Flash_2_0 a enki:LLMProvisioning ;
     enki:provider contextuel:InclusionAI ;
     enki:provides contextuel:Ring_Flash_2_0 .
 
-contextuel:Kimi a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Kimi" ;
+contextuel:Kimi
     enki:manufactures contextuel:Kimi_K2 ;
     enki:manufactures contextuel:Kimi_K2_0905 ;
     enki:manufactures contextuel:Kimi_K2_5_Non_Reasoning ;
@@ -1320,9 +1290,7 @@ contextuel:Kimi_Provisioning_Kimi_Linear_48B_A3B_Instruct a enki:LLMProvisioning
     enki:provider contextuel:Kimi ;
     enki:provides contextuel:Kimi_Linear_48B_A3B_Instruct .
 
-contextuel:Korea_Telecom a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Korea Telecom" ;
+contextuel:Korea_Telecom
     enki:manufactures contextuel:Midm_K_2_5_Pro ;
     enki:manufactures contextuel:Midm_K_2_5_Pro_Preview .
 
@@ -1336,9 +1304,7 @@ contextuel:Korea_Telecom_Provisioning_Midm_K_2_5_Pro_Preview a enki:LLMProvision
     enki:provider contextuel:Korea_Telecom ;
     enki:provides contextuel:Midm_K_2_5_Pro_Preview .
 
-contextuel:KwaiKAT a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "KwaiKAT" ;
+contextuel:KwaiKAT
     enki:manufactures contextuel:KAT_Coder_Pro_V1 .
 
 contextuel:KwaiKAT_Provisioning_KAT_Coder_Pro_V1 a enki:LLMProvisioning ;
@@ -1346,9 +1312,7 @@ contextuel:KwaiKAT_Provisioning_KAT_Coder_Pro_V1 a enki:LLMProvisioning ;
     enki:provider contextuel:KwaiKAT ;
     enki:provides contextuel:KAT_Coder_Pro_V1 .
 
-contextuel:LG_AI_Research a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "LG AI Research" ;
+contextuel:LG_AI_Research
     enki:manufactures contextuel:EXAONE_4_0_32B_Non_Reasoning ;
     enki:manufactures contextuel:EXAONE_4_0_32B_Reasoning ;
     enki:manufactures contextuel:Exaone_4_0_1_2B_Non_Reasoning ;
@@ -1386,9 +1350,7 @@ contextuel:LG_AI_Research_Provisioning_K_EXAONE_Reasoning a enki:LLMProvisioning
     enki:provider contextuel:LG_AI_Research ;
     enki:provides contextuel:K_EXAONE_Reasoning .
 
-contextuel:Liquid_AI a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Liquid AI" ;
+contextuel:Liquid_AI
     enki:manufactures contextuel:LFM2_1_2B ;
     enki:manufactures contextuel:LFM2_2_6B ;
     enki:manufactures contextuel:LFM2_5_1_2B_Instruct ;
@@ -1432,9 +1394,7 @@ contextuel:Liquid_AI_Provisioning_LFM_40B a enki:LLMProvisioning ;
     enki:provider contextuel:Liquid_AI ;
     enki:provides contextuel:LFM_40B .
 
-contextuel:MBZUAI_Institute_Of_Foundation_Models a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "MBZUAI Institute of Foundation Models" ;
+contextuel:MBZUAI_Institute_Of_Foundation_Models
     enki:manufactures contextuel:K2_Think_V2 ;
     enki:manufactures contextuel:K2_V2_High ;
     enki:manufactures contextuel:K2_V2_Low ;
@@ -1460,9 +1420,7 @@ contextuel:MBZUAI_Institute_Of_Foundation_Models_Provisioning_K2_V2_Medium a enk
     enki:provider contextuel:MBZUAI_Institute_Of_Foundation_Models ;
     enki:provides contextuel:K2_V2_Medium .
 
-contextuel:Meta a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Meta" ;
+contextuel:MetaAI
     enki:manufactures contextuel:Llama_2_Chat_13B ;
     enki:manufactures contextuel:Llama_2_Chat_70B ;
     enki:manufactures contextuel:Llama_2_Chat_7B ;
@@ -1480,117 +1438,113 @@ contextuel:Meta a enki:LLMManufacturer,
     enki:manufactures contextuel:Llama_4_Scout ;
     enki:manufactures contextuel:Llama_65B .
 
-contextuel:Meta_Provisioning_Llama_2_Chat_13B a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_2_Chat_13B a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 2 Chat 13B" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_2_Chat_13B .
 
-contextuel:Meta_Provisioning_Llama_2_Chat_70B a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_2_Chat_70B a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 2 Chat 70B" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_2_Chat_70B .
 
-contextuel:Meta_Provisioning_Llama_2_Chat_7B a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_2_Chat_7B a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 2 Chat 7B" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_2_Chat_7B .
 
-contextuel:Meta_Provisioning_Llama_3_1_Instruct_405B a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_3_1_Instruct_405B a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 3.1 Instruct 405B" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_3_1_Instruct_405B .
 
-contextuel:Meta_Provisioning_Llama_3_1_Instruct_70B a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_3_1_Instruct_70B a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 3.1 Instruct 70B" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_3_1_Instruct_70B .
 
-contextuel:Meta_Provisioning_Llama_3_1_Instruct_8B a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_3_1_Instruct_8B a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 3.1 Instruct 8B" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_3_1_Instruct_8B .
 
-contextuel:Meta_Provisioning_Llama_3_2_Instruct_11B_Vision a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_3_2_Instruct_11B_Vision a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 3.2 Instruct 11B (Vision)" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_3_2_Instruct_11B_Vision .
 
-contextuel:Meta_Provisioning_Llama_3_2_Instruct_1B a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_3_2_Instruct_1B a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 3.2 Instruct 1B" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_3_2_Instruct_1B .
 
-contextuel:Meta_Provisioning_Llama_3_2_Instruct_3B a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_3_2_Instruct_3B a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 3.2 Instruct 3B" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_3_2_Instruct_3B .
 
-contextuel:Meta_Provisioning_Llama_3_2_Instruct_90B_Vision a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_3_2_Instruct_90B_Vision a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 3.2 Instruct 90B (Vision)" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_3_2_Instruct_90B_Vision .
 
-contextuel:Meta_Provisioning_Llama_3_3_Instruct_70B a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_3_3_Instruct_70B a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 3.3 Instruct 70B" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_3_3_Instruct_70B .
 
-contextuel:Meta_Provisioning_Llama_3_Instruct_70B a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_3_Instruct_70B a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 3 Instruct 70B" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_3_Instruct_70B .
 
-contextuel:Meta_Provisioning_Llama_3_Instruct_8B a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_3_Instruct_8B a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 3 Instruct 8B" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_3_Instruct_8B .
 
-contextuel:Meta_Provisioning_Llama_4_Maverick a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_4_Maverick a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 4 Maverick" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_4_Maverick .
 
-contextuel:Meta_Provisioning_Llama_4_Scout a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_4_Scout a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 4 Scout" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_4_Scout .
 
-contextuel:Meta_Provisioning_Llama_65B a enki:LLMProvisioning ;
+contextuel:MetaAI_Provisioning_Llama_65B a enki:LLMProvisioning ;
     rdfs:label "Meta provisioning of Llama 65B" ;
-    enki:provider contextuel:Meta ;
+    enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_65B .
 
-contextuel:Microsoft_Azure a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Microsoft Azure" ;
+contextuel:MicrosoftAI
     enki:manufactures contextuel:Phi_3_Mini_Instruct_3_8B ;
     enki:manufactures contextuel:Phi_4 ;
     enki:manufactures contextuel:Phi_4_Mini_Instruct ;
     enki:manufactures contextuel:Phi_4_Multimodal_Instruct .
 
-contextuel:Microsoft_Azure_Provisioning_Phi_3_Mini_Instruct_3_8B a enki:LLMProvisioning ;
+contextuel:MicrosoftAI_Provisioning_Phi_3_Mini_Instruct_3_8B a enki:LLMProvisioning ;
     rdfs:label "Microsoft Azure provisioning of Phi-3 Mini Instruct 3.8B" ;
-    enki:provider contextuel:Microsoft_Azure ;
+    enki:provider contextuel:MicrosoftAI ;
     enki:provides contextuel:Phi_3_Mini_Instruct_3_8B .
 
-contextuel:Microsoft_Azure_Provisioning_Phi_4 a enki:LLMProvisioning ;
+contextuel:MicrosoftAI_Provisioning_Phi_4 a enki:LLMProvisioning ;
     rdfs:label "Microsoft Azure provisioning of Phi-4" ;
-    enki:provider contextuel:Microsoft_Azure ;
+    enki:provider contextuel:MicrosoftAI ;
     enki:provides contextuel:Phi_4 .
 
-contextuel:Microsoft_Azure_Provisioning_Phi_4_Mini_Instruct a enki:LLMProvisioning ;
+contextuel:MicrosoftAI_Provisioning_Phi_4_Mini_Instruct a enki:LLMProvisioning ;
     rdfs:label "Microsoft Azure provisioning of Phi-4 Mini Instruct" ;
-    enki:provider contextuel:Microsoft_Azure ;
+    enki:provider contextuel:MicrosoftAI ;
     enki:provides contextuel:Phi_4_Mini_Instruct .
 
-contextuel:Microsoft_Azure_Provisioning_Phi_4_Multimodal_Instruct a enki:LLMProvisioning ;
+contextuel:MicrosoftAI_Provisioning_Phi_4_Multimodal_Instruct a enki:LLMProvisioning ;
     rdfs:label "Microsoft Azure provisioning of Phi-4 Multimodal Instruct" ;
-    enki:provider contextuel:Microsoft_Azure ;
+    enki:provider contextuel:MicrosoftAI ;
     enki:provides contextuel:Phi_4_Multimodal_Instruct .
 
-contextuel:MiniMax a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "MiniMax" ;
+contextuel:MiniMax
     enki:manufactures contextuel:MiniMax_M1_40k ;
     enki:manufactures contextuel:MiniMax_M1_80k ;
     enki:manufactures contextuel:MiniMax_M2 ;
@@ -1622,9 +1576,7 @@ contextuel:MiniMax_Provisioning_MiniMax_M2_5 a enki:LLMProvisioning ;
     enki:provider contextuel:MiniMax ;
     enki:provides contextuel:MiniMax_M2_5 .
 
-contextuel:Mistral a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Mistral" ;
+contextuel:Mistral
     enki:manufactures contextuel:Devstral_2 ;
     enki:manufactures contextuel:Devstral_Medium ;
     enki:manufactures contextuel:Devstral_Small_2 ;
@@ -1800,9 +1752,7 @@ contextuel:Mistral_Provisioning_Pixtral_Large a enki:LLMProvisioning ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Pixtral_Large .
 
-contextuel:Motif_Technologies a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Motif Technologies" ;
+contextuel:Motif_Technologies
     enki:manufactures contextuel:Motif_2_12_7B_Reasoning .
 
 contextuel:Motif_Technologies_Provisioning_Motif_2_12_7B_Reasoning a enki:LLMProvisioning ;
@@ -1810,9 +1760,7 @@ contextuel:Motif_Technologies_Provisioning_Motif_2_12_7B_Reasoning a enki:LLMPro
     enki:provider contextuel:Motif_Technologies ;
     enki:provides contextuel:Motif_2_12_7B_Reasoning .
 
-contextuel:Naver a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Naver" ;
+contextuel:Naver
     enki:manufactures contextuel:HyperCLOVA_X_SEED_Think_32B .
 
 contextuel:Naver_Provisioning_HyperCLOVA_X_SEED_Think_32B a enki:LLMProvisioning ;
@@ -1820,9 +1768,7 @@ contextuel:Naver_Provisioning_HyperCLOVA_X_SEED_Think_32B a enki:LLMProvisioning
     enki:provider contextuel:Naver ;
     enki:provides contextuel:HyperCLOVA_X_SEED_Think_32B .
 
-contextuel:Nous_Research a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Nous Research" ;
+contextuel:Nous_Research
     enki:manufactures contextuel:DeepHermes_3_Llama_3_1_8B_Preview_Non_Reasoning ;
     enki:manufactures contextuel:DeepHermes_3_Mistral_24B_Preview_Non_Reasoning ;
     enki:manufactures contextuel:Hermes_3_Llama_3_1_70B ;
@@ -1866,9 +1812,7 @@ contextuel:Nous_Research_Provisioning_Hermes_4_Llama_3_1_70B_Reasoning a enki:LL
     enki:provider contextuel:Nous_Research ;
     enki:provides contextuel:Hermes_4_Llama_3_1_70B_Reasoning .
 
-contextuel:NVIDIA a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "NVIDIA" ;
+contextuel:NvidiaNGC
     enki:manufactures contextuel:Llama_3_1_Nemotron_Instruct_70B ;
     enki:manufactures contextuel:Llama_3_1_Nemotron_Nano_4B_V1_1_Reasoning ;
     enki:manufactures contextuel:Llama_3_1_Nemotron_Ultra_253B_V1_Reasoning ;
@@ -1883,74 +1827,72 @@ contextuel:NVIDIA a enki:LLMManufacturer,
     enki:manufactures contextuel:NVIDIA_Nemotron_Nano_9B_V2_Non_Reasoning ;
     enki:manufactures contextuel:NVIDIA_Nemotron_Nano_9B_V2_Reasoning .
 
-contextuel:NVIDIA_Provisioning_Llama_3_1_Nemotron_Instruct_70B a enki:LLMProvisioning ;
+contextuel:NvidiaNGC_Provisioning_Llama_3_1_Nemotron_Instruct_70B a enki:LLMProvisioning ;
     rdfs:label "NVIDIA provisioning of Llama 3.1 Nemotron Instruct 70B" ;
-    enki:provider contextuel:NVIDIA ;
+    enki:provider contextuel:NvidiaNGC ;
     enki:provides contextuel:Llama_3_1_Nemotron_Instruct_70B .
 
-contextuel:NVIDIA_Provisioning_Llama_3_1_Nemotron_Nano_4B_V1_1_Reasoning a enki:LLMProvisioning ;
+contextuel:NvidiaNGC_Provisioning_Llama_3_1_Nemotron_Nano_4B_V1_1_Reasoning a enki:LLMProvisioning ;
     rdfs:label "NVIDIA provisioning of Llama 3.1 Nemotron Nano 4B v1.1 (Reasoning)" ;
-    enki:provider contextuel:NVIDIA ;
+    enki:provider contextuel:NvidiaNGC ;
     enki:provides contextuel:Llama_3_1_Nemotron_Nano_4B_V1_1_Reasoning .
 
-contextuel:NVIDIA_Provisioning_Llama_3_1_Nemotron_Ultra_253B_V1_Reasoning a enki:LLMProvisioning ;
+contextuel:NvidiaNGC_Provisioning_Llama_3_1_Nemotron_Ultra_253B_V1_Reasoning a enki:LLMProvisioning ;
     rdfs:label "NVIDIA provisioning of Llama 3.1 Nemotron Ultra 253B v1 (Reasoning)" ;
-    enki:provider contextuel:NVIDIA ;
+    enki:provider contextuel:NvidiaNGC ;
     enki:provides contextuel:Llama_3_1_Nemotron_Ultra_253B_V1_Reasoning .
 
-contextuel:NVIDIA_Provisioning_Llama_3_3_Nemotron_Super_49B_V1_Non_Reasoning a enki:LLMProvisioning ;
+contextuel:NvidiaNGC_Provisioning_Llama_3_3_Nemotron_Super_49B_V1_Non_Reasoning a enki:LLMProvisioning ;
     rdfs:label "NVIDIA provisioning of Llama 3.3 Nemotron Super 49B v1 (Non-reasoning)" ;
-    enki:provider contextuel:NVIDIA ;
+    enki:provider contextuel:NvidiaNGC ;
     enki:provides contextuel:Llama_3_3_Nemotron_Super_49B_V1_Non_Reasoning .
 
-contextuel:NVIDIA_Provisioning_Llama_3_3_Nemotron_Super_49B_V1_Reasoning a enki:LLMProvisioning ;
+contextuel:NvidiaNGC_Provisioning_Llama_3_3_Nemotron_Super_49B_V1_Reasoning a enki:LLMProvisioning ;
     rdfs:label "NVIDIA provisioning of Llama 3.3 Nemotron Super 49B v1 (Reasoning)" ;
-    enki:provider contextuel:NVIDIA ;
+    enki:provider contextuel:NvidiaNGC ;
     enki:provides contextuel:Llama_3_3_Nemotron_Super_49B_V1_Reasoning .
 
-contextuel:NVIDIA_Provisioning_Llama_Nemotron_Super_49B_V1_5_Non_Reasoning a enki:LLMProvisioning ;
+contextuel:NvidiaNGC_Provisioning_Llama_Nemotron_Super_49B_V1_5_Non_Reasoning a enki:LLMProvisioning ;
     rdfs:label "NVIDIA provisioning of Llama Nemotron Super 49B v1.5 (Non-reasoning)" ;
-    enki:provider contextuel:NVIDIA ;
+    enki:provider contextuel:NvidiaNGC ;
     enki:provides contextuel:Llama_Nemotron_Super_49B_V1_5_Non_Reasoning .
 
-contextuel:NVIDIA_Provisioning_Llama_Nemotron_Super_49B_V1_5_Reasoning a enki:LLMProvisioning ;
+contextuel:NvidiaNGC_Provisioning_Llama_Nemotron_Super_49B_V1_5_Reasoning a enki:LLMProvisioning ;
     rdfs:label "NVIDIA provisioning of Llama Nemotron Super 49B v1.5 (Reasoning)" ;
-    enki:provider contextuel:NVIDIA ;
+    enki:provider contextuel:NvidiaNGC ;
     enki:provides contextuel:Llama_Nemotron_Super_49B_V1_5_Reasoning .
 
-contextuel:NVIDIA_Provisioning_NVIDIA_Nemotron_3_Nano_30B_A3B_Non_Reasoning a enki:LLMProvisioning ;
+contextuel:NvidiaNGC_Provisioning_NVIDIA_Nemotron_3_Nano_30B_A3B_Non_Reasoning a enki:LLMProvisioning ;
     rdfs:label "NVIDIA provisioning of NVIDIA Nemotron 3 Nano 30B A3B (Non-reasoning)" ;
-    enki:provider contextuel:NVIDIA ;
+    enki:provider contextuel:NvidiaNGC ;
     enki:provides contextuel:NVIDIA_Nemotron_3_Nano_30B_A3B_Non_Reasoning .
 
-contextuel:NVIDIA_Provisioning_NVIDIA_Nemotron_3_Nano_30B_A3B_Reasoning a enki:LLMProvisioning ;
+contextuel:NvidiaNGC_Provisioning_NVIDIA_Nemotron_3_Nano_30B_A3B_Reasoning a enki:LLMProvisioning ;
     rdfs:label "NVIDIA provisioning of NVIDIA Nemotron 3 Nano 30B A3B (Reasoning)" ;
-    enki:provider contextuel:NVIDIA ;
+    enki:provider contextuel:NvidiaNGC ;
     enki:provides contextuel:NVIDIA_Nemotron_3_Nano_30B_A3B_Reasoning .
 
-contextuel:NVIDIA_Provisioning_NVIDIA_Nemotron_Nano_12B_V2_VL_Non_Reasoning a enki:LLMProvisioning ;
+contextuel:NvidiaNGC_Provisioning_NVIDIA_Nemotron_Nano_12B_V2_VL_Non_Reasoning a enki:LLMProvisioning ;
     rdfs:label "NVIDIA provisioning of NVIDIA Nemotron Nano 12B v2 VL (Non-reasoning)" ;
-    enki:provider contextuel:NVIDIA ;
+    enki:provider contextuel:NvidiaNGC ;
     enki:provides contextuel:NVIDIA_Nemotron_Nano_12B_V2_VL_Non_Reasoning .
 
-contextuel:NVIDIA_Provisioning_NVIDIA_Nemotron_Nano_12B_V2_VL_Reasoning a enki:LLMProvisioning ;
+contextuel:NvidiaNGC_Provisioning_NVIDIA_Nemotron_Nano_12B_V2_VL_Reasoning a enki:LLMProvisioning ;
     rdfs:label "NVIDIA provisioning of NVIDIA Nemotron Nano 12B v2 VL (Reasoning)" ;
-    enki:provider contextuel:NVIDIA ;
+    enki:provider contextuel:NvidiaNGC ;
     enki:provides contextuel:NVIDIA_Nemotron_Nano_12B_V2_VL_Reasoning .
 
-contextuel:NVIDIA_Provisioning_NVIDIA_Nemotron_Nano_9B_V2_Non_Reasoning a enki:LLMProvisioning ;
+contextuel:NvidiaNGC_Provisioning_NVIDIA_Nemotron_Nano_9B_V2_Non_Reasoning a enki:LLMProvisioning ;
     rdfs:label "NVIDIA provisioning of NVIDIA Nemotron Nano 9B V2 (Non-reasoning)" ;
-    enki:provider contextuel:NVIDIA ;
+    enki:provider contextuel:NvidiaNGC ;
     enki:provides contextuel:NVIDIA_Nemotron_Nano_9B_V2_Non_Reasoning .
 
-contextuel:NVIDIA_Provisioning_NVIDIA_Nemotron_Nano_9B_V2_Reasoning a enki:LLMProvisioning ;
+contextuel:NvidiaNGC_Provisioning_NVIDIA_Nemotron_Nano_9B_V2_Reasoning a enki:LLMProvisioning ;
     rdfs:label "NVIDIA provisioning of NVIDIA Nemotron Nano 9B V2 (Reasoning)" ;
-    enki:provider contextuel:NVIDIA ;
+    enki:provider contextuel:NvidiaNGC ;
     enki:provides contextuel:NVIDIA_Nemotron_Nano_9B_V2_Reasoning .
 
-contextuel:OpenAI a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "OpenAI" ;
+contextuel:OpenAI
     enki:manufactures contextuel:GPT_3_5_Turbo ;
     enki:manufactures contextuel:GPT_3_5_Turbo_0613 ;
     enki:manufactures contextuel:GPT_4 ;
@@ -2246,9 +2188,7 @@ contextuel:OpenAI_Provisioning_O4_Mini_High a enki:LLMProvisioning ;
     enki:provider contextuel:OpenAI ;
     enki:provides contextuel:O4_Mini_High .
 
-contextuel:OpenChat a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "OpenChat" ;
+contextuel:OpenChat
     enki:manufactures contextuel:OpenChat_3_5_1210 .
 
 contextuel:OpenChat_Provisioning_OpenChat_3_5_1210 a enki:LLMProvisioning ;
@@ -2256,9 +2196,7 @@ contextuel:OpenChat_Provisioning_OpenChat_3_5_1210 a enki:LLMProvisioning ;
     enki:provider contextuel:OpenChat ;
     enki:provides contextuel:OpenChat_3_5_1210 .
 
-contextuel:Perplexity a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Perplexity" ;
+contextuel:Perplexity
     enki:manufactures contextuel:R1_1776 ;
     enki:manufactures contextuel:Sonar ;
     enki:manufactures contextuel:Sonar_Pro ;
@@ -2290,9 +2228,7 @@ contextuel:Perplexity_Provisioning_Sonar_Reasoning_Pro a enki:LLMProvisioning ;
     enki:provider contextuel:Perplexity ;
     enki:provides contextuel:Sonar_Reasoning_Pro .
 
-contextuel:Prime_Intellect a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Prime Intellect" ;
+contextuel:Prime_Intellect
     enki:manufactures contextuel:INTELLECT_3 .
 
 contextuel:Prime_Intellect_Provisioning_INTELLECT_3 a enki:LLMProvisioning ;
@@ -2300,9 +2236,7 @@ contextuel:Prime_Intellect_Provisioning_INTELLECT_3 a enki:LLMProvisioning ;
     enki:provider contextuel:Prime_Intellect ;
     enki:provides contextuel:INTELLECT_3 .
 
-contextuel:Reka_AI a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Reka AI" ;
+contextuel:Reka_AI
     enki:manufactures contextuel:Reka_Flash_3 ;
     enki:manufactures contextuel:Reka_Flash_Sep_24 .
 
@@ -2316,9 +2250,7 @@ contextuel:Reka_AI_Provisioning_Reka_Flash_Sep_24 a enki:LLMProvisioning ;
     enki:provider contextuel:Reka_AI ;
     enki:provides contextuel:Reka_Flash_Sep_24 .
 
-contextuel:ServiceNow a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "ServiceNow" ;
+contextuel:ServiceNow
     enki:manufactures contextuel:Apriel_V1_5_15B_Thinker ;
     enki:manufactures contextuel:Apriel_V1_6_15B_Thinker .
 
@@ -2332,9 +2264,7 @@ contextuel:ServiceNow_Provisioning_Apriel_V1_6_15B_Thinker a enki:LLMProvisionin
     enki:provider contextuel:ServiceNow ;
     enki:provides contextuel:Apriel_V1_6_15B_Thinker .
 
-contextuel:Snowflake a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Snowflake" ;
+contextuel:Snowflake
     enki:manufactures contextuel:Arctic_Instruct .
 
 contextuel:Snowflake_Provisioning_Arctic_Instruct a enki:LLMProvisioning ;
@@ -2342,9 +2272,7 @@ contextuel:Snowflake_Provisioning_Arctic_Instruct a enki:LLMProvisioning ;
     enki:provider contextuel:Snowflake ;
     enki:provides contextuel:Arctic_Instruct .
 
-contextuel:StepFun a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "StepFun" ;
+contextuel:StepFun
     enki:manufactures contextuel:Step3_VL_10B .
 
 contextuel:StepFun_Provisioning_Step3_VL_10B a enki:LLMProvisioning ;
@@ -2352,9 +2280,7 @@ contextuel:StepFun_Provisioning_Step3_VL_10B a enki:LLMProvisioning ;
     enki:provider contextuel:StepFun ;
     enki:provides contextuel:Step3_VL_10B .
 
-contextuel:TII_UAE a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "TII UAE" ;
+contextuel:TII_UAE
     enki:manufactures contextuel:Falcon_H1R_7B .
 
 contextuel:TII_UAE_Provisioning_Falcon_H1R_7B a enki:LLMProvisioning ;
@@ -2362,9 +2288,7 @@ contextuel:TII_UAE_Provisioning_Falcon_H1R_7B a enki:LLMProvisioning ;
     enki:provider contextuel:TII_UAE ;
     enki:provides contextuel:Falcon_H1R_7B .
 
-contextuel:Trillion_Labs a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Trillion Labs" ;
+contextuel:Trillion_Labs
     enki:manufactures contextuel:Tri_21B_Think ;
     enki:manufactures contextuel:Tri_21B_Think_Preview .
 
@@ -2378,9 +2302,7 @@ contextuel:Trillion_Labs_Provisioning_Tri_21B_Think_Preview a enki:LLMProvisioni
     enki:provider contextuel:Trillion_Labs ;
     enki:provides contextuel:Tri_21B_Think_Preview .
 
-contextuel:Upstage a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Upstage" ;
+contextuel:Upstage
     enki:manufactures contextuel:Solar_Mini ;
     enki:manufactures contextuel:Solar_Open_100B_Reasoning ;
     enki:manufactures contextuel:Solar_Pro_2_Non_Reasoning ;
@@ -2418,9 +2340,7 @@ contextuel:Upstage_Provisioning_Solar_Pro_2_Reasoning a enki:LLMProvisioning ;
     enki:provider contextuel:Upstage ;
     enki:provides contextuel:Solar_Pro_2_Reasoning .
 
-contextuel:xAI a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "xAI" ;
+contextuel:xAI
     enki:manufactures contextuel:Grok_1 ;
     enki:manufactures contextuel:Grok_2_Dec_24 ;
     enki:manufactures contextuel:Grok_3 ;
@@ -2500,9 +2420,7 @@ contextuel:xAI_Provisioning_Grok_Voice_Agent a enki:LLMProvisioning ;
     enki:provider contextuel:xAI ;
     enki:provides contextuel:Grok_Voice_Agent .
 
-contextuel:Xiaomi a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Xiaomi" ;
+contextuel:Xiaomi
     enki:manufactures contextuel:MiMo_V2_Flash_Feb_2026 ;
     enki:manufactures contextuel:MiMo_V2_Flash_Non_Reasoning ;
     enki:manufactures contextuel:MiMo_V2_Flash_Reasoning .
@@ -2522,9 +2440,7 @@ contextuel:Xiaomi_Provisioning_MiMo_V2_Flash_Reasoning a enki:LLMProvisioning ;
     enki:provider contextuel:Xiaomi ;
     enki:provides contextuel:MiMo_V2_Flash_Reasoning .
 
-contextuel:Z_AI a enki:LLMManufacturer,
-        enki:LLMProvider ;
-    rdfs:label "Z AI" ;
+contextuel:Z_AI
     enki:manufactures contextuel:GLM_4_5V_Non_Reasoning ;
     enki:manufactures contextuel:GLM_4_5V_Reasoning ;
     enki:manufactures contextuel:GLM_4_5_Air ;
@@ -15151,15 +15067,10 @@ contextuel:Artificial_Analysis_Time_To_First_Token_S a enki:Evaluation ;
     enki:metricEvaluated contextuel:Sonar_Pro_Time_To_First_Token ;
     enki:metricEvaluated contextuel:Sonar_Time_To_First_Token .
 
-contextuel:Artificial_Analysis a enki:AIOrganization ;
-    dct:description "Artificial Analysis provides independent benchmarks, speed tests, and pricing data for LLM API providers." ;
-    dct:identifier "https://artificialanalysis.ai/" ;
-    rdfs:label "Artificial Analysis" .
-
 contextuel:Apriel_V1_5_15B_Thinker a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/apriel-v1-5-15b-thinker" ;
     rdfs:label "Apriel-v1.5-15B-Thinker" ;
-    enki:hasTotalParameterCount 15000000000 .
+    enki:hasTotalParameterCount 15.0 .
 
 contextuel:Apriel_V1_5_15B_Thinker_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -15276,7 +15187,7 @@ contextuel:Apriel_V1_5_15B_Thinker_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Apriel_V1_6_15B_Thinker a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/apriel-v1-6-15b-thinker" ;
     rdfs:label "Apriel-v1.6-15B-Thinker" ;
-    enki:hasTotalParameterCount 15000000000 .
+    enki:hasTotalParameterCount 15.0 .
 
 contextuel:Apriel_V1_6_15B_Thinker_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -19085,7 +18996,7 @@ contextuel:DBRX_Instruct_SciCode a enki:EvaluatedMetric ;
 contextuel:DeepHermes_3_Llama_3_1_8B_Preview_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/deephermes-3-llama-3-1-8b-preview" ;
     rdfs:label "DeepHermes 3 - Llama-3.1 8B Preview (Non-reasoning)" ;
-    enki:hasTotalParameterCount 8000000000 .
+    enki:hasTotalParameterCount 8.0 .
 
 contextuel:DeepHermes_3_Llama_3_1_8B_Preview_Non_Reasoning_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -19146,7 +19057,7 @@ contextuel:DeepHermes_3_Llama_3_1_8B_Preview_Non_Reasoning_SciCode a enki:Evalua
 contextuel:DeepHermes_3_Mistral_24B_Preview_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/deephermes-3-mistral-24b-preview" ;
     rdfs:label "DeepHermes 3 - Mistral 24B Preview (Non-reasoning)" ;
-    enki:hasTotalParameterCount 24000000000 .
+    enki:hasTotalParameterCount 24.0 .
 
 contextuel:DeepHermes_3_Mistral_24B_Preview_Non_Reasoning_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -19271,7 +19182,7 @@ contextuel:DeepSeek_Coder_V2_Lite_Instruct_SciCode a enki:EvaluatedMetric ;
 contextuel:DeepSeek_LLM_67B_Chat_V1 a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/deepseek-llm-67b-chat" ;
     rdfs:label "DeepSeek LLM 67B Chat (V1)" ;
-    enki:hasTotalParameterCount 67000000000 .
+    enki:hasTotalParameterCount 67.0 .
 
 contextuel:DeepSeek_LLM_67B_Chat_V1_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -19413,7 +19324,7 @@ contextuel:DeepSeek_R1_0528_May_25_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:DeepSeek_R1_0528_Qwen3_8B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/deepseek-r1-qwen3-8b" ;
     rdfs:label "DeepSeek R1 0528 Qwen3 8B" ;
-    enki:hasTotalParameterCount 8000000000 .
+    enki:hasTotalParameterCount 8.0 .
 
 contextuel:DeepSeek_R1_0528_Qwen3_8B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -19523,7 +19434,7 @@ contextuel:DeepSeek_R1_0528_Qwen3_8B_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:DeepSeek_R1_Distill_Llama_70B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/deepseek-r1-distill-llama-70b" ;
     rdfs:label "DeepSeek R1 Distill Llama 70B" ;
-    enki:hasTotalParameterCount 70000000000 .
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:DeepSeek_R1_Distill_Llama_70B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -19675,7 +19586,7 @@ contextuel:DeepSeek_R1_Distill_Llama_70B_Time_To_First_Token a enki:EvaluatedMet
 contextuel:DeepSeek_R1_Distill_Llama_8B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/deepseek-r1-distill-llama-8b" ;
     rdfs:label "DeepSeek R1 Distill Llama 8B" ;
-    enki:hasTotalParameterCount 8000000000 .
+    enki:hasTotalParameterCount 8.0 .
 
 contextuel:DeepSeek_R1_Distill_Llama_8B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -19764,7 +19675,7 @@ contextuel:DeepSeek_R1_Distill_Llama_8B_SciCode a enki:EvaluatedMetric ;
 contextuel:DeepSeek_R1_Distill_Qwen_14B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/deepseek-r1-distill-qwen-14b" ;
     rdfs:label "DeepSeek R1 Distill Qwen 14B" ;
-    enki:hasTotalParameterCount 14000000000 .
+    enki:hasTotalParameterCount 14.0 .
 
 contextuel:DeepSeek_R1_Distill_Qwen_14B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -19853,7 +19764,7 @@ contextuel:DeepSeek_R1_Distill_Qwen_14B_SciCode a enki:EvaluatedMetric ;
 contextuel:DeepSeek_R1_Distill_Qwen_1_5B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/deepseek-r1-distill-qwen-1-5b" ;
     rdfs:label "DeepSeek R1 Distill Qwen 1.5B" ;
-    enki:hasTotalParameterCount 1500000000 .
+    enki:hasTotalParameterCount 1.5 .
 
 contextuel:DeepSeek_R1_Distill_Qwen_1_5B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -19942,7 +19853,7 @@ contextuel:DeepSeek_R1_Distill_Qwen_1_5B_SciCode a enki:EvaluatedMetric ;
 contextuel:DeepSeek_R1_Distill_Qwen_32B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/deepseek-r1-distill-qwen-32b" ;
     rdfs:label "DeepSeek R1 Distill Qwen 32B" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:DeepSeek_R1_Distill_Qwen_32B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -22376,7 +22287,7 @@ contextuel:Doubao_Seed_Code_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:ERNIE_4_5_300B_A47B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/ernie-4-5-300b-a47b" ;
     rdfs:label "ERNIE 4.5 300B A47B" ;
-    enki:hasTotalParameterCount 300000000000 .
+    enki:hasTotalParameterCount 300.0 .
 
 contextuel:ERNIE_4_5_300B_A47B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -22623,7 +22534,7 @@ contextuel:ERNIE_5_0_Thinking_Preview_TerminalBench_Hard a enki:EvaluatedMetric 
 contextuel:Exaone_4_0_1_2B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/exaone-4-0-1-2b" ;
     rdfs:label "Exaone 4.0 1.2B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 1200000000 .
+    enki:hasTotalParameterCount 1.2 .
 
 contextuel:Exaone_4_0_1_2B_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -22719,7 +22630,7 @@ contextuel:Exaone_4_0_1_2B_Non_Reasoning_TerminalBench_Hard a enki:EvaluatedMetr
 contextuel:Exaone_4_0_1_2B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/exaone-4-0-1-2b-reasoning" ;
     rdfs:label "Exaone 4.0 1.2B (Reasoning)" ;
-    enki:hasTotalParameterCount 1200000000 .
+    enki:hasTotalParameterCount 1.2 .
 
 contextuel:Exaone_4_0_1_2B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -22815,7 +22726,7 @@ contextuel:Exaone_4_0_1_2B_Reasoning_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:EXAONE_4_0_32B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/exaone-4-0-32b" ;
     rdfs:label "EXAONE 4.0 32B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:EXAONE_4_0_32B_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -22967,7 +22878,7 @@ contextuel:EXAONE_4_0_32B_Non_Reasoning_Time_To_First_Token a enki:EvaluatedMetr
 contextuel:EXAONE_4_0_32B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/exaone-4-0-32b-reasoning" ;
     rdfs:label "EXAONE 4.0 32B (Reasoning)" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:EXAONE_4_0_32B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -23119,7 +23030,7 @@ contextuel:EXAONE_4_0_32B_Reasoning_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Falcon_H1R_7B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/falcon-h1r-7b" ;
     rdfs:label "Falcon-H1R-7B" ;
-    enki:hasTotalParameterCount 7000000000 .
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Falcon_H1R_7B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -23293,7 +23204,7 @@ contextuel:Gemini_1_0_Ultra_AA_Intelligence_Index a enki:EvaluatedMetric ;
 contextuel:Gemini_1_5_Flash_8B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/gemini-1-5-flash-8b" ;
     rdfs:label "Gemini 1.5 Flash-8B" ;
-    enki:hasTotalParameterCount 8000000000 .
+    enki:hasTotalParameterCount 8.0 .
 
 contextuel:Gemini_1_5_Flash_8B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -26249,7 +26160,7 @@ contextuel:Gemini_3_Pro_Preview_Low_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Gemma_3_12B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/gemma-3-12b" ;
     rdfs:label "Gemma 3 12B Instruct" ;
-    enki:hasTotalParameterCount 12000000000 .
+    enki:hasTotalParameterCount 12.0 .
 
 contextuel:Gemma_3_12B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -26380,7 +26291,7 @@ contextuel:Gemma_3_12B_Instruct_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Gemma_3_1B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/gemma-3-1b" ;
     rdfs:label "Gemma 3 1B Instruct" ;
-    enki:hasTotalParameterCount 1000000000 .
+    enki:hasTotalParameterCount 1.0 .
 
 contextuel:Gemma_3_1B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -26511,7 +26422,7 @@ contextuel:Gemma_3_1B_Instruct_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Gemma_3_270M a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/gemma-3-270m" ;
     rdfs:label "Gemma 3 270M" ;
-    enki:hasTotalParameterCount 270000000 .
+    enki:hasTotalParameterCount 0.27 .
 
 contextuel:Gemma_3_270M_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -26607,7 +26518,7 @@ contextuel:Gemma_3_270M_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:Gemma_3_27B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/gemma-3-27b" ;
     rdfs:label "Gemma 3 27B Instruct" ;
-    enki:hasTotalParameterCount 27000000000 .
+    enki:hasTotalParameterCount 27.0 .
 
 contextuel:Gemma_3_27B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -26738,7 +26649,7 @@ contextuel:Gemma_3_27B_Instruct_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Gemma_3_4B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/gemma-3-4b" ;
     rdfs:label "Gemma 3 4B Instruct" ;
-    enki:hasTotalParameterCount 4000000000 .
+    enki:hasTotalParameterCount 4.0 .
 
 contextuel:Gemma_3_4B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -26869,7 +26780,7 @@ contextuel:Gemma_3_4B_Instruct_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Gemma_3n_E2B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/gemma-3n-e2b" ;
     rdfs:label "Gemma 3n E2B Instruct" ;
-    enki:hasTotalParameterCount 2000000000 .
+    enki:hasTotalParameterCount 2.0 .
 
 contextuel:Gemma_3n_E2B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -27000,7 +26911,7 @@ contextuel:Gemma_3n_E2B_Instruct_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Gemma_3n_E4B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/gemma-3n-e4b" ;
     rdfs:label "Gemma 3n E4B Instruct" ;
-    enki:hasTotalParameterCount 4000000000 .
+    enki:hasTotalParameterCount 4.0 .
 
 contextuel:Gemma_3n_E4B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -27152,7 +27063,7 @@ contextuel:Gemma_3n_E4B_Instruct_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Gemma_3n_E4B_Instruct_Preview_May_25 a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/gemma-3n-e4b-preview-0520" ;
     rdfs:label "Gemma 3n E4B Instruct Preview (May '25)" ;
-    enki:hasTotalParameterCount 4000000000 .
+    enki:hasTotalParameterCount 4.0 .
 
 contextuel:Gemma_3n_E4B_Instruct_Preview_May_25_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -33202,7 +33113,7 @@ contextuel:GPT_5_Nano_Minimal_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Gpt_Oss_120B_High a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/gpt-oss-120b" ;
     rdfs:label "gpt-oss-120B (high)" ;
-    enki:hasTotalParameterCount 120000000000 .
+    enki:hasTotalParameterCount 120.0 .
 
 contextuel:Gpt_Oss_120B_High_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -33340,7 +33251,7 @@ contextuel:Gpt_Oss_120B_High_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Gpt_Oss_120B_Low a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/gpt-oss-120b-low" ;
     rdfs:label "gpt-oss-120B (low)" ;
-    enki:hasTotalParameterCount 120000000000 .
+    enki:hasTotalParameterCount 120.0 .
 
 contextuel:Gpt_Oss_120B_Low_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -33478,7 +33389,7 @@ contextuel:Gpt_Oss_120B_Low_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Gpt_Oss_20B_High a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/gpt-oss-20b" ;
     rdfs:label "gpt-oss-20B (high)" ;
-    enki:hasTotalParameterCount 20000000000 .
+    enki:hasTotalParameterCount 20.0 .
 
 contextuel:Gpt_Oss_20B_High_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -33616,7 +33527,7 @@ contextuel:Gpt_Oss_20B_High_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Gpt_Oss_20B_Low a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/gpt-oss-20b-low" ;
     rdfs:label "gpt-oss-20B (low)" ;
-    enki:hasTotalParameterCount 20000000000 .
+    enki:hasTotalParameterCount 20.0 .
 
 contextuel:Gpt_Oss_20B_Low_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -33754,7 +33665,7 @@ contextuel:Gpt_Oss_20B_Low_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Granite_3_3_8B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/granite-3-3-8b-instruct" ;
     rdfs:label "Granite 3.3 8B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 8000000000 .
+    enki:hasTotalParameterCount 8.0 .
 
 contextuel:Granite_3_3_8B_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -33906,7 +33817,7 @@ contextuel:Granite_3_3_8B_Non_Reasoning_Time_To_First_Token a enki:EvaluatedMetr
 contextuel:Granite_4_0_1B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/granite-4-0-nano-1b" ;
     rdfs:label "Granite 4.0 1B" ;
-    enki:hasTotalParameterCount 1000000000 .
+    enki:hasTotalParameterCount 1.0 .
 
 contextuel:Granite_4_0_1B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -34002,7 +33913,7 @@ contextuel:Granite_4_0_1B_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:Granite_4_0_350M a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/granite-4-0-350m" ;
     rdfs:label "Granite 4.0 350M" ;
-    enki:hasTotalParameterCount 350000000 .
+    enki:hasTotalParameterCount 0.35 .
 
 contextuel:Granite_4_0_350M_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -34098,7 +34009,7 @@ contextuel:Granite_4_0_350M_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:Granite_4_0_H_1B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/granite-4-0-h-nano-1b" ;
     rdfs:label "Granite 4.0 H 1B" ;
-    enki:hasTotalParameterCount 1000000000 .
+    enki:hasTotalParameterCount 1.0 .
 
 contextuel:Granite_4_0_H_1B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -34194,7 +34105,7 @@ contextuel:Granite_4_0_H_1B_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:Granite_4_0_H_350M a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/granite-4-0-h-350m" ;
     rdfs:label "Granite 4.0 H 350M" ;
-    enki:hasTotalParameterCount 350000000 .
+    enki:hasTotalParameterCount 0.35 .
 
 contextuel:Granite_4_0_H_350M_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -35806,7 +35717,7 @@ contextuel:Grok_Voice_Agent a enki:LLM ;
 contextuel:Hermes_3_Llama_3_1_70B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/hermes-3-llama-3-1-70b" ;
     rdfs:label "Hermes 3 - Llama-3.1 70B" ;
-    enki:hasTotalParameterCount 70000000000 .
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:Hermes_3_Llama_3_1_70B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -35909,7 +35820,7 @@ contextuel:Hermes_3_Llama_3_1_70B_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Hermes_4_Llama_3_1_405B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/hermes-4-llama-3-1-405b" ;
     rdfs:label "Hermes 4 - Llama-3.1 405B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 405000000000 .
+    enki:hasTotalParameterCount 405.0 .
 
 contextuel:Hermes_4_Llama_3_1_405B_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -36026,7 +35937,7 @@ contextuel:Hermes_4_Llama_3_1_405B_Non_Reasoning_TerminalBench_Hard a enki:Evalu
 contextuel:Hermes_4_Llama_3_1_405B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/hermes-4-llama-3-1-405b-reasoning" ;
     rdfs:label "Hermes 4 - Llama-3.1 405B (Reasoning)" ;
-    enki:hasTotalParameterCount 405000000000 .
+    enki:hasTotalParameterCount 405.0 .
 
 contextuel:Hermes_4_Llama_3_1_405B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -36143,7 +36054,7 @@ contextuel:Hermes_4_Llama_3_1_405B_Reasoning_TerminalBench_Hard a enki:Evaluated
 contextuel:Hermes_4_Llama_3_1_70B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/hermes-4-llama-3-1-70b" ;
     rdfs:label "Hermes 4 - Llama-3.1 70B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 70000000000 .
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:Hermes_4_Llama_3_1_70B_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -36260,7 +36171,7 @@ contextuel:Hermes_4_Llama_3_1_70B_Non_Reasoning_TerminalBench_Hard a enki:Evalua
 contextuel:Hermes_4_Llama_3_1_70B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/hermes-4-llama-3-1-70b-reasoning" ;
     rdfs:label "Hermes 4 - Llama-3.1 70B (Reasoning)" ;
-    enki:hasTotalParameterCount 70000000000 .
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:Hermes_4_Llama_3_1_70B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -36377,7 +36288,7 @@ contextuel:Hermes_4_Llama_3_1_70B_Reasoning_TerminalBench_Hard a enki:EvaluatedM
 contextuel:HyperCLOVA_X_SEED_Think_32B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/hyperclova-x-seed-think-32b" ;
     rdfs:label "HyperCLOVA X SEED Think (32B)" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:HyperCLOVA_X_SEED_Think_32B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -37236,7 +37147,7 @@ contextuel:Jamba_1_7_Mini_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:Jamba_Reasoning_3B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/jamba-reasoning-3b" ;
     rdfs:label "Jamba Reasoning 3B" ;
-    enki:hasTotalParameterCount 3000000000 .
+    enki:hasTotalParameterCount 3.0 .
 
 contextuel:Jamba_Reasoning_3B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -38689,7 +38600,7 @@ contextuel:Kimi_K2_Thinking_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Kimi_Linear_48B_A3B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/kimi-linear-48b-a3b-instruct" ;
     rdfs:label "Kimi Linear 48B A3B Instruct" ;
-    enki:hasTotalParameterCount 48000000000 .
+    enki:hasTotalParameterCount 48.0 .
 
 contextuel:Kimi_Linear_48B_A3B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -38785,7 +38696,7 @@ contextuel:Kimi_Linear_48B_A3B_Instruct_TerminalBench_Hard a enki:EvaluatedMetri
 contextuel:LFM2_1_2B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/lfm2-1-2b" ;
     rdfs:label "LFM2 1.2B" ;
-    enki:hasTotalParameterCount 1200000000 .
+    enki:hasTotalParameterCount 1.2 .
 
 contextuel:LFM2_1_2B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -38881,7 +38792,7 @@ contextuel:LFM2_1_2B_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:LFM2_2_6B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/lfm2-2-6b" ;
     rdfs:label "LFM2 2.6B" ;
-    enki:hasTotalParameterCount 2600000000 .
+    enki:hasTotalParameterCount 2.6 .
 
 contextuel:LFM2_2_6B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -38977,7 +38888,7 @@ contextuel:LFM2_2_6B_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:LFM2_5_1_2B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/lfm2-5-1-2b-instruct" ;
     rdfs:label "LFM2.5-1.2B-Instruct" ;
-    enki:hasTotalParameterCount 1200000000 .
+    enki:hasTotalParameterCount 1.2 .
 
 contextuel:LFM2_5_1_2B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -39045,7 +38956,7 @@ contextuel:LFM2_5_1_2B_Instruct_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:LFM2_5_1_2B_Thinking a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/lfm2-5-1-2b-thinking" ;
     rdfs:label "LFM2.5-1.2B-Thinking" ;
-    enki:hasTotalParameterCount 1200000000 .
+    enki:hasTotalParameterCount 1.2 .
 
 contextuel:LFM2_5_1_2B_Thinking_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -39113,7 +39024,7 @@ contextuel:LFM2_5_1_2B_Thinking_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:LFM2_5_VL_1_6B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/lfm2-5-vl-1-6b" ;
     rdfs:label "LFM2.5-VL-1.6B" ;
-    enki:hasTotalParameterCount 1600000000 .
+    enki:hasTotalParameterCount 1.6 .
 
 contextuel:LFM2_5_VL_1_6B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -39181,7 +39092,7 @@ contextuel:LFM2_5_VL_1_6B_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:LFM2_8B_A1B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/lfm2-8b-a1b" ;
     rdfs:label "LFM2 8B A1B" ;
-    enki:hasTotalParameterCount 8000000000 .
+    enki:hasTotalParameterCount 8.0 .
 
 contextuel:LFM2_8B_A1B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -39277,7 +39188,7 @@ contextuel:LFM2_8B_A1B_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:LFM_40B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/lfm-40b" ;
     rdfs:label "LFM 40B" ;
-    enki:hasTotalParameterCount 40000000000 .
+    enki:hasTotalParameterCount 40.0 .
 
 contextuel:LFM_40B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -39707,7 +39618,7 @@ contextuel:Ling_Mini_2_0_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Llama_2_Chat_13B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-2-chat-13b" ;
     rdfs:label "Llama 2 Chat 13B" ;
-    enki:hasTotalParameterCount 13000000000 .
+    enki:hasTotalParameterCount 13.0 .
 
 contextuel:Llama_2_Chat_13B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -39768,7 +39679,7 @@ contextuel:Llama_2_Chat_13B_SciCode a enki:EvaluatedMetric ;
 contextuel:Llama_2_Chat_70B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-2-chat-70b" ;
     rdfs:label "Llama 2 Chat 70B" ;
-    enki:hasTotalParameterCount 70000000000 .
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:Llama_2_Chat_70B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -39822,7 +39733,7 @@ contextuel:Llama_2_Chat_70B_MMLU_PRO a enki:EvaluatedMetric ;
 contextuel:Llama_2_Chat_7B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-2-chat-7b" ;
     rdfs:label "Llama 2 Chat 7B" ;
-    enki:hasTotalParameterCount 7000000000 .
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Llama_2_Chat_7B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -39925,7 +39836,7 @@ contextuel:Llama_2_Chat_7B_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Llama_3_1_Instruct_405B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-1-instruct-405b" ;
     rdfs:label "Llama 3.1 Instruct 405B" ;
-    enki:hasTotalParameterCount 405000000000 .
+    enki:hasTotalParameterCount 405.0 .
 
 contextuel:Llama_3_1_Instruct_405B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -40077,7 +39988,7 @@ contextuel:Llama_3_1_Instruct_405B_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Llama_3_1_Instruct_70B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-1-instruct-70b" ;
     rdfs:label "Llama 3.1 Instruct 70B" ;
-    enki:hasTotalParameterCount 70000000000 .
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:Llama_3_1_Instruct_70B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -40229,7 +40140,7 @@ contextuel:Llama_3_1_Instruct_70B_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Llama_3_1_Instruct_8B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-1-instruct-8b" ;
     rdfs:label "Llama 3.1 Instruct 8B" ;
-    enki:hasTotalParameterCount 8000000000 .
+    enki:hasTotalParameterCount 8.0 .
 
 contextuel:Llama_3_1_Instruct_8B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -40381,7 +40292,7 @@ contextuel:Llama_3_1_Instruct_8B_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Llama_3_1_Nemotron_Instruct_70B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-1-nemotron-instruct-70b" ;
     rdfs:label "Llama 3.1 Nemotron Instruct 70B" ;
-    enki:hasTotalParameterCount 70000000000 .
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:Llama_3_1_Nemotron_Instruct_70B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -40533,7 +40444,7 @@ contextuel:Llama_3_1_Nemotron_Instruct_70B_Time_To_First_Token a enki:EvaluatedM
 contextuel:Llama_3_1_Nemotron_Nano_4B_V1_1_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-1-nemotron-nano-4b-reasoning" ;
     rdfs:label "Llama 3.1 Nemotron Nano 4B v1.1 (Reasoning)" ;
-    enki:hasTotalParameterCount 4000000000 .
+    enki:hasTotalParameterCount 4.0 .
 
 contextuel:Llama_3_1_Nemotron_Nano_4B_V1_1_Reasoning_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -40629,7 +40540,7 @@ contextuel:Llama_3_1_Nemotron_Nano_4B_V1_1_Reasoning_Tau2 a enki:EvaluatedMetric
 contextuel:Llama_3_1_Nemotron_Ultra_253B_V1_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-1-nemotron-ultra-253b-v1-reasoning" ;
     rdfs:label "Llama 3.1 Nemotron Ultra 253B v1 (Reasoning)" ;
-    enki:hasTotalParameterCount 253000000000 .
+    enki:hasTotalParameterCount 253.0 .
 
 contextuel:Llama_3_1_Nemotron_Ultra_253B_V1_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -40760,7 +40671,7 @@ contextuel:Llama_3_1_Nemotron_Ultra_253B_V1_Reasoning_TerminalBench_Hard a enki:
 contextuel:Llama_3_1_Tulu3_405B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/tulu3-405b" ;
     rdfs:label "Llama 3.1 Tulu3 405B" ;
-    enki:hasTotalParameterCount 405000000000 .
+    enki:hasTotalParameterCount 405.0 .
 
 contextuel:Llama_3_1_Tulu3_405B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -40821,7 +40732,7 @@ contextuel:Llama_3_1_Tulu3_405B_SciCode a enki:EvaluatedMetric ;
 contextuel:Llama_3_2_Instruct_11B_Vision a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-2-instruct-11b-vision" ;
     rdfs:label "Llama 3.2 Instruct 11B (Vision)" ;
-    enki:hasTotalParameterCount 11000000000 .
+    enki:hasTotalParameterCount 11.0 .
 
 contextuel:Llama_3_2_Instruct_11B_Vision_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -40973,7 +40884,7 @@ contextuel:Llama_3_2_Instruct_11B_Vision_Time_To_First_Token a enki:EvaluatedMet
 contextuel:Llama_3_2_Instruct_1B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-2-instruct-1b" ;
     rdfs:label "Llama 3.2 Instruct 1B" ;
-    enki:hasTotalParameterCount 1000000000 .
+    enki:hasTotalParameterCount 1.0 .
 
 contextuel:Llama_3_2_Instruct_1B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -41125,7 +41036,7 @@ contextuel:Llama_3_2_Instruct_1B_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Llama_3_2_Instruct_3B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-2-instruct-3b" ;
     rdfs:label "Llama 3.2 Instruct 3B" ;
-    enki:hasTotalParameterCount 3000000000 .
+    enki:hasTotalParameterCount 3.0 .
 
 contextuel:Llama_3_2_Instruct_3B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -41263,7 +41174,7 @@ contextuel:Llama_3_2_Instruct_3B_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Llama_3_2_Instruct_90B_Vision a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-2-instruct-90b-vision" ;
     rdfs:label "Llama 3.2 Instruct 90B (Vision)" ;
-    enki:hasTotalParameterCount 90000000000 .
+    enki:hasTotalParameterCount 90.0 .
 
 contextuel:Llama_3_2_Instruct_90B_Vision_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -41366,7 +41277,7 @@ contextuel:Llama_3_2_Instruct_90B_Vision_Time_To_First_Token a enki:EvaluatedMet
 contextuel:Llama_3_3_Instruct_70B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-3-instruct-70b" ;
     rdfs:label "Llama 3.3 Instruct 70B" ;
-    enki:hasTotalParameterCount 70000000000 .
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:Llama_3_3_Instruct_70B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -41518,7 +41429,7 @@ contextuel:Llama_3_3_Instruct_70B_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Llama_3_3_Nemotron_Super_49B_V1_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-3-nemotron-super-49b" ;
     rdfs:label "Llama 3.3 Nemotron Super 49B v1 (Non-reasoning)" ;
-    enki:hasTotalParameterCount 49000000000 .
+    enki:hasTotalParameterCount 49.0 .
 
 contextuel:Llama_3_3_Nemotron_Super_49B_V1_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -41621,7 +41532,7 @@ contextuel:Llama_3_3_Nemotron_Super_49B_V1_Non_Reasoning_TerminalBench_Hard a en
 contextuel:Llama_3_3_Nemotron_Super_49B_V1_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-3-nemotron-super-49b-reasoning" ;
     rdfs:label "Llama 3.3 Nemotron Super 49B v1 (Reasoning)" ;
-    enki:hasTotalParameterCount 49000000000 .
+    enki:hasTotalParameterCount 49.0 .
 
 contextuel:Llama_3_3_Nemotron_Super_49B_V1_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -41724,7 +41635,7 @@ contextuel:Llama_3_3_Nemotron_Super_49B_V1_Reasoning_TerminalBench_Hard a enki:E
 contextuel:Llama_3_Instruct_70B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-instruct-70b" ;
     rdfs:label "Llama 3 Instruct 70B" ;
-    enki:hasTotalParameterCount 70000000000 .
+    enki:hasTotalParameterCount 70.0 .
 
 contextuel:Llama_3_Instruct_70B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -41862,7 +41773,7 @@ contextuel:Llama_3_Instruct_70B_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Llama_3_Instruct_8B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-3-instruct-8b" ;
     rdfs:label "Llama 3 Instruct 8B" ;
-    enki:hasTotalParameterCount 8000000000 .
+    enki:hasTotalParameterCount 8.0 .
 
 contextuel:Llama_3_Instruct_8B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -42295,7 +42206,7 @@ contextuel:Llama_4_Scout_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Llama_65B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-65b" ;
     rdfs:label "Llama 65B" ;
-    enki:hasTotalParameterCount 65000000000 .
+    enki:hasTotalParameterCount 65.0 .
 
 contextuel:Llama_65B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -42307,7 +42218,7 @@ contextuel:Llama_65B_AA_Intelligence_Index a enki:EvaluatedMetric ;
 contextuel:Llama_Nemotron_Super_49B_V1_5_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-nemotron-super-49b-v1-5" ;
     rdfs:label "Llama Nemotron Super 49B v1.5 (Non-reasoning)" ;
-    enki:hasTotalParameterCount 49000000000 .
+    enki:hasTotalParameterCount 49.0 .
 
 contextuel:Llama_Nemotron_Super_49B_V1_5_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -42459,7 +42370,7 @@ contextuel:Llama_Nemotron_Super_49B_V1_5_Non_Reasoning_Time_To_First_Token a enk
 contextuel:Llama_Nemotron_Super_49B_V1_5_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/llama-nemotron-super-49b-v1-5-reasoning" ;
     rdfs:label "Llama Nemotron Super 49B v1.5 (Reasoning)" ;
-    enki:hasTotalParameterCount 49000000000 .
+    enki:hasTotalParameterCount 49.0 .
 
 contextuel:Llama_Nemotron_Super_49B_V1_5_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -44312,7 +44223,7 @@ contextuel:MiniMax_M2_5_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Ministral_3_14B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/ministral-3-14b" ;
     rdfs:label "Ministral 3 14B" ;
-    enki:hasTotalParameterCount 14000000000 .
+    enki:hasTotalParameterCount 14.0 .
 
 contextuel:Ministral_3_14B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -44450,7 +44361,7 @@ contextuel:Ministral_3_14B_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Ministral_3_3B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/ministral-3-3b" ;
     rdfs:label "Ministral 3 3B" ;
-    enki:hasTotalParameterCount 3000000000 .
+    enki:hasTotalParameterCount 3.0 .
 
 contextuel:Ministral_3_3B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -44588,7 +44499,7 @@ contextuel:Ministral_3_3B_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Ministral_3_8B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/ministral-3-8b" ;
     rdfs:label "Ministral 3 8B" ;
-    enki:hasTotalParameterCount 8000000000 .
+    enki:hasTotalParameterCount 8.0 .
 
 contextuel:Ministral_3_8B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -44726,7 +44637,7 @@ contextuel:Ministral_3_8B_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Mistral_7B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/mistral-7b-instruct" ;
     rdfs:label "Mistral 7B Instruct" ;
-    enki:hasTotalParameterCount 7000000000 .
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Mistral_7B_Instruct_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -46421,7 +46332,7 @@ contextuel:Mistral_Small_Sep_24_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Mixtral_8x22B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/mistral-8x22b-instruct" ;
     rdfs:label "Mixtral 8x22B Instruct" ;
-    enki:hasTotalParameterCount 2000000000 .
+    enki:hasTotalParameterCount 2.0 .
 
 contextuel:Mixtral_8x22B_Instruct_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -46563,7 +46474,7 @@ contextuel:Mixtral_8x7B_Instruct_SciCode a enki:EvaluatedMetric ;
 contextuel:Molmo2_8B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/molmo2-8b" ;
     rdfs:label "Molmo2-8B" ;
-    enki:hasTotalParameterCount 8000000000 .
+    enki:hasTotalParameterCount 8.0 .
 
 contextuel:Molmo2_8B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -46645,7 +46556,7 @@ contextuel:Molmo2_8B_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Molmo_7B_D a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/molmo-7b-d" ;
     rdfs:label "Molmo 7B-D" ;
-    enki:hasTotalParameterCount 7000000000 .
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Molmo_7B_D_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -46741,7 +46652,7 @@ contextuel:Molmo_7B_D_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:Motif_2_12_7B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/motif-2-12-7b" ;
     rdfs:label "Motif-2-12.7B-Reasoning" ;
-    enki:hasTotalParameterCount 12700000000 .
+    enki:hasTotalParameterCount 12.7 .
 
 contextuel:Motif_2_12_7B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -48611,7 +48522,7 @@ contextuel:Nova_Pro_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:NVIDIA_Nemotron_3_Nano_30B_A3B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-30b-a3b" ;
     rdfs:label "NVIDIA Nemotron 3 Nano 30B A3B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 30000000000 .
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:NVIDIA_Nemotron_3_Nano_30B_A3B_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -48749,7 +48660,7 @@ contextuel:NVIDIA_Nemotron_3_Nano_30B_A3B_Non_Reasoning_Time_To_First_Token a en
 contextuel:NVIDIA_Nemotron_3_Nano_30B_A3B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-30b-a3b-reasoning" ;
     rdfs:label "NVIDIA Nemotron 3 Nano 30B A3B (Reasoning)" ;
-    enki:hasTotalParameterCount 30000000000 .
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:NVIDIA_Nemotron_3_Nano_30B_A3B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -48887,7 +48798,7 @@ contextuel:NVIDIA_Nemotron_3_Nano_30B_A3B_Reasoning_Time_To_First_Token a enki:E
 contextuel:NVIDIA_Nemotron_Nano_12B_V2_VL_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/nvidia-nemotron-nano-12b-v2-vl" ;
     rdfs:label "NVIDIA Nemotron Nano 12B v2 VL (Non-reasoning)" ;
-    enki:hasTotalParameterCount 12000000000 .
+    enki:hasTotalParameterCount 12.0 .
 
 contextuel:NVIDIA_Nemotron_Nano_12B_V2_VL_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -49025,7 +48936,7 @@ contextuel:NVIDIA_Nemotron_Nano_12B_V2_VL_Non_Reasoning_Time_To_First_Token a en
 contextuel:NVIDIA_Nemotron_Nano_12B_V2_VL_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/nvidia-nemotron-nano-12b-v2-vl-reasoning" ;
     rdfs:label "NVIDIA Nemotron Nano 12B v2 VL (Reasoning)" ;
-    enki:hasTotalParameterCount 12000000000 .
+    enki:hasTotalParameterCount 12.0 .
 
 contextuel:NVIDIA_Nemotron_Nano_12B_V2_VL_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -49163,7 +49074,7 @@ contextuel:NVIDIA_Nemotron_Nano_12B_V2_VL_Reasoning_Time_To_First_Token a enki:E
 contextuel:NVIDIA_Nemotron_Nano_9B_V2_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/nvidia-nemotron-nano-9b-v2" ;
     rdfs:label "NVIDIA Nemotron Nano 9B V2 (Non-reasoning)" ;
-    enki:hasTotalParameterCount 9000000000 .
+    enki:hasTotalParameterCount 9.0 .
 
 contextuel:NVIDIA_Nemotron_Nano_9B_V2_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -49301,7 +49212,7 @@ contextuel:NVIDIA_Nemotron_Nano_9B_V2_Non_Reasoning_Time_To_First_Token a enki:E
 contextuel:NVIDIA_Nemotron_Nano_9B_V2_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/nvidia-nemotron-nano-9b-v2-reasoning" ;
     rdfs:label "NVIDIA Nemotron Nano 9B V2 (Reasoning)" ;
-    enki:hasTotalParameterCount 9000000000 .
+    enki:hasTotalParameterCount 9.0 .
 
 contextuel:NVIDIA_Nemotron_Nano_9B_V2_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -50336,7 +50247,7 @@ contextuel:O4_Mini_High_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:OLMo_2_32B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/olmo-2-32b" ;
     rdfs:label "OLMo 2 32B" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:OLMo_2_32B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -50432,7 +50343,7 @@ contextuel:OLMo_2_32B_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:OLMo_2_7B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/olmo-2-7b" ;
     rdfs:label "OLMo 2 7B" ;
-    enki:hasTotalParameterCount 7000000000 .
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:OLMo_2_7B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -50528,7 +50439,7 @@ contextuel:OLMo_2_7B_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:Olmo_3_1_32B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/olmo-3-1-32b-instruct" ;
     rdfs:label "Olmo 3.1 32B Instruct" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:Olmo_3_1_32B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -50638,7 +50549,7 @@ contextuel:Olmo_3_1_32B_Instruct_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Olmo_3_1_32B_Think a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/olmo-3-1-32b-think" ;
     rdfs:label "Olmo 3.1 32B Think" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:Olmo_3_1_32B_Think_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -50755,7 +50666,7 @@ contextuel:Olmo_3_1_32B_Think_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Olmo_3_32B_Think a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/olmo-3-32b-think" ;
     rdfs:label "Olmo 3 32B Think" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:Olmo_3_32B_Think_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -50851,7 +50762,7 @@ contextuel:Olmo_3_32B_Think_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:Olmo_3_7B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/olmo-3-7b-instruct" ;
     rdfs:label "Olmo 3 7B Instruct" ;
-    enki:hasTotalParameterCount 7000000000 .
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Olmo_3_7B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -50989,7 +50900,7 @@ contextuel:Olmo_3_7B_Instruct_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Olmo_3_7B_Think a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/olmo-3-7b-think" ;
     rdfs:label "Olmo 3 7B Think" ;
-    enki:hasTotalParameterCount 7000000000 .
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Olmo_3_7B_Think_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -51198,7 +51109,7 @@ contextuel:PALM_2_AA_Intelligence_Index a enki:EvaluatedMetric ;
 contextuel:Phi_3_Mini_Instruct_3_8B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/phi-3-mini" ;
     rdfs:label "Phi-3 Mini Instruct 3.8B" ;
-    enki:hasTotalParameterCount 3800000000 .
+    enki:hasTotalParameterCount 3.8 .
 
 contextuel:Phi_3_Mini_Instruct_3_8B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -51828,7 +51739,7 @@ contextuel:Pixtral_Large_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen1_5_Chat_110B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen1.5-110b-chat" ;
     rdfs:label "Qwen1.5 Chat 110B" ;
-    enki:hasTotalParameterCount 110000000000 .
+    enki:hasTotalParameterCount 110.0 .
 
 contextuel:Qwen1_5_Chat_110B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -51847,7 +51758,7 @@ contextuel:Qwen1_5_Chat_110B_GPQA a enki:EvaluatedMetric ;
 contextuel:Qwen2_5_Coder_Instruct_32B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen2-5-coder-32b-instruct" ;
     rdfs:label "Qwen2.5 Coder Instruct 32B" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:Qwen2_5_Coder_Instruct_32B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -51950,7 +51861,7 @@ contextuel:Qwen2_5_Coder_Instruct_32B_Time_To_First_Token a enki:EvaluatedMetric
 contextuel:Qwen2_5_Coder_Instruct_7B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen2-5-coder-7b-instruct" ;
     rdfs:label "Qwen2.5 Coder Instruct 7B" ;
-    enki:hasTotalParameterCount 7000000000 .
+    enki:hasTotalParameterCount 7.0 .
 
 contextuel:Qwen2_5_Coder_Instruct_7B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -52011,7 +51922,7 @@ contextuel:Qwen2_5_Coder_Instruct_7B_SciCode a enki:EvaluatedMetric ;
 contextuel:Qwen2_5_Instruct_32B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen2.5-32b-instruct" ;
     rdfs:label "Qwen2.5 Instruct 32B" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:Qwen2_5_Instruct_32B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -52072,7 +51983,7 @@ contextuel:Qwen2_5_Instruct_32B_SciCode a enki:EvaluatedMetric ;
 contextuel:Qwen2_5_Instruct_72B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen2-5-72b-instruct" ;
     rdfs:label "Qwen2.5 Instruct 72B" ;
-    enki:hasTotalParameterCount 72000000000 .
+    enki:hasTotalParameterCount 72.0 .
 
 contextuel:Qwen2_5_Instruct_72B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -52407,7 +52318,7 @@ contextuel:Qwen2_5_Turbo_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen2_Instruct_72B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen2-72b-instruct" ;
     rdfs:label "Qwen2 Instruct 72B" ;
-    enki:hasTotalParameterCount 72000000000 .
+    enki:hasTotalParameterCount 72.0 .
 
 contextuel:Qwen2_Instruct_72B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -52468,7 +52379,7 @@ contextuel:Qwen2_Instruct_72B_SciCode a enki:EvaluatedMetric ;
 contextuel:Qwen3_0_6B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-0.6b-instruct" ;
     rdfs:label "Qwen3 0.6B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 600000000 .
+    enki:hasTotalParameterCount 0.6 .
 
 contextuel:Qwen3_0_6B_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -52620,7 +52531,7 @@ contextuel:Qwen3_0_6B_Non_Reasoning_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen3_0_6B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-0.6b-instruct-reasoning" ;
     rdfs:label "Qwen3 0.6B (Reasoning)" ;
-    enki:hasTotalParameterCount 600000000 .
+    enki:hasTotalParameterCount 0.6 .
 
 contextuel:Qwen3_0_6B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -52772,7 +52683,7 @@ contextuel:Qwen3_0_6B_Reasoning_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen3_14B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-14b-instruct" ;
     rdfs:label "Qwen3 14B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 14000000000 .
+    enki:hasTotalParameterCount 14.0 .
 
 contextuel:Qwen3_14B_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -52924,7 +52835,7 @@ contextuel:Qwen3_14B_Non_Reasoning_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen3_14B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-14b-instruct-reasoning" ;
     rdfs:label "Qwen3 14B (Reasoning)" ;
-    enki:hasTotalParameterCount 14000000000 .
+    enki:hasTotalParameterCount 14.0 .
 
 contextuel:Qwen3_14B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -53076,7 +52987,7 @@ contextuel:Qwen3_14B_Reasoning_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen3_1_7B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-1.7b-instruct" ;
     rdfs:label "Qwen3 1.7B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 1700000000 .
+    enki:hasTotalParameterCount 1.7 .
 
 contextuel:Qwen3_1_7B_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -53228,7 +53139,7 @@ contextuel:Qwen3_1_7B_Non_Reasoning_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen3_1_7B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-1.7b-instruct-reasoning" ;
     rdfs:label "Qwen3 1.7B (Reasoning)" ;
-    enki:hasTotalParameterCount 1700000000 .
+    enki:hasTotalParameterCount 1.7 .
 
 contextuel:Qwen3_1_7B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -53380,7 +53291,7 @@ contextuel:Qwen3_1_7B_Reasoning_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen3_235B_A22B_2507_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct-2507" ;
     rdfs:label "Qwen3 235B A22B 2507 Instruct" ;
-    enki:hasTotalParameterCount 235000000000 .
+    enki:hasTotalParameterCount 235.0 .
 
 contextuel:Qwen3_235B_A22B_2507_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -53532,7 +53443,7 @@ contextuel:Qwen3_235B_A22B_2507_Instruct_Time_To_First_Token a enki:EvaluatedMet
 contextuel:Qwen3_235B_A22B_2507_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct-2507-reasoning" ;
     rdfs:label "Qwen3 235B A22B 2507 (Reasoning)" ;
-    enki:hasTotalParameterCount 235000000000 .
+    enki:hasTotalParameterCount 235.0 .
 
 contextuel:Qwen3_235B_A22B_2507_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -53684,7 +53595,7 @@ contextuel:Qwen3_235B_A22B_2507_Reasoning_Time_To_First_Token a enki:EvaluatedMe
 contextuel:Qwen3_235B_A22B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct" ;
     rdfs:label "Qwen3 235B A22B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 235000000000 .
+    enki:hasTotalParameterCount 235.0 .
 
 contextuel:Qwen3_235B_A22B_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -53836,7 +53747,7 @@ contextuel:Qwen3_235B_A22B_Non_Reasoning_Time_To_First_Token a enki:EvaluatedMet
 contextuel:Qwen3_235B_A22B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct-reasoning" ;
     rdfs:label "Qwen3 235B A22B (Reasoning)" ;
-    enki:hasTotalParameterCount 235000000000 .
+    enki:hasTotalParameterCount 235.0 .
 
 contextuel:Qwen3_235B_A22B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -53988,7 +53899,7 @@ contextuel:Qwen3_235B_A22B_Reasoning_Time_To_First_Token a enki:EvaluatedMetric 
 contextuel:Qwen3_30B_A3B_2507_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-30b-a3b-2507" ;
     rdfs:label "Qwen3 30B A3B 2507 Instruct" ;
-    enki:hasTotalParameterCount 30000000000 .
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:Qwen3_30B_A3B_2507_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -54140,7 +54051,7 @@ contextuel:Qwen3_30B_A3B_2507_Instruct_Time_To_First_Token a enki:EvaluatedMetri
 contextuel:Qwen3_30B_A3B_2507_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-30b-a3b-2507-reasoning" ;
     rdfs:label "Qwen3 30B A3B 2507 (Reasoning)" ;
-    enki:hasTotalParameterCount 30000000000 .
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:Qwen3_30B_A3B_2507_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -54292,7 +54203,7 @@ contextuel:Qwen3_30B_A3B_2507_Reasoning_Time_To_First_Token a enki:EvaluatedMetr
 contextuel:Qwen3_30B_A3B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-30b-a3b-instruct" ;
     rdfs:label "Qwen3 30B A3B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 30000000000 .
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:Qwen3_30B_A3B_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -54444,7 +54355,7 @@ contextuel:Qwen3_30B_A3B_Non_Reasoning_Time_To_First_Token a enki:EvaluatedMetri
 contextuel:Qwen3_30B_A3B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-30b-a3b-instruct-reasoning" ;
     rdfs:label "Qwen3 30B A3B (Reasoning)" ;
-    enki:hasTotalParameterCount 30000000000 .
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:Qwen3_30B_A3B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -54596,7 +54507,7 @@ contextuel:Qwen3_30B_A3B_Reasoning_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen3_32B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-32b-instruct" ;
     rdfs:label "Qwen3 32B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:Qwen3_32B_Non_Reasoning_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -54727,7 +54638,7 @@ contextuel:Qwen3_32B_Non_Reasoning_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen3_32B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-32b-instruct-reasoning" ;
     rdfs:label "Qwen3 32B (Reasoning)" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:Qwen3_32B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -54879,7 +54790,7 @@ contextuel:Qwen3_32B_Reasoning_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen3_4B_2507_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-4b-2507-instruct" ;
     rdfs:label "Qwen3 4B 2507 Instruct" ;
-    enki:hasTotalParameterCount 4000000000 .
+    enki:hasTotalParameterCount 4.0 .
 
 contextuel:Qwen3_4B_2507_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -54975,7 +54886,7 @@ contextuel:Qwen3_4B_2507_Instruct_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:Qwen3_4B_2507_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-4b-2507-instruct-reasoning" ;
     rdfs:label "Qwen3 4B 2507 (Reasoning)" ;
-    enki:hasTotalParameterCount 4000000000 .
+    enki:hasTotalParameterCount 4.0 .
 
 contextuel:Qwen3_4B_2507_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -55071,7 +54982,7 @@ contextuel:Qwen3_4B_2507_Reasoning_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:Qwen3_4B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-4b-instruct" ;
     rdfs:label "Qwen3 4B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 4000000000 .
+    enki:hasTotalParameterCount 4.0 .
 
 contextuel:Qwen3_4B_Non_Reasoning_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -55153,7 +55064,7 @@ contextuel:Qwen3_4B_Non_Reasoning_SciCode a enki:EvaluatedMetric ;
 contextuel:Qwen3_4B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-4b-instruct-reasoning" ;
     rdfs:label "Qwen3 4B (Reasoning)" ;
-    enki:hasTotalParameterCount 4000000000 .
+    enki:hasTotalParameterCount 4.0 .
 
 contextuel:Qwen3_4B_Reasoning_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -55270,7 +55181,7 @@ contextuel:Qwen3_4B_Reasoning_Tau2 a enki:EvaluatedMetric ;
 contextuel:Qwen3_5_397B_A17B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-5-397b-a17b-non-reasoning" ;
     rdfs:label "Qwen3.5 397B A17B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 397000000000 .
+    enki:hasTotalParameterCount 397.0 .
 
 contextuel:Qwen3_5_397B_A17B_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -55380,7 +55291,7 @@ contextuel:Qwen3_5_397B_A17B_Non_Reasoning_Time_To_First_Token a enki:EvaluatedM
 contextuel:Qwen3_5_397B_A17B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-5-397b-a17b" ;
     rdfs:label "Qwen3.5 397B A17B (Reasoning)" ;
-    enki:hasTotalParameterCount 397000000000 .
+    enki:hasTotalParameterCount 397.0 .
 
 contextuel:Qwen3_5_397B_A17B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -55490,7 +55401,7 @@ contextuel:Qwen3_5_397B_A17B_Reasoning_Time_To_First_Token a enki:EvaluatedMetri
 contextuel:Qwen3_8B_Non_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-8b-instruct" ;
     rdfs:label "Qwen3 8B (Non-reasoning)" ;
-    enki:hasTotalParameterCount 8000000000 .
+    enki:hasTotalParameterCount 8.0 .
 
 contextuel:Qwen3_8B_Non_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -55642,7 +55553,7 @@ contextuel:Qwen3_8B_Non_Reasoning_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen3_8B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-8b-instruct-reasoning" ;
     rdfs:label "Qwen3 8B (Reasoning)" ;
-    enki:hasTotalParameterCount 8000000000 .
+    enki:hasTotalParameterCount 8.0 .
 
 contextuel:Qwen3_8B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -55794,7 +55705,7 @@ contextuel:Qwen3_8B_Reasoning_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen3_Coder_30B_A3B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-coder-30b-a3b-instruct" ;
     rdfs:label "Qwen3 Coder 30B A3B Instruct" ;
-    enki:hasTotalParameterCount 30000000000 .
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:Qwen3_Coder_30B_A3B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -55946,7 +55857,7 @@ contextuel:Qwen3_Coder_30B_A3B_Instruct_Time_To_First_Token a enki:EvaluatedMetr
 contextuel:Qwen3_Coder_480B_A35B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-coder-480b-a35b-instruct" ;
     rdfs:label "Qwen3 Coder 480B A35B Instruct" ;
-    enki:hasTotalParameterCount 480000000000 .
+    enki:hasTotalParameterCount 480.0 .
 
 contextuel:Qwen3_Coder_480B_A35B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -56727,7 +56638,7 @@ contextuel:Qwen3_Max_Thinking_Preview_Time_To_First_Token a enki:EvaluatedMetric
 contextuel:Qwen3_Next_80B_A3B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-next-80b-a3b-instruct" ;
     rdfs:label "Qwen3 Next 80B A3B Instruct" ;
-    enki:hasTotalParameterCount 80000000000 .
+    enki:hasTotalParameterCount 80.0 .
 
 contextuel:Qwen3_Next_80B_A3B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -56865,7 +56776,7 @@ contextuel:Qwen3_Next_80B_A3B_Instruct_Time_To_First_Token a enki:EvaluatedMetri
 contextuel:Qwen3_Next_80B_A3B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-next-80b-a3b-reasoning" ;
     rdfs:label "Qwen3 Next 80B A3B (Reasoning)" ;
-    enki:hasTotalParameterCount 80000000000 .
+    enki:hasTotalParameterCount 80.0 .
 
 contextuel:Qwen3_Next_80B_A3B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -57003,7 +56914,7 @@ contextuel:Qwen3_Next_80B_A3B_Reasoning_Time_To_First_Token a enki:EvaluatedMetr
 contextuel:Qwen3_Omni_30B_A3B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-omni-30b-a3b-instruct" ;
     rdfs:label "Qwen3 Omni 30B A3B Instruct" ;
-    enki:hasTotalParameterCount 30000000000 .
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:Qwen3_Omni_30B_A3B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -57141,7 +57052,7 @@ contextuel:Qwen3_Omni_30B_A3B_Instruct_Time_To_First_Token a enki:EvaluatedMetri
 contextuel:Qwen3_Omni_30B_A3B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-omni-30b-a3b-reasoning" ;
     rdfs:label "Qwen3 Omni 30B A3B (Reasoning)" ;
-    enki:hasTotalParameterCount 30000000000 .
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:Qwen3_Omni_30B_A3B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -57279,7 +57190,7 @@ contextuel:Qwen3_Omni_30B_A3B_Reasoning_Time_To_First_Token a enki:EvaluatedMetr
 contextuel:Qwen3_VL_235B_A22B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-vl-235b-a22b-instruct" ;
     rdfs:label "Qwen3 VL 235B A22B Instruct" ;
-    enki:hasTotalParameterCount 235000000000 .
+    enki:hasTotalParameterCount 235.0 .
 
 contextuel:Qwen3_VL_235B_A22B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -57417,7 +57328,7 @@ contextuel:Qwen3_VL_235B_A22B_Instruct_Time_To_First_Token a enki:EvaluatedMetri
 contextuel:Qwen3_VL_235B_A22B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-vl-235b-a22b-reasoning" ;
     rdfs:label "Qwen3 VL 235B A22B (Reasoning)" ;
-    enki:hasTotalParameterCount 235000000000 .
+    enki:hasTotalParameterCount 235.0 .
 
 contextuel:Qwen3_VL_235B_A22B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -57555,7 +57466,7 @@ contextuel:Qwen3_VL_235B_A22B_Reasoning_Time_To_First_Token a enki:EvaluatedMetr
 contextuel:Qwen3_VL_30B_A3B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-vl-30b-a3b-instruct" ;
     rdfs:label "Qwen3 VL 30B A3B Instruct" ;
-    enki:hasTotalParameterCount 30000000000 .
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:Qwen3_VL_30B_A3B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -57693,7 +57604,7 @@ contextuel:Qwen3_VL_30B_A3B_Instruct_Time_To_First_Token a enki:EvaluatedMetric 
 contextuel:Qwen3_VL_30B_A3B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-vl-30b-a3b-reasoning" ;
     rdfs:label "Qwen3 VL 30B A3B (Reasoning)" ;
-    enki:hasTotalParameterCount 30000000000 .
+    enki:hasTotalParameterCount 30.0 .
 
 contextuel:Qwen3_VL_30B_A3B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -57831,7 +57742,7 @@ contextuel:Qwen3_VL_30B_A3B_Reasoning_Time_To_First_Token a enki:EvaluatedMetric
 contextuel:Qwen3_VL_32B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-vl-32b-instruct" ;
     rdfs:label "Qwen3 VL 32B Instruct" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:Qwen3_VL_32B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -57969,7 +57880,7 @@ contextuel:Qwen3_VL_32B_Instruct_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen3_VL_32B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-vl-32b-reasoning" ;
     rdfs:label "Qwen3 VL 32B (Reasoning)" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:Qwen3_VL_32B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -58107,7 +58018,7 @@ contextuel:Qwen3_VL_32B_Reasoning_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen3_VL_4B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-vl-4b-instruct" ;
     rdfs:label "Qwen3 VL 4B Instruct" ;
-    enki:hasTotalParameterCount 4000000000 .
+    enki:hasTotalParameterCount 4.0 .
 
 contextuel:Qwen3_VL_4B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -58203,7 +58114,7 @@ contextuel:Qwen3_VL_4B_Instruct_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:Qwen3_VL_4B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-vl-4b-reasoning" ;
     rdfs:label "Qwen3 VL 4B (Reasoning)" ;
-    enki:hasTotalParameterCount 4000000000 .
+    enki:hasTotalParameterCount 4.0 .
 
 contextuel:Qwen3_VL_4B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -58299,7 +58210,7 @@ contextuel:Qwen3_VL_4B_Reasoning_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:Qwen3_VL_8B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-vl-8b-instruct" ;
     rdfs:label "Qwen3 VL 8B Instruct" ;
-    enki:hasTotalParameterCount 8000000000 .
+    enki:hasTotalParameterCount 8.0 .
 
 contextuel:Qwen3_VL_8B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -58437,7 +58348,7 @@ contextuel:Qwen3_VL_8B_Instruct_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen3_VL_8B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen3-vl-8b-reasoning" ;
     rdfs:label "Qwen3 VL 8B (Reasoning)" ;
-    enki:hasTotalParameterCount 8000000000 .
+    enki:hasTotalParameterCount 8.0 .
 
 contextuel:Qwen3_VL_8B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -58575,7 +58486,7 @@ contextuel:Qwen3_VL_8B_Reasoning_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Qwen_Chat_14B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen-chat-14b" ;
     rdfs:label "Qwen Chat 14B" ;
-    enki:hasTotalParameterCount 14000000000 .
+    enki:hasTotalParameterCount 14.0 .
 
 contextuel:Qwen_Chat_14B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -58587,7 +58498,7 @@ contextuel:Qwen_Chat_14B_AA_Intelligence_Index a enki:EvaluatedMetric ;
 contextuel:Qwen_Chat_72B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwen-chat-72b" ;
     rdfs:label "Qwen Chat 72B" ;
-    enki:hasTotalParameterCount 72000000000 .
+    enki:hasTotalParameterCount 72.0 .
 
 contextuel:Qwen_Chat_72B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -58599,7 +58510,7 @@ contextuel:Qwen_Chat_72B_AA_Intelligence_Index a enki:EvaluatedMetric ;
 contextuel:QwQ_32B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/qwq-32b" ;
     rdfs:label "QwQ 32B" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:QwQ_32B_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -58730,7 +58641,7 @@ contextuel:QwQ_32B_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:QwQ_32B_Preview a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/QwQ-32B-Preview" ;
     rdfs:label "QwQ 32B-Preview" ;
-    enki:hasTotalParameterCount 32000000000 .
+    enki:hasTotalParameterCount 32.0 .
 
 contextuel:QwQ_32B_Preview_AA_Intelligence_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -59294,7 +59205,7 @@ contextuel:Ring_Flash_2_0_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Seed_OSS_36B_Instruct a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/seed-oss-36b-instruct" ;
     rdfs:label "Seed-OSS-36B-Instruct" ;
-    enki:hasTotalParameterCount 36000000000 .
+    enki:hasTotalParameterCount 36.0 .
 
 contextuel:Seed_OSS_36B_Instruct_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -59499,7 +59410,7 @@ contextuel:Solar_Mini_Time_To_First_Token a enki:EvaluatedMetric ;
 contextuel:Solar_Open_100B_Reasoning a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/solar-open-100b-reasoning" ;
     rdfs:label "Solar Open 100B (Reasoning)" ;
-    enki:hasTotalParameterCount 100000000000 .
+    enki:hasTotalParameterCount 100.0 .
 
 contextuel:Solar_Open_100B_Reasoning_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -60166,7 +60077,7 @@ contextuel:Sonar_Reasoning_Pro_MATH_500 a enki:EvaluatedMetric ;
 contextuel:Step3_VL_10B a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/step3-vl-10b" ;
     rdfs:label "Step3 VL 10B" ;
-    enki:hasTotalParameterCount 10000000000 .
+    enki:hasTotalParameterCount 10.0 .
 
 contextuel:Step3_VL_10B_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -60301,7 +60212,7 @@ contextuel:Tiny_Aya_Global_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:Tri_21B_Think a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/tri-21b-think-v0-5" ;
     rdfs:label "Tri-21B-Think" ;
-    enki:hasTotalParameterCount 21000000000 .
+    enki:hasTotalParameterCount 21.0 .
 
 contextuel:Tri_21B_Think_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -60369,7 +60280,7 @@ contextuel:Tri_21B_Think_TerminalBench_Hard a enki:EvaluatedMetric ;
 contextuel:Tri_21B_Think_Preview a enki:LLM ;
     dct:identifier "https://artificialanalysis.ai/models/tri-21b-think-preview" ;
     rdfs:label "Tri-21B-think Preview" ;
-    enki:hasTotalParameterCount 21000000000 .
+    enki:hasTotalParameterCount 21.0 .
 
 contextuel:Tri_21B_Think_Preview_AA_Coding_Index a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
