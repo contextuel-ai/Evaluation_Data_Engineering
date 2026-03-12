@@ -354,11 +354,12 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
             aa_link = f"https://artificialanalysis.ai/models/{r['slug']}"
             g.add((model_uri, DCT.identifier, Literal(aa_link)))
 
-        # Parameters (extracted from model name, stored as float in billions)
+        # Parameters (extracted from model name, stored as raw count nonNegativeInteger)
         params_b = extract_params_billion(r["model_name"])
         if params_b is not None:
+            raw_count = int(params_b * 1_000_000_000)
             g.add((model_uri, ENKI.hasTotalParameterCount,
-                   Literal(float(params_b))))
+                   Literal(str(raw_count), datatype=XSD.nonNegativeInteger)))
 
         # Quality benchmark scores as EvaluatedMetric
         for bm_key, bm_val in r["benchmarks"].items():

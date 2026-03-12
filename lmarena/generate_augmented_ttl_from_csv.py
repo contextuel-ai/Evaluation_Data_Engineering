@@ -217,11 +217,10 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
         if r["cutoff"] and r["cutoff"] not in ("-", "nan", "Online"):
             g.add((model_uri, ENKI.hasKnowledgeCutoff, Literal(r["cutoff"])))
 
-        # Total parameter count — stored as float in billions
+        # Total parameter count — stored as raw count (nonNegativeInteger)
         if r["total_parameter_count"] is not None:
-            # Convert raw integer count to billions for consistency
-            params_b = r["total_parameter_count"] / 1e9
-            g.add((model_uri, ENKI.hasTotalParameterCount, Literal(float(params_b))))
+            g.add((model_uri, ENKI.hasTotalParameterCount,
+                   Literal(str(r["total_parameter_count"]), datatype=XSD.nonNegativeInteger)))
 
         # Max context window tokens
         if r["context_window_tokens"] is not None:

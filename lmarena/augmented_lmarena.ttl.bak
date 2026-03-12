@@ -6,7 +6,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix contextuel: <https://www.contextuel.ai/spec/Contextuel/> .
 
-contextuel:01_AI ;
+contextuel:01_AI
     enki:manufactures contextuel:Yi_34B_Chat .
 
 contextuel:01_AI_Provisioning_Yi_34B_Chat a enki:LLMProvisioning ;
@@ -14,7 +14,7 @@ contextuel:01_AI_Provisioning_Yi_34B_Chat a enki:LLMProvisioning ;
     enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_34B_Chat .
 
-contextuel:Alibaba ;
+contextuel:Alibaba
     enki:manufactures contextuel:Qwen1_5_4B_Chat ;
     enki:manufactures contextuel:Qwen1_5_72B_Chat ;
     enki:manufactures contextuel:Qwen1_5_7B_Chat ;
@@ -40,12 +40,12 @@ contextuel:Alibaba_Provisioning_Qwen_14B_Chat a enki:LLMProvisioning ;
     enki:provider contextuel:Alibaba ;
     enki:provides contextuel:Qwen_14B_Chat .
 
-contextuel:Allen_AI ;
+contextuel:Allen_AI
     enki:manufactures contextuel:OLMo_7B_instruct ;
     enki:manufactures contextuel:Tulu_2_DPO_70B ;
     enki:manufactures contextuel:Tulu_30B .
 
-contextuel:Anthropic ;
+contextuel:Anthropic
     enki:manufactures contextuel:Claude_1 ;
     enki:manufactures contextuel:Claude_2_0 ;
     enki:manufactures contextuel:Claude_2_1 ;
@@ -83,13 +83,13 @@ contextuel:Anthropic_Provisioning_Claude_Instant_1 a enki:LLMProvisioning ;
     enki:provider contextuel:Anthropic ;
     enki:provides contextuel:Claude_Instant_1 .
 
-contextuel:Cognitive_Computations ;
+contextuel:Cognitive_Computations
     enki:manufactures contextuel:Dolphin_2_2_1_Mistral_7B .
 
-contextuel:Databricks ;
+contextuel:Databricks
     enki:manufactures contextuel:Dolly_V2_12B .
 
-contextuel:DeepSeek_AI ;
+contextuel:DeepSeek_AI
     enki:manufactures contextuel:DeepSeek_LLM_67B_Chat .
 
 contextuel:DeepSeek_AI_Provisioning_DeepSeek_LLM_67B_Chat a enki:LLMProvisioning ;
@@ -97,7 +97,7 @@ contextuel:DeepSeek_AI_Provisioning_DeepSeek_LLM_67B_Chat a enki:LLMProvisioning
     enki:provider contextuel:DeepSeek_AI ;
     enki:provides contextuel:DeepSeek_LLM_67B_Chat .
 
-contextuel:GoogleAI ;
+contextuel:GoogleAI
     enki:manufactures contextuel:Bard_Gemini_Pro ;
     enki:manufactures contextuel:Gemini_Pro ;
     enki:manufactures contextuel:Gemini_Pro_Dev_API ;
@@ -135,14 +135,14 @@ contextuel:GoogleAI_Provisioning_PaLM_Chat_Bison_001 a enki:LLMProvisioning ;
     enki:provider contextuel:GoogleAI ;
     enki:provides contextuel:PaLM_Chat_Bison_001 .
 
-contextuel:h2oai ;
+contextuel:h2oai
     enki:manufactures contextuel:H2O_Oasst_OpenLLaMA_13B .
 
-contextuel:HuggingFace ;
+contextuel:HuggingFace
     enki:manufactures contextuel:Zephyr_7b_alpha ;
     enki:manufactures contextuel:Zephyr_7b_beta .
 
-contextuel:LMSYS ;
+contextuel:LMSYS
     enki:manufactures contextuel:FastChat_T5_3B ;
     enki:manufactures contextuel:Vicuna_13B ;
     enki:manufactures contextuel:Vicuna_13B_16k ;
@@ -150,7 +150,7 @@ contextuel:LMSYS ;
     enki:manufactures contextuel:Vicuna_7B ;
     enki:manufactures contextuel:Vicuna_7B_16k .
 
-contextuel:MetaAI ;
+contextuel:MetaAI
     enki:manufactures contextuel:CodeLlama_34B_instruct ;
     enki:manufactures contextuel:CodeLlama_70B_instruct ;
     enki:manufactures contextuel:LLaMA_13B ;
@@ -188,14 +188,14 @@ contextuel:MetaAI_Provisioning_Llama_2_7b_chat a enki:LLMProvisioning ;
     enki:provider contextuel:MetaAI ;
     enki:provides contextuel:Llama_2_7b_chat .
 
-contextuel:MicrosoftAI ;
+contextuel:MicrosoftAI
     enki:manufactures contextuel:WizardLM_13B_v1_0 ;
     enki:manufactures contextuel:WizardLM_13B_v1_1 ;
     enki:manufactures contextuel:WizardLM_13b_v1_2 ;
     enki:manufactures contextuel:WizardLM_30B ;
     enki:manufactures contextuel:WizardLM_70B_v1_0 .
 
-contextuel:Mistral ;
+contextuel:Mistral
     enki:manufactures contextuel:Mistral_7B_Instruct_v0_1 ;
     enki:manufactures contextuel:Mistral_7B_Instruct_v0_2 ;
     enki:manufactures contextuel:Mistral_Large_2402 ;
@@ -233,20 +233,20 @@ contextuel:Mistral_Provisioning_Mixtral_8x7b_Instruct_v0_1 a enki:LLMProvisionin
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mixtral_8x7b_Instruct_v0_1 .
 
-contextuel:MosaicML ;
+contextuel:MosaicML
     enki:manufactures contextuel:MPT_30B_Instruct ;
     enki:manufactures contextuel:MPT_30B_chat ;
     enki:manufactures contextuel:MPT_7B_Chat .
 
-contextuel:Nomic_AI ;
+contextuel:Nomic_AI
     enki:manufactures contextuel:GPT4All_13B_Snoozy .
 
-contextuel:NousResearch ;
+contextuel:NousResearch
     enki:manufactures contextuel:Nous_Hermes_13B ;
     enki:manufactures contextuel:Nous_Hermes_2_Mixtral_8x7B_DPO ;
     enki:manufactures contextuel:OpenHermes_2_5_Mistral_7b .
 
-contextuel:NvidiaNGC ;
+contextuel:NvidiaNGC
     enki:manufactures contextuel:NV_Llama2_70B_SteerLM_Chat .
 
 contextuel:NvidiaNGC_Provisioning_NV_Llama2_70B_SteerLM_Chat a enki:LLMProvisioning ;
@@ -254,7 +254,7 @@ contextuel:NvidiaNGC_Provisioning_NV_Llama2_70B_SteerLM_Chat a enki:LLMProvision
     enki:provider contextuel:NvidiaNGC ;
     enki:provides contextuel:NV_Llama2_70B_SteerLM_Chat .
 
-contextuel:OpenAI ;
+contextuel:OpenAI
     enki:manufactures contextuel:GPT_3_5_Turbo_0125 ;
     enki:manufactures contextuel:GPT_3_5_Turbo_0314 ;
     enki:manufactures contextuel:GPT_3_5_Turbo_0613 ;
@@ -304,15 +304,15 @@ contextuel:OpenAI_Provisioning_GPT_4_1106_preview a enki:LLMProvisioning ;
     enki:provider contextuel:OpenAI ;
     enki:provides contextuel:GPT_4_1106_preview .
 
-contextuel:OpenAssistant ;
+contextuel:OpenAssistant
     enki:manufactures contextuel:OpenAssistant_LLaMA_30B ;
     enki:manufactures contextuel:OpenAssistant_Pythia_12B .
 
-contextuel:OpenChat ;
+contextuel:OpenChat
     enki:manufactures contextuel:OpenChat_3_5 ;
     enki:manufactures contextuel:OpenChat_3_5_0106 .
 
-contextuel:Perplexity_AI ;
+contextuel:Perplexity_AI
     enki:manufactures contextuel:pplx_70b_online ;
     enki:manufactures contextuel:pplx_7b_online .
 
@@ -326,41 +326,41 @@ contextuel:Perplexity_AI_Provisioning_pplx_7b_online a enki:LLMProvisioning ;
     enki:provider contextuel:Perplexity_AI ;
     enki:provides contextuel:pplx_7b_online .
 
-contextuel:RWKV ;
+contextuel:RWKV
     enki:manufactures contextuel:RWKV_4_Raven_14B .
 
-contextuel:SalesforceAI ;
+contextuel:SalesforceAI
     enki:manufactures contextuel:XGen_7B_8K_Inst .
 
-contextuel:Stability_AI ;
+contextuel:Stability_AI
     enki:manufactures contextuel:StableLM_Tuned_Alpha_7B .
 
-contextuel:StanfordAI ;
+contextuel:StanfordAI
     enki:manufactures contextuel:Alpaca_13B .
 
-contextuel:TII ;
+contextuel:TII
     enki:manufactures contextuel:Falcon_40B_Instruct ;
     enki:manufactures contextuel:falcon_180b_chat .
 
-contextuel:Together_AI ;
+contextuel:Together_AI
     enki:manufactures contextuel:StripedHyena_Nous_7B .
 
-contextuel:Tsinghua ;
+contextuel:Tsinghua
     enki:manufactures contextuel:ChatGLM2_6B ;
     enki:manufactures contextuel:ChatGLM3_6B ;
     enki:manufactures contextuel:ChatGLM_6B .
 
-contextuel:UC_Berkeley_AI ;
+contextuel:UC_Berkeley_AI
     enki:manufactures contextuel:Koala_13B ;
     enki:manufactures contextuel:Starling_LM_7B_alpha .
 
-contextuel:UCSD_AI ;
+contextuel:UCSD_AI
     enki:manufactures contextuel:Baize_v2_13B .
 
-contextuel:Upstage_AI ;
+contextuel:Upstage_AI
     enki:manufactures contextuel:SOLAR_10_7B_Instruct_v1_0 .
 
-contextuel:UW_AI ;
+contextuel:UW_AI
     enki:manufactures contextuel:Guanaco_33B ;
     enki:manufactures contextuel:Guanaco_65B .
 

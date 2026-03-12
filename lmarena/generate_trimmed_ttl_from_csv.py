@@ -273,10 +273,12 @@ def build_graph(rows) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
             except Exception:
                 pass
 
-        # Parameters (extracted from model name) — stored as float in billions
+        # Parameters (extracted from model name) — stored as raw count (nonNegativeInteger)
         params_b = extract_params_billion(model_label)
         if params_b is not None:
-            g.add((model_uri, ENKI.hasTotalParameterCount, Literal(float(params_b))))
+            raw_count = int(params_b * 1_000_000_000)
+            g.add((model_uri, ENKI.hasTotalParameterCount,
+                   Literal(str(raw_count), datatype=XSD.nonNegativeInteger)))
 
         if r["license"] and r["license"].strip() and r["license"].strip() != "-":
             lic_local = normalize_license_local(r["license"])

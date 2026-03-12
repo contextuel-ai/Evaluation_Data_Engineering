@@ -347,8 +347,9 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
         if params_b is None:
             params_b = extract_params_billion(r["fullname"])
         if params_b is not None:
+            raw_count = int(params_b * 1_000_000_000)
             g.add((model_uri, ENKI.hasTotalParameterCount,
-                   Literal(float(params_b))))
+                   Literal(str(raw_count), datatype=XSD.nonNegativeInteger)))
 
         # Benchmark scores as EvaluatedMetric
         for bm_key, bm_val in r["benchmarks"].items():
