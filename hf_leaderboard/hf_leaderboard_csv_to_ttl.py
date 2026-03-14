@@ -164,12 +164,25 @@ def normalize_license_local(lic: str) -> str:
 # --- Org / license normalisation mappings ---
 # Org URI renames (match against raw org labels from CSV)
 ORG_RENAME = {
-    "google":       "GoogleAI",
-    "meta-llama":   "MetaAI",
-    "microsoft":    "MicrosoftAI",
-    "nvidia":       "NvidiaNGC",
-    "Salesforce":   "SalesforceAI",
-    "allenai":      "Allen_AI",
+    "google":                "GoogleAI",
+    "meta-llama":            "MetaAI",
+    "microsoft":             "MicrosoftAI",
+    "nvidia":                "NvidiaNGC",
+    "Salesforce":            "SalesforceAI",
+    "allenai":               "Allen_AI",
+    "01-ai":                 "01_AI",
+    "deepseek-ai":           "DeepSeek_AI",
+    "stabilityai":           "Stability_AI",
+    "cognitivecomputations": "Cognitive_Computations",
+    "h2oai":                 "h2oai",
+    "openchat":              "OpenChat",
+    "lmsys":                 "LMSYS",
+    "PrimeIntellect":        "Prime_Intellect",
+    "ai21labs":              "AI21_Labs",
+    "gradientai":            "GradientAI",
+    "mosaicml":              "MosaicML",
+    "HuggingFaceH4":         "HuggingFace",
+    "argilla-warehouse":     "Argilla",
 }
 
 # Org merge (multiple raw labels → single canonical local)
@@ -346,7 +359,7 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
                 pass
         if params_b is None:
             params_b = extract_params_billion(r["fullname"])
-        if params_b is not None:
+        if params_b is not None and params_b > 0:
             raw_count = int(params_b * 1_000_000_000)
             g.add((model_uri, ENKI.hasTotalParameterCount,
                    Literal(str(raw_count), datatype=XSD.nonNegativeInteger)))
@@ -507,6 +520,8 @@ def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef,
                 return str(int(o))
             if o.datatype == XSD.nonNegativeInteger:
                 return f'"{int(o)}"^^xsd:nonNegativeInteger'
+            if o.datatype == XSD.gYearMonth:
+                return f'"{o}"^^xsd:gYearMonth'
             if o.datatype in (XSD.float, XSD.double):
                 return str(float(o))
             if o.datatype == XSD.decimal:

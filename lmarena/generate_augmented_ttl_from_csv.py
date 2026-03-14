@@ -67,6 +67,15 @@ LICENSE_RENAME = {
     "Yi License":      "Apache_2_0",
 }
 
+# _________ MODALITY MAPPING __________
+# Map CSV modality labels (lowercase) to ontology URI locals from modalities.ttl.
+MODALITY_MAP = {
+    "text":  "TextModality",
+    "image": "ImageModality",
+    "audio": "AudioModality",
+    "video": "VideoModality",
+}
+
 # _________ HELPERS __________
 
 def local_from_label(s: str) -> str:
@@ -95,6 +104,21 @@ def org_uri_local(org_label: str) -> str:
     if org_label in ORG_RENAME:
         return ORG_RENAME[org_label]
     return local_from_label(org_label)
+
+def normalize_cutoff(raw: str) -> str | None:
+    """Convert a knowledge-cutoff date to canonical xsd:gYearMonth (YYYY-MM).
+
+    Accepts formats like '2023/3', '2023/10', '2023-3', '2023-10'.
+    Returns None if the value cannot be parsed.
+    """
+    raw = raw.strip()
+    m = re.match(r'^(\d{4})[/\-](\d{1,2})$', raw)
+    if not m:
+        return None
+    year, month = m.group(1), int(m.group(2))
+    if 1 <= month <= 12:
+        return f"{year}-{month:02d}"
+    return None
 
 def safe_int(val) -> int | None:
     """Parse a value to int, handling floats like '30000000000.0'."""
@@ -213,9 +237,12 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
             lic_uri = URIRef(str(LM) + lic_local)
             g.add((model_uri, DCT.license, lic_uri))
 
-        # Knowledge cutoff (drop "Online")
+        # Knowledge cutoff (drop "Online") — canonical xsd:gYearMonth format
         if r["cutoff"] and r["cutoff"] not in ("-", "nan", "Online"):
-            g.add((model_uri, ENKI.hasKnowledgeCutoff, Literal(r["cutoff"])))
+            gyearmonth = normalize_cutoff(r["cutoff"])
+            if gyearmonth:
+                g.add((model_uri, ENKI.hasKnowledgeCutoff,
+                       Literal(gyearmonth, datatype=XSD.gYearMonth)))
 
         # Total parameter count — stored as raw count (nonNegativeInteger)
         if r["total_parameter_count"] is not None:
@@ -237,17 +264,19 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
             g.add((model_uri, ENKI.hasMaxOutputTokens,
                    Literal(r["max_output_tokens"], datatype=XSD.nonNegativeInteger)))
 
-        # Input modalities (reference only — modality definitions live elsewhere)
+        # Input modalities (reference only — modality definitions live in modalities.ttl)
         for mod in r["input_modalities"]:
-            mod_local = local_from_label(mod)
-            mod_uri = URIRef(str(LM) + mod_local)
-            g.add((model_uri, ENKI.hasInputModality, mod_uri))
+            mod_local = MODALITY_MAP.get(mod.lower())
+            if mod_local:
+                mod_uri = URIRef(str(LM) + mod_local)
+                g.add((model_uri, ENKI.hasInputModality, mod_uri))
 
         # Output modalities
         for mod in r["output_modalities"]:
-            mod_local = local_from_label(mod)
-            mod_uri = URIRef(str(LM) + mod_local)
-            g.add((model_uri, ENKI.hasOutputModality, mod_uri))
+            mod_local = MODALITY_MAP.get(mod.lower())
+            if mod_local:
+                mod_uri = URIRef(str(LM) + mod_local)
+                g.add((model_uri, ENKI.hasOutputModality, mod_uri))
 
         # Manufacturer (reference only — org definitions live in organizations.ttl)
         if r["org"] and r["org"] not in ("-", "nan"):
@@ -399,6 +428,8 @@ def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef,
                 return str(int(o))
             if o.datatype == XSD.nonNegativeInteger:
                 return f'"{int(o)}"^^xsd:nonNegativeInteger'
+            if o.datatype == XSD.gYearMonth:
+                return f'"{o}"^^xsd:gYearMonth'
             if o.datatype in (XSD.float, XSD.double):
                 return str(float(o))
             if o.datatype == XSD.decimal:

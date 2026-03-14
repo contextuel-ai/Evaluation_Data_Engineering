@@ -132,6 +132,21 @@ def local_from_label(s: str) -> str:
     s = s.strip("_")
     return s or "Unnamed"
 
+def normalize_cutoff(raw: str) -> str | None:
+    """Convert a knowledge-cutoff date to canonical xsd:gYearMonth (YYYY-MM).
+
+    Accepts formats like '2023/3', '2023/10', '2023-3', '2023-10'.
+    Returns None if the value cannot be parsed.
+    """
+    raw = raw.strip()
+    m = re.match(r'^(\d{4})[/\-](\d{1,2})$', raw)
+    if not m:
+        return None
+    year, month = m.group(1), int(m.group(2))
+    if 1 <= month <= 12:
+        return f"{year}-{month:02d}"
+    return None
+
 def local_name(s: str) -> str:
     s = (s or "").strip()
     s = re.sub(r"[.\-\/\s]+", "_", s)
@@ -288,7 +303,10 @@ def build_graph(rows) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
             g.add((model_uri, DCT.license, lic_uri))
 
         if r["cutoff"] and r["cutoff"].strip() and r["cutoff"].strip() not in ("-", "Online"):
-            g.add((model_uri, ENKI.hasKnowledgeCutoff, Literal(r["cutoff"])))
+            gyearmonth = normalize_cutoff(r["cutoff"])
+            if gyearmonth:
+                g.add((model_uri, ENKI.hasKnowledgeCutoff,
+                       Literal(gyearmonth, datatype=XSD.gYearMonth)))
 
         if r["org"] and r["org"].strip() and r["org"].strip() != "-":
             org_label = r["org"].strip()
@@ -438,6 +456,8 @@ def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef,
                 return str(int(o))
             if o.datatype == XSD.nonNegativeInteger:
                 return f'"{int(o)}"^^xsd:nonNegativeInteger'
+            if o.datatype == XSD.gYearMonth:
+                return f'"{o}"^^xsd:gYearMonth'
             if o.datatype in (XSD.float, XSD.double):
                 return str(float(o))
             if o.datatype == XSD.decimal:

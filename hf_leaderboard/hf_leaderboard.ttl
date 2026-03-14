@@ -6,7 +6,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix contextuel: <https://www.contextuel.ai/spec/Contextuel/> .
 
-contextuel:01_Ai
+contextuel:01_AI
     enki:manufactures contextuel:Dolphin_2_9_1_Yi_1_5_34b ;
     enki:manufactures contextuel:Dolphin_2_9_1_Yi_1_5_9b ;
     enki:manufactures contextuel:Dolphin_2_9_3_Yi_1_5_34B_32k ;
@@ -32,99 +32,99 @@ contextuel:01_Ai
     enki:manufactures contextuel:Yi_9B_200K ;
     enki:manufactures contextuel:Yi_Coder_9B_Chat .
 
-contextuel:01_Ai_Provisioning_Yi_1_5_34B a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_1_5_34B a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-1.5-34B" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_1_5_34B .
 
-contextuel:01_Ai_Provisioning_Yi_1_5_34B_32K a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_1_5_34B_32K a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-1.5-34B-32K" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_1_5_34B_32K .
 
-contextuel:01_Ai_Provisioning_Yi_1_5_34B_Chat a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_1_5_34B_Chat a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-1.5-34B-Chat" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_1_5_34B_Chat .
 
-contextuel:01_Ai_Provisioning_Yi_1_5_34B_Chat_16K a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_1_5_34B_Chat_16K a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-1.5-34B-Chat-16K" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_1_5_34B_Chat_16K .
 
-contextuel:01_Ai_Provisioning_Yi_1_5_6B a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_1_5_6B a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-1.5-6B" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_1_5_6B .
 
-contextuel:01_Ai_Provisioning_Yi_1_5_6B_Chat a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_1_5_6B_Chat a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-1.5-6B-Chat" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_1_5_6B_Chat .
 
-contextuel:01_Ai_Provisioning_Yi_1_5_9B a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_1_5_9B a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-1.5-9B" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_1_5_9B .
 
-contextuel:01_Ai_Provisioning_Yi_1_5_9B_32K a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_1_5_9B_32K a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-1.5-9B-32K" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_1_5_9B_32K .
 
-contextuel:01_Ai_Provisioning_Yi_1_5_9B_Chat a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_1_5_9B_Chat a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-1.5-9B-Chat" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_1_5_9B_Chat .
 
-contextuel:01_Ai_Provisioning_Yi_1_5_9B_Chat_16K a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_1_5_9B_Chat_16K a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-1.5-9B-Chat-16K" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_1_5_9B_Chat_16K .
 
-contextuel:01_Ai_Provisioning_Yi_34B a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_34B a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-34B" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_34B .
 
-contextuel:01_Ai_Provisioning_Yi_34B_200K a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_34B_200K a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-34B-200K" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_34B_200K .
 
-contextuel:01_Ai_Provisioning_Yi_34B_Chat a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_34B_Chat a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-34B-Chat" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_34B_Chat .
 
-contextuel:01_Ai_Provisioning_Yi_6B a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_6B a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-6B" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_6B .
 
-contextuel:01_Ai_Provisioning_Yi_6B_200K a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_6B_200K a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-6B-200K" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_6B_200K .
 
-contextuel:01_Ai_Provisioning_Yi_6B_Chat a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_6B_Chat a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-6B-Chat" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_6B_Chat .
 
-contextuel:01_Ai_Provisioning_Yi_9B a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_9B a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-9B" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_9B .
 
-contextuel:01_Ai_Provisioning_Yi_9B_200K a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_9B_200K a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-9B-200K" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_9B_200K .
 
-contextuel:01_Ai_Provisioning_Yi_Coder_9B_Chat a enki:LLMProvisioning ;
+contextuel:01_AI_Provisioning_Yi_Coder_9B_Chat a enki:LLMProvisioning ;
     rdfs:label "01-ai provisioning of Yi-Coder-9B-Chat" ;
-    enki:provider contextuel:01_Ai ;
+    enki:provider contextuel:01_AI ;
     enki:provides contextuel:Yi_Coder_9B_Chat .
 
 contextuel:0_Hero
@@ -267,12 +267,12 @@ contextuel:Ahdoot
 contextuel:Ahmeda335
     enki:manufactures contextuel:13_outOf_32_Pruned_Layers_Llama3_1_8b .
 
-contextuel:Ai21labs
+contextuel:AI21_Labs
     enki:manufactures contextuel:Jamba_V0_1 .
 
-contextuel:Ai21labs_Provisioning_Jamba_V0_1 a enki:LLMProvisioning ;
+contextuel:AI21_Labs_Provisioning_Jamba_V0_1 a enki:LLMProvisioning ;
     rdfs:label "ai21labs provisioning of Jamba-v0.1" ;
-    enki:provider contextuel:Ai21labs ;
+    enki:provider contextuel:AI21_Labs ;
     enki:provides contextuel:Jamba_V0_1 .
 
 contextuel:Ai4bharat
@@ -1020,7 +1020,7 @@ contextuel:Cluebbers
 contextuel:Codellama
     enki:manufactures contextuel:NexusRaven_V2_13B .
 
-contextuel:Cognitivecomputations
+contextuel:Cognitive_Computations
     enki:manufactures contextuel:Dolphin3_0_Llama3_1_8B ;
     enki:manufactures contextuel:Dolphin3_0_Llama3_2_1B ;
     enki:manufactures contextuel:Dolphin3_0_Qwen2_5_0_5B ;
@@ -1028,89 +1028,89 @@ contextuel:Cognitivecomputations
     enki:manufactures contextuel:Dolphin_2_9_2_Phi_3_Medium ;
     enki:manufactures contextuel:Dolphin_2_9_2_Phi_3_Medium_Abliterated .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin3_0_Llama3_1_8B a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin3_0_Llama3_1_8B a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of Dolphin3.0-Llama3.1-8B" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin3_0_Llama3_1_8B .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin3_0_Llama3_2_1B a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin3_0_Llama3_2_1B a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of Dolphin3.0-Llama3.2-1B" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin3_0_Llama3_2_1B .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin3_0_Qwen2_5_0_5B a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin3_0_Qwen2_5_0_5B a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of Dolphin3.0-Qwen2.5-0.5B" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin3_0_Qwen2_5_0_5B .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin3_0_R1_Mistral_24B a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin3_0_R1_Mistral_24B a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of Dolphin3.0-R1-Mistral-24B" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin3_0_R1_Mistral_24B .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin_2_9_1_Llama_3_70b a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin_2_9_1_Llama_3_70b a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of dolphin-2.9.1-llama-3-70b" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin_2_9_1_Llama_3_70b .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin_2_9_1_Yi_1_5_34b a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin_2_9_1_Yi_1_5_34b a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of dolphin-2.9.1-yi-1.5-34b" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin_2_9_1_Yi_1_5_34b .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin_2_9_1_Yi_1_5_9b a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin_2_9_1_Yi_1_5_9b a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of dolphin-2.9.1-yi-1.5-9b" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin_2_9_1_Yi_1_5_9b .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin_2_9_2_Phi_3_Medium a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin_2_9_2_Phi_3_Medium a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of dolphin-2.9.2-Phi-3-Medium" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin_2_9_2_Phi_3_Medium .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin_2_9_2_Phi_3_Medium_Abliterated a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin_2_9_2_Phi_3_Medium_Abliterated a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of dolphin-2.9.2-Phi-3-Medium-abliterated" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin_2_9_2_Phi_3_Medium_Abliterated .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin_2_9_2_Qwen2_72b a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin_2_9_2_Qwen2_72b a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of dolphin-2.9.2-qwen2-72b" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin_2_9_2_Qwen2_72b .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin_2_9_2_Qwen2_7b a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin_2_9_2_Qwen2_7b a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of dolphin-2.9.2-qwen2-7b" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin_2_9_2_Qwen2_7b .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin_2_9_3_Mistral_7B_32k a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin_2_9_3_Mistral_7B_32k a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of dolphin-2.9.3-mistral-7B-32k" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin_2_9_3_Mistral_7B_32k .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin_2_9_3_Mistral_Nemo_12b a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin_2_9_3_Mistral_Nemo_12b a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of dolphin-2.9.3-mistral-nemo-12b" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin_2_9_3_Mistral_Nemo_12b .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin_2_9_3_Yi_1_5_34B_32k a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin_2_9_3_Yi_1_5_34B_32k a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of dolphin-2.9.3-Yi-1.5-34B-32k" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin_2_9_3_Yi_1_5_34B_32k .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin_2_9_4_Gemma2_2b a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin_2_9_4_Gemma2_2b a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of dolphin-2.9.4-gemma2-2b" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin_2_9_4_Gemma2_2b .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin_2_9_4_Llama3_1_8b a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin_2_9_4_Llama3_1_8b a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of dolphin-2.9.4-llama3.1-8b" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin_2_9_4_Llama3_1_8b .
 
-contextuel:Cognitivecomputations_Provisioning_Dolphin_2_9_Llama3_8b a enki:LLMProvisioning ;
+contextuel:Cognitive_Computations_Provisioning_Dolphin_2_9_Llama3_8b a enki:LLMProvisioning ;
     rdfs:label "cognitivecomputations provisioning of dolphin-2.9-llama3-8b" ;
-    enki:provider contextuel:Cognitivecomputations ;
+    enki:provider contextuel:Cognitive_Computations ;
     enki:provides contextuel:Dolphin_2_9_Llama3_8b .
 
 contextuel:CohereForAI
@@ -1439,7 +1439,7 @@ contextuel:DeepMount00
     enki:manufactures contextuel:Qwen2_1_5B_Ita_V6 ;
     enki:manufactures contextuel:Qwen2_5_7B_Instruct_MathCoder .
 
-contextuel:Deepseek_Ai
+contextuel:DeepSeek_AI
     enki:manufactures contextuel:DeepSeek_R1_8b_Sify ;
     enki:manufactures contextuel:DeepSeek_R1_Distill_Llama_70B ;
     enki:manufactures contextuel:DeepSeek_R1_Distill_Llama_8B ;
@@ -1464,59 +1464,59 @@ contextuel:Deepseek_Ai
     enki:manufactures contextuel:NuminaMath_7B_CoT ;
     enki:manufactures contextuel:NuminaMath_7B_TIR .
 
-contextuel:Deepseek_Ai_Provisioning_Deepseek_Llm_67b_Chat a enki:LLMProvisioning ;
+contextuel:DeepSeek_AI_Provisioning_Deepseek_Llm_67b_Chat a enki:LLMProvisioning ;
     rdfs:label "deepseek-ai provisioning of deepseek-llm-67b-chat" ;
-    enki:provider contextuel:Deepseek_Ai ;
+    enki:provider contextuel:DeepSeek_AI ;
     enki:provides contextuel:Deepseek_Llm_67b_Chat .
 
-contextuel:Deepseek_Ai_Provisioning_Deepseek_Llm_7b_Base a enki:LLMProvisioning ;
+contextuel:DeepSeek_AI_Provisioning_Deepseek_Llm_7b_Base a enki:LLMProvisioning ;
     rdfs:label "deepseek-ai provisioning of deepseek-llm-7b-base" ;
-    enki:provider contextuel:Deepseek_Ai ;
+    enki:provider contextuel:DeepSeek_AI ;
     enki:provides contextuel:Deepseek_Llm_7b_Base .
 
-contextuel:Deepseek_Ai_Provisioning_Deepseek_Llm_7b_Chat a enki:LLMProvisioning ;
+contextuel:DeepSeek_AI_Provisioning_Deepseek_Llm_7b_Chat a enki:LLMProvisioning ;
     rdfs:label "deepseek-ai provisioning of deepseek-llm-7b-chat" ;
-    enki:provider contextuel:Deepseek_Ai ;
+    enki:provider contextuel:DeepSeek_AI ;
     enki:provides contextuel:Deepseek_Llm_7b_Chat .
 
-contextuel:Deepseek_Ai_Provisioning_Deepseek_Moe_16b_Base a enki:LLMProvisioning ;
+contextuel:DeepSeek_AI_Provisioning_Deepseek_Moe_16b_Base a enki:LLMProvisioning ;
     rdfs:label "deepseek-ai provisioning of deepseek-moe-16b-base" ;
-    enki:provider contextuel:Deepseek_Ai ;
+    enki:provider contextuel:DeepSeek_AI ;
     enki:provides contextuel:Deepseek_Moe_16b_Base .
 
-contextuel:Deepseek_Ai_Provisioning_Deepseek_Moe_16b_Chat a enki:LLMProvisioning ;
+contextuel:DeepSeek_AI_Provisioning_Deepseek_Moe_16b_Chat a enki:LLMProvisioning ;
     rdfs:label "deepseek-ai provisioning of deepseek-moe-16b-chat" ;
-    enki:provider contextuel:Deepseek_Ai ;
+    enki:provider contextuel:DeepSeek_AI ;
     enki:provides contextuel:Deepseek_Moe_16b_Chat .
 
-contextuel:Deepseek_Ai_Provisioning_DeepSeek_R1_Distill_Llama_70B a enki:LLMProvisioning ;
+contextuel:DeepSeek_AI_Provisioning_DeepSeek_R1_Distill_Llama_70B a enki:LLMProvisioning ;
     rdfs:label "deepseek-ai provisioning of DeepSeek-R1-Distill-Llama-70B" ;
-    enki:provider contextuel:Deepseek_Ai ;
+    enki:provider contextuel:DeepSeek_AI ;
     enki:provides contextuel:DeepSeek_R1_Distill_Llama_70B .
 
-contextuel:Deepseek_Ai_Provisioning_DeepSeek_R1_Distill_Llama_8B a enki:LLMProvisioning ;
+contextuel:DeepSeek_AI_Provisioning_DeepSeek_R1_Distill_Llama_8B a enki:LLMProvisioning ;
     rdfs:label "deepseek-ai provisioning of DeepSeek-R1-Distill-Llama-8B" ;
-    enki:provider contextuel:Deepseek_Ai ;
+    enki:provider contextuel:DeepSeek_AI ;
     enki:provides contextuel:DeepSeek_R1_Distill_Llama_8B .
 
-contextuel:Deepseek_Ai_Provisioning_DeepSeek_R1_Distill_Qwen_14B a enki:LLMProvisioning ;
+contextuel:DeepSeek_AI_Provisioning_DeepSeek_R1_Distill_Qwen_14B a enki:LLMProvisioning ;
     rdfs:label "deepseek-ai provisioning of DeepSeek-R1-Distill-Qwen-14B" ;
-    enki:provider contextuel:Deepseek_Ai ;
+    enki:provider contextuel:DeepSeek_AI ;
     enki:provides contextuel:DeepSeek_R1_Distill_Qwen_14B .
 
-contextuel:Deepseek_Ai_Provisioning_DeepSeek_R1_Distill_Qwen_1_5B a enki:LLMProvisioning ;
+contextuel:DeepSeek_AI_Provisioning_DeepSeek_R1_Distill_Qwen_1_5B a enki:LLMProvisioning ;
     rdfs:label "deepseek-ai provisioning of DeepSeek-R1-Distill-Qwen-1.5B" ;
-    enki:provider contextuel:Deepseek_Ai ;
+    enki:provider contextuel:DeepSeek_AI ;
     enki:provides contextuel:DeepSeek_R1_Distill_Qwen_1_5B .
 
-contextuel:Deepseek_Ai_Provisioning_DeepSeek_R1_Distill_Qwen_32B a enki:LLMProvisioning ;
+contextuel:DeepSeek_AI_Provisioning_DeepSeek_R1_Distill_Qwen_32B a enki:LLMProvisioning ;
     rdfs:label "deepseek-ai provisioning of DeepSeek-R1-Distill-Qwen-32B" ;
-    enki:provider contextuel:Deepseek_Ai ;
+    enki:provider contextuel:DeepSeek_AI ;
     enki:provides contextuel:DeepSeek_R1_Distill_Qwen_32B .
 
-contextuel:Deepseek_Ai_Provisioning_DeepSeek_R1_Distill_Qwen_7B a enki:LLMProvisioning ;
+contextuel:DeepSeek_AI_Provisioning_DeepSeek_R1_Distill_Qwen_7B a enki:LLMProvisioning ;
     rdfs:label "deepseek-ai provisioning of DeepSeek-R1-Distill-Qwen-7B" ;
-    enki:provider contextuel:Deepseek_Ai ;
+    enki:provider contextuel:DeepSeek_AI ;
     enki:provides contextuel:DeepSeek_R1_Distill_Qwen_7B .
 
 contextuel:Delta_Vector
@@ -2343,12 +2343,12 @@ contextuel:GoToCompany
 contextuel:Goulue5
     enki:manufactures contextuel:Merging_LLM .
 
-contextuel:Gradientai
+contextuel:GradientAI
     enki:manufactures contextuel:Llama_3_8B_Instruct_Gradient_1048k .
 
-contextuel:Gradientai_Provisioning_Llama_3_8B_Instruct_Gradient_1048k a enki:LLMProvisioning ;
+contextuel:GradientAI_Provisioning_Llama_3_8B_Instruct_Gradient_1048k a enki:LLMProvisioning ;
     rdfs:label "gradientai provisioning of Llama-3-8B-Instruct-Gradient-1048k" ;
-    enki:provider contextuel:Gradientai ;
+    enki:provider contextuel:GradientAI ;
     enki:provides contextuel:Llama_3_8B_Instruct_Gradient_1048k .
 
 contextuel:GreenNode
@@ -2401,7 +2401,7 @@ contextuel:Gz987
     enki:manufactures contextuel:Qwen2_5_7b_Cabs_V0_3 ;
     enki:manufactures contextuel:Qwen2_5_7b_Cabs_V0_4 .
 
-contextuel:H2oai
+contextuel:h2oai
     enki:manufactures contextuel:H2o_Danube3_1_4b_Chat ;
     enki:manufactures contextuel:H2o_Danube3_4b_Base ;
     enki:manufactures contextuel:H2o_Danube3_4b_Chat ;
@@ -3655,24 +3655,24 @@ contextuel:llnYou
     enki:manufactures contextuel:ECE_PRYMMAL_YL_3B_SLERP_V2 ;
     enki:manufactures contextuel:ECE_PRYMMAL_YL_3B_SLERP_V3 .
 
-contextuel:Lmsys
+contextuel:LMSYS
     enki:manufactures contextuel:Vicuna_13b_V1_3 ;
     enki:manufactures contextuel:Vicuna_7b_V1_3 ;
     enki:manufactures contextuel:Vicuna_7b_V1_5 .
 
-contextuel:Lmsys_Provisioning_Vicuna_13b_V1_3 a enki:LLMProvisioning ;
+contextuel:LMSYS_Provisioning_Vicuna_13b_V1_3 a enki:LLMProvisioning ;
     rdfs:label "lmsys provisioning of vicuna-13b-v1.3" ;
-    enki:provider contextuel:Lmsys ;
+    enki:provider contextuel:LMSYS ;
     enki:provides contextuel:Vicuna_13b_V1_3 .
 
-contextuel:Lmsys_Provisioning_Vicuna_7b_V1_3 a enki:LLMProvisioning ;
+contextuel:LMSYS_Provisioning_Vicuna_7b_V1_3 a enki:LLMProvisioning ;
     rdfs:label "lmsys provisioning of vicuna-7b-v1.3" ;
-    enki:provider contextuel:Lmsys ;
+    enki:provider contextuel:LMSYS ;
     enki:provides contextuel:Vicuna_7b_V1_3 .
 
-contextuel:Lmsys_Provisioning_Vicuna_7b_V1_5 a enki:LLMProvisioning ;
+contextuel:LMSYS_Provisioning_Vicuna_7b_V1_5 a enki:LLMProvisioning ;
     rdfs:label "lmsys provisioning of vicuna-7b-v1.5" ;
-    enki:provider contextuel:Lmsys ;
+    enki:provider contextuel:LMSYS ;
     enki:provides contextuel:Vicuna_7b_V1_5 .
 
 contextuel:Locutusque
@@ -4580,12 +4580,12 @@ contextuel:MoonRide
 contextuel:Moreh
     enki:manufactures contextuel:Smaug_72B_V0_1 .
 
-contextuel:Mosaicml
+contextuel:MosaicML
     enki:manufactures contextuel:Mpt_7b .
 
-contextuel:Mosaicml_Provisioning_Mpt_7b a enki:LLMProvisioning ;
+contextuel:MosaicML_Provisioning_Mpt_7b a enki:LLMProvisioning ;
     rdfs:label "mosaicml provisioning of mpt-7b" ;
-    enki:provider contextuel:Mosaicml ;
+    enki:provider contextuel:MosaicML ;
     enki:provides contextuel:Mpt_7b .
 
 contextuel:Mosama
@@ -5311,40 +5311,40 @@ contextuel:OpenBuddy
     enki:manufactures contextuel:Openbuddy_Zero_3b_V21_2_32k ;
     enki:manufactures contextuel:Openbuddy_Zero_56b_V21_2_32k .
 
-contextuel:Openchat
+contextuel:OpenChat
     enki:manufactures contextuel:FuseChat_7B_V2_0 ;
     enki:manufactures contextuel:Openchat_3_5 ;
     enki:manufactures contextuel:Openchat_V3_2 ;
     enki:manufactures contextuel:Openchat_V3_2_Super .
 
-contextuel:Openchat_Provisioning_Openchat_3_5 a enki:LLMProvisioning ;
+contextuel:OpenChat_Provisioning_Openchat_3_5 a enki:LLMProvisioning ;
     rdfs:label "openchat provisioning of openchat_3.5" ;
-    enki:provider contextuel:Openchat ;
+    enki:provider contextuel:OpenChat ;
     enki:provides contextuel:Openchat_3_5 .
 
-contextuel:Openchat_Provisioning_Openchat_3_5_0106 a enki:LLMProvisioning ;
+contextuel:OpenChat_Provisioning_Openchat_3_5_0106 a enki:LLMProvisioning ;
     rdfs:label "openchat provisioning of openchat-3.5-0106" ;
-    enki:provider contextuel:Openchat ;
+    enki:provider contextuel:OpenChat ;
     enki:provides contextuel:Openchat_3_5_0106 .
 
-contextuel:Openchat_Provisioning_Openchat_3_5_1210 a enki:LLMProvisioning ;
+contextuel:OpenChat_Provisioning_Openchat_3_5_1210 a enki:LLMProvisioning ;
     rdfs:label "openchat provisioning of openchat-3.5-1210" ;
-    enki:provider contextuel:Openchat ;
+    enki:provider contextuel:OpenChat ;
     enki:provides contextuel:Openchat_3_5_1210 .
 
-contextuel:Openchat_Provisioning_Openchat_3_6_8b_20240522 a enki:LLMProvisioning ;
+contextuel:OpenChat_Provisioning_Openchat_3_6_8b_20240522 a enki:LLMProvisioning ;
     rdfs:label "openchat provisioning of openchat-3.6-8b-20240522" ;
-    enki:provider contextuel:Openchat ;
+    enki:provider contextuel:OpenChat ;
     enki:provides contextuel:Openchat_3_6_8b_20240522 .
 
-contextuel:Openchat_Provisioning_Openchat_V3_2 a enki:LLMProvisioning ;
+contextuel:OpenChat_Provisioning_Openchat_V3_2 a enki:LLMProvisioning ;
     rdfs:label "openchat provisioning of openchat_v3.2" ;
-    enki:provider contextuel:Openchat ;
+    enki:provider contextuel:OpenChat ;
     enki:provides contextuel:Openchat_V3_2 .
 
-contextuel:Openchat_Provisioning_Openchat_V3_2_Super a enki:LLMProvisioning ;
+contextuel:OpenChat_Provisioning_Openchat_V3_2_Super a enki:LLMProvisioning ;
     rdfs:label "openchat provisioning of openchat_v3.2_super" ;
-    enki:provider contextuel:Openchat ;
+    enki:provider contextuel:OpenChat ;
     enki:provides contextuel:Openchat_V3_2_Super .
 
 contextuel:OpenGenerativeAI
@@ -5484,18 +5484,18 @@ contextuel:Pretergeek
     enki:manufactures contextuel:OpenChat_3_5_0106_9_86B_44Layers_Appended ;
     enki:manufactures contextuel:Openchat_3_5_0106_Rebased_Mistral_7B_V0_2 .
 
-contextuel:PrimeIntellect
+contextuel:Prime_Intellect
     enki:manufactures contextuel:INTELLECT_1 ;
     enki:manufactures contextuel:INTELLECT_1_Instruct .
 
-contextuel:PrimeIntellect_Provisioning_INTELLECT_1 a enki:LLMProvisioning ;
+contextuel:Prime_Intellect_Provisioning_INTELLECT_1 a enki:LLMProvisioning ;
     rdfs:label "PrimeIntellect provisioning of INTELLECT-1" ;
-    enki:provider contextuel:PrimeIntellect ;
+    enki:provider contextuel:Prime_Intellect ;
     enki:provides contextuel:INTELLECT_1 .
 
-contextuel:PrimeIntellect_Provisioning_INTELLECT_1_Instruct a enki:LLMProvisioning ;
+contextuel:Prime_Intellect_Provisioning_INTELLECT_1_Instruct a enki:LLMProvisioning ;
     rdfs:label "PrimeIntellect provisioning of INTELLECT-1-Instruct" ;
-    enki:provider contextuel:PrimeIntellect ;
+    enki:provider contextuel:Prime_Intellect ;
     enki:provides contextuel:INTELLECT_1_Instruct .
 
 contextuel:Prince_Canuma
@@ -6818,7 +6818,7 @@ contextuel:Spow12
 contextuel:Ssmits
     enki:manufactures contextuel:Qwen2_5_95B_Instruct .
 
-contextuel:Stabilityai
+contextuel:Stability_AI
     enki:manufactures contextuel:StableBeluga2 ;
     enki:manufactures contextuel:Stablelm_2_12b ;
     enki:manufactures contextuel:Stablelm_2_12b_Chat ;
@@ -6828,44 +6828,44 @@ contextuel:Stabilityai
     enki:manufactures contextuel:Stablelm_3b_4e1t ;
     enki:manufactures contextuel:Stablelm_Zephyr_3b .
 
-contextuel:Stabilityai_Provisioning_StableBeluga2 a enki:LLMProvisioning ;
+contextuel:Stability_AI_Provisioning_StableBeluga2 a enki:LLMProvisioning ;
     rdfs:label "stabilityai provisioning of StableBeluga2" ;
-    enki:provider contextuel:Stabilityai ;
+    enki:provider contextuel:Stability_AI ;
     enki:provides contextuel:StableBeluga2 .
 
-contextuel:Stabilityai_Provisioning_Stablelm_2_12b a enki:LLMProvisioning ;
+contextuel:Stability_AI_Provisioning_Stablelm_2_12b a enki:LLMProvisioning ;
     rdfs:label "stabilityai provisioning of stablelm-2-12b" ;
-    enki:provider contextuel:Stabilityai ;
+    enki:provider contextuel:Stability_AI ;
     enki:provides contextuel:Stablelm_2_12b .
 
-contextuel:Stabilityai_Provisioning_Stablelm_2_12b_Chat a enki:LLMProvisioning ;
+contextuel:Stability_AI_Provisioning_Stablelm_2_12b_Chat a enki:LLMProvisioning ;
     rdfs:label "stabilityai provisioning of stablelm-2-12b-chat" ;
-    enki:provider contextuel:Stabilityai ;
+    enki:provider contextuel:Stability_AI ;
     enki:provides contextuel:Stablelm_2_12b_Chat .
 
-contextuel:Stabilityai_Provisioning_Stablelm_2_1_6b a enki:LLMProvisioning ;
+contextuel:Stability_AI_Provisioning_Stablelm_2_1_6b a enki:LLMProvisioning ;
     rdfs:label "stabilityai provisioning of stablelm-2-1_6b" ;
-    enki:provider contextuel:Stabilityai ;
+    enki:provider contextuel:Stability_AI ;
     enki:provides contextuel:Stablelm_2_1_6b .
 
-contextuel:Stabilityai_Provisioning_Stablelm_2_1_6b_Chat a enki:LLMProvisioning ;
+contextuel:Stability_AI_Provisioning_Stablelm_2_1_6b_Chat a enki:LLMProvisioning ;
     rdfs:label "stabilityai provisioning of stablelm-2-1_6b-chat" ;
-    enki:provider contextuel:Stabilityai ;
+    enki:provider contextuel:Stability_AI ;
     enki:provides contextuel:Stablelm_2_1_6b_Chat .
 
-contextuel:Stabilityai_Provisioning_Stablelm_2_Zephyr_1_6b a enki:LLMProvisioning ;
+contextuel:Stability_AI_Provisioning_Stablelm_2_Zephyr_1_6b a enki:LLMProvisioning ;
     rdfs:label "stabilityai provisioning of stablelm-2-zephyr-1_6b" ;
-    enki:provider contextuel:Stabilityai ;
+    enki:provider contextuel:Stability_AI ;
     enki:provides contextuel:Stablelm_2_Zephyr_1_6b .
 
-contextuel:Stabilityai_Provisioning_Stablelm_3b_4e1t a enki:LLMProvisioning ;
+contextuel:Stability_AI_Provisioning_Stablelm_3b_4e1t a enki:LLMProvisioning ;
     rdfs:label "stabilityai provisioning of stablelm-3b-4e1t" ;
-    enki:provider contextuel:Stabilityai ;
+    enki:provider contextuel:Stability_AI ;
     enki:provides contextuel:Stablelm_3b_4e1t .
 
-contextuel:Stabilityai_Provisioning_Stablelm_Zephyr_3b a enki:LLMProvisioning ;
+contextuel:Stability_AI_Provisioning_Stablelm_Zephyr_3b a enki:LLMProvisioning ;
     rdfs:label "stabilityai provisioning of stablelm-zephyr-3b" ;
-    enki:provider contextuel:Stabilityai ;
+    enki:provider contextuel:Stability_AI ;
     enki:provides contextuel:Stablelm_Zephyr_3b .
 
 contextuel:Stark2008
@@ -7950,6 +7950,11 @@ contextuel:ZHLiu627
     enki:manufactures contextuel:Zephyr_7b_Gemma_Dpo_Avg ;
     enki:manufactures contextuel:Zephyr_7b_Gemma_Rpo_Avg .
 
+contextuel:Argilla_Provisioning_Llama_3_1_8B_MagPie_Ultra a enki:LLMProvisioning ;
+    rdfs:label "argilla-warehouse provisioning of Llama-3.1-8B-MagPie-Ultra" ;
+    enki:provider contextuel:Argilla ;
+    enki:provides contextuel:Llama_3_1_8B_MagPie_Ultra .
+
 contextuel:Argilla_Provisioning_Notus_7b_V1 a enki:LLMProvisioning ;
     rdfs:label "argilla provisioning of notus-7b-v1" ;
     enki:provider contextuel:Argilla ;
@@ -7960,29 +7965,24 @@ contextuel:Argilla_Provisioning_Notux_8x7b_V1 a enki:LLMProvisioning ;
     enki:provider contextuel:Argilla ;
     enki:provides contextuel:Notux_8x7b_V1 .
 
-contextuel:Argilla_Warehouse_Provisioning_Llama_3_1_8B_MagPie_Ultra a enki:LLMProvisioning ;
-    rdfs:label "argilla-warehouse provisioning of Llama-3.1-8B-MagPie-Ultra" ;
-    enki:provider contextuel:Argilla_Warehouse ;
-    enki:provides contextuel:Llama_3_1_8B_MagPie_Ultra .
-
-contextuel:HuggingFaceH4_Provisioning_Zephyr_7b_Alpha a enki:LLMProvisioning ;
+contextuel:HuggingFace_Provisioning_Zephyr_7b_Alpha a enki:LLMProvisioning ;
     rdfs:label "HuggingFaceH4 provisioning of zephyr-7b-alpha" ;
-    enki:provider contextuel:HuggingFaceH4 ;
+    enki:provider contextuel:HuggingFace ;
     enki:provides contextuel:Zephyr_7b_Alpha .
 
-contextuel:HuggingFaceH4_Provisioning_Zephyr_7b_Beta a enki:LLMProvisioning ;
+contextuel:HuggingFace_Provisioning_Zephyr_7b_Beta a enki:LLMProvisioning ;
     rdfs:label "HuggingFaceH4 provisioning of zephyr-7b-beta" ;
-    enki:provider contextuel:HuggingFaceH4 ;
+    enki:provider contextuel:HuggingFace ;
     enki:provides contextuel:Zephyr_7b_Beta .
 
-contextuel:HuggingFaceH4_Provisioning_Zephyr_7b_Gemma_V0_1 a enki:LLMProvisioning ;
+contextuel:HuggingFace_Provisioning_Zephyr_7b_Gemma_V0_1 a enki:LLMProvisioning ;
     rdfs:label "HuggingFaceH4 provisioning of zephyr-7b-gemma-v0.1" ;
-    enki:provider contextuel:HuggingFaceH4 ;
+    enki:provider contextuel:HuggingFace ;
     enki:provides contextuel:Zephyr_7b_Gemma_V0_1 .
 
-contextuel:HuggingFaceH4_Provisioning_Zephyr_Orpo_141b_A35b_V0_1 a enki:LLMProvisioning ;
+contextuel:HuggingFace_Provisioning_Zephyr_Orpo_141b_A35b_V0_1 a enki:LLMProvisioning ;
     rdfs:label "HuggingFaceH4 provisioning of zephyr-orpo-141b-A35b-v0.1" ;
-    enki:provider contextuel:HuggingFaceH4 ;
+    enki:provider contextuel:HuggingFace ;
     enki:provides contextuel:Zephyr_Orpo_141b_A35b_V0_1 .
 
 contextuel:Nexusflow_Provisioning_NexusRaven_V2_13B a enki:LLMProvisioning ;
@@ -102083,8 +102083,7 @@ contextuel:Daughter_Of_Rhodia_12B_MUSR a enki:EvaluatedMetric ;
 contextuel:Dbrx_Base a enki:LLM ;
     dct:identifier "https://huggingface.co/databricks/dbrx-base" ;
     dct:license contextuel:Other ;
-    rdfs:label "dbrx-base" ;
-    enki:hasTotalParameterCount "0"^^xsd:nonNegativeInteger .
+    rdfs:label "dbrx-base" .
 
 contextuel:Dbrx_Base_BBH a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -107833,8 +107832,7 @@ contextuel:Dolphin_2_9_1_Yi_1_5_9b_MUSR a enki:EvaluatedMetric ;
 contextuel:Dolphin_2_9_2_Phi_3_Medium a enki:LLM ;
     dct:identifier "https://huggingface.co/cognitivecomputations/dolphin-2.9.2-Phi-3-Medium" ;
     dct:license contextuel:Mit ;
-    rdfs:label "dolphin-2.9.2-Phi-3-Medium" ;
-    enki:hasTotalParameterCount "-1000000000"^^xsd:nonNegativeInteger .
+    rdfs:label "dolphin-2.9.2-Phi-3-Medium" .
 
 contextuel:Dolphin_2_9_2_Phi_3_Medium_BBH a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -145661,8 +145659,7 @@ contextuel:Internlm2_5_7b_Chat_MUSR a enki:EvaluatedMetric ;
 contextuel:Internlm2_7b a enki:LLM ;
     dct:identifier "https://huggingface.co/internlm/internlm2-7b" ;
     dct:license contextuel:Other ;
-    rdfs:label "internlm2-7b" ;
-    enki:hasTotalParameterCount "0"^^xsd:nonNegativeInteger .
+    rdfs:label "internlm2-7b" .
 
 contextuel:Internlm2_7b_BBH a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -168065,8 +168062,7 @@ contextuel:Llama_3_1_8b_ITA_MUSR a enki:EvaluatedMetric ;
 
 contextuel:Llama_3_1_8b_Ita a enki:LLM ;
     dct:identifier "https://huggingface.co/DeepMount00/Llama-3.1-8b-Ita" ;
-    rdfs:label "Llama-3.1-8b-Ita" ;
-    enki:hasTotalParameterCount "0"^^xsd:nonNegativeInteger .
+    rdfs:label "Llama-3.1-8b-Ita" .
 
 contextuel:Llama_3_1_8b_Ita_BBH a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -183401,8 +183397,7 @@ contextuel:Llama_3_NeuralMahou_8b_MUSR a enki:EvaluatedMetric ;
 contextuel:Llama_3_Reactor a enki:LLM ;
     dct:identifier "https://huggingface.co/Corianas/llama-3-reactor" ;
     dct:license contextuel:Apache_2_0 ;
-    rdfs:label "llama-3-reactor" ;
-    enki:hasTotalParameterCount "-1000000000"^^xsd:nonNegativeInteger .
+    rdfs:label "llama-3-reactor" .
 
 contextuel:Llama_3_Reactor_BBH a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -207153,7 +207148,6 @@ contextuel:Mixtral_8x22B_V0_1 a enki:LLM ;
     dct:identifier "https://huggingface.co/mistralai/Mixtral-8x22B-v0.1" ;
     dct:license contextuel:Apache_2_0 ;
     rdfs:label "Mixtral-8x22B-v0.1" ;
-    enki:hasTotalParameterCount "0"^^xsd:nonNegativeInteger ;
     enki:hasTotalParameterCount "140621000000"^^xsd:nonNegativeInteger .
 
 contextuel:Mixtral_8x22B_V0_1_BBH a enki:EvaluatedMetric ;
@@ -221744,6 +221738,59 @@ contextuel:Occiglot_7b_Es_En_Instruct_MUSR a enki:EvaluatedMetric ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 4.452083333333333 .
 
+contextuel:ODB_14B_Sce a enki:LLM ;
+    dct:identifier "https://huggingface.co/Quazim0t0/ODB-14B-sce" ;
+    rdfs:label "ODB-14B-sce" .
+
+contextuel:ODB_14B_Sce_BBH a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14B_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "BBH" ;
+    enki:metricValue 50.69950430097801 .
+
+contextuel:ODB_14B_Sce_CO2 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:CarbonCost ;
+    enki:metricAssignee contextuel:ODB_14B_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "CO₂ cost (kg)" ;
+    enki:metricValue 2.98336784194147 .
+
+contextuel:ODB_14B_Sce_GPQA a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14B_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "GPQA" ;
+    enki:metricValue 2.1252796420581683 .
+
+contextuel:ODB_14B_Sce_IFEval a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14B_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "IFEval" ;
+    enki:metricValue 29.2235712354331 .
+
+contextuel:ODB_14B_Sce_MATH_Lvl_5 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14B_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MATH Lvl 5" ;
+    enki:metricValue 25.45317220543807 .
+
+contextuel:ODB_14B_Sce_MMLU_PRO a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14B_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MMLU-PRO" ;
+    enki:metricValue 46.74386820330969 .
+
+contextuel:ODB_14B_Sce_MUSR a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:ODB_14B_Sce ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MUSR" ;
+    enki:metricValue 7.277343750000001 .
+
 contextuel:ODB_14b_Sce a enki:LLM ;
     dct:identifier "https://huggingface.co/Quazim0t0/ODB-14b-sce" ;
     rdfs:label "ODB-14b-sce" ;
@@ -221797,60 +221844,6 @@ contextuel:ODB_14b_Sce_MUSR a enki:EvaluatedMetric ;
     enki:metricAssigner contextuel:Hugging_Face ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 16.49947916666667 .
-
-contextuel:ODB_14B_Sce a enki:LLM ;
-    dct:identifier "https://huggingface.co/Quazim0t0/ODB-14B-sce" ;
-    rdfs:label "ODB-14B-sce" ;
-    enki:hasTotalParameterCount "0"^^xsd:nonNegativeInteger .
-
-contextuel:ODB_14B_Sce_BBH a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14B_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "BBH" ;
-    enki:metricValue 50.69950430097801 .
-
-contextuel:ODB_14B_Sce_CO2 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:CarbonCost ;
-    enki:metricAssignee contextuel:ODB_14B_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "CO₂ cost (kg)" ;
-    enki:metricValue 2.98336784194147 .
-
-contextuel:ODB_14B_Sce_GPQA a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14B_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "GPQA" ;
-    enki:metricValue 2.1252796420581683 .
-
-contextuel:ODB_14B_Sce_IFEval a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14B_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "IFEval" ;
-    enki:metricValue 29.2235712354331 .
-
-contextuel:ODB_14B_Sce_MATH_Lvl_5 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14B_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MATH Lvl 5" ;
-    enki:metricValue 25.45317220543807 .
-
-contextuel:ODB_14B_Sce_MMLU_PRO a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14B_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MMLU-PRO" ;
-    enki:metricValue 46.74386820330969 .
-
-contextuel:ODB_14B_Sce_MUSR a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:ODB_14B_Sce ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MUSR" ;
-    enki:metricValue 7.277343750000001 .
 
 contextuel:Odin_9B a enki:LLM ;
     dct:identifier "https://huggingface.co/Delta-Vector/Odin-9B" ;
@@ -222179,8 +222172,7 @@ contextuel:Olmner_Sbr_7b_MUSR a enki:EvaluatedMetric ;
 contextuel:OLMo_1_7_7B_Hf a enki:LLM ;
     dct:identifier "https://huggingface.co/allenai/OLMo-1.7-7B-hf" ;
     dct:license contextuel:Apache_2_0 ;
-    rdfs:label "OLMo-1.7-7B-hf" ;
-    enki:hasTotalParameterCount "0"^^xsd:nonNegativeInteger .
+    rdfs:label "OLMo-1.7-7B-hf" .
 
 contextuel:OLMo_1_7_7B_Hf_BBH a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -264905,61 +264897,6 @@ contextuel:QwenSlerp12_7B_MUSR a enki:EvaluatedMetric ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 16.134895833333335 .
 
-contextuel:Qwenslerp2_14B a enki:LLM ;
-    dct:identifier "https://huggingface.co/allknowingroger/Qwenslerp2-14B" ;
-    dct:license contextuel:Apache_2_0 ;
-    rdfs:label "Qwenslerp2-14B" ;
-    enki:hasTotalParameterCount "14770000000"^^xsd:nonNegativeInteger .
-
-contextuel:Qwenslerp2_14B_BBH a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "BBH" ;
-    enki:metricValue 50.30369191199753 .
-
-contextuel:Qwenslerp2_14B_CO2 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:CarbonCost ;
-    enki:metricAssignee contextuel:Qwenslerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "CO₂ cost (kg)" ;
-    enki:metricValue 4.528886847953466 .
-
-contextuel:Qwenslerp2_14B_GPQA a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "GPQA" ;
-    enki:metricValue 15.771812080536916 .
-
-contextuel:Qwenslerp2_14B_IFEval a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "IFEval" ;
-    enki:metricValue 50.07136619724553 .
-
-contextuel:Qwenslerp2_14B_MATH_Lvl_5 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MATH Lvl 5" ;
-    enki:metricValue 44.5619335347432 .
-
-contextuel:Qwenslerp2_14B_MMLU_PRO a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MMLU-PRO" ;
-    enki:metricValue 48.92324172576833 .
-
-contextuel:Qwenslerp2_14B_MUSR a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp2_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MUSR" ;
-    enki:metricValue 18.883854166666666 .
-
 contextuel:QwenSlerp2_14B a enki:LLM ;
     dct:identifier "https://huggingface.co/hotmailuser/QwenSlerp2-14B" ;
     dct:license contextuel:Apache_2_0 ;
@@ -265014,6 +264951,61 @@ contextuel:QwenSlerp2_14B_MUSR a enki:EvaluatedMetric ;
     enki:metricAssigner contextuel:Hugging_Face ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 19.348697916666666 .
+
+contextuel:Qwenslerp2_14B a enki:LLM ;
+    dct:identifier "https://huggingface.co/allknowingroger/Qwenslerp2-14B" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "Qwenslerp2-14B" ;
+    enki:hasTotalParameterCount "14770000000"^^xsd:nonNegativeInteger .
+
+contextuel:Qwenslerp2_14B_BBH a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "BBH" ;
+    enki:metricValue 50.30369191199753 .
+
+contextuel:Qwenslerp2_14B_CO2 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:CarbonCost ;
+    enki:metricAssignee contextuel:Qwenslerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "CO₂ cost (kg)" ;
+    enki:metricValue 4.528886847953466 .
+
+contextuel:Qwenslerp2_14B_GPQA a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "GPQA" ;
+    enki:metricValue 15.771812080536916 .
+
+contextuel:Qwenslerp2_14B_IFEval a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "IFEval" ;
+    enki:metricValue 50.07136619724553 .
+
+contextuel:Qwenslerp2_14B_MATH_Lvl_5 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MATH Lvl 5" ;
+    enki:metricValue 44.5619335347432 .
+
+contextuel:Qwenslerp2_14B_MMLU_PRO a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MMLU-PRO" ;
+    enki:metricValue 48.92324172576833 .
+
+contextuel:Qwenslerp2_14B_MUSR a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp2_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MUSR" ;
+    enki:metricValue 18.883854166666666 .
 
 contextuel:QwenSlerp2_3B a enki:LLM ;
     dct:identifier "https://huggingface.co/hotmailuser/QwenSlerp2-3B" ;
@@ -265125,61 +265117,6 @@ contextuel:Qwenslerp2_7B_MUSR a enki:EvaluatedMetric ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 12.817187500000005 .
 
-contextuel:Qwenslerp3_14B a enki:LLM ;
-    dct:identifier "https://huggingface.co/allknowingroger/Qwenslerp3-14B" ;
-    dct:license contextuel:Apache_2_0 ;
-    rdfs:label "Qwenslerp3-14B" ;
-    enki:hasTotalParameterCount "14770000000"^^xsd:nonNegativeInteger .
-
-contextuel:Qwenslerp3_14B_BBH a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp3_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "BBH" ;
-    enki:metricValue 49.80982854016478 .
-
-contextuel:Qwenslerp3_14B_CO2 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:CarbonCost ;
-    enki:metricAssignee contextuel:Qwenslerp3_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "CO₂ cost (kg)" ;
-    enki:metricValue 4.439262164468745 .
-
-contextuel:Qwenslerp3_14B_GPQA a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp3_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "GPQA" ;
-    enki:metricValue 16.666666666666664 .
-
-contextuel:Qwenslerp3_14B_IFEval a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp3_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "IFEval" ;
-    enki:metricValue 50.52349986923585 .
-
-contextuel:Qwenslerp3_14B_MATH_Lvl_5 a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp3_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MATH Lvl 5" ;
-    enki:metricValue 44.637462235649544 .
-
-contextuel:Qwenslerp3_14B_MMLU_PRO a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp3_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MMLU-PRO" ;
-    enki:metricValue 48.83089539007093 .
-
-contextuel:Qwenslerp3_14B_MUSR a enki:EvaluatedMetric ;
-    enki:metricAssesses contextuel:Quality ;
-    enki:metricAssignee contextuel:Qwenslerp3_14B ;
-    enki:metricAssigner contextuel:Hugging_Face ;
-    enki:metricUnit "MUSR" ;
-    enki:metricValue 18.017187499999995 .
-
 contextuel:QwenSlerp3_14B a enki:LLM ;
     dct:identifier "https://huggingface.co/hotmailuser/QwenSlerp3-14B" ;
     dct:license contextuel:Apache_2_0 ;
@@ -265234,6 +265171,61 @@ contextuel:QwenSlerp3_14B_MUSR a enki:EvaluatedMetric ;
     enki:metricAssigner contextuel:Hugging_Face ;
     enki:metricUnit "MUSR" ;
     enki:metricValue 19.964322916666664 .
+
+contextuel:Qwenslerp3_14B a enki:LLM ;
+    dct:identifier "https://huggingface.co/allknowingroger/Qwenslerp3-14B" ;
+    dct:license contextuel:Apache_2_0 ;
+    rdfs:label "Qwenslerp3-14B" ;
+    enki:hasTotalParameterCount "14770000000"^^xsd:nonNegativeInteger .
+
+contextuel:Qwenslerp3_14B_BBH a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp3_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "BBH" ;
+    enki:metricValue 49.80982854016478 .
+
+contextuel:Qwenslerp3_14B_CO2 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:CarbonCost ;
+    enki:metricAssignee contextuel:Qwenslerp3_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "CO₂ cost (kg)" ;
+    enki:metricValue 4.439262164468745 .
+
+contextuel:Qwenslerp3_14B_GPQA a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp3_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "GPQA" ;
+    enki:metricValue 16.666666666666664 .
+
+contextuel:Qwenslerp3_14B_IFEval a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp3_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "IFEval" ;
+    enki:metricValue 50.52349986923585 .
+
+contextuel:Qwenslerp3_14B_MATH_Lvl_5 a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp3_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MATH Lvl 5" ;
+    enki:metricValue 44.637462235649544 .
+
+contextuel:Qwenslerp3_14B_MMLU_PRO a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp3_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MMLU-PRO" ;
+    enki:metricValue 48.83089539007093 .
+
+contextuel:Qwenslerp3_14B_MUSR a enki:EvaluatedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Qwenslerp3_14B ;
+    enki:metricAssigner contextuel:Hugging_Face ;
+    enki:metricUnit "MUSR" ;
+    enki:metricValue 18.017187499999995 .
 
 contextuel:Qwenslerp3_7B a enki:LLM ;
     dct:identifier "https://huggingface.co/allknowingroger/Qwenslerp3-7B" ;
@@ -295348,8 +295340,7 @@ contextuel:T31122024203920_Gemma_2_9B_MUSR a enki:EvaluatedMetric ;
 contextuel:T3Q_Qwen2_5_14B_Instruct_1M_E3 a enki:LLM ;
     dct:identifier "https://huggingface.co/JungZoona/T3Q-Qwen2.5-14B-Instruct-1M-e3" ;
     dct:license contextuel:Apache_2_0 ;
-    rdfs:label "T3Q-Qwen2.5-14B-Instruct-1M-e3" ;
-    enki:hasTotalParameterCount "0"^^xsd:nonNegativeInteger .
+    rdfs:label "T3Q-Qwen2.5-14B-Instruct-1M-e3" .
 
 contextuel:T3Q_Qwen2_5_14B_Instruct_1M_E3_BBH a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
@@ -302949,8 +302940,7 @@ contextuel:Uma_4x4B_Instruct_V0_1_MUSR a enki:EvaluatedMetric ;
 contextuel:Umt5_Base a enki:LLM ;
     dct:identifier "https://huggingface.co/google/umt5-base" ;
     dct:license contextuel:Apache_2_0 ;
-    rdfs:label "umt5-base" ;
-    enki:hasTotalParameterCount "-1000000000"^^xsd:nonNegativeInteger .
+    rdfs:label "umt5-base" .
 
 contextuel:Umt5_Base_BBH a enki:EvaluatedMetric ;
     enki:metricAssesses contextuel:Quality ;
