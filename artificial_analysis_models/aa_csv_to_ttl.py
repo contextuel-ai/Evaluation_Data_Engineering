@@ -243,15 +243,29 @@ def extract_params_billion(name: str) -> float | None:
 
 # _________ EVALUATOR ORG __________
 
-ORG_LOCAL = "Artificial_Analysis"
+ORG_LOCAL = "Artificial-Analysis"
 
 # --- Org normalisation mappings ---
+# Map CSV creator labels to canonical URI locals from organizations.ttl.
 ORG_RENAME = {
-    "Google":                   "GoogleAI",
-    "Meta":                     "MetaAI",
-    "Microsoft Azure":          "MicrosoftAI",
-    "NVIDIA":                   "NvidiaNGC",
-    "Allen Institute for AI":   "Allen_AI",
+    "Google":                           "GoogleAI",
+    "Meta":                             "MetaAI",
+    "Microsoft Azure":                  "MicrosoftAI",
+    "NVIDIA":                           "NvidiaNGC",
+    "Allen Institute for AI":           "Allen_AI",
+    "Amazon":                           "Amazon_AI",
+    "Baidu":                            "Baidu_AI",
+    "DeepSeek":                         "DeepSeek_AI",
+    "IBM":                              "IBM_AI",
+    "Korea Telecom":                    "Korea_Telecom_AI",
+    "KwaiKAT":                          "KwaiPilot",
+    "LG AI Research":                   "LG_AI",
+    "MBZUAI Institute of Foundation Models": "MBZUAI",
+    "Nous Research":                    "NousResearch",
+    "Perplexity":                       "Perplexity_AI",
+    "ServiceNow":                       "ServiceNow_AI",
+    "TII UAE":                          "TII",
+    "Upstage":                          "Upstage_AI",
 }
 
 ORG_MERGE: dict[str, str] = {}
@@ -532,6 +546,8 @@ def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef,
                 return str(int(o))
             if o.datatype == XSD.nonNegativeInteger:
                 return f'"{int(o)}"^^xsd:nonNegativeInteger'
+            if o.datatype == XSD.gYearMonth:
+                return f'"{o}"^^xsd:gYearMonth'
             if o.datatype in (XSD.float, XSD.double):
                 return str(float(o))
             if o.datatype == XSD.decimal:
