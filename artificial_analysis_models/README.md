@@ -1,16 +1,28 @@
-This folder handles the **Artifical Analysis** dataset. Below is an explanation of the importance of each file. 
+# Artificial Analysis
 
-**aa_csv_to_ttl.py**
-Converts the information in **aa_models_with_pricing_speed_and_benchmarks.csv** into triples for the ontology. 
+This folder handles the **Artificial Analysis** dataset — extracting model data via API and converting it to Turtle triples for the Enki knowledge graph.
 
-**aa_extraction.py**
-Extracts the dataset from Artifical Analysis using an API key. It converts the dataset to **aa_models_with_pricing_speed_and_benchmarks.csv**.
+## Pipeline
 
-**aa_models.ttl**
-The triples, converted from the .csv, for use in Enki. 
+```
+Artificial Analysis API  ──►  aa_models_with_pricing_speed_and_benchmarks.csv  ──►  aa_models.ttl
+(aa_extraction.py)             (aa_csv_to_ttl.py)
+```
 
-**aa_models.ttl.bak**
-A backup file of the aa_models.ttl. 
+## Files
 
-**aa_models_with_pricing_speed_and_benchmarks.csv**
-The dataset in .csv format. It contains 406 models and evaluates latency, cost, and quality. 
+| File | Description |
+|---|---|
+| `aa_extraction.py` | Extracts the dataset from Artificial Analysis using an API key. Writes `aa_models_with_pricing_speed_and_benchmarks.csv`. |
+| `aa_csv_to_ttl.py` | Converts the CSV into Turtle triples. Emits benchmarks for latency, throughput, time-to-first-token, pricing, and quality scores. |
+| `aa_models_with_pricing_speed_and_benchmarks.csv` | The dataset in CSV format. Contains 406 models with evaluations for latency, cost, and quality. |
+| `aa_models.ttl` | The generated Turtle triples for use in Enki. |
+| `aa_models.ttl.bak` | Backup of the previous `aa_models.ttl`. |
+| `aa_models_report.html` | Turtlelint validation report for `aa_models.ttl`. |
+
+## Usage
+
+```bash
+python aa_extraction.py  # pull latest data from Artificial Analysis API
+python aa_csv_to_ttl.py  # generate TTL from CSV
+```
