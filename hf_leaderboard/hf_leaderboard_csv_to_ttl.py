@@ -8,7 +8,11 @@ from rdflib.namespace import XSD
 ROOT = Path(__file__).resolve().parent
 SOURCE_CSV = ROOT / "hf_leaderboard_long_20260221.csv"
 OUTPUT_TTL = ROOT / "hf_leaderboard.ttl"
+OUTPUT_UNMATCHED_TTL = ROOT / "hf_leaderboard_unmatched.ttl"
 BACKUP = OUTPUT_TTL.with_suffix(".ttl.bak")
+BACKUP_UNMATCHED = OUTPUT_UNMATCHED_TTL.with_suffix(".ttl.bak")
+
+ONTOLOGY_ORGS_TTL = ROOT.parent / "enki" / "backend" / "ontology" / "organizations.ttl"
 
 C = Namespace("https://www.contextuel.ai/spec/Contextuel/")
 ENKI = Namespace("https://www.contextuel.ai/spec/Enki/")
@@ -224,6 +228,36 @@ def extract_base_model_org(base_model: str) -> str:
     if "/" in bm:
         return bm.split("/")[0].strip()
     return ""
+
+# _________ ONTOLOGY ORG LOOKUP __________
+
+def load_known_org_locals(ont_path: Path) -> set[str]:
+    """Parse organizations.ttl and return the set of org local names
+    (i.e. the part after contextuel:) that are typed as LLMManufacturer or LLMProvider."""
+    if not ont_path.exists():
+        print(f"[WARNING] Ontology orgs file not found: {ont_path}")
+        return set()
+    text = ont_path.read_text(encoding="utf-8")
+    return set(re.findall(r'contextuel:(\w+)\s+a\s+enki:LLM(?:Manufacturer|Provider)', text))
+
+
+def classify_row_org(row: dict, known_org_locals: set[str]) -> bool:
+    """Return True if the row's manufacturer org is in the ontology.
+    A row is 'known' when the org that would be emitted as the manufacturer
+    resolves (via org_uri_local) to a local name present in organizations.ttl."""
+    org = row.get("org", "")
+    if not org:
+        # Models with no org get no manufacturer triple; put them in unmatched.
+        return False
+
+    base_org = row.get("base_model_org", "")
+    # Mirror the manufacturer logic in build_graph:
+    if base_org and base_org.lower() != org.lower():
+        mfr_local = org_uri_local(base_org)
+    else:
+        mfr_local = org_uri_local(org)
+
+    return mfr_local in known_org_locals
 
 # _________ READ CSV __________
 
@@ -495,7 +529,7 @@ def add_evaluations(g: Graph, rows: list[dict]):
 
 # _________ SERIALISATION __________
 
-def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef, list[URIRef]]):
+def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef, list[URIRef]], backup_path: Path | None = None):
     PREFIX_MAP = OrderedDict([
         (str(C),     "contextuel:"),
         (str(ENKI),  "enki:"),
@@ -636,14 +670,16 @@ def reorder_and_serialize(g: Graph, out_path: Path, metrics_by_llm: dict[URIRef,
     lines = serialize_subjects(ordered_subjects)
 
     if out_path.exists():
-        BACKUP.write_text(out_path.read_text(encoding="utf-8"), encoding="utf-8")
+        bp = backup_path or out_path.with_suffix(".ttl.bak")
+        bp.write_text(out_path.read_text(encoding="utf-8"), encoding="utf-8")
 
     with out_path.open("w", encoding="utf-8") as fh:
         fh.write(HEADER_BLOCK)
         fh.write("\n".join(lines))
         fh.write("\n")
 
-    print(f"Wrote HF leaderboard TTL to {out_path} (backup at {BACKUP})")
+    bp = backup_path or out_path.with_suffix(".ttl.bak")
+    print(f"Wrote HF leaderboard TTL to {out_path} (backup at {bp})")
 
 # _________ MAIN __________
 
@@ -653,10 +689,32 @@ def main():
         print("No rows read. Exiting.")
         return
 
-    print(f"Building graph from {len(rows)} models...")
-    g, metrics_by_llm = build_graph(rows)
-    add_evaluations(g, rows)
-    reorder_and_serialize(g, OUTPUT_TTL, metrics_by_llm)
+    # Load known orgs from the ontology
+    known_org_locals = load_known_org_locals(ONTOLOGY_ORGS_TTL)
+    print(f"Loaded {len(known_org_locals)} known orgs from ontology")
+
+    # Split rows into known-org and unknown-org sets
+    known_rows = []
+    unmatched_rows = []
+    for r in rows:
+        if classify_row_org(r, known_org_locals):
+            known_rows.append(r)
+        else:
+            unmatched_rows.append(r)
+
+    print(f"Known-org models: {len(known_rows)}, Unmatched-org models: {len(unmatched_rows)}")
+
+    # Build and serialise the known-org file
+    print(f"\n=== Building known-org graph from {len(known_rows)} models ===")
+    g_known, metrics_known = build_graph(known_rows)
+    add_evaluations(g_known, known_rows)
+    reorder_and_serialize(g_known, OUTPUT_TTL, metrics_known, BACKUP)
+
+    # Build and serialise the unmatched-org file
+    print(f"\n=== Building unmatched-org graph from {len(unmatched_rows)} models ===")
+    g_unmatched, metrics_unmatched = build_graph(unmatched_rows)
+    add_evaluations(g_unmatched, unmatched_rows)
+    reorder_and_serialize(g_unmatched, OUTPUT_UNMATCHED_TTL, metrics_unmatched, BACKUP_UNMATCHED)
 
 if __name__ == "__main__":
     main()

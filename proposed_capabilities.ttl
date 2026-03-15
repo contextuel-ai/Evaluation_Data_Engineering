@@ -11,27 +11,6 @@
 # ============================================================
 
 # ------------------------------------------------------------
-# MathematicalReasoning
-# ------------------------------------------------------------
-# Justification: MATH Lvl 5 Hard specifically tests complex
-# mathematical problem-solving with exact-answer matching,
-# formal notation, and symbolic manipulation. Distinct from
-# FormalReasoning (which covers logic/procedures) because
-# mathematical reasoning requires domain-specific notation
-# and numerical derivation.
-#
-# Tested by: MATH_Lvl_5
-# Parent:    MultiStepReasoning
-# ------------------------------------------------------------
-contextuel:MathematicalReasoning a enki:Capability ;
-    rdfs:label "Mathematical Reasoning" ;
-    dct:description "The ability of an LLM to solve mathematical problems requiring formal symbolic manipulation, numerical computation, and multi-step logical derivation across domains such as algebra, geometry, number theory, combinatorics, and calculus." ;
-    enki:subsumedByCapability contextuel:MultiStepReasoning .
-
-contextuel:MultiStepReasoning
-    enki:subsumesCapability contextuel:MathematicalReasoning .
-
-# ------------------------------------------------------------
 # FormalReasoning (consolidates LogicalDeduction + AlgorithmicReasoning)
 # ------------------------------------------------------------
 # Justification: BBH tasks span both deductive logic (Boolean
@@ -101,29 +80,30 @@ contextuel:MultiStepReasoning
     enki:subsumesCapability contextuel:CausalReasoning .
 
 # ------------------------------------------------------------
-# ExpertLevelProblemSolving
+# LongContextReasoning
 # ------------------------------------------------------------
-# Justification: GPQA is designed so domain experts achieve
-# ~65% accuracy while non-experts with web access achieve ~34%.
-# This tests the intersection of deep domain expertise with
-# graduate-level reasoning. Dual parentage under both
-# AcademicDomainKnowledge and MultiStepReasoning reflects
-# that neither alone is sufficient.
+# Justification: The Artificial Analysis LCR (Long-Context
+# Reasoning) benchmark specifically measures a model's ability
+# to locate, synthesise, and reason over information spread
+# across very long input contexts (100k+ tokens). This is
+# distinct from MultiStepReasoning (which focuses on
+# sequential logical operations regardless of context length)
+# and from FactualRecall (which tests retrieval of training
+# data, not in-context information). Long-context reasoning
+# requires both attention over large spans and the ability to
+# integrate dispersed evidence — a capability not captured by
+# any existing node.
 #
-# Tested by: GPQA
-# Parents:   AcademicDomainKnowledge, MultiStepReasoning
+# Tested by: LCR (Artificial Analysis)
+# Parent:    Reasoning
 # ------------------------------------------------------------
-contextuel:ExpertLevelProblemSolving a enki:Capability ;
-    rdfs:label "Expert-Level Problem Solving" ;
-    dct:description "The ability of an LLM to solve problems that require graduate-level or professional-level expertise in a specialized domain, integrating deep domain knowledge with sophisticated reasoning that resists simple lookup or surface-level understanding." ;
-    enki:subsumedByCapability contextuel:AcademicDomainKnowledge ;
-    enki:subsumedByCapability contextuel:MultiStepReasoning .
+contextuel:LongContextReasoning a enki:Capability ;
+    rdfs:label "Long-Context Reasoning" ;
+    dct:description "The ability of an LLM to accurately retrieve, synthesise, and reason over information distributed across long input contexts, including multi-document comprehension, needle-in-a-haystack recall, and cross-passage inference." ;
+    enki:subsumedByCapability contextuel:Reasoning .
 
-contextuel:AcademicDomainKnowledge
-    enki:subsumesCapability contextuel:ExpertLevelProblemSolving .
-
-contextuel:MultiStepReasoning
-    enki:subsumesCapability contextuel:ExpertLevelProblemSolving .
+contextuel:Reasoning
+    enki:subsumesCapability contextuel:LongContextReasoning .
 
 # ============================================================
 # CONSOLIDATED HIERARCHY
@@ -137,13 +117,14 @@ contextuel:MultiStepReasoning
 # │   ├── CausalReasoning               ← NEW (BBH, MUSR) [cross-cutting]
 # │   └── ExpertLevelProblemSolving      ← NEW (GPQA) [also under AcademicDomainKnowledge]
 # ├── GeneralKnowledgeReasoning
-# │
+# ├── LongContextReasoning               ← NEW (LCR, Artificial Analysis)
+#
 # Knowledge
 # ├── AcademicDomainKnowledge
 # │   └── ExpertLevelProblemSolving      ← NEW (GPQA)
 # ├── FactualRecall
 # ├── GeneralKnowledgeReasoning
-# │
+#
 # ConversationalReasoning
 # ├── InstructionFollowing               ← used by IFEval
 # ├── ContextRetention
