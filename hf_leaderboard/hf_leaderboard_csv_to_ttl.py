@@ -238,7 +238,27 @@ def load_known_org_locals(ont_path: Path) -> set[str]:
         print(f"[WARNING] Ontology orgs file not found: {ont_path}")
         return set()
     text = ont_path.read_text(encoding="utf-8")
-    return set(re.findall(r'contextuel:(\w+)\s+a\s+enki:LLM(?:Manufacturer|Provider)', text))
+    orgs = set()
+    for block in re.split(r'\n(?=contextuel:\w+\s)', text):
+        m = re.match(r'contextuel:(\w+)', block)
+        if m and ('enki:LLMManufacturer' in block or 'enki:LLMProvider' in block):
+            orgs.add(m.group(1))
+    return orgs
+
+
+def load_known_provider_locals(ont_path: Path) -> set[str]:
+    """Parse organizations.ttl and return the set of org local names
+    that are typed specifically as enki:LLMProvider."""
+    if not ont_path.exists():
+        print(f"[WARNING] Ontology orgs file not found: {ont_path}")
+        return set()
+    text = ont_path.read_text(encoding="utf-8")
+    providers = set()
+    for block in re.split(r'\n(?=contextuel:\w+\s)', text):
+        m = re.match(r'contextuel:(\w+)', block)
+        if m and 'enki:LLMProvider' in block:
+            providers.add(m.group(1))
+    return providers
 
 
 def classify_row_org(row: dict, known_org_locals: set[str]) -> bool:
@@ -302,12 +322,6 @@ def read_rows(path: Path) -> list[dict]:
                 except (ValueError, TypeError):
                     pass
 
-        # Determine if this is an official provider model
-        official = False
-        if 'Official Providers' in df.columns:
-            op_val = str(r.get("Official Providers", "")).strip().upper()
-            official = op_val == "TRUE"
-
         # Extract base model to determine the true manufacturer
         base_model_raw = str(r.get("Base Model", "")).strip()
         if base_model_raw == "nan":
@@ -321,14 +335,12 @@ def read_rows(path: Path) -> list[dict]:
             "license": lic,
             "params_b": params_str,
             "benchmarks": benchmarks,
-            "official_provider": official,
             "base_model_raw": base_model_raw,
             "base_model_org": base_model_org,
         }
         rows.append(row)
 
-    official_count = sum(1 for r in rows if r["official_provider"])
-    print(f"Total models: {len(rows)}, Official Providers: {official_count}")
+    print(f"Total models: {len(rows)}")
 
     return rows
 
@@ -336,7 +348,7 @@ def read_rows(path: Path) -> list[dict]:
 
 ORG_LOCAL = "Hugging_Face"
 
-def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
+def build_graph(rows: list[dict], known_provider_locals: set[str]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
     g = Graph()
     g.bind("enki", ENKI)
     g.bind("contextuel", C)
@@ -430,19 +442,20 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
         else:
             manufacturer_models[submitting_org].add(model_uri)
 
-        # --- Provisioner logic (only Official Providers) ---
-        if r["official_provider"]:
-            if base_org and base_org.lower() != submitting_org.lower():
-                # The submitting org fine-tuned/adapted someone else's model
-                # and serves it via API → submitting org is the provisioner.
-                provisioner_provisionings[submitting_org].append(
-                    (model_uri, local, model_name)
-                )
-            else:
-                # Self-submitted original model: org is also the provisioner.
-                provisioner_provisionings[submitting_org].append(
-                    (model_uri, local, model_name)
-                )
+        # --- Provisioner logic (only orgs confirmed as LLMProvider in ontology) ---
+        # Determine which org would be the provisioner for this model:
+        #   - If base_model_org differs → submitting org is the provisioner
+        #   - Otherwise → submitting org is also the provisioner (self-hosted)
+        if base_org and base_org.lower() != submitting_org.lower():
+            candidate_prov = submitting_org
+        else:
+            candidate_prov = submitting_org
+
+        candidate_prov_local = org_uri_local(candidate_prov)
+        if candidate_prov_local in known_provider_locals:
+            provisioner_provisionings[candidate_prov].append(
+                (model_uri, local, model_name)
+            )
 
     # Add manufacturer triples (definitional triples live in organizations.ttl)
     skipped_org_collisions = []
@@ -691,7 +704,8 @@ def main():
 
     # Load known orgs from the ontology
     known_org_locals = load_known_org_locals(ONTOLOGY_ORGS_TTL)
-    print(f"Loaded {len(known_org_locals)} known orgs from ontology")
+    known_provider_locals = load_known_provider_locals(ONTOLOGY_ORGS_TTL)
+    print(f"Loaded {len(known_org_locals)} known orgs from ontology ({len(known_provider_locals)} are LLMProvider)")
 
     # Split rows into known-org and unknown-org sets
     known_rows = []
@@ -706,13 +720,13 @@ def main():
 
     # Build and serialise the known-org file
     print(f"\n=== Building known-org graph from {len(known_rows)} models ===")
-    g_known, metrics_known = build_graph(known_rows)
+    g_known, metrics_known = build_graph(known_rows, known_provider_locals)
     add_evaluations(g_known, known_rows)
     reorder_and_serialize(g_known, OUTPUT_TTL, metrics_known, BACKUP)
 
     # Build and serialise the unmatched-org file
     print(f"\n=== Building unmatched-org graph from {len(unmatched_rows)} models ===")
-    g_unmatched, metrics_unmatched = build_graph(unmatched_rows)
+    g_unmatched, metrics_unmatched = build_graph(unmatched_rows, known_provider_locals)
     add_evaluations(g_unmatched, unmatched_rows)
     reorder_and_serialize(g_unmatched, OUTPUT_UNMATCHED_TTL, metrics_unmatched, BACKUP_UNMATCHED)
 
