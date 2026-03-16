@@ -109,7 +109,7 @@ def enrich_fireworks_model(model: Dict[str, Any]) -> Dict[str, Any]:
 
     derived = derive_modalities(model)
 
-    conversation_config = model.get("conversationConfig", {})
+    conversation_config = model.get("conversationConfig") or {}
 
     return {
         "model_id": model.get("name"),
