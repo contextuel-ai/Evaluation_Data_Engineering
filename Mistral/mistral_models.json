@@ -1010,7 +1010,7 @@
       "version": null,
       "release_date": "December 9, 2025",
       "context_window_tokens": 256000,
-      "input_usd_per_1m_tokens": 0.0,
+      "input_usd_per_1m_tokens": 0.1,
       "output_usd_per_1m_tokens": 0.3,
       "input_modalities": [
         "image",
