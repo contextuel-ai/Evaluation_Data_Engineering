@@ -7,6 +7,7 @@
 @prefix contextuel: <https://www.contextuel.ai/spec/Contextuel/> .
 
 contextuel:Mistral
+    enki:curlModel "curl https://api.mistral.ai/v1/models -H \"Authorization: Bearer $MISTRAL_API_KEY\"" ;
     enki:manufactures contextuel:Codestral_2405 ;
     enki:manufactures contextuel:Codestral_2501 ;
     enki:manufactures contextuel:Codestral_2508 ;
@@ -101,21 +102,25 @@ contextuel:Mistral_Provisioning_Codestral_2501 a enki:LLMProvisioning ;
 
 contextuel:Mistral_Provisioning_Codestral_2508 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Codestral" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"codestral-2508\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Codestral_2508 .
 
 contextuel:Mistral_Provisioning_Codestral_Embed a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Codestral Embed" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/embeddings -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"codestral-embed\",\"input\":[\"Hello world\"]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Codestral_Embed .
 
 contextuel:Mistral_Provisioning_Codestral_Embed_2505 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Codestral Embed" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/embeddings -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"codestral-embed-2505\",\"input\":[\"Hello world\"]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Codestral_Embed_2505 .
 
 contextuel:Mistral_Provisioning_Codestral_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Codestral" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"codestral-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Codestral_Latest .
 
@@ -126,21 +131,25 @@ contextuel:Mistral_Provisioning_Codestral_Mamba_7b_0_1 a enki:LLMProvisioning ;
 
 contextuel:Mistral_Provisioning_Devstral_2512 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Devstral 2" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"devstral-2512\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Devstral_2512 .
 
 contextuel:Mistral_Provisioning_Devstral_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Devstral 2" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"devstral-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Devstral_Latest .
 
 contextuel:Mistral_Provisioning_Devstral_Medium_2507 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Devstral Medium 1.0" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"devstral-medium-2507\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Devstral_Medium_2507 .
 
 contextuel:Mistral_Provisioning_Devstral_Medium_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Devstral Medium 1.0" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"devstral-medium-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Devstral_Medium_Latest .
 
@@ -151,21 +160,25 @@ contextuel:Mistral_Provisioning_Devstral_Small_2505 a enki:LLMProvisioning ;
 
 contextuel:Mistral_Provisioning_Devstral_Small_2507 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Devstral Small 1.1" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"devstral-small-2507\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Devstral_Small_2507 .
 
 contextuel:Mistral_Provisioning_Devstral_Small_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Devstral Small 2" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"devstral-small-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Devstral_Small_Latest .
 
 contextuel:Mistral_Provisioning_Labs_Devstral_Small_2512 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of labs-devstral-small-2512" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"labs-devstral-small-2512\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Labs_Devstral_Small_2512 .
 
 contextuel:Mistral_Provisioning_Labs_Mistral_Small_Creative a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of labs-mistral-small-creative" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"labs-mistral-small-creative\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Labs_Mistral_Small_Creative .
 
@@ -181,11 +194,13 @@ contextuel:Mistral_Provisioning_Magistral_Medium_2507 a enki:LLMProvisioning ;
 
 contextuel:Mistral_Provisioning_Magistral_Medium_2509 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Magistral Medium 1.2" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"magistral-medium-2509\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Magistral_Medium_2509 .
 
 contextuel:Mistral_Provisioning_Magistral_Medium_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Magistral Medium 1.2" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"magistral-medium-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Magistral_Medium_Latest .
 
@@ -201,11 +216,13 @@ contextuel:Mistral_Provisioning_Magistral_Small_2507 a enki:LLMProvisioning ;
 
 contextuel:Mistral_Provisioning_Magistral_Small_2509 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Magistral Small 1.2" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"magistral-small-2509\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Magistral_Small_2509 .
 
 contextuel:Mistral_Provisioning_Magistral_Small_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Magistral Small 1.2" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"magistral-small-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Magistral_Small_Latest .
 
@@ -216,31 +233,37 @@ contextuel:Mistral_Provisioning_Mathstral_7b_0_1 a enki:LLMProvisioning ;
 
 contextuel:Mistral_Provisioning_Ministral_14b_2512 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Ministral 3 14B" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"ministral-14b-2512\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Ministral_14b_2512 .
 
 contextuel:Mistral_Provisioning_Ministral_14b_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Ministral 3 14B" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"ministral-14b-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Ministral_14b_Latest .
 
 contextuel:Mistral_Provisioning_Ministral_3b_2512 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Ministral 3B" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"ministral-3b-2512\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Ministral_3b_2512 .
 
 contextuel:Mistral_Provisioning_Ministral_3b_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Ministral 3B" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"ministral-3b-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Ministral_3b_Latest .
 
 contextuel:Mistral_Provisioning_Ministral_8b_2512 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Ministral 8B" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"ministral-8b-2512\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Ministral_8b_2512 .
 
 contextuel:Mistral_Provisioning_Ministral_8b_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Ministral 8B" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"ministral-8b-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Ministral_8b_Latest .
 
@@ -261,11 +284,13 @@ contextuel:Mistral_Provisioning_Mistral_7b_0_3 a enki:LLMProvisioning ;
 
 contextuel:Mistral_Provisioning_Mistral_Embed a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Embed" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/embeddings -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-embed\",\"input\":[\"Hello world\"]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Embed .
 
 contextuel:Mistral_Provisioning_Mistral_Embed_2312 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Embed" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/embeddings -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-embed-2312\",\"input\":[\"Hello world\"]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Embed_2312 .
 
@@ -281,26 +306,31 @@ contextuel:Mistral_Provisioning_Mistral_Large_2407 a enki:LLMProvisioning ;
 
 contextuel:Mistral_Provisioning_Mistral_Large_2411 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Large 2.1" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-large-2411\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Large_2411 .
 
 contextuel:Mistral_Provisioning_Mistral_Large_2512 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Large 3" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-large-2512\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Large_2512 .
 
 contextuel:Mistral_Provisioning_Mistral_Large_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Large 3" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-large-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Large_Latest .
 
 contextuel:Mistral_Provisioning_Mistral_Large_Pixtral_2411 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Large 3" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-large-pixtral-2411\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Large_Pixtral_2411 .
 
 contextuel:Mistral_Provisioning_Mistral_Medium a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Medium 3.1" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-medium\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Medium .
 
@@ -311,26 +341,31 @@ contextuel:Mistral_Provisioning_Mistral_Medium_2312 a enki:LLMProvisioning ;
 
 contextuel:Mistral_Provisioning_Mistral_Medium_2505 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Medium 3" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-medium-2505\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Medium_2505 .
 
 contextuel:Mistral_Provisioning_Mistral_Medium_2508 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Medium 3.1" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-medium-2508\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Medium_2508 .
 
 contextuel:Mistral_Provisioning_Mistral_Medium_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Medium 3.1" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-medium-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Medium_Latest .
 
 contextuel:Mistral_Provisioning_Mistral_Moderation_2411 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Moderation" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-moderation-2411\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Moderation_2411 .
 
 contextuel:Mistral_Provisioning_Mistral_Moderation_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Moderation" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-moderation-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Moderation_Latest .
 
@@ -346,21 +381,25 @@ contextuel:Mistral_Provisioning_Mistral_Next a enki:LLMProvisioning ;
 
 contextuel:Mistral_Provisioning_Mistral_Ocr_2503 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Large 3" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-ocr-2503\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Ocr_2503 .
 
 contextuel:Mistral_Provisioning_Mistral_Ocr_2505 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Large 3" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-ocr-2505\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Ocr_2505 .
 
 contextuel:Mistral_Provisioning_Mistral_Ocr_2512 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Large 3" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-ocr-2512\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Ocr_2512 .
 
 contextuel:Mistral_Provisioning_Mistral_Ocr_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Large 3" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-ocr-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Ocr_Latest .
 
@@ -391,6 +430,7 @@ contextuel:Mistral_Provisioning_Mistral_Small_2503 a enki:LLMProvisioning ;
 
 contextuel:Mistral_Provisioning_Mistral_Small_2506 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Small 3.2" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-small-2506\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Small_2506 .
 
@@ -401,26 +441,31 @@ contextuel:Mistral_Provisioning_Mistral_Small_Creative_25_12 a enki:LLMProvision
 
 contextuel:Mistral_Provisioning_Mistral_Small_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Small 3.2" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-small-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Small_Latest .
 
 contextuel:Mistral_Provisioning_Mistral_Tiny_2407 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Large 3" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-tiny-2407\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Tiny_2407 .
 
 contextuel:Mistral_Provisioning_Mistral_Tiny_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Large 3" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-tiny-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Tiny_Latest .
 
 contextuel:Mistral_Provisioning_Mistral_Vibe_Cli_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Large 3" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-vibe-cli-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Vibe_Cli_Latest .
 
 contextuel:Mistral_Provisioning_Mistral_Vibe_Cli_With_Tools a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Mistral Large 3" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"mistral-vibe-cli-with-tools\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Mistral_Vibe_Cli_With_Tools .
 
@@ -436,11 +481,13 @@ contextuel:Mistral_Provisioning_Mixtral_8x7b_0_1 a enki:LLMProvisioning ;
 
 contextuel:Mistral_Provisioning_Open_Mistral_Nemo a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of open-mistral-nemo" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"open-mistral-nemo\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Open_Mistral_Nemo .
 
 contextuel:Mistral_Provisioning_Open_Mistral_Nemo_2407 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of open-mistral-nemo-2407" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"open-mistral-nemo-2407\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Open_Mistral_Nemo_2407 .
 
@@ -451,31 +498,37 @@ contextuel:Mistral_Provisioning_Pixtral_12b_2409 a enki:LLMProvisioning ;
 
 contextuel:Mistral_Provisioning_Pixtral_Large_2411 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Pixtral Large" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"pixtral-large-2411\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Pixtral_Large_2411 .
 
 contextuel:Mistral_Provisioning_Pixtral_Large_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Pixtral Large" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"pixtral-large-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Pixtral_Large_Latest .
 
 contextuel:Mistral_Provisioning_Voxtral_Mini_2507 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Voxtral Mini Transcribe" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"voxtral-mini-2507\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Voxtral_Mini_2507 .
 
 contextuel:Mistral_Provisioning_Voxtral_Mini_2602 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Voxtral Mini Transcribe 2" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"voxtral-mini-2602\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Voxtral_Mini_2602 .
 
 contextuel:Mistral_Provisioning_Voxtral_Mini_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Voxtral Mini Transcribe" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"voxtral-mini-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Voxtral_Mini_Latest .
 
 contextuel:Mistral_Provisioning_Voxtral_Mini_Transcribe_2507 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Voxtral Mini Transcribe" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"voxtral-mini-transcribe-2507\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Voxtral_Mini_Transcribe_2507 .
 
@@ -486,11 +539,13 @@ contextuel:Mistral_Provisioning_Voxtral_Mini_Transcribe_Realtime_2602 a enki:LLM
 
 contextuel:Mistral_Provisioning_Voxtral_Small_2507 a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Voxtral Small" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"voxtral-small-2507\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Voxtral_Small_2507 .
 
 contextuel:Mistral_Provisioning_Voxtral_Small_Latest a enki:LLMProvisioning ;
     rdfs:label "Mistral provisioning of Voxtral Small" ;
+    enki:curlExample "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer $MISTRAL_API_KEY\" -H \"Content-Type: application/json\" -d '\\{\"model\":\"voxtral-small-latest\",\"messages\":[\\{\"role\":\"user\",\"content\":\"Hello\"}]}'" ;
     enki:provider contextuel:Mistral ;
     enki:provides contextuel:Voxtral_Small_Latest .
 
@@ -521,19 +576,33 @@ contextuel:Codestral_2508 a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Codestral_2508_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Codestral_2508_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Codestral_2508 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Codestral_2508_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Codestral_2508 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.3 .
 
-contextuel:Codestral_2508_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Codestral_2508_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Codestral_2508 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 0.9 .
+
+contextuel:Codestral_2508_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Codestral_2508 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Codestral_Embed a enki:LLM ;
     dct:description "Our state-of-the-art semantic for extracting representation of code extracts" ;
@@ -544,19 +613,33 @@ contextuel:Codestral_Embed a enki:LLM ;
     enki:hasMaxContextWindowTokens "8000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Codestral_Embed_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Codestral_Embed_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Codestral_Embed ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Codestral_Embed_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Codestral_Embed ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.15 .
 
-contextuel:Codestral_Embed_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Codestral_Embed_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Codestral_Embed ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.0 .
+
+contextuel:Codestral_Embed_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Codestral_Embed ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 4 .
 
 contextuel:Codestral_Embed_2505 a enki:LLM ;
     dct:description "Our state-of-the-art semantic for extracting representation of code extracts" ;
@@ -567,19 +650,33 @@ contextuel:Codestral_Embed_2505 a enki:LLM ;
     enki:hasMaxContextWindowTokens "8000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Codestral_Embed_2505_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Codestral_Embed_2505_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Codestral_Embed_2505 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Codestral_Embed_2505_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Codestral_Embed_2505 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.15 .
 
-contextuel:Codestral_Embed_2505_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Codestral_Embed_2505_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Codestral_Embed_2505 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.0 .
+
+contextuel:Codestral_Embed_2505_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Codestral_Embed_2505 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 4 .
 
 contextuel:Codestral_Latest a enki:LLM ;
     dct:description "Our cutting-edge language model for code completion released end of July 2025, Codestral specializes in low-latency, high-frequency tasks such as fill-in-the-middle (FIM) and code generation." ;
@@ -590,19 +687,33 @@ contextuel:Codestral_Latest a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Codestral_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Codestral_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Codestral_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Codestral_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Codestral_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.3 .
 
-contextuel:Codestral_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Codestral_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Codestral_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 0.9 .
+
+contextuel:Codestral_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Codestral_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Codestral_Mamba_7b_0_1 a enki:LLM ;
     dct:description "A coding dedicated model using a mamba 2 architecture for research purposes under an open license." ;
@@ -622,19 +733,33 @@ contextuel:Devstral_2512 a enki:LLM ;
     enki:hasMaxContextWindowTokens "256000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Devstral_2512_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Devstral_2512_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Devstral_2512 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Devstral_2512_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Devstral_2512 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.4 .
 
-contextuel:Devstral_2512_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Devstral_2512_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Devstral_2512 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 2.0 .
+
+contextuel:Devstral_2512_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Devstral_2512 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Devstral_Latest a enki:LLM ;
     dct:description "Our frontier code agents model for solving software engineering tasks; excels at using tools to explore codebases, editing multiple files and power software engineering agents." ;
@@ -645,19 +770,33 @@ contextuel:Devstral_Latest a enki:LLM ;
     enki:hasMaxContextWindowTokens "256000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Devstral_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Devstral_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Devstral_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Devstral_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Devstral_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.4 .
 
-contextuel:Devstral_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Devstral_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Devstral_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 2.0 .
+
+contextuel:Devstral_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Devstral_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Devstral_Medium_2507 a enki:LLM ;
     dct:description "An enterprise grade text model, that excels at using tools to explore codebases, editing multiple files and power software engineering agents." ;
@@ -668,19 +807,33 @@ contextuel:Devstral_Medium_2507 a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Devstral_Medium_2507_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Devstral_Medium_2507_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Devstral_Medium_2507 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Devstral_Medium_2507_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Devstral_Medium_2507 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.4 .
 
-contextuel:Devstral_Medium_2507_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Devstral_Medium_2507_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Devstral_Medium_2507 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 2.0 .
+
+contextuel:Devstral_Medium_2507_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Devstral_Medium_2507 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Devstral_Medium_Latest a enki:LLM ;
     dct:description "An enterprise grade text model, that excels at using tools to explore codebases, editing multiple files and power software engineering agents." ;
@@ -691,19 +844,33 @@ contextuel:Devstral_Medium_Latest a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Devstral_Medium_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Devstral_Medium_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Devstral_Medium_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Devstral_Medium_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Devstral_Medium_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.4 .
 
-contextuel:Devstral_Medium_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Devstral_Medium_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Devstral_Medium_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 2.0 .
+
+contextuel:Devstral_Medium_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Devstral_Medium_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Devstral_Small_2505 a enki:LLM ;
     dct:description "A 24B text model, open source model that excels at using tools to explore codebases, editing multiple files and power software engineering agents." ;
@@ -723,19 +890,33 @@ contextuel:Devstral_Small_2507 a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Devstral_Small_2507_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Devstral_Small_2507_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Devstral_Small_2507 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Devstral_Small_2507_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Devstral_Small_2507 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.1 .
 
-contextuel:Devstral_Small_2507_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Devstral_Small_2507_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Devstral_Small_2507 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 0.3 .
+
+contextuel:Devstral_Small_2507_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Devstral_Small_2507 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Devstral_Small_Latest a enki:LLM ;
     dct:description "Our open source model that excels at using tools to explore codebases, editing multiple files and power software engineering agents." ;
@@ -747,19 +928,33 @@ contextuel:Devstral_Small_Latest a enki:LLM ;
     enki:hasMaxContextWindowTokens "256000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Devstral_Small_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Devstral_Small_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Devstral_Small_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Devstral_Small_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Devstral_Small_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
-    enki:metricValue 0.0 .
+    enki:metricValue 0.1 .
 
-contextuel:Devstral_Small_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Devstral_Small_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Devstral_Small_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 0.3 .
+
+contextuel:Devstral_Small_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Devstral_Small_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Labs_Devstral_Small_2512 a enki:LLM ;
     dct:identifier "labs-devstral-small-2512" ;
@@ -799,19 +994,33 @@ contextuel:Magistral_Medium_2509 a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Magistral_Medium_2509_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Magistral_Medium_2509_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Magistral_Medium_2509 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Magistral_Medium_2509_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Magistral_Medium_2509 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 2.0 .
 
-contextuel:Magistral_Medium_2509_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Magistral_Medium_2509_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Magistral_Medium_2509 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 5.0 .
+
+contextuel:Magistral_Medium_2509_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Magistral_Medium_2509 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Magistral_Medium_Latest a enki:LLM ;
     dct:description "Our frontier-class multimodal reasoning model update of September 2025." ;
@@ -823,19 +1032,33 @@ contextuel:Magistral_Medium_Latest a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Magistral_Medium_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Magistral_Medium_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Magistral_Medium_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Magistral_Medium_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Magistral_Medium_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 2.0 .
 
-contextuel:Magistral_Medium_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Magistral_Medium_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Magistral_Medium_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 5.0 .
+
+contextuel:Magistral_Medium_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Magistral_Medium_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Magistral_Small_2506 a enki:LLM ;
     dct:description "Our first small reasoning model released June 2025. Learn more in our blog post" ;
@@ -865,19 +1088,33 @@ contextuel:Magistral_Small_2509 a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Magistral_Small_2509_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Magistral_Small_2509_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Magistral_Small_2509 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Magistral_Small_2509_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Magistral_Small_2509 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.5 .
 
-contextuel:Magistral_Small_2509_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Magistral_Small_2509_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Magistral_Small_2509 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.5 .
+
+contextuel:Magistral_Small_2509_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Magistral_Small_2509 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Magistral_Small_Latest a enki:LLM ;
     dct:description "Our small multimodal reasoning model update of September 2025." ;
@@ -889,19 +1126,33 @@ contextuel:Magistral_Small_Latest a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Magistral_Small_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Magistral_Small_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Magistral_Small_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Magistral_Small_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Magistral_Small_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.5 .
 
-contextuel:Magistral_Small_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Magistral_Small_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Magistral_Small_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.5 .
+
+contextuel:Magistral_Small_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Magistral_Small_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Mathstral_7b_0_1 a enki:LLM ;
     dct:description "A math dedicated model for research purposes under an open license." ;
@@ -922,19 +1173,33 @@ contextuel:Ministral_14b_2512 a enki:LLM ;
     enki:hasMaxContextWindowTokens "256000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Ministral_14b_2512_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Ministral_14b_2512_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Ministral_14b_2512 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 2 .
+
+contextuel:Ministral_14b_2512_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Ministral_14b_2512 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.2 .
 
-contextuel:Ministral_14b_2512_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Ministral_14b_2512_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Ministral_14b_2512 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.0 .
+
+contextuel:Ministral_14b_2512_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Ministral_14b_2512 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Ministral_14b_Latest a enki:LLM ;
     dct:description "Ministral 3 14B is the largest model in the Ministral 3 family, offering state-of-the-art capabilities and performance comparable to its larger Mistral Small 3.2 24B counterpart. Optimized for local deployment, it delivers high performance across diverse hardware, including local setups." ;
@@ -946,19 +1211,33 @@ contextuel:Ministral_14b_Latest a enki:LLM ;
     enki:hasMaxContextWindowTokens "256000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Ministral_14b_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Ministral_14b_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Ministral_14b_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 2 .
+
+contextuel:Ministral_14b_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Ministral_14b_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.2 .
 
-contextuel:Ministral_14b_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Ministral_14b_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Ministral_14b_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.0 .
+
+contextuel:Ministral_14b_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Ministral_14b_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Ministral_3b_2512 a enki:LLM ;
     dct:description "World’s best edge model." ;
@@ -1036,19 +1315,33 @@ contextuel:Mistral_Embed a enki:LLM ;
     enki:hasMaxContextWindowTokens "8000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Mistral_Embed_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Embed_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Embed ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 2 .
+
+contextuel:Mistral_Embed_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Embed ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.1 .
 
-contextuel:Mistral_Embed_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Embed_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Embed ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.0 .
+
+contextuel:Mistral_Embed_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Embed ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 4 .
 
 contextuel:Mistral_Embed_2312 a enki:LLM ;
     dct:description "Our state-of-the-art semantic for extracting representation of code extracts" ;
@@ -1059,19 +1352,33 @@ contextuel:Mistral_Embed_2312 a enki:LLM ;
     enki:hasMaxContextWindowTokens "8000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Mistral_Embed_2312_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Embed_2312_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Embed_2312 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 2 .
+
+contextuel:Mistral_Embed_2312_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Embed_2312 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.1 .
 
-contextuel:Mistral_Embed_2312_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Embed_2312_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Embed_2312 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.0 .
+
+contextuel:Mistral_Embed_2312_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Embed_2312 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 4 .
 
 contextuel:Mistral_Large_2402 a enki:LLM ;
     dct:description "Our first and larger SOTA model for enterprise use cases with powerfull chat capabilities." ;
@@ -1100,19 +1407,33 @@ contextuel:Mistral_Large_2411 a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Mistral_Large_2411_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Large_2411_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Large_2411 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Large_2411_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Large_2411 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 2.0 .
 
-contextuel:Mistral_Large_2411_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Large_2411_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Large_2411 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 6.0 .
+
+contextuel:Mistral_Large_2411_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Large_2411 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 1 .
 
 contextuel:Mistral_Large_2512 a enki:LLM ;
     dct:description "Mistral Large 3, is a state-of-the-art, open-weight, general-purpose multimodal model with a granular Mixture-of-Experts architecture. It features 41B active parameters and 675B total parameters." ;
@@ -1125,19 +1446,33 @@ contextuel:Mistral_Large_2512 a enki:LLM ;
     enki:hasOutputModality contextuel:TextModality ;
     enki:hasTotalParameterCount "675000000000"^^xsd:nonNegativeInteger .
 
-contextuel:Mistral_Large_2512_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Large_2512_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Large_2512 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Large_2512_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Large_2512 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.5 .
 
-contextuel:Mistral_Large_2512_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Large_2512_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Large_2512 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.5 .
+
+contextuel:Mistral_Large_2512_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Large_2512 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mistral_Large_Latest a enki:LLM ;
     dct:description "Mistral Large 3, is a state-of-the-art, open-weight, general-purpose multimodal model with a granular Mixture-of-Experts architecture. It features 41B active parameters and 675B total parameters." ;
@@ -1150,19 +1485,33 @@ contextuel:Mistral_Large_Latest a enki:LLM ;
     enki:hasOutputModality contextuel:TextModality ;
     enki:hasTotalParameterCount "675000000000"^^xsd:nonNegativeInteger .
 
-contextuel:Mistral_Large_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Large_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Large_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Large_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Large_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.5 .
 
-contextuel:Mistral_Large_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Large_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Large_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.5 .
+
+contextuel:Mistral_Large_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Large_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mistral_Large_Pixtral_2411 a enki:LLM ;
     dct:description "Mistral Large 3, is a state-of-the-art, open-weight, general-purpose multimodal model with a granular Mixture-of-Experts architecture. It features 41B active parameters and 675B total parameters." ;
@@ -1175,19 +1524,33 @@ contextuel:Mistral_Large_Pixtral_2411 a enki:LLM ;
     enki:hasOutputModality contextuel:TextModality ;
     enki:hasTotalParameterCount "675000000000"^^xsd:nonNegativeInteger .
 
-contextuel:Mistral_Large_Pixtral_2411_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Large_Pixtral_2411_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Large_Pixtral_2411 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Large_Pixtral_2411_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Large_Pixtral_2411 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.5 .
 
-contextuel:Mistral_Large_Pixtral_2411_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Large_Pixtral_2411_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Large_Pixtral_2411 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.5 .
+
+contextuel:Mistral_Large_Pixtral_2411_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Large_Pixtral_2411 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mistral_Medium a enki:LLM ;
     dct:description "Our frontier-class multimodal model released August 2025. Improving tone and performance." ;
@@ -1199,19 +1562,33 @@ contextuel:Mistral_Medium a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Mistral_Medium_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Medium_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Medium ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Medium_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Medium ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.4 .
 
-contextuel:Mistral_Medium_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Medium_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Medium ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 2.0 .
+
+contextuel:Mistral_Medium_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Medium ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mistral_Medium_2312 a enki:LLM ;
     dct:description "Our first SOTA enterprise grade model." ;
@@ -1232,19 +1609,33 @@ contextuel:Mistral_Medium_2505 a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Mistral_Medium_2505_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Medium_2505_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Medium_2505 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Medium_2505_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Medium_2505 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.4 .
 
-contextuel:Mistral_Medium_2505_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Medium_2505_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Medium_2505 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 2.0 .
+
+contextuel:Mistral_Medium_2505_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Medium_2505 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mistral_Medium_2508 a enki:LLM ;
     dct:description "Our frontier-class multimodal model released August 2025. Improving tone and performance." ;
@@ -1256,19 +1647,33 @@ contextuel:Mistral_Medium_2508 a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Mistral_Medium_2508_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Medium_2508_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Medium_2508 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Medium_2508_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Medium_2508 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.4 .
 
-contextuel:Mistral_Medium_2508_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Medium_2508_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Medium_2508 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 2.0 .
+
+contextuel:Mistral_Medium_2508_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Medium_2508 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mistral_Medium_Latest a enki:LLM ;
     dct:description "Our frontier-class multimodal model released August 2025. Improving tone and performance." ;
@@ -1280,19 +1685,33 @@ contextuel:Mistral_Medium_Latest a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Mistral_Medium_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Medium_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Medium_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Medium_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Medium_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.4 .
 
-contextuel:Mistral_Medium_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Medium_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Medium_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 2.0 .
+
+contextuel:Mistral_Medium_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Medium_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mistral_Moderation_2411 a enki:LLM ;
     dct:description "Our moderation service that enables our users to detect harmful text content" ;
@@ -1303,19 +1722,33 @@ contextuel:Mistral_Moderation_2411 a enki:LLM ;
     enki:hasMaxContextWindowTokens "8000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Mistral_Moderation_2411_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Moderation_2411_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Moderation_2411 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Mistral_Moderation_2411_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Moderation_2411 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.1 .
 
-contextuel:Mistral_Moderation_2411_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Moderation_2411_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Moderation_2411 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.0 .
+
+contextuel:Mistral_Moderation_2411_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Moderation_2411 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 4 .
 
 contextuel:Mistral_Moderation_Latest a enki:LLM ;
     dct:description "Our moderation service that enables our users to detect harmful text content" ;
@@ -1326,19 +1759,33 @@ contextuel:Mistral_Moderation_Latest a enki:LLM ;
     enki:hasMaxContextWindowTokens "8000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Mistral_Moderation_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Moderation_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Moderation_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Mistral_Moderation_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Moderation_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.1 .
 
-contextuel:Mistral_Moderation_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Moderation_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Moderation_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.0 .
+
+contextuel:Mistral_Moderation_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Moderation_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 4 .
 
 contextuel:Mistral_Nemo_2407 a enki:LLM ;
     dct:description "Our best multilingual open source model released July 2024." ;
@@ -1349,19 +1796,33 @@ contextuel:Mistral_Nemo_2407 a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Mistral_Nemo_2407_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Nemo_2407_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Nemo_2407 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 2 .
+
+contextuel:Mistral_Nemo_2407_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Nemo_2407 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.15 .
 
-contextuel:Mistral_Nemo_2407_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Nemo_2407_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Nemo_2407 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.0 .
+
+contextuel:Mistral_Nemo_2407_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Nemo_2407 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Mistral_Next a enki:LLM ;
     dct:description "A prototype model, designed to be brief and concise." ;
@@ -1382,19 +1843,33 @@ contextuel:Mistral_Ocr_2503 a enki:LLM ;
     enki:hasOutputModality contextuel:TextModality ;
     enki:hasTotalParameterCount "675000000000"^^xsd:nonNegativeInteger .
 
-contextuel:Mistral_Ocr_2503_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Ocr_2503_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Ocr_2503 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Ocr_2503_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Ocr_2503 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.5 .
 
-contextuel:Mistral_Ocr_2503_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Ocr_2503_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Ocr_2503 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.5 .
+
+contextuel:Mistral_Ocr_2503_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Ocr_2503 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mistral_Ocr_2505 a enki:LLM ;
     dct:description "Mistral Large 3, is a state-of-the-art, open-weight, general-purpose multimodal model with a granular Mixture-of-Experts architecture. It features 41B active parameters and 675B total parameters." ;
@@ -1407,19 +1882,33 @@ contextuel:Mistral_Ocr_2505 a enki:LLM ;
     enki:hasOutputModality contextuel:TextModality ;
     enki:hasTotalParameterCount "675000000000"^^xsd:nonNegativeInteger .
 
-contextuel:Mistral_Ocr_2505_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Ocr_2505_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Ocr_2505 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Ocr_2505_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Ocr_2505 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.5 .
 
-contextuel:Mistral_Ocr_2505_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Ocr_2505_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Ocr_2505 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.5 .
+
+contextuel:Mistral_Ocr_2505_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Ocr_2505 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mistral_Ocr_2512 a enki:LLM ;
     dct:description "Mistral Large 3, is a state-of-the-art, open-weight, general-purpose multimodal model with a granular Mixture-of-Experts architecture. It features 41B active parameters and 675B total parameters." ;
@@ -1432,19 +1921,33 @@ contextuel:Mistral_Ocr_2512 a enki:LLM ;
     enki:hasOutputModality contextuel:TextModality ;
     enki:hasTotalParameterCount "675000000000"^^xsd:nonNegativeInteger .
 
-contextuel:Mistral_Ocr_2512_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Ocr_2512_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Ocr_2512 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Ocr_2512_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Ocr_2512 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.5 .
 
-contextuel:Mistral_Ocr_2512_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Ocr_2512_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Ocr_2512 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.5 .
+
+contextuel:Mistral_Ocr_2512_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Ocr_2512 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mistral_Ocr_Latest a enki:LLM ;
     dct:description "Mistral Large 3, is a state-of-the-art, open-weight, general-purpose multimodal model with a granular Mixture-of-Experts architecture. It features 41B active parameters and 675B total parameters." ;
@@ -1457,19 +1960,33 @@ contextuel:Mistral_Ocr_Latest a enki:LLM ;
     enki:hasOutputModality contextuel:TextModality ;
     enki:hasTotalParameterCount "675000000000"^^xsd:nonNegativeInteger .
 
-contextuel:Mistral_Ocr_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Ocr_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Ocr_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Ocr_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Ocr_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.5 .
 
-contextuel:Mistral_Ocr_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Ocr_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Ocr_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.5 .
+
+contextuel:Mistral_Ocr_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Ocr_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mistral_Saba_2502 a enki:LLM ;
     dct:description "A finetuned Small model trained on meticulously curated datasets from across the Middle East and South Asia." ;
@@ -1526,19 +2043,33 @@ contextuel:Mistral_Small_2506 a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Mistral_Small_2506_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Small_2506_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Small_2506 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Mistral_Small_2506_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Small_2506 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.1 .
 
-contextuel:Mistral_Small_2506_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Small_2506_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Small_2506 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 0.3 .
+
+contextuel:Mistral_Small_2506_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Small_2506 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Mistral_Small_Creative_25_12 a enki:LLM ;
     dct:description "An experimental specialized small model trained on meticulously curated data, designed for creative writing, narrative generation, roleplay and character-driven dialog, general-purpose instruction following and conversational agents." ;
@@ -1549,19 +2080,33 @@ contextuel:Mistral_Small_Creative_25_12 a enki:LLM ;
     enki:hasMaxContextWindowTokens "32000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Mistral_Small_Creative_25_12_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Small_Creative_25_12_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Small_Creative_25_12 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Mistral_Small_Creative_25_12_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Small_Creative_25_12 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.1 .
 
-contextuel:Mistral_Small_Creative_25_12_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Small_Creative_25_12_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Small_Creative_25_12 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 0.3 .
+
+contextuel:Mistral_Small_Creative_25_12_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Small_Creative_25_12 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Mistral_Small_Latest a enki:LLM ;
     dct:description "An update to our previous small model, released June 2025." ;
@@ -1573,19 +2118,33 @@ contextuel:Mistral_Small_Latest a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Mistral_Small_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Small_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Small_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Mistral_Small_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Small_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.1 .
 
-contextuel:Mistral_Small_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Small_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Small_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 0.3 .
+
+contextuel:Mistral_Small_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Small_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Mistral_Tiny_2407 a enki:LLM ;
     dct:description "Mistral Large 3, is a state-of-the-art, open-weight, general-purpose multimodal model with a granular Mixture-of-Experts architecture. It features 41B active parameters and 675B total parameters." ;
@@ -1597,19 +2156,33 @@ contextuel:Mistral_Tiny_2407 a enki:LLM ;
     enki:hasOutputModality contextuel:TextModality ;
     enki:hasTotalParameterCount "675000000000"^^xsd:nonNegativeInteger .
 
-contextuel:Mistral_Tiny_2407_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Tiny_2407_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Tiny_2407 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Tiny_2407_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Tiny_2407 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.5 .
 
-contextuel:Mistral_Tiny_2407_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Tiny_2407_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Tiny_2407 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.5 .
+
+contextuel:Mistral_Tiny_2407_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Tiny_2407 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mistral_Tiny_Latest a enki:LLM ;
     dct:description "Mistral Large 3, is a state-of-the-art, open-weight, general-purpose multimodal model with a granular Mixture-of-Experts architecture. It features 41B active parameters and 675B total parameters." ;
@@ -1621,19 +2194,33 @@ contextuel:Mistral_Tiny_Latest a enki:LLM ;
     enki:hasOutputModality contextuel:TextModality ;
     enki:hasTotalParameterCount "675000000000"^^xsd:nonNegativeInteger .
 
-contextuel:Mistral_Tiny_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Tiny_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Tiny_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Tiny_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Tiny_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.5 .
 
-contextuel:Mistral_Tiny_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Tiny_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Tiny_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.5 .
+
+contextuel:Mistral_Tiny_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Tiny_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mistral_Vibe_Cli_Latest a enki:LLM ;
     dct:description "Mistral Large 3, is a state-of-the-art, open-weight, general-purpose multimodal model with a granular Mixture-of-Experts architecture. It features 41B active parameters and 675B total parameters." ;
@@ -1645,19 +2232,33 @@ contextuel:Mistral_Vibe_Cli_Latest a enki:LLM ;
     enki:hasOutputModality contextuel:TextModality ;
     enki:hasTotalParameterCount "675000000000"^^xsd:nonNegativeInteger .
 
-contextuel:Mistral_Vibe_Cli_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Vibe_Cli_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Vibe_Cli_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Vibe_Cli_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Vibe_Cli_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.5 .
 
-contextuel:Mistral_Vibe_Cli_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Vibe_Cli_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Vibe_Cli_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.5 .
+
+contextuel:Mistral_Vibe_Cli_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Vibe_Cli_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mistral_Vibe_Cli_With_Tools a enki:LLM ;
     dct:description "Mistral Large 3, is a state-of-the-art, open-weight, general-purpose multimodal model with a granular Mixture-of-Experts architecture. It features 41B active parameters and 675B total parameters." ;
@@ -1670,19 +2271,33 @@ contextuel:Mistral_Vibe_Cli_With_Tools a enki:LLM ;
     enki:hasOutputModality contextuel:TextModality ;
     enki:hasTotalParameterCount "675000000000"^^xsd:nonNegativeInteger .
 
-contextuel:Mistral_Vibe_Cli_With_Tools_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Vibe_Cli_With_Tools_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Mistral_Vibe_Cli_With_Tools ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Mistral_Vibe_Cli_With_Tools_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Vibe_Cli_With_Tools ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.5 .
 
-contextuel:Mistral_Vibe_Cli_With_Tools_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Mistral_Vibe_Cli_With_Tools_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Mistral_Vibe_Cli_With_Tools ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 1.5 .
+
+contextuel:Mistral_Vibe_Cli_With_Tools_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Mistral_Vibe_Cli_With_Tools ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 2 .
 
 contextuel:Mixtral_8x22b_0_1_0_3 a enki:LLM ;
     dct:description "A large open MoE model competing with much larger dense models." ;
@@ -1731,19 +2346,33 @@ contextuel:Pixtral_Large_2411 a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Pixtral_Large_2411_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Pixtral_Large_2411_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Pixtral_Large_2411 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Pixtral_Large_2411_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Pixtral_Large_2411 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 2.0 .
 
-contextuel:Pixtral_Large_2411_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Pixtral_Large_2411_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Pixtral_Large_2411 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 6.0 .
+
+contextuel:Pixtral_Large_2411_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Pixtral_Large_2411 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 1 .
 
 contextuel:Pixtral_Large_Latest a enki:LLM ;
     dct:description "Our first frontier-class multimodal model released November 2024. Learn more in our blog post" ;
@@ -1755,19 +2384,33 @@ contextuel:Pixtral_Large_Latest a enki:LLM ;
     enki:hasMaxContextWindowTokens "128000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Pixtral_Large_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Pixtral_Large_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Pixtral_Large_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 4 .
+
+contextuel:Pixtral_Large_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Pixtral_Large_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 2.0 .
 
-contextuel:Pixtral_Large_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Pixtral_Large_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Pixtral_Large_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 6.0 .
+
+contextuel:Pixtral_Large_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Pixtral_Large_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 1 .
 
 contextuel:Voxtral_Mini_2507 a enki:LLM ;
     dct:description "An efficient audio input model, fine-tuned and optimized for transcription purposes only." ;
@@ -1779,6 +2422,20 @@ contextuel:Voxtral_Mini_2507 a enki:LLM ;
     enki:hasMaxContextWindowTokens "32000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
+contextuel:Voxtral_Mini_2507_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Voxtral_Mini_2507 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Voxtral_Mini_2507_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Voxtral_Mini_2507 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 4 .
+
 contextuel:Voxtral_Mini_2602 a enki:LLM ;
     dct:description "An efficient audio input model, fine-tuned and optimized for transcription purposes only." ;
     dct:identifier "https://docs.mistral.ai/models/voxtral-mini-transcribe-26-02" ;
@@ -1788,6 +2445,20 @@ contextuel:Voxtral_Mini_2602 a enki:LLM ;
     enki:hasKnowledgeCutoff "2026-02"^^xsd:gYearMonth ;
     enki:hasMaxContextWindowTokens "16384"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
+
+contextuel:Voxtral_Mini_2602_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Voxtral_Mini_2602 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Voxtral_Mini_2602_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Voxtral_Mini_2602 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 4 .
 
 contextuel:Voxtral_Mini_Latest a enki:LLM ;
     dct:description "An efficient audio input model, fine-tuned and optimized for transcription purposes only." ;
@@ -1799,6 +2470,20 @@ contextuel:Voxtral_Mini_Latest a enki:LLM ;
     enki:hasMaxContextWindowTokens "32000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
+contextuel:Voxtral_Mini_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Voxtral_Mini_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Voxtral_Mini_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Voxtral_Mini_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 4 .
+
 contextuel:Voxtral_Mini_Transcribe_2507 a enki:LLM ;
     dct:description "An efficient audio input model, fine-tuned and optimized for transcription purposes only." ;
     dct:identifier "https://docs.mistral.ai/models/voxtral-mini-transcribe-25-07" ;
@@ -1809,6 +2494,20 @@ contextuel:Voxtral_Mini_Transcribe_2507 a enki:LLM ;
     enki:hasMaxContextWindowTokens "32000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
+contextuel:Voxtral_Mini_Transcribe_2507_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Voxtral_Mini_Transcribe_2507 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Voxtral_Mini_Transcribe_2507_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Voxtral_Mini_Transcribe_2507 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 4 .
+
 contextuel:Voxtral_Mini_Transcribe_Realtime_2602 a enki:LLM ;
     dct:description "An efficient audio input model, fine-tuned and optimized for live transcription purposes only." ;
     dct:identifier "https://docs.mistral.ai/models/voxtral-mini-transcribe-realtime-26-02" ;
@@ -1817,6 +2516,20 @@ contextuel:Voxtral_Mini_Transcribe_Realtime_2602 a enki:LLM ;
     enki:hasInputModality contextuel:TextModality ;
     enki:hasKnowledgeCutoff "2026-02"^^xsd:gYearMonth ;
     enki:hasOutputModality contextuel:TextModality .
+
+contextuel:Voxtral_Mini_Transcribe_Realtime_2602_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Voxtral_Mini_Transcribe_Realtime_2602 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Voxtral_Mini_Transcribe_Realtime_2602_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Voxtral_Mini_Transcribe_Realtime_2602 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 4 .
 
 contextuel:Voxtral_Small_2507 a enki:LLM ;
     dct:description "Our first model with audio input capabilities for instruct use cases." ;
@@ -1828,19 +2541,33 @@ contextuel:Voxtral_Small_2507 a enki:LLM ;
     enki:hasMaxContextWindowTokens "32000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Voxtral_Small_2507_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Voxtral_Small_2507_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Voxtral_Small_2507 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Voxtral_Small_2507_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Voxtral_Small_2507 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.004 .
 
-contextuel:Voxtral_Small_2507_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Voxtral_Small_2507_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Voxtral_Small_2507 ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 0.3 .
+
+contextuel:Voxtral_Small_2507_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Voxtral_Small_2507 ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 
 contextuel:Voxtral_Small_Latest a enki:LLM ;
     dct:description "Our first model with audio input capabilities for instruct use cases." ;
@@ -1852,17 +2579,31 @@ contextuel:Voxtral_Small_Latest a enki:LLM ;
     enki:hasMaxContextWindowTokens "32000"^^xsd:nonNegativeInteger ;
     enki:hasOutputModality contextuel:TextModality .
 
-contextuel:Voxtral_Small_Latest_Price_1M_Input_Tokens a enki:EvaluatedMetric ;
+contextuel:Voxtral_Small_Latest_Performance_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Quality ;
+    enki:metricAssignee contextuel:Voxtral_Small_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Performance Rating (1-5)" ;
+    enki:metricValue 3 .
+
+contextuel:Voxtral_Small_Latest_Price_1M_Input_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Voxtral_Small_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Input Tokens ($)" ;
     enki:metricValue 0.004 .
 
-contextuel:Voxtral_Small_Latest_Price_1M_Output_Tokens a enki:EvaluatedMetric ;
+contextuel:Voxtral_Small_Latest_Price_1M_Output_Tokens a enki:ClaimedMetric ;
     enki:metricAssesses contextuel:Cost ;
     enki:metricAssignee contextuel:Voxtral_Small_Latest ;
     enki:metricAssigner contextuel:Mistral ;
     enki:metricUnit "Price per 1M Output Tokens ($)" ;
     enki:metricValue 0.3 .
+
+contextuel:Voxtral_Small_Latest_Speed_Rating a enki:ClaimedMetric ;
+    enki:metricAssesses contextuel:Latency ;
+    enki:metricAssignee contextuel:Voxtral_Small_Latest ;
+    enki:metricAssigner contextuel:Mistral ;
+    enki:metricUnit "Speed Rating (1-5)" ;
+    enki:metricValue 3 .
 

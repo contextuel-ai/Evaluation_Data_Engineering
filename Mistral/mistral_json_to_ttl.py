@@ -37,13 +37,24 @@ HEADER_BLOCK = """@base <https://www.contextuel.ai/spec/Contextuel/> .
 
 """
 
-# _________ PRICE METRICS __________
+# _________ CLAIMED METRICS __________
 
 PRICE_METRICS = {
     "Price_1M_Input_Tokens":  {"field": "input_usd_per_1m_tokens",
-                                "label": "Price per 1M Input Tokens ($)"},
+                                "label": "Price per 1M Input Tokens ($)",
+                                "criterion": "Cost"},
     "Price_1M_Output_Tokens": {"field": "output_usd_per_1m_tokens",
-                                "label": "Price per 1M Output Tokens ($)"},
+                                "label": "Price per 1M Output Tokens ($)",
+                                "criterion": "Cost"},
+}
+
+RATING_METRICS = {
+    "Speed_Rating":       {"field": "speed_rating",
+                           "label": "Speed Rating (1-5)",
+                           "criterion": "Latency"},
+    "Performance_Rating": {"field": "performance_rating",
+                           "label": "Performance Rating (1-5)",
+                           "criterion": "Quality"},
 }
 
 # _________ MODALITY MAPPING __________
@@ -129,6 +140,54 @@ def parse_release_date(s: str) -> str | None:
 # Mistral is the sole manufacturer and provider.
 ORG_LOCAL = "Mistral"
 
+# _________ CURL TEMPLATES __________
+
+CURL_MODELS = (
+    'curl https://api.mistral.ai/v1/models '
+    '-H "Authorization: Bearer $MISTRAL_API_KEY"'
+)
+
+# Per-endpoint curl templates.  {model_id} is substituted at emission time.
+# Use double-brace {{ }} to produce literal braces after .format().
+CURL_CHAT = (
+    'curl https://api.mistral.ai/v1/chat/completions '
+    '-H "Authorization: Bearer $MISTRAL_API_KEY" '
+    '-H "Content-Type: application/json" '
+    """-d '{{"model":"{model_id}","messages":[{{"role":"user","content":"Hello"}}]}}'"""
+)
+
+CURL_FIM = (
+    'curl https://api.mistral.ai/v1/fim/completions '
+    '-H "Authorization: Bearer $MISTRAL_API_KEY" '
+    '-H "Content-Type: application/json" '
+    """-d '{{"model":"{model_id}","prompt":"def fibonacci(n):","suffix":"return result"}}'"""
+)
+
+CURL_EMBED = (
+    'curl https://api.mistral.ai/v1/embeddings '
+    '-H "Authorization: Bearer $MISTRAL_API_KEY" '
+    '-H "Content-Type: application/json" '
+    """-d '{{"model":"{model_id}","input":["Hello world"]}}'"""
+)
+
+
+def curl_for_model(model_id: str, caps: dict, api_listed: bool) -> str | None:
+    """Return the appropriate curl template for a model, or None if not API-accessible."""
+    if not api_listed:
+        return None
+    mid_lower = model_id.lower()
+    # Embedding models use /v1/embeddings
+    if "embed" in mid_lower:
+        return CURL_EMBED.format(model_id=model_id)
+    # FIM-capable models (Codestral) — prefer FIM endpoint if not also chat
+    if caps.get("completion_fim") and not caps.get("completion_chat"):
+        return CURL_FIM.format(model_id=model_id)
+    # Chat completion (the vast majority)
+    if caps.get("completion_chat"):
+        return CURL_CHAT.format(model_id=model_id)
+    # Fallback for API-listed models without known caps (use chat)
+    return CURL_CHAT.format(model_id=model_id)
+
 # _________ READ JSON __________
 
 def read_models(path: Path) -> list[dict]:
@@ -195,6 +254,22 @@ def read_models(path: Path) -> list[dict]:
         # Docs URL for identifier
         docs_url = m.get("docs_url") or ""
 
+        # Speed & performance ratings (1-5 scale, self-reported by Mistral)
+        ratings = {}
+        for rm_key, rm_info in RATING_METRICS.items():
+            v = m.get(rm_info["field"])
+            if v is not None:
+                try:
+                    v = int(v)
+                    if 1 <= v <= 5:
+                        ratings[rm_key] = v
+                except (ValueError, TypeError):
+                    pass
+
+        # API availability and capabilities (for curl generation)
+        api_listed = bool(m.get("api_listed"))
+        capabilities = m.get("capabilities") or {}
+
         rows.append({
             "model_id": model_id,
             "label": label,
@@ -205,8 +280,11 @@ def read_models(path: Path) -> list[dict]:
             "input_modalities": input_modalities,
             "output_modalities": output_modalities,
             "price": price,
+            "ratings": ratings,
             "release_date": release_date,
             "docs_url": docs_url,
+            "api_listed": api_listed,
+            "capabilities": capabilities,
         })
 
     print(f"After dedup: {len(rows)} unique models")
@@ -227,6 +305,9 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
     model_uris: list[URIRef] = []
     provisioning_uris: list[URIRef] = []
     metrics_by_llm: dict[URIRef, list[URIRef]] = defaultdict(list)
+
+    # Provider-level: curl to list all models
+    g.add((org_uri, ENKI.curlModel, Literal(CURL_MODELS)))
 
     for r in rows:
         local = local_from_model(r["model_id"])
@@ -288,18 +369,36 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
         g.add((prov_uri, RDFS.label, Literal(f"Mistral provisioning of {r['label']}")))
         g.add((prov_uri, ENKI.provider, org_uri))
         g.add((prov_uri, ENKI.provides, model_uri))
+
+        # Curl example for API-listed models
+        curl_cmd = curl_for_model(r["model_id"], r["capabilities"], r["api_listed"])
+        if curl_cmd:
+            g.add((prov_uri, ENKI.curlExample, Literal(curl_cmd)))
+
         provisioning_uris.append(prov_uri)
 
-        # Price metrics as EvaluatedMetric → Cost
+        # Price metrics as ClaimedMetric → Cost
         for pm_key, pm_val in r["price"].items():
-            pm_label = PRICE_METRICS[pm_key]["label"]
+            pm_info = PRICE_METRICS[pm_key]
             metric_uri = URIRef(str(C) + f"{local}_{pm_key}")
-            g.add((metric_uri, RDF.type, ENKI.EvaluatedMetric))
-            g.add((metric_uri, ENKI.metricAssesses, URIRef(str(C) + "Cost")))
+            g.add((metric_uri, RDF.type, ENKI.ClaimedMetric))
+            g.add((metric_uri, ENKI.metricAssesses, URIRef(str(C) + pm_info["criterion"])))
             g.add((metric_uri, ENKI.metricAssignee, model_uri))
             g.add((metric_uri, ENKI.metricAssigner, org_uri))
-            g.add((metric_uri, ENKI.metricUnit, Literal(pm_label)))
+            g.add((metric_uri, ENKI.metricUnit, Literal(pm_info["label"])))
             g.add((metric_uri, ENKI.metricValue, Literal(pm_val)))
+            metrics_by_llm[model_uri].append(metric_uri)
+
+        # Speed / performance ratings as ClaimedMetric → Latency / Quality
+        for rm_key, rm_val in r["ratings"].items():
+            rm_info = RATING_METRICS[rm_key]
+            metric_uri = URIRef(str(C) + f"{local}_{rm_key}")
+            g.add((metric_uri, RDF.type, ENKI.ClaimedMetric))
+            g.add((metric_uri, ENKI.metricAssesses, URIRef(str(C) + rm_info["criterion"])))
+            g.add((metric_uri, ENKI.metricAssignee, model_uri))
+            g.add((metric_uri, ENKI.metricAssigner, org_uri))
+            g.add((metric_uri, ENKI.metricUnit, Literal(rm_info["label"])))
+            g.add((metric_uri, ENKI.metricValue, Literal(rm_val)))
             metrics_by_llm[model_uri].append(metric_uri)
 
         model_uris.append(model_uri)
@@ -312,18 +411,23 @@ def build_graph(rows: list[dict]) -> tuple[Graph, dict[URIRef, list[URIRef]]]:
     with_params = sum(1 for r in rows if r["total_params_b"] is not None)
     with_ctx = sum(1 for r in rows if r["context_window"] is not None)
     with_price = sum(1 for r in rows if r["price"])
+    with_ratings = sum(1 for r in rows if r["ratings"])
     with_desc = sum(1 for r in rows if r["description"])
     with_modalities = sum(1 for r in rows if r["input_modalities"])
     with_date = sum(1 for r in rows if r["release_date"])
+    with_curl = sum(1 for r in rows if curl_for_model(r["model_id"], r["capabilities"], r["api_listed"]))
+    total_metrics = sum(len(v) for v in metrics_by_llm.values())
     print(f"Models: {len(rows)}")
     print(f"  with params:     {with_params}")
     print(f"  with context:    {with_ctx}")
     print(f"  with pricing:    {with_price}")
+    print(f"  with ratings:    {with_ratings}")
     print(f"  with description:{with_desc}")
     print(f"  with modalities: {with_modalities}")
     print(f"  with release:    {with_date}")
+    print(f"  with curl:       {with_curl}")
     print(f"Provisionings: {len(provisioning_uris)}")
-    print(f"Price metrics: {sum(len(v) for v in metrics_by_llm.values())}")
+    print(f"Claimed metrics: {total_metrics} (price: {sum(len(r['price']) for r in rows)}, ratings: {sum(len(r['ratings']) for r in rows)})")
 
     return g, metrics_by_llm
 
